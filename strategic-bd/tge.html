@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Triad Network — 05 · Token Launch & TGE Strategy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">
+    <svg class="logo-mark" viewBox="0 0 36 36" fill="none"><polygon points="18,2 33,30 3,30" stroke="#c9a96e" stroke-width="1.2" fill="none"/><polygon points="18,10 27,28 9,28" stroke="rgba(201,169,110,0.4)" stroke-width="0.8" fill="none"/><polygon points="18,17 22,26 14,26" stroke="rgba(201,169,110,0.2)" stroke-width="0.6" fill="none"/></svg>
+    <span class="logo-text">Triad Network</span>
+    <span class="logo-div"></span>
+    <span class="logo-sub">Advisory</span>
+  </a>
+  <div class="nav-links">
+    <a href="/ecosystem.html">Ecosystem</a>
+    <a href="/strategic-bd.html">Strategic BD</a>
+    <a href="/#capabilities">Capabilities</a>
+    <a href="mailto:inquiries@triadnetwork.xyz" class="nav-cta">Inquire</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <a href="/strategic-bd.html" class="back-link">← Back to BD Overview</a>
+  <div class="eyebrow">05 · Token Launch & TGE Strategy</div>
+  <h1>Your TGE is a <em>one-shot event</em></h1>
+  <p>You only launch once. Our playbook is battle-tested across 30+ token launches from pre-launch through post-TGE momentum.</p>
+  <div class="info-grid cols-3"><div class="info-item"><div class="val">30+</div><div class="lbl">TGEs Supported</div></div><div class="info-item"><div class="val">90 days</div><div class="lbl">Avg. Pre-launch</div></div><div class="info-item"><div class="val">End-to-End</div><div class="lbl">Coverage</div></div></div>
+</section>
+<section class="content-section"><div class="section-label">The Playbook</div><h2>TGE phases we manage</h2><ul><li>Tokenomics validation — stress-testing supply, vesting, emissions, and incentives</li><li>Pre-launch community — testnet campaigns, ambassadors, waitlists, anticipation engineering</li><li>Airdrop strategy — Sybil-resistant distribution rewarding genuine users</li><li>Launch timing — coordinating with exchanges, market conditions, and conferences</li><li>Day-1 execution — real-time listing go-live, liquidity deployment, social blitz</li><li>Post-TGE momentum — price stability, holder growth, product-driven transition</li></ul></section>
+
+<div class="quote-block"><blockquote>"A TGE isn't a celebration — it's the beginning of accountability. We engineer launches built to sustain."<cite>— Triad Network BD</cite></blockquote></div>
+<div class="cta-banner"><div class="cta-inner"><h3>Ready to start?</h3><p>Let's discuss how Triad Network can drive your growth.</p><a href="mailto:inquiries@triadnetwork.xyz" class="cta-btn">Begin Conversation →</a></div></div>
+<footer>
+  <div class="footer-l">&copy; 2026 Triad Network. All rights reserved.</div>
+  <div class="footer-r">
+    <a href="/">Home</a>
+    <a href="/ecosystem.html">Ecosystem</a>
+    <a href="/strategic-bd.html">Strategic BD</a>
+    <a href="#">Terms</a>
+    <a href="#">Privacy</a>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 60);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.background = scrollY > 50 ? 'rgba(10,10,11,.92)' : 'rgba(10,10,11,.7)';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Triad Network — 01 · Exchange Listing Strategy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">
+    <svg class="logo-mark" viewBox="0 0 36 36" fill="none"><polygon points="18,2 33,30 3,30" stroke="#c9a96e" stroke-width="1.2" fill="none"/><polygon points="18,10 27,28 9,28" stroke="rgba(201,169,110,0.4)" stroke-width="0.8" fill="none"/><polygon points="18,17 22,26 14,26" stroke="rgba(201,169,110,0.2)" stroke-width="0.6" fill="none"/></svg>
+    <span class="logo-text">Triad Network</span>
+    <span class="logo-div"></span>
+    <span class="logo-sub">Advisory</span>
+  </a>
+  <div class="nav-links">
+    <a href="/ecosystem.html">Ecosystem</a>
+    <a href="/strategic-bd.html">Strategic BD</a>
+    <a href="/#capabilities">Capabilities</a>
+    <a href="mailto:inquiries@triadnetwork.xyz" class="nav-cta">Inquire</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <a href="/strategic-bd.html" class="back-link">← Back to BD Overview</a>
+  <div class="eyebrow">01 · Exchange Listing Strategy</div>
+  <h1>Getting listed is <em>science, not luck</em></h1>
+  <p>Exchange listings are the single highest-impact BD event for most token projects. We've supported 40+ listings across Tier 1 and Tier 2 CEXs.</p>
+  <div class="info-grid cols-3"><div class="info-item"><div class="val">40+</div><div class="lbl">Listings Supported</div></div><div class="info-item"><div class="val">8+</div><div class="lbl">CEX Relationships</div></div><div class="info-item"><div class="val">$50M+</div><div class="lbl">Liquidity Facilitated</div></div></div>
+</section>
+<section class="content-section"><div class="section-label">What We Do</div><h2>Our exchange listing methodology</h2><ul><li>Exchange landscape mapping — identifying the right exchanges for your stage, geography, and token type</li><li>Listing sequencing — ordering listings for maximum narrative impact and liquidity depth</li><li>Application management — preparing documentation, legal requirements, and technical integrations</li><li>Market-making partnerships — sourcing agreements that ensure healthy order books</li><li>Liquidity bootstrapping — designing initial liquidity across CEX and DEX venues</li><li>Post-listing growth — monitoring metrics and timing subsequent launches</li></ul></section>
+
+<div class="quote-block"><blockquote>"The difference between a listing that fizzles and one that catalyses growth is sequencing, liquidity design, and narrative timing."<cite>— Triad Network BD</cite></blockquote></div>
+<div class="cta-banner"><div class="cta-inner"><h3>Ready to start?</h3><p>Let's discuss how Triad Network can drive your growth.</p><a href="mailto:inquiries@triadnetwork.xyz" class="cta-btn">Begin Conversation →</a></div></div>
+<footer>
+  <div class="footer-l">&copy; 2026 Triad Network. All rights reserved.</div>
+  <div class="footer-r">
+    <a href="/">Home</a>
+    <a href="/ecosystem.html">Ecosystem</a>
+    <a href="/strategic-bd.html">Strategic BD</a>
+    <a href="#">Terms</a>
+    <a href="#">Privacy</a>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 60);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.background = scrollY > 50 ? 'rgba(10,10,11,.92)' : 'rgba(10,10,11,.7)';
+});
+</script>
+</body>
+</html>

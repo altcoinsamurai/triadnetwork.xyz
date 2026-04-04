@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Triad Network — MAIV Case Study</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">
+    <svg class="logo-mark" viewBox="0 0 36 36" fill="none"><polygon points="18,2 33,30 3,30" stroke="#c9a96e" stroke-width="1.2" fill="none"/><polygon points="18,10 27,28 9,28" stroke="rgba(201,169,110,0.4)" stroke-width="0.8" fill="none"/><polygon points="18,17 22,26 14,26" stroke="rgba(201,169,110,0.2)" stroke-width="0.6" fill="none"/></svg>
+    <span class="logo-text">Triad Network</span>
+    <span class="logo-div"></span>
+    <span class="logo-sub">Advisory</span>
+  </a>
+  <div class="nav-links">
+    <a href="/ecosystem.html">Ecosystem</a>
+    <a href="/strategic-bd.html">Strategic BD</a>
+    <a href="/#capabilities">Capabilities</a>
+    <a href="mailto:inquiries@triadnetwork.xyz" class="nav-cta">Inquire</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <a href="/ecosystem.html" class="back-link">← Back to Partners</a>
+  <div class="eyebrow">Case Study · Strategic Advisory Partner</div>
+  <h1>MAIV — Democratising <em>Institutional-Grade</em> Capital Markets</h1>
+  <p>MAIV (Multi Asset Investment Vehicle) is a European-registered platform bridging DeFi with traditional finance, enabling broader access to secure, high-yield investment opportunities across real-world assets through tokenised financial agreements.</p>
+  <div class="info-grid">
+    <div class="info-item"><div class="val">DeFi × TradFi</div><div class="lbl">Sector</div></div>
+    <div class="info-item"><div class="val">Europe</div><div class="lbl">Headquarters</div></div>
+    <div class="info-item"><div class="val">MiCA</div><div class="lbl">Regulatory</div></div>
+    <div class="info-item"><div class="val">Advisory</div><div class="lbl">Triad Role</div></div>
+  </div>
+</section>
+<section class="content-section"><div class="section-label">The Opportunity</div><h2>Bridging a $400 trillion gap</h2><p>Traditional capital markets manage over $400 trillion globally, yet access remains gated behind high minimums and complex structures. MAIV uses Web3 to fractionalise and democratise these opportunities without sacrificing compliance.</p></section>
+<section class="content-section"><div class="section-label">The Platform</div><h2>How MAIV works</h2>
+  <ul><li>Real Estate Development Pools — fractionalised early-stage property projects, up to 20% annual yields</li><li>Commercial Lending — tokenised financial agreements with established business backing</li><li>Refinancing Solutions — improved terms for businesses, secure returns for investors</li><li>White Label Platform — organisations launch branded investment platforms on MAIV infrastructure</li></ul>
+</section>
+<section class="content-section"><div class="section-label">Token Utility</div><h2>The $MAIV ecosystem</h2>
+  <ul><li>Governance — weighted voting on platform decisions and fee allocation</li><li>Staking — earn additional tokens with duration-weighted vote power</li><li>Launchpad Access — early seed-stage funding allocations via token lock</li><li>Platform Subscription — $MAIV as membership key to full product suite</li><li>Portfolio Access — gamified staking for luxury real estate stays and events</li></ul>
+</section>
+<div class="quote-block"><blockquote>"Democratising institutional-grade capital markets — levelling the playing field for investors of all sizes."<cite>— MAIV</cite></blockquote></div>
+<section class="content-section"><div class="section-label">Triad Network's Role</div><h2>Strategic advisory engagement</h2>
+  <ul><li>Platform architecture advisory — DeFi×TradFi integration layer and smart contract design</li><li>Tokenomics refinement — $MAIV utility design, staking mechanics, and value accrual</li><li>Institutional market expansion — introductions to family offices, developers, and allocators</li><li>Regulatory strategy — MiCA compliance framework and multi-jurisdiction positioning</li><li>White label GTM — B2B strategy for funds seeking tokenised investment infrastructure</li><li>Exchange and liquidity strategy — CEX listing roadmap (currently on MEXC)</li></ul>
+</section>
+<section class="content-section"><div class="section-label">Market Data</div><h2>Token overview</h2>
+  <ul><li>Token: $MAIV (ERC-20 on Ethereum)</li><li>Circulating Supply: ~1.3 Billion MAIV</li><li>Maximum Supply: 10 Billion MAIV</li><li>Contract: 0x39903a1a6f289a67e0de94096915c4ccd506ab2a</li><li>Listed on: MEXC Global (MAIV/USDT)</li></ul>
+</section>
+<div class="links-section"><h3>MAIV Links</h3><div class="links-row">
+  <a href="https://www.maiv.io" target="_blank" class="ext-link">Website ↗</a>
+  <a href="https://coinmarketcap.com/currencies/multi-asset-investment-vehicle/" target="_blank" class="ext-link">CoinMarketCap ↗</a>
+  <a href="https://www.coingecko.com/en/coins/multi-asset-investment-vehicle" target="_blank" class="ext-link">CoinGecko ↗</a>
+  <a href="https://maiv.gitbook.io/maiv-finance" target="_blank" class="ext-link">Documentation ↗</a>
+</div></div>
+<footer>
+  <div class="footer-l">&copy; 2026 Triad Network. All rights reserved.</div>
+  <div class="footer-r">
+    <a href="/">Home</a>
+    <a href="/ecosystem.html">Ecosystem</a>
+    <a href="/strategic-bd.html">Strategic BD</a>
+    <a href="#">Terms</a>
+    <a href="#">Privacy</a>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 60);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.background = scrollY > 50 ? 'rgba(10,10,11,.92)' : 'rgba(10,10,11,.7)';
+});
+</script>
+</body>
+</html>
