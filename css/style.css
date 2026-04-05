@@ -406,3 +406,10 @@ footer{border-top:1px solid var(--border);padding:32px var(--pad);display:flex;j
   #featured .click-card{grid-row:auto!important;min-height:auto!important}
   #featured{padding:60px 20px!important}
 }
+
+/* ═══ INDUSTRY LEADERS RESPONSIVE ═══ */
+@media(max-width:900px){
+  #leaders>div:last-child{grid-template-columns:1fr!important}
+  #leaders .click-card{min-height:auto!important}
+  #leaders{padding:60px 20px!important}
+}
