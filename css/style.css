@@ -399,3 +399,10 @@ footer{border-top:1px solid var(--border);padding:32px var(--pad);display:flex;j
   
   footer{padding-bottom:80px}
 }
+
+/* ═══ FEATURED GRID RESPONSIVE ═══ */
+@media(max-width:900px){
+  #featured>div:last-child{grid-template-columns:1fr!important}
+  #featured .click-card{grid-row:auto!important;min-height:auto!important}
+  #featured{padding:60px 20px!important}
+}
