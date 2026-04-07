@@ -13,33 +13,62 @@
 body{background:var(--dark);color:var(--white);font-family:'Syne',system-ui,sans-serif;overflow:hidden;height:100vh;height:100dvh;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 canvas{position:fixed;inset:0;z-index:0}
+
+/* Ambient glow — reacts to hover */
 .glow-orb{position:fixed;width:500px;height:500px;border-radius:50%;filter:blur(120px);opacity:0;transition:opacity 1.2s,transform 1.2s;pointer-events:none;z-index:1}
 .glow-teal{background:radial-gradient(circle,rgba(0,191,166,.12),transparent 70%);top:30%;left:15%;transform:translateY(20px)}
 .glow-purple{background:radial-gradient(circle,rgba(124,92,252,.12),transparent 70%);top:25%;right:15%;transform:translateY(20px)}
 body.hover-creator .glow-teal{opacity:1;transform:translateY(0)}
 body.hover-project .glow-purple{opacity:1;transform:translateY(0)}
+
+/* Top bar */
 .top-bar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 40px}
 .logo-area{display:flex;align-items:center;gap:10px}
 .logo-area svg{width:28px;height:28px}
 .logo-area span{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.6}
 .top-right{font-family:var(--mono);font-size:10px;color:var(--grey);letter-spacing:.1em}
+
+/* Main content */
 .main{position:relative;z-index:10;height:100vh;height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+
+/* Headline */
 .headline{text-align:center;margin-bottom:56px}
 .headline .eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--grey);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:12px}
 .headline .eyebrow::before,.headline .eyebrow::after{content:'';width:24px;height:1px;background:rgba(255,255,255,.1)}
 .headline h1{font-size:clamp(32px,5vw,56px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
 .headline h1 span{display:block;font-size:clamp(14px,1.8vw,20px);font-weight:400;letter-spacing:.02em;color:var(--grey);margin-top:12px;font-family:var(--mono)}
+
+/* Cards container */
 .cards{display:flex;gap:32px;perspective:1200px}
-.sel-card{width:320px;height:420px;position:relative;border-radius:24px;overflow:hidden;cursor:pointer;transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s;transform-style:preserve-3d;-webkit-tap-highlight-color:transparent}
-.sel-card:hover{transform:translateY(-12px) scale(1.03)}
+
+/* Selection card */
+.sel-card{
+  width:320px;height:420px;
+  position:relative;
+  border-radius:24px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s;
+  transform-style:preserve-3d;
+  -webkit-tap-highlight-color:transparent;
+}
+.sel-card:hover{
+  transform:translateY(-12px) scale(1.03);
+}
+
+/* Card background */
 .card-bg{position:absolute;inset:0;border-radius:24px;overflow:hidden}
 .card-bg-inner{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr);gap:4px;padding:4px;opacity:.35;transition:opacity .5s}
 .sel-card:hover .card-bg-inner{opacity:.55}
 .card-bg-inner img{width:100%;height:100%;object-fit:cover;border-radius:8px}
 .card-bg-inner .placeholder{border-radius:8px}
+
+/* Card overlay + content */
 .card-overlay{position:absolute;inset:0;border-radius:24px;z-index:2;transition:background .5s}
 .card-content{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;justify-content:flex-end;padding:32px;border-radius:24px;border:1px solid rgba(255,255,255,.06);transition:border-color .5s}
 .sel-card:hover .card-content{border-color:rgba(255,255,255,.12)}
+
+/* Creator card colors */
 .sel-card.creator .card-overlay{background:linear-gradient(180deg,rgba(0,191,166,.05) 0%,rgba(6,6,12,.85) 60%,rgba(6,6,12,.95) 100%)}
 .sel-card.creator:hover .card-overlay{background:linear-gradient(180deg,rgba(0,191,166,.08) 0%,rgba(6,6,12,.75) 50%,rgba(6,6,12,.92) 100%)}
 .sel-card.creator:hover{box-shadow:0 24px 80px rgba(0,191,166,.15),0 0 0 1px rgba(0,191,166,.1)}
@@ -48,6 +77,8 @@ body.hover-project .glow-purple{opacity:1;transform:translateY(0)}
 .sel-card.creator .card-arrow svg{stroke:var(--teal)}
 .sel-card.creator:hover .card-arrow{background:var(--teal);box-shadow:0 0 20px rgba(0,191,166,.3)}
 .sel-card.creator:hover .card-arrow svg{stroke:var(--dark)}
+
+/* Project card colors */
 .sel-card.project .card-overlay{background:linear-gradient(180deg,rgba(124,92,252,.05) 0%,rgba(6,6,12,.85) 60%,rgba(6,6,12,.95) 100%)}
 .sel-card.project:hover .card-overlay{background:linear-gradient(180deg,rgba(124,92,252,.08) 0%,rgba(6,6,12,.75) 50%,rgba(6,6,12,.92) 100%)}
 .sel-card.project:hover{box-shadow:0 24px 80px rgba(124,92,252,.15),0 0 0 1px rgba(124,92,252,.1)}
@@ -56,13 +87,19 @@ body.hover-project .glow-purple{opacity:1;transform:translateY(0)}
 .sel-card.project .card-arrow svg{stroke:var(--purple)}
 .sel-card.project:hover .card-arrow{background:var(--purple);box-shadow:0 0 20px rgba(124,92,252,.3)}
 .sel-card.project:hover .card-arrow svg{stroke:var(--dark)}
+
+/* Card inner elements */
 .card-tag{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;padding:5px 14px;border:1px solid;border-radius:100px;display:inline-block;margin-bottom:16px;width:fit-content}
 .card-title{font-size:28px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
 .card-desc{font-size:13px;line-height:1.6;color:rgba(255,255,255,.5);margin-bottom:20px}
 .card-arrow{width:44px;height:44px;border-radius:50%;border:1.5px solid;display:flex;align-items:center;justify-content:center;transition:all .4s}
 .card-arrow svg{width:18px;height:18px;transition:stroke .3s}
+
+/* Bottom stats */
 .bottom-stats{position:fixed;bottom:28px;left:0;right:0;z-index:20;display:flex;justify-content:center;gap:40px}
 .bottom-stats span{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.2)}
+
+/* ═══ MOBILE ═══ */
 @media(max-width:750px){
   .cards{flex-direction:column;gap:20px}
   .sel-card{width:min(320px,85vw);height:280px}
@@ -86,9 +123,14 @@ body.hover-project .glow-purple{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
+
 <canvas id="particles"></canvas>
+
+<!-- Ambient glows -->
 <div class="glow-orb glow-teal"></div>
 <div class="glow-orb glow-purple"></div>
+
+<!-- Top bar -->
 <div class="top-bar">
   <div class="logo-area">
     <svg viewBox="0 0 36 36" fill="none">
@@ -100,12 +142,16 @@ body.hover-project .glow-purple{opacity:1;transform:translateY(0)}
   </div>
   <div class="top-right">London · 2026</div>
 </div>
+
+<!-- Main -->
 <div class="main">
   <div class="headline">
     <div class="eyebrow">Venture Infrastructure</div>
     <h1>Triad Network<span>Engineering · Advisory · Capital</span></h1>
   </div>
+
   <div class="cards">
+    <!-- Creator Card -->
     <a href="/creators.html" class="sel-card creator" onmouseenter="document.body.classList.add('hover-creator')" onmouseleave="document.body.classList.remove('hover-creator')">
       <div class="card-bg"><div class="card-bg-inner" id="creator-grid"></div></div>
       <div class="card-overlay"></div>
@@ -116,6 +162,8 @@ body.hover-project .glow-purple{opacity:1;transform:translateY(0)}
         <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
     </a>
+
+    <!-- Project Card -->
     <a href="/home.html" class="sel-card project" onmouseenter="document.body.classList.add('hover-project')" onmouseleave="document.body.classList.remove('hover-project')">
       <div class="card-bg"><div class="card-bg-inner" id="project-grid"></div></div>
       <div class="card-overlay"></div>
@@ -128,13 +176,17 @@ body.hover-project .glow-purple{opacity:1;transform:translateY(0)}
     </a>
   </div>
 </div>
+
+<!-- Bottom -->
 <div class="bottom-stats">
   <span>550+ Ventures</span>
   <span>400+ Products</span>
   <span>8+ Years</span>
   <span>Select Access</span>
 </div>
+
 <script>
+// ── Particle system ──
 const canvas=document.getElementById('particles'),ctx=canvas.getContext('2d');
 let w,h,pts=[];
 function resize(){w=canvas.width=innerWidth;h=canvas.height=innerHeight}
@@ -142,6 +194,8 @@ resize();window.addEventListener('resize',resize);
 for(let i=0;i<45;i++){pts.push({x:Math.random()*2e3,y:Math.random()*2e3,r:Math.random()*1.8+.4,sx:(Math.random()-.5)*.2,sy:(Math.random()-.5)*.2-.08,p:Math.random()*Math.PI*2,t:Math.random()>.5})}
 function draw(){ctx.clearRect(0,0,w,h);const t=Date.now()*.001;pts.forEach(p=>{p.x+=p.sx;p.y+=p.sy;if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;const tw=.3+.7*Math.sin(t*1.5+p.p);const a=tw*.4;const r=p.r*(.8+.2*tw);ctx.fillStyle=p.t?`rgba(0,191,166,${a*.12})`:`rgba(124,92,252,${a*.1})`;ctx.beginPath();ctx.arc(p.x,p.y,r*4,0,Math.PI*2);ctx.fill();ctx.fillStyle=p.t?`rgba(0,191,166,${a})`:`rgba(124,92,252,${a})`;ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.fill()});requestAnimationFrame(draw)}
 draw();
+
+// ── Card background grids ──
 const creatorHandles=['HsakaTrades','Pentosh1','crypto_banter','thedefiedge','CryptoTony__','AltcoinGordon','MacnBTC','DeFi_Dad','CryptoCred','loomdart','crypto_birb','RuneKek'];
 const projectLogos=[
   'https://assets.coingecko.com/coins/images/279/small/ethereum.png',
@@ -159,6 +213,7 @@ const projectLogos=[
 ];
 const tealGrads=[['#00BFA6','#004D40'],['#00897B','#1A237E'],['#26A69A','#283593'],['#00ACC1','#006064'],['#0097A7','#01579B'],['#009688','#311B92']];
 const purpGrads=[['#7C5CFC','#1A0A3E'],['#5C6BC0','#0D47A1'],['#7E57C2','#311B92'],['#9575CD','#4A148C'],['#5E35B1','#1A237E'],['#673AB7','#0D47A1']];
+
 function fillGrid(id,items,type){
   const grid=document.getElementById(id);
   items.forEach((item,i)=>{
@@ -179,6 +234,8 @@ function fillGrid(id,items,type){
 }
 fillGrid('creator-grid',creatorHandles,'creator');
 fillGrid('project-grid',projectLogos,'project');
+
+// ── 3D tilt on cards ──
 if(window.matchMedia('(hover:hover)').matches){
   document.querySelectorAll('.sel-card').forEach(card=>{
     card.addEventListener('mousemove',e=>{

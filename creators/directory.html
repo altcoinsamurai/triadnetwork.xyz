@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creator Profile & Directory — Triad Creators</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script async src="https://plausible.io/js/pa-sO608YaKMQ1Jb8JQKbrs2.js"></script>
+<script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
+<style>
+body{background:#06060C;color:#F0EEE8}
+.p-hero{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;padding:140px 24px 80px}
+.p-hero .icon-ring{width:80px;height:80px;border-radius:50%;border:2px solid #7C5CFC;display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:28px;background:rgba(124,92,252,.06);box-shadow:0 0 40px rgba(124,92,252,.1);animation:float 4s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.p-hero .tag{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#7C5CFC;margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:10px}
+.p-hero .tag::before,.p-hero .tag::after{content:'';width:16px;height:1px;background:#7C5CFC;opacity:.3}
+.p-hero h1{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1.08;margin-bottom:20px;max-width:700px}
+.p-hero h1 em{font-style:normal;color:#7C5CFC}
+.p-hero>p{font-size:17px;line-height:1.7;color:#8888a0;max-width:560px;margin:0 auto}
+.p-section{max-width:900px;margin:0 auto;padding:80px 48px;position:relative;z-index:2}
+.p-section h2{font-family:'Syne',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
+.p-section h2 em{font-style:normal;color:#7C5CFC}
+.p-section p{font-size:15px;line-height:1.8;color:#8888a0;margin-bottom:14px}
+.p-section .label{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#7C5CFC;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.p-section .label::before{content:'';width:16px;height:1px;background:#7C5CFC}
+.p-list{list-style:none;margin:20px 0}
+.p-list li{font-size:14px;line-height:1.7;color:#8888a0;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:baseline;gap:14px}
+.p-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:#7C5CFC;flex-shrink:0;margin-top:7px;box-shadow:0 0 8px rgba(124,92,252,.4)}
+.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:32px 0}
+.feat-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:28px;transition:all .4s}
+.feat-card:hover{border-color:rgba(124,92,252,.2);transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.2)}
+.feat-card h4{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:6px}
+.feat-card p{font-size:13px;line-height:1.6;color:#8888a0}
+.quote-bar{border-left:3px solid #7C5CFC;padding:24px 28px;background:rgba(124,92,252,.04);border-radius:0 14px 14px 0;margin:32px 0;font-size:18px;font-weight:600;line-height:1.5;font-family:'Syne',sans-serif}
+.quote-bar cite{display:block;font-size:12px;color:#55556a;font-weight:400;margin-top:10px;font-style:normal;font-family:var(--mono)}
+.cta-block{text-align:center;padding:60px 32px;background:rgba(124,92,252,.04);border:1px solid rgba(124,92,252,.1);border-radius:20px;margin:40px 0}
+.cta-block h3{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;margin-bottom:10px}
+.cta-block p{font-size:14px;color:#8888a0;margin-bottom:24px}
+.cta-block a{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#7C5CFC;color:#06060C;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;border-radius:100px;text-decoration:none;transition:all .3s}
+.cta-block a:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(124,92,252,.25)}
+.back-link{font-family:var(--mono);font-size:11px;color:#55556a;text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:32px;transition:color .2s;position:relative;z-index:2;padding:140px 48px 0;max-width:900px;margin:0 auto;display:block}
+.back-link:hover{color:#7C5CFC}
+@media(max-width:900px){
+  .p-hero{padding:100px 20px 60px;min-height:auto}
+  .p-section{padding:60px 20px}
+  .feat-grid{grid-template-columns:1fr}
+  .back-link{padding:100px 20px 0}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo"><svg class="logo-mark" viewBox="0 0 36 36" fill="none"><circle cx="12" cy="18" r="10" stroke="#00BFA6" stroke-width="1" fill="none" opacity=".6"/><circle cx="24" cy="18" r="10" stroke="#00BFA6" stroke-width="1" fill="none" opacity=".4"/><circle cx="18" cy="10" r="10" stroke="#00BFA6" stroke-width="1" fill="none" opacity=".8"/></svg><span class="logo-text">Triad Network</span><span class="logo-div"></span><span class="logo-sub">Advisory</span></a>
+  <div class="nav-links">
+    <a href="/ecosystem.html">Ecosystem</a>
+    <a href="/strategic-bd.html">Strategic BD</a>
+    <a href="/creators.html" style="color:var(--accent)">Creators</a>
+    <a href="mailto:inquiries@triadnetwork.xyz" class="nav-cta">Inquire</a>
+  </div>
+  <button class="mobile-menu" style="display:none" onclick="document.querySelector('.nav-links').classList.toggle('show')"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="back-link"><a href="/creators.html" style="font-family:var(--mono);font-size:11px;color:#55556a;text-decoration:none">&larr; Back to Creators</a></div>
+<section class="p-hero">
+  <div class="icon-ring" style="border-color:#7C5CFC;background:rgba(124,92,252,.06);box-shadow:0 0 40px rgba(124,92,252,.1)">&#9881;</div>
+  <div class="tag">Creator Directory</div>
+  <h1>Your profile. Their <em>discovery.</em></h1>
+  <p>Every Triad Creator gets a public profile on our directory. Projects browse, filter by niche and audience, and pick you directly. You don't pitch — you get picked.</p>
+</section>
+
+<section class="p-section">
+  <div class="label">Your Profile Includes</div>
+  <h2>Everything a project needs to say <em>yes.</em></h2>
+  <div class="feat-grid">
+    <div class="feat-card reveal"><h4>Creator Bio &amp; Positioning</h4><p>A professionally written bio that communicates your expertise, niche, and unique angle. First impression, handled.</p></div>
+    <div class="feat-card reveal"><h4>Audience Metrics</h4><p>Follower count, engagement rate, average impressions, and audience demographics. Data that builds confidence.</p></div>
+    <div class="feat-card reveal"><h4>Content Portfolio</h4><p>Your best threads, videos, and posts — curated and presented. Projects see your work quality before they reach out.</p></div>
+    <div class="feat-card reveal"><h4>Niche Tags</h4><p>DeFi, AI×Crypto, L1s, NFTs, Trading — tagged so projects can filter and find creators who match their audience.</p></div>
+    <div class="feat-card reveal"><h4>Campaign History</h4><p>Past campaigns completed through Triad, with performance metrics. A track record that compounds over time.</p></div>
+    <div class="feat-card reveal"><h4>Direct Request Button</h4><p>Projects click one button to request a collaboration. No DMs, no emails, no middlemen. Instant connection through Triad.</p></div>
+  </div>
+</section>
+
+<section class="p-section">
+  <div class="label">For Projects</div>
+  <h2>Browse. Filter. <em>Book.</em></h2>
+  <p>The Triad Creators Directory is the fastest way for projects to find vetted, quality crypto creators. Every creator in the directory has been accepted through our application process, had their brand built by our team, and is ready to deliver.</p>
+  <p>Projects can filter by content niche, follower range, platform, engagement rate, and availability. No more scrolling through thousands of unvetted KOL lists. Quality over quantity.</p>
+</section>
+
+<section class="p-section">
+  <div class="quote-bar reveal">"The best creators shouldn't need to sell themselves. Their profile should do the selling. We make sure it does."<cite>— Triad Creators</cite></div>
+</section>
+
+<section class="p-section">
+  <div class="cta-block reveal">
+    <h3>Get discovered.</h3>
+    <p>Apply to Triad Creators and get your profile live in the directory.</p>
+    <a href="/creators.html#apply" style="background:#7C5CFC">Apply Now &rarr;</a>
+  </div>
+</section>
+
+<footer style="position:relative;z-index:2">
+  <div class="footer-l">&copy; 2026 Triad Network. All rights reserved.</div>
+  <div class="footer-r"><a href="/">Home</a><a href="/creators.html">Creators</a><a href="/ecosystem.html">Ecosystem</a></div>
+</footer>
+<div class="tab-bar"><div class="tab-bar-inner">
+  <a href="/" class="tab-item"><svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></a>
+  <a href="/strategic-bd.html" class="tab-item"><svg viewBox="0 0 24 24"><polyline points="7 8 3 12 7 16"/><polyline points="17 8 21 12 17 16"/><line x1="14" y1="4" x2="10" y2="20"/></svg></a>
+  <a href="/ecosystem.html" class="tab-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a14.5 14.5 0 014 9 14.5 14.5 0 01-4 9 14.5 14.5 0 01-4-9 14.5 14.5 0 014-9"/><line x1="3" y1="12" x2="21" y2="12"/></svg></a>
+  <a href="/creators.html" class="tab-item active"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></a>
+  <a href="mailto:inquiries@triadnetwork.xyz" class="tab-item"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg></a>
+</div></div>
+<script>
+const observer=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*60);observer.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
