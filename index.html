@@ -4,189 +4,192 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Triad Network — Engineering · Advisory · Capital</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<!-- Privacy-friendly analytics by Plausible -->
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script async src="https://plausible.io/js/pa-sO608YaKMQ1Jb8JQKbrs2.js"></script>
-<script>
-  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-  plausible.init()
-</script>
+<script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--teal:#00BFA6;--teal2:#00E8CC;--dark:#08080F;--dark2:#0E0E18;--white:#F0EEE8;--grey:#888}
-body{background:var(--dark);color:var(--white);font-family:'Space Grotesk',system-ui,sans-serif;overflow:hidden;height:100vh;height:100dvh;-webkit-font-smoothing:antialiased}
+:root{--teal:#00BFA6;--teal2:#00E8CC;--purple:#7C5CFC;--purple2:#9B7FFF;--dark:#06060C;--white:#F0EEE8;--grey:#666;--mono:'JetBrains Mono',monospace}
+body{background:var(--dark);color:var(--white);font-family:'Syne',system-ui,sans-serif;overflow:hidden;height:100vh;height:100dvh;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-.gateway{display:flex;height:100vh;height:100dvh;position:relative}
-.logo-bar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:center;align-items:center;padding:24px;pointer-events:none}
-.logo-bar svg{width:36px;height:36px;opacity:.9}
-.logo-name{font-size:15px;font-weight:600;letter-spacing:.06em;margin-left:10px;opacity:.8}
-.center-label{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:50;text-align:center;pointer-events:none}
-.center-label h1{font-size:clamp(20px,3vw,32px);font-weight:700;letter-spacing:-.02em;line-height:1.3;text-shadow:0 4px 30px rgba(0,0,0,.8)}
-.center-label h1 em{font-style:normal;color:var(--teal)}
-.center-label p{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);margin-top:12px}
-.panel{flex:1;position:relative;overflow:hidden;cursor:pointer;transition:flex .6s cubic-bezier(.16,1,.3,1)}
-.panel:hover{flex:1.15}
-.scroll-col{position:absolute;display:flex;flex-direction:column;gap:8px;width:calc(50% - 12px);animation-timing-function:linear;animation-iteration-count:infinite}
-.scroll-col.col-1{left:8px}
-.scroll-col.col-2{right:8px}
-.scroll-col.up{animation-name:scrollUp}
-.scroll-col.down{animation-name:scrollDown}
-@keyframes scrollUp{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}
-@keyframes scrollDown{0%{transform:translateY(-50%)}100%{transform:translateY(0)}}
-.avatar{width:100%;aspect-ratio:1;border-radius:14px;position:relative;overflow:hidden}
-.avatar::before{content:'';position:absolute;inset:0;border-radius:14px}
-.panel-overlay{position:absolute;inset:0;background:rgba(8,8,15,.55);transition:background .5s;z-index:10}
-.panel:hover .panel-overlay{background:rgba(8,8,15,.3)}
-.panel-cta{position:absolute;bottom:60px;left:0;right:0;z-index:20;text-align:center;transition:all .5s cubic-bezier(.16,1,.3,1)}
-.panel:hover .panel-cta{bottom:70px}
-.panel-cta h2{font-size:clamp(18px,2.5vw,28px);font-weight:700;letter-spacing:.02em;margin-bottom:8px;text-shadow:0 2px 20px rgba(0,0,0,.6)}
-.panel-cta .arrow{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border:2px solid var(--teal);border-radius:50%;margin-top:12px;transition:all .3s;opacity:.7}
-.panel:hover .panel-cta .arrow{opacity:1;transform:translateY(-4px);box-shadow:0 0 24px rgba(0,191,166,.2);background:rgba(0,191,166,.1)}
-.panel-cta .arrow svg{stroke:var(--teal);width:20px;height:20px}
-.divider{position:fixed;top:0;bottom:0;left:50%;width:1px;background:linear-gradient(180deg,transparent,rgba(0,191,166,.3) 30%,rgba(0,191,166,.3) 70%,transparent);z-index:30;pointer-events:none}
-.bottom-bar{position:fixed;bottom:0;left:0;right:0;z-index:40;display:flex;justify-content:center;gap:32px;padding:20px;pointer-events:none}
-.bottom-bar span{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--grey);opacity:.5}
-@media(max-width:700px){
-  .gateway{flex-direction:column}
-  .divider{top:50%;bottom:auto;left:0;right:0;width:auto;height:1px;background:linear-gradient(90deg,transparent,rgba(0,191,166,.3) 30%,rgba(0,191,166,.3) 70%,transparent)}
-  .scroll-col{width:calc(33.33% - 8px);gap:6px}
-  .scroll-col.col-1{left:4px}
-  .scroll-col.col-2{left:calc(33.33% + 2px)}
-  .scroll-col.col-3{right:4px}
-  .panel-cta{bottom:30px}
-  .panel:hover .panel-cta{bottom:35px}
-  .panel-cta h2{font-size:18px}
-  .center-label h1{font-size:18px}
-  .avatar{border-radius:10px}
-  .panel-cta .arrow{width:40px;height:40px}
-  .bottom-bar{gap:16px;padding:12px}
-  .bottom-bar span{font-size:8px}
+canvas{position:fixed;inset:0;z-index:0}
+.glow-orb{position:fixed;width:500px;height:500px;border-radius:50%;filter:blur(120px);opacity:0;transition:opacity 1.2s,transform 1.2s;pointer-events:none;z-index:1}
+.glow-teal{background:radial-gradient(circle,rgba(0,191,166,.12),transparent 70%);top:30%;left:15%;transform:translateY(20px)}
+.glow-purple{background:radial-gradient(circle,rgba(124,92,252,.12),transparent 70%);top:25%;right:15%;transform:translateY(20px)}
+body.hover-creator .glow-teal{opacity:1;transform:translateY(0)}
+body.hover-project .glow-purple{opacity:1;transform:translateY(0)}
+.top-bar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 40px}
+.logo-area{display:flex;align-items:center;gap:10px}
+.logo-area svg{width:28px;height:28px}
+.logo-area span{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.6}
+.top-right{font-family:var(--mono);font-size:10px;color:var(--grey);letter-spacing:.1em}
+.main{position:relative;z-index:10;height:100vh;height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+.headline{text-align:center;margin-bottom:56px}
+.headline .eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--grey);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:12px}
+.headline .eyebrow::before,.headline .eyebrow::after{content:'';width:24px;height:1px;background:rgba(255,255,255,.1)}
+.headline h1{font-size:clamp(32px,5vw,56px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.headline h1 span{display:block;font-size:clamp(14px,1.8vw,20px);font-weight:400;letter-spacing:.02em;color:var(--grey);margin-top:12px;font-family:var(--mono)}
+.cards{display:flex;gap:32px;perspective:1200px}
+.sel-card{width:320px;height:420px;position:relative;border-radius:24px;overflow:hidden;cursor:pointer;transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s;transform-style:preserve-3d;-webkit-tap-highlight-color:transparent}
+.sel-card:hover{transform:translateY(-12px) scale(1.03)}
+.card-bg{position:absolute;inset:0;border-radius:24px;overflow:hidden}
+.card-bg-inner{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr);gap:4px;padding:4px;opacity:.35;transition:opacity .5s}
+.sel-card:hover .card-bg-inner{opacity:.55}
+.card-bg-inner img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+.card-bg-inner .placeholder{border-radius:8px}
+.card-overlay{position:absolute;inset:0;border-radius:24px;z-index:2;transition:background .5s}
+.card-content{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;justify-content:flex-end;padding:32px;border-radius:24px;border:1px solid rgba(255,255,255,.06);transition:border-color .5s}
+.sel-card:hover .card-content{border-color:rgba(255,255,255,.12)}
+.sel-card.creator .card-overlay{background:linear-gradient(180deg,rgba(0,191,166,.05) 0%,rgba(6,6,12,.85) 60%,rgba(6,6,12,.95) 100%)}
+.sel-card.creator:hover .card-overlay{background:linear-gradient(180deg,rgba(0,191,166,.08) 0%,rgba(6,6,12,.75) 50%,rgba(6,6,12,.92) 100%)}
+.sel-card.creator:hover{box-shadow:0 24px 80px rgba(0,191,166,.15),0 0 0 1px rgba(0,191,166,.1)}
+.sel-card.creator .card-tag{color:var(--teal);border-color:rgba(0,191,166,.2);background:rgba(0,191,166,.06)}
+.sel-card.creator .card-arrow{border-color:var(--teal)}
+.sel-card.creator .card-arrow svg{stroke:var(--teal)}
+.sel-card.creator:hover .card-arrow{background:var(--teal);box-shadow:0 0 20px rgba(0,191,166,.3)}
+.sel-card.creator:hover .card-arrow svg{stroke:var(--dark)}
+.sel-card.project .card-overlay{background:linear-gradient(180deg,rgba(124,92,252,.05) 0%,rgba(6,6,12,.85) 60%,rgba(6,6,12,.95) 100%)}
+.sel-card.project:hover .card-overlay{background:linear-gradient(180deg,rgba(124,92,252,.08) 0%,rgba(6,6,12,.75) 50%,rgba(6,6,12,.92) 100%)}
+.sel-card.project:hover{box-shadow:0 24px 80px rgba(124,92,252,.15),0 0 0 1px rgba(124,92,252,.1)}
+.sel-card.project .card-tag{color:var(--purple);border-color:rgba(124,92,252,.2);background:rgba(124,92,252,.06)}
+.sel-card.project .card-arrow{border-color:var(--purple)}
+.sel-card.project .card-arrow svg{stroke:var(--purple)}
+.sel-card.project:hover .card-arrow{background:var(--purple);box-shadow:0 0 20px rgba(124,92,252,.3)}
+.sel-card.project:hover .card-arrow svg{stroke:var(--dark)}
+.card-tag{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;padding:5px 14px;border:1px solid;border-radius:100px;display:inline-block;margin-bottom:16px;width:fit-content}
+.card-title{font-size:28px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+.card-desc{font-size:13px;line-height:1.6;color:rgba(255,255,255,.5);margin-bottom:20px}
+.card-arrow{width:44px;height:44px;border-radius:50%;border:1.5px solid;display:flex;align-items:center;justify-content:center;transition:all .4s}
+.card-arrow svg{width:18px;height:18px;transition:stroke .3s}
+.bottom-stats{position:fixed;bottom:28px;left:0;right:0;z-index:20;display:flex;justify-content:center;gap:40px}
+.bottom-stats span{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.2)}
+@media(max-width:750px){
+  .cards{flex-direction:column;gap:20px}
+  .sel-card{width:min(320px,85vw);height:280px}
+  .card-content{padding:24px}
+  .card-title{font-size:22px}
+  .card-desc{font-size:12px;margin-bottom:14px}
+  .headline{margin-bottom:36px}
+  .headline h1{font-size:28px}
+  .glow-orb{width:300px;height:300px}
+  .glow-teal{top:20%;left:5%}
+  .glow-purple{top:50%;right:5%}
+  .top-bar{padding:20px 24px}
+  .bottom-stats{gap:20px;bottom:16px}
+  .bottom-stats span{font-size:8px;letter-spacing:.1em}
+  .card-bg-inner{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr)}
+}
+@media(max-width:380px){
+  .sel-card{width:90vw;height:250px}
+  .headline h1{font-size:24px}
 }
 </style>
 </head>
 <body>
-<div class="logo-bar">
-  <svg viewBox="0 0 36 36" fill="none">
-    <circle cx="12" cy="18" r="10" stroke="#00BFA6" stroke-width="1.2" fill="none" opacity=".6"/>
-    <circle cx="24" cy="18" r="10" stroke="#00BFA6" stroke-width="1.2" fill="none" opacity=".4"/>
-    <circle cx="18" cy="10" r="10" stroke="#00BFA6" stroke-width="1.2" fill="none" opacity=".8"/>
-  </svg>
-  <span class="logo-name">TRIAD NETWORK</span>
+<canvas id="particles"></canvas>
+<div class="glow-orb glow-teal"></div>
+<div class="glow-orb glow-purple"></div>
+<div class="top-bar">
+  <div class="logo-area">
+    <svg viewBox="0 0 36 36" fill="none">
+      <circle cx="12" cy="18" r="10" stroke="#00BFA6" stroke-width="1" fill="none" opacity=".6"/>
+      <circle cx="24" cy="18" r="10" stroke="#00BFA6" stroke-width="1" fill="none" opacity=".4"/>
+      <circle cx="18" cy="10" r="10" stroke="#00BFA6" stroke-width="1" fill="none" opacity=".8"/>
+    </svg>
+    <span>Triad Network</span>
+  </div>
+  <div class="top-right">London · 2026</div>
 </div>
-<div class="center-label">
-  <h1>Choose your <em>path</em></h1>
-  <p>Engineering · Advisory · Capital</p>
+<div class="main">
+  <div class="headline">
+    <div class="eyebrow">Venture Infrastructure</div>
+    <h1>Triad Network<span>Engineering · Advisory · Capital</span></h1>
+  </div>
+  <div class="cards">
+    <a href="/creators.html" class="sel-card creator" onmouseenter="document.body.classList.add('hover-creator')" onmouseleave="document.body.classList.remove('hover-creator')">
+      <div class="card-bg"><div class="card-bg-inner" id="creator-grid"></div></div>
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-tag">For Creators</div>
+        <div class="card-title">I'm a Creator</div>
+        <div class="card-desc">Get your brand built, campaigns sourced, and audience monetised. Free to join. 70/30 revenue share.</div>
+        <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </a>
+    <a href="/home.html" class="sel-card project" onmouseenter="document.body.classList.add('hover-project')" onmouseleave="document.body.classList.remove('hover-project')">
+      <div class="card-bg"><div class="card-bg-inner" id="project-grid"></div></div>
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-tag">For Projects</div>
+        <div class="card-title">I'm a Project</div>
+        <div class="card-desc">Strategic BD, exchange listings, capital introductions, and creator distribution across 12 markets.</div>
+        <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </a>
+  </div>
 </div>
-<div class="divider"></div>
-<div class="gateway">
-  <a href="/creators.html" class="panel" id="panel-creators">
-    <div class="panel-overlay"></div>
-    <div class="scroll-col col-1 up" style="animation-duration:25s" id="cr-col1"></div>
-    <div class="scroll-col col-2 down" style="animation-duration:30s" id="cr-col2"></div>
-    <div class="panel-cta">
-      <h2>I'M A CREATOR</h2>
-      <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a href="/home.html" class="panel" id="panel-projects">
-    <div class="panel-overlay"></div>
-    <div class="scroll-col col-1 down" style="animation-duration:28s" id="pr-col1"></div>
-    <div class="scroll-col col-2 up" style="animation-duration:22s" id="pr-col2"></div>
-    <div class="panel-cta">
-      <h2>I'M A PROJECT</h2>
-      <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-</div>
-<div class="bottom-bar">
+<div class="bottom-stats">
   <span>550+ Ventures</span>
   <span>400+ Products</span>
   <span>8+ Years</span>
-  <span>London</span>
+  <span>Select Access</span>
 </div>
 <script>
-const creators = [
-  {name:'Cobie', handle:'coaborozdottxt'},
-  {name:'Hsaka', handle:'HsakaTrades'},
-  {name:'Ansem', handle:'blaborozdoteth'},
-  {name:'CryptoCred', handle:'CryptoCred'},
-  {name:'Rune', handle:'RuneKek'},
-  {name:'Pentoshi', handle:'Pentosh1'},
-  {name:'GCR', handle:'GCRClassic'},
-  {name:'Loomdart', handle:'loomdart'},
-  {name:'Crypto Banter', handle:'crypto_banter'},
-  {name:'Miles Deutscher', handle:'milaborozdeutscher'},
-  {name:'DeFi Dad', handle:'DeFi_Dad'},
-  {name:'The DeFi Edge', handle:'thedefiedge'},
-  {name:'Crypto Birb', handle:'crypto_birb'},
-  {name:'AltcoinGordon', handle:'AltcoinGordon'},
-  {name:'MacnBTC', handle:'MacnBTC'},
-  {name:'Crypto Tony', handle:'CryptoTony__'},
+const canvas=document.getElementById('particles'),ctx=canvas.getContext('2d');
+let w,h,pts=[];
+function resize(){w=canvas.width=innerWidth;h=canvas.height=innerHeight}
+resize();window.addEventListener('resize',resize);
+for(let i=0;i<45;i++){pts.push({x:Math.random()*2e3,y:Math.random()*2e3,r:Math.random()*1.8+.4,sx:(Math.random()-.5)*.2,sy:(Math.random()-.5)*.2-.08,p:Math.random()*Math.PI*2,t:Math.random()>.5})}
+function draw(){ctx.clearRect(0,0,w,h);const t=Date.now()*.001;pts.forEach(p=>{p.x+=p.sx;p.y+=p.sy;if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;const tw=.3+.7*Math.sin(t*1.5+p.p);const a=tw*.4;const r=p.r*(.8+.2*tw);ctx.fillStyle=p.t?`rgba(0,191,166,${a*.12})`:`rgba(124,92,252,${a*.1})`;ctx.beginPath();ctx.arc(p.x,p.y,r*4,0,Math.PI*2);ctx.fill();ctx.fillStyle=p.t?`rgba(0,191,166,${a})`:`rgba(124,92,252,${a})`;ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.fill()});requestAnimationFrame(draw)}
+draw();
+const creatorHandles=['HsakaTrades','Pentosh1','crypto_banter','thedefiedge','CryptoTony__','AltcoinGordon','MacnBTC','DeFi_Dad','CryptoCred','loomdart','crypto_birb','RuneKek'];
+const projectLogos=[
+  'https://assets.coingecko.com/coins/images/279/small/ethereum.png',
+  'https://assets.coingecko.com/coins/images/4128/small/solana.png',
+  'https://assets.coingecko.com/coins/images/12559/small/Avalanche_Circle_RedWhite_Trans.png',
+  'https://assets.coingecko.com/coins/images/4713/small/polygon.png',
+  'https://assets.coingecko.com/coins/images/877/small/chainlink-new-logo.png',
+  'https://assets.coingecko.com/coins/images/825/small/bnb-icon2_2x.png',
+  'https://assets.coingecko.com/coins/images/12504/small/uni.jpg',
+  'https://assets.coingecko.com/coins/images/12645/small/AAVE.png',
+  'https://assets.coingecko.com/coins/images/10365/small/near.jpg',
+  'https://assets.coingecko.com/coins/images/25244/small/Optimism.png',
+  'https://assets.coingecko.com/coins/images/16547/small/photo_2023-03-29_21.47.00.jpeg',
+  'https://assets.coingecko.com/coins/images/13573/small/Lido_DAO.png',
 ];
-const projects = [
-  {name:'Ethereum', img:'https://assets.coingecko.com/coins/images/279/small/ethereum.png'},
-  {name:'Solana', img:'https://assets.coingecko.com/coins/images/4128/small/solana.png'},
-  {name:'Avalanche', img:'https://assets.coingecko.com/coins/images/12559/small/Avalanche_Circle_RedWhite_Trans.png'},
-  {name:'Polygon', img:'https://assets.coingecko.com/coins/images/4713/small/polygon.png'},
-  {name:'Chainlink', img:'https://assets.coingecko.com/coins/images/877/small/chainlink-new-logo.png'},
-  {name:'Arbitrum', img:'https://assets.coingecko.com/coins/images/16547/small/photo_2023-03-29_21.47.00.jpeg'},
-  {name:'Optimism', img:'https://assets.coingecko.com/coins/images/25244/small/Optimism.png'},
-  {name:'BNB Chain', img:'https://assets.coingecko.com/coins/images/825/small/bnb-icon2_2x.png'},
-  {name:'NEAR', img:'https://assets.coingecko.com/coins/images/10365/small/near.jpg'},
-  {name:'Cosmos', img:'https://assets.coingecko.com/coins/images/1481/small/cosmos_hub.png'},
-  {name:'Uniswap', img:'https://assets.coingecko.com/coins/images/12504/small/uni.jpg'},
-  {name:'Aave', img:'https://assets.coingecko.com/coins/images/12645/small/AAVE.png'},
-  {name:'MakerDAO', img:'https://assets.coingecko.com/coins/images/1364/small/Mark_Maker.png'},
-  {name:'Lido', img:'https://assets.coingecko.com/coins/images/13573/small/Lido_DAO.png'},
-  {name:'Filecoin', img:'https://assets.coingecko.com/coins/images/12817/small/filecoin.png'},
-  {name:'StarkNet', img:'https://assets.coingecko.com/coins/images/26433/small/starknet.png'},
-];
-function createImageTile(src, name, fallbackColors) {
-  const div = document.createElement('div');
-  div.className = 'avatar';
-  const c = fallbackColors || ['#222','#111'];
-  div.style.background = `linear-gradient(135deg, ${c[0]}, ${c[1]})`;
-  div.style.display = 'flex';
-  div.style.alignItems = 'center';
-  div.style.justifyContent = 'center';
-  const img = document.createElement('img');
-  img.src = src;
-  img.alt = name;
-  img.style.cssText = 'width:70%;height:70%;object-fit:cover;border-radius:10px;opacity:0;transition:opacity .3s';
-  img.onload = () => { img.style.opacity = '1'; div.style.background = 'rgba(15,15,25,.9)'; };
-  img.onerror = () => { 
-    img.remove();
-    const txt = document.createElement('span');
-    txt.textContent = name.split(' ').map(w=>w[0]).join('').substring(0,2);
-    txt.style.cssText = 'font-size:20px;font-weight:700;color:rgba(255,255,255,.4);font-family:Space Grotesk,sans-serif';
-    div.appendChild(txt);
-  };
-  div.appendChild(img);
-  return div;
+const tealGrads=[['#00BFA6','#004D40'],['#00897B','#1A237E'],['#26A69A','#283593'],['#00ACC1','#006064'],['#0097A7','#01579B'],['#009688','#311B92']];
+const purpGrads=[['#7C5CFC','#1A0A3E'],['#5C6BC0','#0D47A1'],['#7E57C2','#311B92'],['#9575CD','#4A148C'],['#5E35B1','#1A237E'],['#673AB7','#0D47A1']];
+function fillGrid(id,items,type){
+  const grid=document.getElementById(id);
+  items.forEach((item,i)=>{
+    const src=type==='creator'?`https://unavatar.io/x/${item}`:item;
+    const fb=type==='creator'?tealGrads[i%tealGrads.length]:purpGrads[i%purpGrads.length];
+    const img=document.createElement('img');
+    img.src=src;img.alt='';
+    img.style.cssText='opacity:0;transition:opacity .4s';
+    img.onload=()=>{img.style.opacity='1'};
+    img.onerror=()=>{img.style.display='none';
+      const d=document.createElement('div');
+      d.className='placeholder';
+      d.style.background=`linear-gradient(135deg,${fb[0]},${fb[1]})`;
+      img.parentNode&&img.parentNode.replaceChild(d,img);
+    };
+    grid.appendChild(img);
+  });
 }
-function populateColumn(containerId, items, type, count) {
-  const container = document.getElementById(containerId);
-  const tealFallbacks = [['#00BFA6','#004D40'],['#00897B','#1A237E'],['#26A69A','#283593'],['#00ACC1','#006064'],['#0097A7','#01579B'],['#00838F','#1B5E20'],['#009688','#311B92'],['#4DB6AC','#0D47A1']];
-  const purpleFallbacks = [['#7C5CFC','#1A0A3E'],['#5C6BC0','#0D47A1'],['#7E57C2','#311B92'],['#9575CD','#4A148C'],['#5E35B1','#1A237E'],['#673AB7','#0D47A1'],['#7986CB','#283593'],['#9FA8DA','#1A237E']];
-  const fallbacks = type === 'creator' ? tealFallbacks : purpleFallbacks;
-  for (let round = 0; round < 2; round++) {
-    for (let i = 0; i < count; i++) {
-      const item = items[i % items.length];
-      const fb = fallbacks[i % fallbacks.length];
-      let src;
-      if (type === 'creator') {
-        src = `https://unavatar.io/x/${item.handle}`;
-      } else {
-        src = item.img;
-      }
-      container.appendChild(createImageTile(src, item.name, fb));
-    }
-  }
+fillGrid('creator-grid',creatorHandles,'creator');
+fillGrid('project-grid',projectLogos,'project');
+if(window.matchMedia('(hover:hover)').matches){
+  document.querySelectorAll('.sel-card').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5;
+      const y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`translateY(-12px) scale(1.03) perspective(800px) rotateY(${x*8}deg) rotateX(${-y*8}deg)`;
+    });
+    card.addEventListener('mouseleave',()=>{card.style.transform=''});
+  });
 }
-populateColumn('cr-col1', creators.slice(0, 8), 'creator', 8);
-populateColumn('cr-col2', creators.slice(8), 'creator', 8);
-populateColumn('pr-col1', projects.slice(0, 8), 'project', 8);
-populateColumn('pr-col2', projects.slice(8), 'project', 8);
 </script>
 </body>
 </html>
