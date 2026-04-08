@@ -12,6 +12,8 @@
 :root{--bg:#06060C;--card:rgba(255,255,255,.02);--border:rgba(255,255,255,.06);--teal:#00BFA6;--teal2:#00E8CC;--gold:#F0C75E;--purple:#7C5CFC;--pink:#E040A0;--text:#F0EEE8;--text2:#888;--text3:#555;--mono:'JetBrains Mono',monospace;--sans:'Syne',system-ui,sans-serif}
 body{background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
+
+/* Login overlay */
 .login-overlay{position:fixed;inset:0;z-index:1000;background:var(--bg);display:flex;align-items:center;justify-content:center;transition:opacity .5s,visibility .5s}
 .login-overlay.hidden{opacity:0;visibility:hidden;pointer-events:none}
 .login-box{width:100%;max-width:420px;padding:0 24px}
@@ -27,6 +29,8 @@ a{color:inherit;text-decoration:none}
 .login-btn{width:100%;padding:16px;background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--bg);font-family:var(--sans);font-weight:700;font-size:15px;border:none;border-radius:100px;cursor:pointer;transition:all .3s;margin-top:8px}
 .login-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,191,166,.25)}
 .login-hint{text-align:center;font-size:12px;color:#444;margin-top:16px}
+
+/* Header */
 .dash-header{display:flex;justify-content:space-between;align-items:center;padding:20px 32px;border-bottom:1px solid var(--border)}
 .dash-header .brand{display:flex;align-items:center;gap:12px}
 .dash-header .brand svg{width:28px;height:28px}
@@ -35,7 +39,11 @@ a{color:inherit;text-decoration:none}
 .user-area{display:flex;align-items:center;gap:12px}
 .user-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px rgba(0,191,166,.4)}
 .user-avatar{width:32px;height:32px;border-radius:10px;background:rgba(0,191,166,.1);border:1px solid rgba(0,191,166,.2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--teal)}
+
+/* Layout */
 .dash-layout{display:flex;min-height:calc(100vh - 73px)}
+
+/* Sidebar */
 .sidebar{width:220px;border-right:1px solid var(--border);padding:24px 12px;display:flex;flex-direction:column;gap:4px}
 .sidebar-btn{display:flex;align-items:center;gap:12px;padding:12px 16px;background:transparent;border:1px solid transparent;border-radius:12px;color:var(--text3);font-size:13px;font-weight:600;font-family:var(--sans);cursor:pointer;transition:all .2s;width:100%;text-align:left}
 .sidebar-btn:hover{color:var(--text2)}
@@ -48,16 +56,24 @@ a{color:inherit;text-decoration:none}
 .sidebar-footer .label{font-size:10px;font-family:var(--mono);color:#333;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
 .sidebar-footer .tier{font-size:16px;font-weight:800;color:var(--teal)}
 .sidebar-footer .followers{font-size:11px;color:#444;margin-top:4px}
+
+/* Main */
 .dash-main{flex:1;padding:32px;overflow-y:auto;max-height:calc(100vh - 73px)}
 .page-title{font-size:24px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
 .page-desc{font-size:14px;color:#666;margin-bottom:32px}
+
+/* Tab content */
 .tab-content{display:none}
 .tab-content.active{display:block}
+
+/* Stat cards */
 .stats-row{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap}
 .stat-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 20px;flex:1;min-width:140}
 .stat-label{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:8px}
 .stat-val{font-size:28px;font-weight:800;font-family:var(--sans)}
 .stat-sub{font-size:11px;color:var(--text3);margin-top:4px}
+
+/* Deal cards */
 .deals-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:16px}
 .deal-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;transition:all .3s;position:relative;overflow:hidden}
 .deal-card:hover{border-color:rgba(0,191,166,.15);transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.2)}
@@ -74,6 +90,8 @@ a{color:inherit;text-decoration:none}
 .deal-slots{font-size:11px;color:var(--text3)}
 .deal-accept{padding:10px 24px;color:var(--bg);font-family:var(--sans);font-weight:700;font-size:12px;border:none;border-radius:100px;cursor:pointer;transition:all .2s}
 .deal-accept:hover{transform:scale(1.05)}
+
+/* Active campaigns */
 .campaign-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:12px}
 .campaign-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer}
 .campaign-info{display:flex;gap:12px;align-items:center}
@@ -87,17 +105,19 @@ a{color:inherit;text-decoration:none}
 .campaign-body{margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.05);display:none}
 .campaign-card.expanded .campaign-body{display:block}
 .campaign-card.expanded .campaign-toggle{transform:rotate(180deg)}
+.progress-bar{height:4px;background:rgba(255,255,255,.05);border-radius:2px;margin-top:6px;margin-bottom:16px}
+.progress-fill{height:4px;background:linear-gradient(90deg,var(--teal),var(--teal2));border-radius:2px;transition:width .5s}
 .progress-header{display:flex;justify-content:space-between;margin-bottom:6px}
 .progress-label{font-size:11px;color:var(--text3);font-family:var(--mono)}
 .progress-pct{font-size:11px;color:var(--teal);font-weight:600}
-.progress-bar{height:4px;background:rgba(255,255,255,.05);border-radius:2px;margin-bottom:16px}
-.progress-fill{height:4px;background:linear-gradient(90deg,var(--teal),var(--teal2));border-radius:2px}
 .deliverable{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.03)}
 .deliverable:last-child{border-bottom:none}
 .check-box{width:20px;height:20px;border-radius:6px;border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0}
 .check-box.done{border-color:var(--teal);background:rgba(0,191,166,.15);color:var(--teal)}
 .deliverable span{font-size:13px}
 .deliverable span.done{color:var(--text2);text-decoration:line-through}
+
+/* Earnings */
 .chart-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:24px}
 .chart-label{font-size:10px;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:20px}
 .chart-bars{display:flex;align-items:flex-end;gap:12px;height:120px;padding:0 8px}
@@ -110,8 +130,11 @@ a{color:inherit;text-decoration:none}
 .history-project{font-size:14px;font-weight:600}
 .history-meta{font-size:11px;color:var(--text3)}
 .history-amount{font-size:16px;font-weight:800;color:var(--teal)}
-.status-paid{font-size:10px;font-weight:600;color:var(--teal)}
-.status-pending{font-size:10px;font-weight:600;color:var(--gold)}
+.history-status{font-size:10px;font-weight:600}
+.status-paid{color:var(--teal)}
+.status-pending{color:var(--gold)}
+
+/* Profile */
 .profile-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px;margin-bottom:24px}
 .profile-top{display:flex;gap:20px;align-items:center;margin-bottom:24px;flex-wrap:wrap}
 .profile-avatar{width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,var(--teal),var(--teal2));display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:var(--bg)}
@@ -127,8 +150,12 @@ a{color:inherit;text-decoration:none}
 .tags-label{font-size:10px;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:16px}
 .tags-list{display:flex;gap:8px;flex-wrap:wrap}
 .tag-pill{padding:6px 14px;border-radius:100px;font-size:12px;font-weight:500}
+
+/* Notification */
 .notif{position:fixed;top:20px;right:20px;background:rgba(0,191,166,.15);border:1px solid rgba(0,191,166,.3);border-radius:12px;padding:12px 20px;font-size:13px;color:var(--teal);font-weight:600;z-index:1000;opacity:0;transform:translateY(-10px);transition:all .3s;pointer-events:none}
 .notif.show{opacity:1;transform:translateY(0)}
+
+/* Mobile */
 @media(max-width:800px){
   .sidebar{display:none}
   .dash-main{padding:20px}
@@ -139,6 +166,7 @@ a{color:inherit;text-decoration:none}
   .profile-top{flex-direction:column;text-align:center}
   .profile-tier{margin:0 auto}
   .dash-header{padding:16px 20px}
+  /* Mobile bottom tabs */
   .mobile-tabs{display:flex;position:fixed;bottom:0;left:0;right:0;background:var(--bg);border-top:1px solid var(--border);padding:8px;gap:4px;z-index:100}
   .mobile-tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px;border-radius:10px;background:transparent;border:none;color:var(--text3);font-size:9px;font-family:var(--mono);cursor:pointer}
   .mobile-tab.active{color:var(--teal);background:rgba(0,191,166,.06)}
@@ -149,7 +177,11 @@ a{color:inherit;text-decoration:none}
 </style>
 </head>
 <body>
+
+<!-- Notification -->
 <div class="notif" id="notif"></div>
+
+<!-- Login Overlay -->
 <div class="login-overlay" id="loginOverlay">
   <div class="login-box">
     <div class="logo">
@@ -165,6 +197,8 @@ a{color:inherit;text-decoration:none}
     </div>
   </div>
 </div>
+
+<!-- Header -->
 <header class="dash-header">
   <div class="brand">
     <svg viewBox="0 0 36 36" fill="none"><circle cx="12" cy="18" r="10" stroke="#00BFA6" stroke-width="1" opacity=".6"/><circle cx="24" cy="18" r="10" stroke="#00BFA6" stroke-width="1" opacity=".4"/><circle cx="18" cy="10" r="10" stroke="#00BFA6" stroke-width="1" opacity=".8"/></svg>
@@ -177,7 +211,9 @@ a{color:inherit;text-decoration:none}
     <div><div style="font-size:12px;font-weight:600">Alex Chen</div><div style="font-size:10px;color:#555">@alexcrypto</div></div>
   </div>
 </header>
+
 <div class="dash-layout">
+  <!-- Sidebar -->
   <nav class="sidebar">
     <button class="sidebar-btn active" onclick="switchTab('deals',this)"><span class="icon">◆</span>Deal Flow<span class="badge badge-teal">5</span></button>
     <button class="sidebar-btn" onclick="switchTab('active',this)"><span class="icon">▶</span>Active<span class="badge badge-gold">2</span></button>
@@ -189,7 +225,11 @@ a{color:inherit;text-decoration:none}
       <div class="followers">3,200 followers</div>
     </div>
   </nav>
+
+  <!-- Main -->
   <main class="dash-main">
+
+    <!-- DEALS -->
     <div class="tab-content active" id="tab-deals">
       <h2 class="page-title">Deal Flow</h2>
       <p class="page-desc">Campaigns matched to your niche and audience. Accept to start creating.</p>
@@ -198,7 +238,7 @@ a{color:inherit;text-decoration:none}
         <div class="stat-card"><div class="stat-label">Avg Budget</div><div class="stat-val" style="color:var(--gold)">$910</div></div>
         <div class="stat-card"><div class="stat-label">Your Accept Rate</div><div class="stat-val" style="color:var(--purple)">73%</div></div>
       </div>
-      <div class="deals-grid">
+      <div class="deals-grid" id="dealsGrid">
         <div class="deal-card" id="deal-1"><div class="deal-top"><div class="deal-project"><div class="deal-logo" style="background:rgba(0,191,166,.1);border:1px solid rgba(0,191,166,.2);color:#00BFA6">OP</div><div><div class="deal-name">Orbital Protocol</div><div class="deal-cat">DeFi</div></div></div><div class="deal-budget" style="color:#00BFA6">$800</div></div><div class="deal-tags"><span class="deal-tag">Thread Campaign</span><span class="deal-tag">Due Apr 15</span></div><p class="deal-desc">Deep-dive thread on Orbital's new lending vault architecture. Cover mechanics, yield strategy, and risk model.</p><div class="deal-footer"><div class="deal-slots">1/3 slots filled</div><button class="deal-accept" style="background:#00BFA6" onclick="acceptDeal('deal-1')">Accept Deal</button></div></div>
         <div class="deal-card" id="deal-2"><div class="deal-top"><div class="deal-project"><div class="deal-logo" style="background:rgba(124,92,252,.1);border:1px solid rgba(124,92,252,.2);color:#7C5CFC">NC</div><div><div class="deal-name">NeuralChain AI</div><div class="deal-cat">AI × Crypto</div></div></div><div class="deal-budget" style="color:#7C5CFC">$1,500</div></div><div class="deal-tags"><span class="deal-tag">Video Review</span><span class="deal-tag">Due Apr 18</span></div><p class="deal-desc">YouTube or X video reviewing NeuralChain's decentralised inference network. 3-5 min runtime.</p><div class="deal-footer"><div class="deal-slots">0/2 slots filled</div><button class="deal-accept" style="background:#7C5CFC" onclick="acceptDeal('deal-2')">Accept Deal</button></div></div>
         <div class="deal-card" id="deal-3"><div class="deal-top"><div class="deal-project"><div class="deal-logo" style="background:rgba(240,199,94,.1);border:1px solid rgba(240,199,94,.2);color:#F0C75E">MX</div><div><div class="deal-name">Meridian Exchange</div><div class="deal-cat">Infrastructure</div></div></div><div class="deal-budget" style="color:#F0C75E">$400</div></div><div class="deal-tags"><span class="deal-tag">Awareness Blast</span><span class="deal-tag">Due Apr 12</span></div><p class="deal-desc">3 tweets over 48 hours covering Meridian's mainnet launch. Key messages and assets provided.</p><div class="deal-footer"><div class="deal-slots">3/5 slots filled</div><button class="deal-accept" style="background:#F0C75E" onclick="acceptDeal('deal-3')">Accept Deal</button></div></div>
@@ -206,6 +246,8 @@ a{color:inherit;text-decoration:none}
         <div class="deal-card" id="deal-5"><div class="deal-top"><div class="deal-project"><div class="deal-logo" style="background:rgba(224,64,160,.1);border:1px solid rgba(224,64,160,.2);color:#E040A0">DM</div><div><div class="deal-name">DataMesh</div><div class="deal-cat">Infrastructure</div></div></div><div class="deal-budget" style="color:#E040A0">$1,200</div></div><div class="deal-tags"><span class="deal-tag">Community Takeover</span><span class="deal-tag">Due Apr 22</span></div><p class="deal-desc">Host a 45-min AMA in DataMesh Telegram. Prep doc and questions provided.</p><div class="deal-footer"><div class="deal-slots">0/1 slots filled</div><button class="deal-accept" style="background:#E040A0" onclick="acceptDeal('deal-5')">Accept Deal</button></div></div>
       </div>
     </div>
+
+    <!-- ACTIVE -->
     <div class="tab-content" id="tab-active">
       <h2 class="page-title">Active Campaigns</h2>
       <p class="page-desc">Your current work. Click to expand deliverables and track progress.</p>
@@ -215,14 +257,16 @@ a{color:inherit;text-decoration:none}
         <div class="stat-card"><div class="stat-label">Due This Week</div><div class="stat-val" style="color:var(--pink)">2</div></div>
       </div>
       <div class="campaign-card" onclick="this.classList.toggle('expanded')">
-        <div class="campaign-header"><div class="campaign-info"><div class="campaign-logo">AX</div><div><div class="campaign-name">Axion Labs</div><div class="campaign-meta">Thread Campaign · Due Apr 10</div></div></div><div class="campaign-right"><span class="campaign-status" style="color:var(--teal)">In Progress</span><span class="campaign-budget">$750</span><span class="campaign-toggle">▾</span></div></div>
+        <div class="campaign-header"><div class="campaign-info"><div class="campaign-logo">NR</div><div><div class="campaign-name">NERO Chain</div><div class="campaign-meta">Thread Campaign · Due Apr 10</div></div></div><div class="campaign-right"><span class="campaign-status" style="color:var(--teal)">In Progress</span><span class="campaign-budget">$750</span><span class="campaign-toggle">▾</span></div></div>
         <div class="campaign-body"><div class="progress-header"><span class="progress-label">PROGRESS</span><span class="progress-pct">60%</span></div><div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div><div class="deliverable"><div class="check-box done">✓</div><span class="done">Draft thread (8+ tweets)</span></div><div class="deliverable"><div class="check-box done">✓</div><span class="done">Include 3 data points from docs</span></div><div class="deliverable"><div class="check-box"></div><span>Submit for review</span></div><div class="deliverable"><div class="check-box"></div><span>Post thread</span></div><div class="deliverable"><div class="check-box"></div><span>Engagement report (24hr)</span></div></div>
       </div>
       <div class="campaign-card" onclick="this.classList.toggle('expanded')">
-        <div class="campaign-header"><div class="campaign-info"><div class="campaign-logo">SP</div><div><div class="campaign-name">SkyPulse Network</div><div class="campaign-meta">Awareness Blast · Due Apr 11</div></div></div><div class="campaign-right"><span class="campaign-status" style="color:var(--gold)">Review</span><span class="campaign-budget">$400</span><span class="campaign-toggle">▾</span></div></div>
+        <div class="campaign-header"><div class="campaign-info"><div class="campaign-logo">MV</div><div><div class="campaign-name">MAIV Platform</div><div class="campaign-meta">Awareness Blast · Due Apr 11</div></div></div><div class="campaign-right"><span class="campaign-status" style="color:var(--gold)">Review</span><span class="campaign-budget">$400</span><span class="campaign-toggle">▾</span></div></div>
         <div class="campaign-body"><div class="progress-header"><span class="progress-label">PROGRESS</span><span class="progress-pct">80%</span></div><div class="progress-bar"><div class="progress-fill" style="width:80%"></div></div><div class="deliverable"><div class="check-box done">✓</div><span class="done">Tweet 1: Product announcement</span></div><div class="deliverable"><div class="check-box done">✓</div><span class="done">Tweet 2: Key feature highlight</span></div><div class="deliverable"><div class="check-box done">✓</div><span class="done">Tweet 3: CTA + link</span></div><div class="deliverable"><div class="check-box"></div><span>Submit engagement metrics</span></div></div>
       </div>
     </div>
+
+    <!-- EARNINGS -->
     <div class="tab-content" id="tab-earnings">
       <h2 class="page-title">Earnings</h2>
       <p class="page-desc">Your revenue at a glance. 70/30 split — you keep the majority.</p>
@@ -233,8 +277,10 @@ a{color:inherit;text-decoration:none}
         <div class="stat-card"><div class="stat-label">This Month</div><div class="stat-val" style="color:var(--purple)">$1,200</div></div>
       </div>
       <div class="chart-card"><div class="chart-label">Monthly Earnings</div><div class="chart-bars"><div class="chart-bar"><span class="bar-val">$650</span><div class="bar" style="height:43px"></div><span class="bar-label">Jan</span></div><div class="chart-bar"><span class="bar-val">$800</span><div class="bar" style="height:53px"></div><span class="bar-label">Feb</span></div><div class="chart-bar"><span class="bar-val">$1,200</span><div class="bar" style="height:80px"></div><span class="bar-label">Mar</span></div><div class="chart-bar"><span class="bar-val">$1,200</span><div class="bar" style="height:80px"></div><span class="bar-label">Apr</span></div></div></div>
-      <div class="chart-card"><div class="chart-label">Payment History</div><div class="history-row"><div><div class="history-project">Axion Labs</div><div class="history-meta">Thread · Mar 28</div></div><div style="text-align:right"><div class="history-amount">$750</div><div class="status-paid">Paid</div></div></div><div class="history-row"><div><div class="history-project">Zenith Protocol</div><div class="history-meta">Video · Mar 15</div></div><div style="text-align:right"><div class="history-amount">$1,200</div><div class="status-paid">Paid</div></div></div><div class="history-row"><div><div class="history-project">SkyBridge</div><div class="history-meta">Awareness · Mar 8</div></div><div style="text-align:right"><div class="history-amount">$350</div><div class="status-paid">Paid</div></div></div><div class="history-row"><div><div class="history-project">SkyPulse Network</div><div class="history-meta">Awareness · Apr 5</div></div><div style="text-align:right"><div class="history-amount">$400</div><div class="status-pending">Pending</div></div></div><div class="history-row"><div><div class="history-project">Axion Labs</div><div class="history-meta">Thread · Apr 8</div></div><div style="text-align:right"><div class="history-amount">$800</div><div class="status-pending">Pending</div></div></div></div>
+      <div class="chart-card"><div class="chart-label">Payment History</div><div class="history-row"><div><div class="history-project">NERO Chain</div><div class="history-meta">Thread · Mar 28</div></div><div style="text-align:right"><div class="history-amount">$750</div><div class="history-status status-paid">Paid</div></div></div><div class="history-row"><div><div class="history-project">Axion Labs</div><div class="history-meta">Video · Mar 15</div></div><div style="text-align:right"><div class="history-amount">$1,200</div><div class="history-status status-paid">Paid</div></div></div><div class="history-row"><div><div class="history-project">SkyBridge</div><div class="history-meta">Awareness · Mar 8</div></div><div style="text-align:right"><div class="history-amount">$350</div><div class="history-status status-paid">Paid</div></div></div><div class="history-row"><div><div class="history-project">MAIV Platform</div><div class="history-meta">Awareness · Apr 5</div></div><div style="text-align:right"><div class="history-amount">$400</div><div class="history-status status-pending">Pending</div></div></div><div class="history-row"><div><div class="history-project">NERO Chain</div><div class="history-meta">Thread · Apr 8</div></div><div style="text-align:right"><div class="history-amount">$800</div><div class="history-status status-pending">Pending</div></div></div></div>
     </div>
+
+    <!-- PROFILE -->
     <div class="tab-content" id="tab-profile">
       <h2 class="page-title">Your Profile</h2>
       <p class="page-desc">How projects see you in the Triad Creators directory.</p>
@@ -246,32 +292,40 @@ a{color:inherit;text-decoration:none}
     </div>
   </main>
 </div>
+
+<!-- Mobile tabs -->
 <div class="mobile-tabs">
   <button class="mobile-tab active" onclick="switchTab('deals',this)"><span class="mt-icon">◆</span>Deals</button>
   <button class="mobile-tab" onclick="switchTab('active',this)"><span class="mt-icon">▶</span>Active</button>
   <button class="mobile-tab" onclick="switchTab('earnings',this)"><span class="mt-icon">$</span>Earn</button>
   <button class="mobile-tab" onclick="switchTab('profile',this)"><span class="mt-icon">◉</span>Profile</button>
 </div>
+
 <script>
-function switchTab(tabId,btn){
-  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.sidebar-btn').forEach(b=>b.classList.remove('active'));
-  document.querySelectorAll('.mobile-tab').forEach(b=>b.classList.remove('active'));
-  document.getElementById('tab-'+tabId).classList.add('active');
-  if(btn)btn.classList.add('active');
-  var idx=['deals','active','earnings','profile'].indexOf(tabId);
-  var sb=document.querySelectorAll('.sidebar-btn');if(sb[idx])sb[idx].classList.add('active');
-  var mt=document.querySelectorAll('.mobile-tab');if(mt[idx])mt[idx].classList.add('active');
+function switchTab(tabId, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.sidebar-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.mobile-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tabId).classList.add('active');
+  if (btn) btn.classList.add('active');
+  // Sync mobile + desktop
+  const idx = ['deals','active','earnings','profile'].indexOf(tabId);
+  document.querySelectorAll('.sidebar-btn')[idx]?.classList.add('active');
+  document.querySelectorAll('.mobile-tab')[idx]?.classList.add('active');
 }
-function acceptDeal(id){
-  var el=document.getElementById(id);
-  el.style.transition='all .4s';el.style.opacity='0';el.style.transform='scale(.95)';
-  setTimeout(function(){el.remove()},400);
+function acceptDeal(id) {
+  const el = document.getElementById(id);
+  el.style.transition = 'all .4s';
+  el.style.opacity = '0';
+  el.style.transform = 'scale(.95)';
+  setTimeout(() => el.remove(), 400);
   showNotif('Deal accepted! Check Active Campaigns.');
 }
-function showNotif(msg){
-  var n=document.getElementById('notif');n.textContent=msg;n.classList.add('show');
-  setTimeout(function(){n.classList.remove('show')},3000);
+function showNotif(msg) {
+  const n = document.getElementById('notif');
+  n.textContent = msg;
+  n.classList.add('show');
+  setTimeout(() => n.classList.remove('show'), 3000);
 }
 </script>
 </body>
