@@ -11,7 +11,7 @@
 <style>
 body{background:#06060C;color:#F0EEE8}
 .p-hero{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;padding:140px 24px 80px}
-.p-hero .icon-ring{width:80px;height:80px;border-radius:50%;border:2px solid #00BFA6;display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:28px;background:rgba(0,191,166,.06);box-shadow:0 0 40px rgba(0,191,166,.1);animation:float 4s ease-in-out infinite}
+.p-hero .icon-ring{width:80px;height:80px;border-radius:50%;border:2px solid #00BFA6;display:flex;align-items:center;justify-content:center;margin-bottom:28px;background:rgba(0,191,166,.06);box-shadow:0 0 40px rgba(0,191,166,.1);animation:float 4s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 .p-hero .tag{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#00BFA6;margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:10px}
 .p-hero .tag::before,.p-hero .tag::after{content:'';width:16px;height:1px;background:#00BFA6;opacity:.3}
@@ -39,8 +39,7 @@ body{background:#06060C;color:#F0EEE8}
 .cta-block p{font-size:14px;color:#8888a0;margin-bottom:24px}
 .cta-block a{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#00BFA6;color:#06060C;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;border-radius:100px;text-decoration:none;transition:all .3s}
 .cta-block a:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,191,166,.25)}
-.back-link{font-family:var(--mono);font-size:11px;color:#55556a;text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:32px;transition:color .2s;position:relative;z-index:2;padding:140px 48px 0;max-width:900px;margin:0 auto;display:block}
-.back-link:hover{color:#00BFA6}
+.back-link{padding:140px 48px 0;max-width:900px;margin:0 auto;display:block}
 @media(max-width:900px){
   .p-hero{padding:100px 20px 60px;min-height:auto}
   .p-section{padding:60px 20px}
@@ -58,17 +57,14 @@ body{background:#06060C;color:#F0EEE8}
     <a href="/creators.html" style="color:var(--accent)">Creators</a>
     <a href="mailto:inquiries@triadnetwork.xyz" class="nav-cta">Inquire</a>
   </div>
-  <button class="mobile-menu" style="display:none" onclick="document.querySelector('.nav-links').classList.toggle('show')"><span></span><span></span><span></span></button>
 </nav>
-
 <div class="back-link"><a href="/creators.html" style="font-family:var(--mono);font-size:11px;color:#55556a;text-decoration:none">&larr; Back to Creators</a></div>
 <section class="p-hero">
-  <div class="icon-ring"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00BFA6" stroke-width="1.5"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+  <div class="icon-ring"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#00BFA6" stroke-width="1.5"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
   <div class="tag">Brand Buildout</div>
   <h1>Your brand. Built in <em>48 hours.</em></h1>
   <p>Most creators look amateur because they can't afford design. We fix that — completely free. Professional identity, delivered fast, built to make you unforgettable.</p>
 </section>
-
 <section class="p-section">
   <div class="label">What You Receive</div>
   <h2>A complete visual <em>identity.</em></h2>
@@ -82,7 +78,6 @@ body{background:#06060C;color:#F0EEE8}
     <div class="feat-card reveal"><h4>Multi-Platform Adaptation</h4><p>Your brand assets adapted for YouTube thumbnails, Telegram, LinkedIn, and wherever else you create. One identity, every platform.</p></div>
   </div>
 </section>
-
 <section class="p-section">
   <div class="label">The Process</div>
   <h2>How the buildout <em>works.</em></h2>
@@ -95,18 +90,15 @@ body{background:#06060C;color:#F0EEE8}
     <li>You own everything. If you leave Triad Creators, the brand assets stay with you</li>
   </ul>
 </section>
-
 <section class="p-section">
   <div class="quote-bar reveal">"Looking professional isn't vanity — it's the difference between being taken seriously and being scrolled past. We make sure you're taken seriously."<cite>— Triad Creators</cite></div>
 </section>
-
 <section class="p-section">
   <div class="label">Why It Matters</div>
   <h2>First impressions are <em>permanent.</em></h2>
   <p>In crypto X, you have about 2 seconds before someone decides to follow or scroll. A professional PFP, a clean banner, and a sharp bio are the difference between "who's this?" and "I need to follow this person."</p>
   <p>The big KOLs invest thousands into their visual identity. We give that same level of quality to creators who are just getting started — because talent shouldn't be gated by budget.</p>
 </section>
-
 <section class="p-section">
   <div class="cta-block reveal">
     <h3>Ready to look the part?</h3>
@@ -114,7 +106,6 @@ body{background:#06060C;color:#F0EEE8}
     <a href="/creators.html#apply">Apply Now &rarr;</a>
   </div>
 </section>
-
 <footer style="position:relative;z-index:2">
   <div class="footer-l">&copy; 2026 Triad Network. All rights reserved.</div>
   <div class="footer-r"><a href="/">Home</a><a href="/creators.html">Creators</a><a href="/ecosystem.html">Ecosystem</a></div>
