@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creator Dashboard — Triad Creators</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script async src="https://plausible.io/js/pa-sO608YaKMQ1Jb8JQKbrs2.js"></script>
+<script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#06060C;--card:rgba(255,255,255,.02);--border:rgba(255,255,255,.06);--teal:#00BFA6;--teal2:#00E8CC;--gold:#F0C75E;--purple:#7C5CFC;--pink:#E040A0;--text:#F0EEE8;--text2:#888;--text3:#555;--mono:'JetBrains Mono',monospace;--sans:'Syne',system-ui,sans-serif}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.login-overlay{position:fixed;inset:0;z-index:1000;background:var(--bg);display:flex;align-items:center;justify-content:center;transition:opacity .5s,visibility .5s}
+.login-overlay.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.login-box{width:100%;max-width:420px;padding:0 24px}
+.login-box .logo{text-align:center;margin-bottom:48px}
+.login-box .logo svg{width:48px;height:48px;margin-bottom:16px}
+.login-box .logo h1{font-size:28px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+.login-box .logo p{font-size:13px;color:var(--text3);font-family:var(--mono);letter-spacing:.05em}
+.login-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px}
+.login-card .field{margin-bottom:20px}
+.login-card label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:8px}
+.login-card input{width:100%;padding:14px 16px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;color:var(--text);font-size:14px;font-family:var(--sans);outline:none;transition:border-color .2s}
+.login-card input:focus{border-color:var(--teal)}
+.login-btn{width:100%;padding:16px;background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--bg);font-family:var(--sans);font-weight:700;font-size:15px;border:none;border-radius:100px;cursor:pointer;transition:all .3s;margin-top:8px}
+.login-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,191,166,.25)}
+.login-hint{text-align:center;font-size:12px;color:#444;margin-top:16px}
+.dash-header{display:flex;justify-content:space-between;align-items:center;padding:20px 32px;border-bottom:1px solid var(--border)}
+.dash-header .brand{display:flex;align-items:center;gap:12px}
+.dash-header .brand svg{width:28px;height:28px}
+.dash-header .brand span{font-size:14px;font-weight:700;letter-spacing:.04em}
+.beta-tag{font-size:10px;font-family:var(--mono);padding:3px 8px;background:rgba(0,191,166,.08);border-radius:100px;color:var(--teal)}
+.user-area{display:flex;align-items:center;gap:12px}
+.user-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px rgba(0,191,166,.4)}
+.user-avatar{width:32px;height:32px;border-radius:10px;background:rgba(0,191,166,.1);border:1px solid rgba(0,191,166,.2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--teal)}
+.dash-layout{display:flex;min-height:calc(100vh - 73px)}
+.sidebar{width:220px;border-right:1px solid var(--border);padding:24px 12px;display:flex;flex-direction:column;gap:4px}
+.sidebar-btn{display:flex;align-items:center;gap:12px;padding:12px 16px;background:transparent;border:1px solid transparent;border-radius:12px;color:var(--text3);font-size:13px;font-weight:600;font-family:var(--sans);cursor:pointer;transition:all .2s;width:100%;text-align:left}
+.sidebar-btn:hover{color:var(--text2)}
+.sidebar-btn.active{background:rgba(0,191,166,.08);border-color:rgba(0,191,166,.12);color:var(--teal)}
+.sidebar-btn .icon{font-size:14px;width:20px;text-align:center}
+.sidebar-btn .badge{margin-left:auto;font-size:10px;padding:2px 8px;border-radius:100px;font-weight:700}
+.badge-teal{background:var(--teal);color:var(--bg)}
+.badge-gold{background:rgba(240,199,94,.15);color:var(--gold)}
+.sidebar-footer{margin-top:auto;padding:16px;border-top:1px solid var(--border)}
+.sidebar-footer .label{font-size:10px;font-family:var(--mono);color:#333;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.sidebar-footer .tier{font-size:16px;font-weight:800;color:var(--teal)}
+.sidebar-footer .followers{font-size:11px;color:#444;margin-top:4px}
+.dash-main{flex:1;padding:32px;overflow-y:auto;max-height:calc(100vh - 73px)}
+.page-title{font-size:24px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+.page-desc{font-size:14px;color:#666;margin-bottom:32px}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.stats-row{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 20px;flex:1;min-width:140}
+.stat-label{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:8px}
+.stat-val{font-size:28px;font-weight:800;font-family:var(--sans)}
+.stat-sub{font-size:11px;color:var(--text3);margin-top:4px}
+.deals-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:16px}
+.deal-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;transition:all .3s;position:relative;overflow:hidden}
+.deal-card:hover{border-color:rgba(0,191,166,.15);transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.2)}
+.deal-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
+.deal-project{display:flex;gap:12px;align-items:center}
+.deal-logo{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;font-family:var(--mono)}
+.deal-name{font-weight:700;font-size:15px}
+.deal-cat{font-size:11px;color:var(--text3);font-family:var(--mono)}
+.deal-budget{font-size:20px;font-weight:800;font-family:var(--sans)}
+.deal-tags{display:flex;gap:8px;margin-bottom:12px}
+.deal-tag{font-size:10px;font-family:var(--mono);padding:4px 10px;border-radius:100px;background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--text2)}
+.deal-desc{font-size:13px;line-height:1.6;color:#777;margin-bottom:16px}
+.deal-footer{display:flex;justify-content:space-between;align-items:center}
+.deal-slots{font-size:11px;color:var(--text3)}
+.deal-accept{padding:10px 24px;color:var(--bg);font-family:var(--sans);font-weight:700;font-size:12px;border:none;border-radius:100px;cursor:pointer;transition:all .2s}
+.deal-accept:hover{transform:scale(1.05)}
+.campaign-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:12px}
+.campaign-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.campaign-info{display:flex;gap:12px;align-items:center}
+.campaign-logo{width:36px;height:36px;border-radius:10px;background:rgba(0,191,166,.08);border:1px solid rgba(0,191,166,.15);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--teal);font-family:var(--mono)}
+.campaign-name{font-weight:700;font-size:14px}
+.campaign-meta{font-size:11px;color:var(--text3)}
+.campaign-right{display:flex;align-items:center;gap:16px}
+.campaign-status{font-size:12px;font-weight:600}
+.campaign-budget{font-size:16px;font-weight:800;color:var(--teal)}
+.campaign-toggle{color:#444;transition:transform .2s;font-size:14px;cursor:pointer}
+.campaign-body{margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.05);display:none}
+.campaign-card.expanded .campaign-body{display:block}
+.campaign-card.expanded .campaign-toggle{transform:rotate(180deg)}
+.progress-header{display:flex;justify-content:space-between;margin-bottom:6px}
+.progress-label{font-size:11px;color:var(--text3);font-family:var(--mono)}
+.progress-pct{font-size:11px;color:var(--teal);font-weight:600}
+.progress-bar{height:4px;background:rgba(255,255,255,.05);border-radius:2px;margin-bottom:16px}
+.progress-fill{height:4px;background:linear-gradient(90deg,var(--teal),var(--teal2));border-radius:2px}
+.deliverable{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.03)}
+.deliverable:last-child{border-bottom:none}
+.check-box{width:20px;height:20px;border-radius:6px;border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0}
+.check-box.done{border-color:var(--teal);background:rgba(0,191,166,.15);color:var(--teal)}
+.deliverable span{font-size:13px}
+.deliverable span.done{color:var(--text2);text-decoration:line-through}
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:24px}
+.chart-label{font-size:10px;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:20px}
+.chart-bars{display:flex;align-items:flex-end;gap:12px;height:120px;padding:0 8px}
+.chart-bar{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px}
+.chart-bar .bar-val{font-size:11px;font-weight:600;color:var(--teal)}
+.chart-bar .bar{width:100%;background:linear-gradient(180deg,var(--teal),rgba(0,191,166,.2));border-radius:6px 6px 0 0;min-height:8px}
+.chart-bar .bar-label{font-size:10px;color:var(--text3);font-family:var(--mono)}
+.history-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.03)}
+.history-row:last-child{border-bottom:none}
+.history-project{font-size:14px;font-weight:600}
+.history-meta{font-size:11px;color:var(--text3)}
+.history-amount{font-size:16px;font-weight:800;color:var(--teal)}
+.status-paid{font-size:10px;font-weight:600;color:var(--teal)}
+.status-pending{font-size:10px;font-weight:600;color:var(--gold)}
+.profile-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px;margin-bottom:24px}
+.profile-top{display:flex;gap:20px;align-items:center;margin-bottom:24px;flex-wrap:wrap}
+.profile-avatar{width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,var(--teal),var(--teal2));display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:var(--bg)}
+.profile-name{font-size:20px;font-weight:800}
+.profile-handle{font-size:13px;color:var(--teal);font-family:var(--mono)}
+.profile-tier{margin-left:auto;padding:6px 16px;background:rgba(0,191,166,.08);border:1px solid rgba(0,191,166,.15);border-radius:100px;font-size:11px;font-weight:700;color:var(--teal)}
+.profile-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.metric{text-align:center;padding:16px;background:rgba(255,255,255,.02);border-radius:12px}
+.metric-val{font-size:22px;font-weight:800}
+.metric-label{font-size:10px;color:var(--text3);font-family:var(--mono);margin-top:4px}
+.profile-tags{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.tags-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px}
+.tags-label{font-size:10px;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:16px}
+.tags-list{display:flex;gap:8px;flex-wrap:wrap}
+.tag-pill{padding:6px 14px;border-radius:100px;font-size:12px;font-weight:500}
+.notif{position:fixed;top:20px;right:20px;background:rgba(0,191,166,.15);border:1px solid rgba(0,191,166,.3);border-radius:12px;padding:12px 20px;font-size:13px;color:var(--teal);font-weight:600;z-index:1000;opacity:0;transform:translateY(-10px);transition:all .3s;pointer-events:none}
+.notif.show{opacity:1;transform:translateY(0)}
+@media(max-width:800px){
+  .sidebar{display:none}
+  .dash-main{padding:20px}
+  .deals-grid{grid-template-columns:1fr}
+  .stats-row{flex-direction:column}
+  .profile-metrics{grid-template-columns:repeat(2,1fr)}
+  .profile-tags{grid-template-columns:1fr}
+  .profile-top{flex-direction:column;text-align:center}
+  .profile-tier{margin:0 auto}
+  .dash-header{padding:16px 20px}
+  .mobile-tabs{display:flex;position:fixed;bottom:0;left:0;right:0;background:var(--bg);border-top:1px solid var(--border);padding:8px;gap:4px;z-index:100}
+  .mobile-tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px;border-radius:10px;background:transparent;border:none;color:var(--text3);font-size:9px;font-family:var(--mono);cursor:pointer}
+  .mobile-tab.active{color:var(--teal);background:rgba(0,191,166,.06)}
+  .mobile-tab .mt-icon{font-size:16px}
+  .dash-main{padding-bottom:80px}
+}
+@media(min-width:801px){.mobile-tabs{display:none}}
+</style>
+</head>
+<body>
+<div class="notif" id="notif"></div>
+<div class="login-overlay" id="loginOverlay">
+  <div class="login-box">
+    <div class="logo">
+      <svg viewBox="0 0 36 36" fill="none"><circle cx="12" cy="18" r="10" stroke="#00BFA6" stroke-width="1" opacity=".6"/><circle cx="24" cy="18" r="10" stroke="#00BFA6" stroke-width="1" opacity=".4"/><circle cx="18" cy="10" r="10" stroke="#00BFA6" stroke-width="1" opacity=".8"/></svg>
+      <h1>Triad Creators</h1>
+      <p>Creator Dashboard</p>
+    </div>
+    <div class="login-card">
+      <div class="field"><label>Email</label><input type="email" placeholder="your@email.com"></div>
+      <div class="field"><label>Password</label><input type="password" placeholder="••••••••"></div>
+      <button class="login-btn" onclick="document.getElementById('loginOverlay').classList.add('hidden')">Sign In →</button>
+      <p class="login-hint">Demo mode — click Sign In to explore</p>
+    </div>
+  </div>
+</div>
+<header class="dash-header">
+  <div class="brand">
+    <svg viewBox="0 0 36 36" fill="none"><circle cx="12" cy="18" r="10" stroke="#00BFA6" stroke-width="1" opacity=".6"/><circle cx="24" cy="18" r="10" stroke="#00BFA6" stroke-width="1" opacity=".4"/><circle cx="18" cy="10" r="10" stroke="#00BFA6" stroke-width="1" opacity=".8"/></svg>
+    <span>Triad Creators</span>
+    <span class="beta-tag">BETA</span>
+  </div>
+  <div class="user-area">
+    <div class="user-dot"></div>
+    <div class="user-avatar">AC</div>
+    <div><div style="font-size:12px;font-weight:600">Alex Chen</div><div style="font-size:10px;color:#555">@alexcrypto</div></div>
+  </div>
+</header>
+<div class="dash-layout">
+  <nav class="sidebar">
+    <button class="sidebar-btn active" onclick="switchTab('deals',this)"><span class="icon">◆</span>Deal Flow<span class="badge badge-teal">5</span></button>
+    <button class="sidebar-btn" onclick="switchTab('active',this)"><span class="icon">▶</span>Active<span class="badge badge-gold">2</span></button>
+    <button class="sidebar-btn" onclick="switchTab('earnings',this)"><span class="icon">$</span>Earnings</button>
+    <button class="sidebar-btn" onclick="switchTab('profile',this)"><span class="icon">◉</span>Profile</button>
+    <div class="sidebar-footer">
+      <div class="label">Creator Tier</div>
+      <div class="tier">Rising</div>
+      <div class="followers">3,200 followers</div>
+    </div>
+  </nav>
+  <main class="dash-main">
+    <div class="tab-content active" id="tab-deals">
+      <h2 class="page-title">Deal Flow</h2>
+      <p class="page-desc">Campaigns matched to your niche and audience. Accept to start creating.</p>
+      <div class="stats-row">
+        <div class="stat-card"><div class="stat-label">Available Deals</div><div class="stat-val" style="color:var(--teal)">5</div></div>
+        <div class="stat-card"><div class="stat-label">Avg Budget</div><div class="stat-val" style="color:var(--gold)">$910</div></div>
+        <div class="stat-card"><div class="stat-label">Your Accept Rate</div><div class="stat-val" style="color:var(--purple)">73%</div></div>
+      </div>
+      <div class="deals-grid">
+        <div class="deal-card" id="deal-1"><div class="deal-top"><div class="deal-project"><div class="deal-logo" style="background:rgba(0,191,166,.1);border:1px solid rgba(0,191,166,.2);color:#00BFA6">OP</div><div><div class="deal-name">Orbital Protocol</div><div class="deal-cat">DeFi</div></div></div><div class="deal-budget" style="color:#00BFA6">$800</div></div><div class="deal-tags"><span class="deal-tag">Thread Campaign</span><span class="deal-tag">Due Apr 15</span></div><p class="deal-desc">Deep-dive thread on Orbital's new lending vault architecture. Cover mechanics, yield strategy, and risk model.</p><div class="deal-footer"><div class="deal-slots">1/3 slots filled</div><button class="deal-accept" style="background:#00BFA6" onclick="acceptDeal('deal-1')">Accept Deal</button></div></div>
+        <div class="deal-card" id="deal-2"><div class="deal-top"><div class="deal-project"><div class="deal-logo" style="background:rgba(124,92,252,.1);border:1px solid rgba(124,92,252,.2);color:#7C5CFC">NC</div><div><div class="deal-name">NeuralChain AI</div><div class="deal-cat">AI × Crypto</div></div></div><div class="deal-budget" style="color:#7C5CFC">$1,500</div></div><div class="deal-tags"><span class="deal-tag">Video Review</span><span class="deal-tag">Due Apr 18</span></div><p class="deal-desc">YouTube or X video reviewing NeuralChain's decentralised inference network. 3-5 min runtime.</p><div class="deal-footer"><div class="deal-slots">0/2 slots filled</div><button class="deal-accept" style="background:#7C5CFC" onclick="acceptDeal('deal-2')">Accept Deal</button></div></div>
+        <div class="deal-card" id="deal-3"><div class="deal-top"><div class="deal-project"><div class="deal-logo" style="background:rgba(240,199,94,.1);border:1px solid rgba(240,199,94,.2);color:#F0C75E">MX</div><div><div class="deal-name">Meridian Exchange</div><div class="deal-cat">Infrastructure</div></div></div><div class="deal-budget" style="color:#F0C75E">$400</div></div><div class="deal-tags"><span class="deal-tag">Awareness Blast</span><span class="deal-tag">Due Apr 12</span></div><p class="deal-desc">3 tweets over 48 hours covering Meridian's mainnet launch. Key messages and assets provided.</p><div class="deal-footer"><div class="deal-slots">3/5 slots filled</div><button class="deal-accept" style="background:#F0C75E" onclick="acceptDeal('deal-3')">Accept Deal</button></div></div>
+        <div class="deal-card" id="deal-4"><div class="deal-top"><div class="deal-project"><div class="deal-logo" style="background:rgba(0,232,204,.1);border:1px solid rgba(0,232,204,.2);color:#00E8CC">VF</div><div><div class="deal-name">Vaultis Finance</div><div class="deal-cat">DeFi</div></div></div><div class="deal-budget" style="color:#00E8CC">$650</div></div><div class="deal-tags"><span class="deal-tag">Thread Campaign</span><span class="deal-tag">Due Apr 20</span></div><p class="deal-desc">Thread covering Vaultis cross-chain yield aggregation. Compare to existing solutions.</p><div class="deal-footer"><div class="deal-slots">2/4 slots filled</div><button class="deal-accept" style="background:#00E8CC" onclick="acceptDeal('deal-4')">Accept Deal</button></div></div>
+        <div class="deal-card" id="deal-5"><div class="deal-top"><div class="deal-project"><div class="deal-logo" style="background:rgba(224,64,160,.1);border:1px solid rgba(224,64,160,.2);color:#E040A0">DM</div><div><div class="deal-name">DataMesh</div><div class="deal-cat">Infrastructure</div></div></div><div class="deal-budget" style="color:#E040A0">$1,200</div></div><div class="deal-tags"><span class="deal-tag">Community Takeover</span><span class="deal-tag">Due Apr 22</span></div><p class="deal-desc">Host a 45-min AMA in DataMesh Telegram. Prep doc and questions provided.</p><div class="deal-footer"><div class="deal-slots">0/1 slots filled</div><button class="deal-accept" style="background:#E040A0" onclick="acceptDeal('deal-5')">Accept Deal</button></div></div>
+      </div>
+    </div>
+    <div class="tab-content" id="tab-active">
+      <h2 class="page-title">Active Campaigns</h2>
+      <p class="page-desc">Your current work. Click to expand deliverables and track progress.</p>
+      <div class="stats-row">
+        <div class="stat-card"><div class="stat-label">Active</div><div class="stat-val" style="color:var(--teal)">2</div></div>
+        <div class="stat-card"><div class="stat-label">Pending Review</div><div class="stat-val" style="color:var(--gold)">1</div></div>
+        <div class="stat-card"><div class="stat-label">Due This Week</div><div class="stat-val" style="color:var(--pink)">2</div></div>
+      </div>
+      <div class="campaign-card" onclick="this.classList.toggle('expanded')">
+        <div class="campaign-header"><div class="campaign-info"><div class="campaign-logo">NR</div><div><div class="campaign-name">NERO Chain</div><div class="campaign-meta">Thread Campaign · Due Apr 10</div></div></div><div class="campaign-right"><span class="campaign-status" style="color:var(--teal)">In Progress</span><span class="campaign-budget">$750</span><span class="campaign-toggle">▾</span></div></div>
+        <div class="campaign-body"><div class="progress-header"><span class="progress-label">PROGRESS</span><span class="progress-pct">60%</span></div><div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div><div class="deliverable"><div class="check-box done">✓</div><span class="done">Draft thread (8+ tweets)</span></div><div class="deliverable"><div class="check-box done">✓</div><span class="done">Include 3 data points from docs</span></div><div class="deliverable"><div class="check-box"></div><span>Submit for review</span></div><div class="deliverable"><div class="check-box"></div><span>Post thread</span></div><div class="deliverable"><div class="check-box"></div><span>Engagement report (24hr)</span></div></div>
+      </div>
+      <div class="campaign-card" onclick="this.classList.toggle('expanded')">
+        <div class="campaign-header"><div class="campaign-info"><div class="campaign-logo">MV</div><div><div class="campaign-name">MAIV Platform</div><div class="campaign-meta">Awareness Blast · Due Apr 11</div></div></div><div class="campaign-right"><span class="campaign-status" style="color:var(--gold)">Review</span><span class="campaign-budget">$400</span><span class="campaign-toggle">▾</span></div></div>
+        <div class="campaign-body"><div class="progress-header"><span class="progress-label">PROGRESS</span><span class="progress-pct">80%</span></div><div class="progress-bar"><div class="progress-fill" style="width:80%"></div></div><div class="deliverable"><div class="check-box done">✓</div><span class="done">Tweet 1: Product announcement</span></div><div class="deliverable"><div class="check-box done">✓</div><span class="done">Tweet 2: Key feature highlight</span></div><div class="deliverable"><div class="check-box done">✓</div><span class="done">Tweet 3: CTA + link</span></div><div class="deliverable"><div class="check-box"></div><span>Submit engagement metrics</span></div></div>
+      </div>
+    </div>
+    <div class="tab-content" id="tab-earnings">
+      <h2 class="page-title">Earnings</h2>
+      <p class="page-desc">Your revenue at a glance. 70/30 split — you keep the majority.</p>
+      <div class="stats-row">
+        <div class="stat-card"><div class="stat-label">Total Earned</div><div class="stat-val" style="color:var(--teal)">$4,850</div></div>
+        <div class="stat-card"><div class="stat-label">Pending</div><div class="stat-val" style="color:var(--gold)">$1,200</div><div class="stat-sub">Paid within 7 days</div></div>
+        <div class="stat-card"><div class="stat-label">Paid Out</div><div class="stat-val" style="color:var(--teal2)">$3,650</div></div>
+        <div class="stat-card"><div class="stat-label">This Month</div><div class="stat-val" style="color:var(--purple)">$1,200</div></div>
+      </div>
+      <div class="chart-card"><div class="chart-label">Monthly Earnings</div><div class="chart-bars"><div class="chart-bar"><span class="bar-val">$650</span><div class="bar" style="height:43px"></div><span class="bar-label">Jan</span></div><div class="chart-bar"><span class="bar-val">$800</span><div class="bar" style="height:53px"></div><span class="bar-label">Feb</span></div><div class="chart-bar"><span class="bar-val">$1,200</span><div class="bar" style="height:80px"></div><span class="bar-label">Mar</span></div><div class="chart-bar"><span class="bar-val">$1,200</span><div class="bar" style="height:80px"></div><span class="bar-label">Apr</span></div></div></div>
+      <div class="chart-card"><div class="chart-label">Payment History</div><div class="history-row"><div><div class="history-project">NERO Chain</div><div class="history-meta">Thread · Mar 28</div></div><div style="text-align:right"><div class="history-amount">$750</div><div class="status-paid">Paid</div></div></div><div class="history-row"><div><div class="history-project">Axion Labs</div><div class="history-meta">Video · Mar 15</div></div><div style="text-align:right"><div class="history-amount">$1,200</div><div class="status-paid">Paid</div></div></div><div class="history-row"><div><div class="history-project">SkyBridge</div><div class="history-meta">Awareness · Mar 8</div></div><div style="text-align:right"><div class="history-amount">$350</div><div class="status-paid">Paid</div></div></div><div class="history-row"><div><div class="history-project">MAIV Platform</div><div class="history-meta">Awareness · Apr 5</div></div><div style="text-align:right"><div class="history-amount">$400</div><div class="status-pending">Pending</div></div></div><div class="history-row"><div><div class="history-project">NERO Chain</div><div class="history-meta">Thread · Apr 8</div></div><div style="text-align:right"><div class="history-amount">$800</div><div class="status-pending">Pending</div></div></div></div>
+    </div>
+    <div class="tab-content" id="tab-profile">
+      <h2 class="page-title">Your Profile</h2>
+      <p class="page-desc">How projects see you in the Triad Creators directory.</p>
+      <div class="profile-card">
+        <div class="profile-top"><div class="profile-avatar">AC</div><div><div class="profile-name">Alex Chen</div><div class="profile-handle">@alexcrypto</div></div><span class="profile-tier">Rising Tier</span></div>
+        <div class="profile-metrics"><div class="metric"><div class="metric-val" style="color:var(--teal)">3,200</div><div class="metric-label">Followers</div></div><div class="metric"><div class="metric-val" style="color:var(--gold)">8</div><div class="metric-label">Completed</div></div><div class="metric"><div class="metric-val" style="color:var(--purple)">2</div><div class="metric-label">Active</div></div><div class="metric"><div class="metric-val" style="color:var(--teal2)">73%</div><div class="metric-label">Accept Rate</div></div></div>
+      </div>
+      <div class="profile-tags"><div class="tags-card"><div class="tags-label">Content Niche</div><div class="tags-list"><span class="tag-pill" style="background:rgba(0,191,166,.06);border:1px solid rgba(0,191,166,.12);color:var(--teal)">AI × Crypto</span><span class="tag-pill" style="background:rgba(0,191,166,.06);border:1px solid rgba(0,191,166,.12);color:var(--teal)">DeFi</span><span class="tag-pill" style="background:rgba(0,191,166,.06);border:1px solid rgba(0,191,166,.12);color:var(--teal)">Layer 1s</span></div></div><div class="tags-card"><div class="tags-label">Platforms</div><div class="tags-list"><span class="tag-pill" style="background:rgba(124,92,252,.06);border:1px solid rgba(124,92,252,.12);color:var(--purple)">X / Twitter</span><span class="tag-pill" style="background:rgba(124,92,252,.06);border:1px solid rgba(124,92,252,.12);color:var(--purple)">YouTube</span><span class="tag-pill" style="background:rgba(124,92,252,.06);border:1px solid rgba(124,92,252,.12);color:var(--purple)">Telegram</span></div></div></div>
+    </div>
+  </main>
+</div>
+<div class="mobile-tabs">
+  <button class="mobile-tab active" onclick="switchTab('deals',this)"><span class="mt-icon">◆</span>Deals</button>
+  <button class="mobile-tab" onclick="switchTab('active',this)"><span class="mt-icon">▶</span>Active</button>
+  <button class="mobile-tab" onclick="switchTab('earnings',this)"><span class="mt-icon">$</span>Earn</button>
+  <button class="mobile-tab" onclick="switchTab('profile',this)"><span class="mt-icon">◉</span>Profile</button>
+</div>
+<script>
+function switchTab(tabId,btn){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.sidebar-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.mobile-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+tabId).classList.add('active');
+  if(btn)btn.classList.add('active');
+  var idx=['deals','active','earnings','profile'].indexOf(tabId);
+  var sb=document.querySelectorAll('.sidebar-btn');if(sb[idx])sb[idx].classList.add('active');
+  var mt=document.querySelectorAll('.mobile-tab');if(mt[idx])mt[idx].classList.add('active');
+}
+function acceptDeal(id){
+  var el=document.getElementById(id);
+  el.style.transition='all .4s';el.style.opacity='0';el.style.transform='scale(.95)';
+  setTimeout(function(){el.remove()},400);
+  showNotif('Deal accepted! Check Active Campaigns.');
+}
+function showNotif(msg){
+  var n=document.getElementById('notif');n.textContent=msg;n.classList.add('show');
+  setTimeout(function(){n.classList.remove('show')},3000);
+}
+</script>
+</body>
+</html>
