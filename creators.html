@@ -115,6 +115,20 @@
 .submit-btn:hover::after{transform:translateX(100%)}
 .submit-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,191,166,.25)}
 .faq-section{max-width:640px;margin:0 auto;padding:0 48px 100px}
+.tweet-wall{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tweet-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:20px;transition:all .4s;position:relative;overflow:hidden}
+.tweet-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(0,191,166,.3),transparent);opacity:0;transition:opacity .3s}
+.tweet-card:hover{border-color:rgba(0,191,166,.15);transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.25)}
+.tweet-card:hover::before{opacity:1}
+.tweet-card.tc-featured{grid-column:span 2;background:rgba(0,191,166,.03);border-color:rgba(0,191,166,.12)}
+.tc-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.tc-pfp{width:36px;height:36px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.08)}
+.tc-name{font-size:13px;font-weight:700;display:flex;align-items:center;gap:4px}
+.tc-handle{font-family:var(--mono);font-size:11px;color:var(--text3)}
+.tc-text{font-size:14px;line-height:1.6;color:var(--text2);margin-bottom:12px}
+.tc-meta{display:flex;gap:16px;font-family:var(--mono);font-size:10px;color:var(--text3)}
+.article-stats>div{padding:16px 24px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:14px;min-width:100px;transition:all .3s}
+.article-stats>div:hover{border-color:rgba(0,191,166,.15);transform:translateY(-2px)}
 .faq-item{padding:20px 0;border-bottom:1px solid rgba(255,255,255,.06)}
 .faq-item h4{font-size:15px;font-weight:700;margin-bottom:8px}
 .faq-item p{font-size:13px;line-height:1.65;color:var(--text2)}
@@ -137,6 +151,9 @@
   .mesh-orb.o2{width:250px;height:250px}
   .mesh-orb.o3{display:none}
   .sp-avatars img{width:28px;height:28px}
+  .tweet-wall{grid-template-columns:1fr}
+  .tweet-card.tc-featured{grid-column:span 1}
+  .article-stats{gap:16px !important}
 }
 </style>
 </head>
@@ -210,9 +227,47 @@
 </section>
 <div class="glow-divider"></div>
 <section class="c-section" style="position:relative;z-index:2">
-  <div class="c-section-hdr reveal"><div class="label">From The Feed</div><h2>What <em>CT</em> is saying.</h2><p>Live from our X timeline — posts, replies, and conversations.</p></div>
-  <div style="display:flex;justify-content:center" class="reveal">
-    <a class="twitter-timeline" data-width="600" data-height="800" data-theme="dark" data-chrome="noheader nofooter noborders transparent" href="https://x.com/triadnx">Posts by @triadnx</a>
+  <div class="c-section-hdr reveal"><div class="label">From The Feed</div><h2>What <em>CT</em> is saying.</h2><p>Real reactions from our launch article — unedited, unfiltered.</p></div>
+  <div class="article-stats reveal" style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:48px">
+    <div style="text-align:center"><div style="font-family:'Syne',sans-serif;font-size:32px;font-weight:800;color:var(--accent)">19K</div><div style="font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3)">Views</div></div>
+    <div style="text-align:center"><div style="font-family:'Syne',sans-serif;font-size:32px;font-weight:800;color:#F0C75E">87</div><div style="font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3)">Replies</div></div>
+    <div style="text-align:center"><div style="font-family:'Syne',sans-serif;font-size:32px;font-weight:800;color:#7C5CFC">27</div><div style="font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3)">Reposts</div></div>
+    <div style="text-align:center"><div style="font-family:'Syne',sans-serif;font-size:32px;font-weight:800;color:#E040A0">101</div><div style="font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3)">Likes</div></div>
+  </div>
+  <div class="tweet-wall reveal">
+    <div class="tweet-card">
+      <div class="tc-header"><img src="https://unavatar.io/x/psycryptonaut" alt="" class="tc-pfp"><div><div class="tc-name">Braja Nandan <svg width="14" height="14" viewBox="0 0 24 24" fill="#1D9BF0"><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"/></svg></div><div class="tc-handle">@psycryptonaut</div></div></div>
+      <p class="tc-text">Legit chads behind this, might just fix the broken KOL landscape! Well timed!</p>
+      <div class="tc-meta"><span>256 views</span><span>3 likes</span></div>
+    </div>
+    <div class="tweet-card">
+      <div class="tc-header"><img src="https://unavatar.io/x/Nerochain_Au" alt="" class="tc-pfp"><div><div class="tc-name">Nerochain Australia <svg width="14" height="14" viewBox="0 0 24 24" fill="#1D9BF0"><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"/></svg></div><div class="tc-handle">@Nerochain_Au</div></div></div>
+      <p class="tc-text">Most campaigns optimize for impressions, but the system was never designed to convert activity into sustainable economic flow.</p>
+      <div class="tc-meta"><span>355 views</span><span>2 likes</span></div>
+    </div>
+    <div class="tweet-card">
+      <div class="tc-header"><img src="https://unavatar.io/x/RAD1BAD1" alt="" class="tc-pfp"><div><div class="tc-name">RAD1 <svg width="14" height="14" viewBox="0 0 24 24" fill="#1D9BF0"><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"/></svg></div><div class="tc-handle">@RAD1BAD1</div></div></div>
+      <p class="tc-text">Get used to hearing about Triad. Amazing job fellas &#10071;</p>
+      <div class="tc-meta"><span>230 views</span><span>3 likes</span></div>
+    </div>
+    <div class="tweet-card">
+      <div class="tc-header"><img src="https://unavatar.io/x/J777Crypto" alt="" class="tc-pfp"><div><div class="tc-name">J777Crypto <svg width="14" height="14" viewBox="0 0 24 24" fill="#1D9BF0"><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"/></svg></div><div class="tc-handle">@J777Crypto</div></div></div>
+      <p class="tc-text">changing the game</p>
+      <div class="tc-meta"><span>492 views</span><span>2 likes</span></div>
+    </div>
+    <div class="tweet-card tc-featured">
+      <div class="tc-header"><img src="https://unavatar.io/x/Altcoinsamurai" alt="" class="tc-pfp"><div><div class="tc-name">Altcoin Samurai <svg width="14" height="14" viewBox="0 0 24 24" fill="#1D9BF0"><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"/></svg></div><div class="tc-handle">@Altcoinsamurai</div></div></div>
+      <p class="tc-text">We've guided projects through cap table structuring, tokenomics design, liquidity strategy and go-to-market from the inside.<br><br>Not as consultants. As operators. That's the difference.<br><br>All in. Locked in.</p>
+      <div class="tc-meta"><span>258 views</span><span>6 likes</span></div>
+    </div>
+    <div class="tweet-card">
+      <div class="tc-header"><img src="https://unavatar.io/x/USGPartners" alt="" class="tc-pfp"><div><div class="tc-name">Urban Sovereign Group <svg width="14" height="14" viewBox="0 0 24 24" fill="#1D9BF0"><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"/></svg></div><div class="tc-handle">@USGPartners</div></div></div>
+      <p class="tc-text">&#128079;</p>
+      <div class="tc-meta"><span>497 views</span><span>4 likes</span></div>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:center;margin-top:48px" class="reveal">
+    <a class="twitter-timeline" data-width="600" data-height="600" data-theme="dark" data-chrome="noheader nofooter noborders transparent" href="https://x.com/triadnx">Posts by @triadnx</a>
   </div>
 </section>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
