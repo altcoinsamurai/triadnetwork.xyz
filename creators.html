@@ -209,6 +209,14 @@
   </div>
 </section>
 <div class="glow-divider"></div>
+<section class="c-section" style="position:relative;z-index:2">
+  <div class="c-section-hdr reveal"><div class="label">From The Feed</div><h2>What <em>CT</em> is saying.</h2><p>Live from our X timeline — posts, replies, and conversations.</p></div>
+  <div style="display:flex;justify-content:center" class="reveal">
+    <a class="twitter-timeline" data-width="600" data-height="800" data-theme="dark" data-chrome="noheader nofooter noborders transparent" href="https://x.com/triadnx">Posts by @triadnx</a>
+  </div>
+</section>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<div class="glow-divider"></div>
 <section class="form-section" id="apply" style="position:relative;z-index:2">
   <div class="c-section-hdr reveal"><div class="label">Apply</div></div>
   <h2 class="reveal">Join Triad Creators</h2>
@@ -241,12 +249,12 @@
   <div class="footer-r"><a href="/">Home</a><a href="/ecosystem.html">Ecosystem</a><a href="/strategic-bd.html">Strategic BD</a><a href="/creators.html">Creators</a></div>
 </footer>
 <script>
-const canvas=document.getElementById('particles'),ctx=canvas.getContext('2d');
-let w,h,pts=[];
+var canvas=document.getElementById('particles'),ctx=canvas.getContext('2d');
+var w,h,pts=[];
 function resize(){w=canvas.width=innerWidth;h=canvas.height=innerHeight*4}
 resize();window.addEventListener('resize',resize);
-for(let i=0;i<70;i++){pts.push({x:Math.random()*2e3,y:Math.random()*8e3,r:Math.random()*1.8+.4,sx:(Math.random()-.5)*.12,sy:(Math.random()-.5)*.12-.04,p:Math.random()*Math.PI*2,t:Math.random()>.3})}
-function draw(){ctx.clearRect(0,0,w,h);const t=Date.now()*.001;const scrollY=window.scrollY||0;pts.forEach(p=>{p.x+=p.sx;p.y+=p.sy;if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;const screenY=p.y-scrollY;if(screenY<-50||screenY>innerHeight+50)return;const tw=.3+.7*Math.sin(t*1.5+p.p);const a=tw*.3;const r=p.r*(.8+.2*tw);ctx.fillStyle=p.t?'rgba(0,191,166,'+(a*.08)+')':'rgba(0,232,204,'+(a*.06)+')';ctx.beginPath();ctx.arc(p.x,screenY,r*5,0,Math.PI*2);ctx.fill();ctx.fillStyle=p.t?'rgba(0,191,166,'+a+')':'rgba(0,232,204,'+(a*.7)+')';ctx.beginPath();ctx.arc(p.x,screenY,r,0,Math.PI*2);ctx.fill()});requestAnimationFrame(draw)}
+for(var i=0;i<70;i++){pts.push({x:Math.random()*2e3,y:Math.random()*8e3,r:Math.random()*1.8+.4,sx:(Math.random()-.5)*.12,sy:(Math.random()-.5)*.12-.04,p:Math.random()*Math.PI*2,t:Math.random()>.3})}
+function draw(){ctx.clearRect(0,0,w,h);var t=Date.now()*.001;var scrollY=window.scrollY||0;pts.forEach(function(p){p.x+=p.sx;p.y+=p.sy;if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;var screenY=p.y-scrollY;if(screenY<-50||screenY>innerHeight+50)return;var tw=.3+.7*Math.sin(t*1.5+p.p);var a=tw*.3;var r=p.r*(.8+.2*tw);ctx.fillStyle=p.t?'rgba(0,191,166,'+(a*.08)+')':'rgba(0,232,204,'+(a*.06)+')';ctx.beginPath();ctx.arc(p.x,screenY,r*5,0,Math.PI*2);ctx.fill();ctx.fillStyle=p.t?'rgba(0,191,166,'+a+')':'rgba(0,232,204,'+(a*.7)+')';ctx.beginPath();ctx.arc(p.x,screenY,r,0,Math.PI*2);ctx.fill()});requestAnimationFrame(draw)}
 draw();
 var pfpHandles=['HsakaTrades','Pentosh1','crypto_banter','thedefiedge','CryptoTony__','AltcoinGordon','MacnBTC','DeFi_Dad'];
 var pfpContainer=document.getElementById('floatingPfps');
