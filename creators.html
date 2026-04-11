@@ -2,6 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Triad Network">
+<meta property="og:image" content="https://triadnetwork.xyz/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@triadnx">
+<meta name="twitter:image" content="https://triadnetwork.xyz/og-image.png">
+<meta property="og:title" content="Triad Creators — Creator Accelerator for AI × Crypto">
+<meta property="og:description" content="The first creator accelerator for small-to-mid crypto content creators. Free brand buildout. 70/30 revenue share. Apply now.">
+<meta property="og:url" content="https://triadnetwork.xyz/creators.html">
+<meta name="twitter:title" content="Triad Creators — Creator Accelerator for AI × Crypto">
+<meta name="twitter:description" content="The first creator accelerator for small-to-mid crypto content creators. Free brand buildout. 70/30 revenue share. Apply now.">
+<meta name="description" content="The first creator accelerator for small-to-mid crypto content creators. Free brand buildout. 70/30 revenue share. Apply now.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Triad Creators — Creator Accelerator for AI × Crypto</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -144,7 +161,7 @@
     </div>
     <div class="cta-row">
       <a href="#apply" class="c-btn-primary">Apply Now &rarr;</a>
-      <a href="/dashboard.html" class="c-btn-ghost" style="border-color:rgba(124,92,252,.3);color:#9B7FFF;background:rgba(124,92,252,.06)">Creator Dashboard</a>
+      <a href="/dashboard.html" class="c-btn-ghost" style="border-color:rgba(124,92,252,.3);color:#9B7FFF;background:rgba(124,92,252,.06)">&#9881; Creator Dashboard</a>
       <a href="#how" class="c-btn-ghost">How It Works</a>
     </div>
     <div class="social-proof">
@@ -224,12 +241,12 @@
   <div class="footer-r"><a href="/">Home</a><a href="/ecosystem.html">Ecosystem</a><a href="/strategic-bd.html">Strategic BD</a><a href="/creators.html">Creators</a></div>
 </footer>
 <script>
-var canvas=document.getElementById('particles'),ctx=canvas.getContext('2d');
-var w,h,pts=[];
+const canvas=document.getElementById('particles'),ctx=canvas.getContext('2d');
+let w,h,pts=[];
 function resize(){w=canvas.width=innerWidth;h=canvas.height=innerHeight*4}
 resize();window.addEventListener('resize',resize);
-for(var i=0;i<70;i++){pts.push({x:Math.random()*2e3,y:Math.random()*8e3,r:Math.random()*1.8+.4,sx:(Math.random()-.5)*.12,sy:(Math.random()-.5)*.12-.04,p:Math.random()*Math.PI*2,t:Math.random()>.3})}
-function draw(){ctx.clearRect(0,0,w,h);var t=Date.now()*.001;var scrollY=window.scrollY||0;pts.forEach(function(p){p.x+=p.sx;p.y+=p.sy;if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;var screenY=p.y-scrollY;if(screenY<-50||screenY>innerHeight+50)return;var tw=.3+.7*Math.sin(t*1.5+p.p);var a=tw*.3;var r=p.r*(.8+.2*tw);ctx.fillStyle=p.t?'rgba(0,191,166,'+(a*.08)+')':'rgba(0,232,204,'+(a*.06)+')';ctx.beginPath();ctx.arc(p.x,screenY,r*5,0,Math.PI*2);ctx.fill();ctx.fillStyle=p.t?'rgba(0,191,166,'+a+')':'rgba(0,232,204,'+(a*.7)+')';ctx.beginPath();ctx.arc(p.x,screenY,r,0,Math.PI*2);ctx.fill()});requestAnimationFrame(draw)}
+for(let i=0;i<70;i++){pts.push({x:Math.random()*2e3,y:Math.random()*8e3,r:Math.random()*1.8+.4,sx:(Math.random()-.5)*.12,sy:(Math.random()-.5)*.12-.04,p:Math.random()*Math.PI*2,t:Math.random()>.3})}
+function draw(){ctx.clearRect(0,0,w,h);const t=Date.now()*.001;const scrollY=window.scrollY||0;pts.forEach(p=>{p.x+=p.sx;p.y+=p.sy;if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;const screenY=p.y-scrollY;if(screenY<-50||screenY>innerHeight+50)return;const tw=.3+.7*Math.sin(t*1.5+p.p);const a=tw*.3;const r=p.r*(.8+.2*tw);ctx.fillStyle=p.t?'rgba(0,191,166,'+(a*.08)+')':'rgba(0,232,204,'+(a*.06)+')';ctx.beginPath();ctx.arc(p.x,screenY,r*5,0,Math.PI*2);ctx.fill();ctx.fillStyle=p.t?'rgba(0,191,166,'+a+')':'rgba(0,232,204,'+(a*.7)+')';ctx.beginPath();ctx.arc(p.x,screenY,r,0,Math.PI*2);ctx.fill()});requestAnimationFrame(draw)}
 draw();
 var pfpHandles=['HsakaTrades','Pentosh1','crypto_banter','thedefiedge','CryptoTony__','AltcoinGordon','MacnBTC','DeFi_Dad'];
 var pfpContainer=document.getElementById('floatingPfps');
