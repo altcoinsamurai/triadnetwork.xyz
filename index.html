@@ -74,12 +74,17 @@ a{color:inherit;text-decoration:none}
 .gateway-footer{position:relative;z-index:2;text-align:center;padding:20px;border-top:1px solid rgba(128,130,133,.12)}
 .gateway-footer span{font-family:var(--accent-font);font-size:9px;color:var(--muted);letter-spacing:.18em;text-transform:uppercase}
 @media(max-width:700px){
-  .hero{padding:11vh 20px 8vh}
-  .hero-title{font-size:clamp(24px,7.5vw,38px)}
+  .hero{min-height:auto;padding:0 0 8vh}
+  .hero-bg{position:relative;inset:auto;align-self:stretch;width:100%;aspect-ratio:16/9;flex:0 0 auto;background-size:cover;background-position:center}
+  .hero-bg::after{background:linear-gradient(180deg,transparent 0%,transparent 65%,rgba(6,6,12,.6) 88%,var(--bg) 100%)}
+  .hero-content{padding:0 20px;margin-top:7vh;flex:1}
+  .hero-eyebrow{margin-bottom:18px;font-size:10px;gap:10px}
+  .hero-eyebrow::before,.hero-eyebrow::after{width:18px}
+  .hero-title{font-size:clamp(26px,8vw,40px);margin-bottom:14px}
   .hero-sub{font-size:11px;letter-spacing:.24em}
-  .path-cards{flex-direction:column;align-items:center;padding-top:5vh}
-  .path-card{width:100%;max-width:340px}
-  .stats-bar{gap:24px;flex-wrap:wrap}
+  .path-cards{flex-direction:column;align-items:center;padding-top:7vh;margin-top:0}
+  .path-card{width:100%;max-width:360px}
+  .stats-bar{gap:24px;flex-wrap:wrap;padding:32px 20px}
   .stats-bar .stat-item{min-width:70px}
 }
 </style>
