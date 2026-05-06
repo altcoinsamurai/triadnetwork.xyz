@@ -213,49 +213,42 @@ a{color:inherit;text-decoration:none}
 .pulse-label{font-family:var(--display);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:-.005em}
 .pulse-sub{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:6px;letter-spacing:.05em}
 
-/* RECEIPTS / CASE STUDIES */
-.receipts-wrap{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
-.receipt-hero{position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--border);background:var(--bg-card);min-height:480px;display:grid;grid-template-columns:1.1fr 1fr;gap:0}
-.receipt-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--accent-glow),transparent 60%);pointer-events:none;z-index:1}
-.receipt-hero::after{content:'';position:absolute;top:0;left:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.6}
-.receipt-hero-media{position:relative;overflow:hidden;background:#000;min-height:480px}
-.receipt-hero-media video{width:100%;height:100%;object-fit:cover;display:block}
-.receipt-hero-media::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,var(--bg-card) 100%);pointer-events:none}
-.receipt-live-tag{position:absolute;top:20px;left:20px;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;background:rgba(6,6,12,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--accent-soft);border-radius:100px;font-family:var(--accent-font);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);z-index:2}
-.receipt-live-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:livePulse 2s ease-in-out infinite}
+/* RECEIPTS / CASE STUDIES — R3ACH-INSPIRED */
+.receipts-wrap{max-width:1200px;margin:0 auto;position:relative}
+.receipts-wrap::before{content:'';position:absolute;top:-20%;left:-10%;right:-10%;bottom:-10%;background:radial-gradient(ellipse at 30% 20%,rgba(1,189,165,.10),transparent 50%),radial-gradient(ellipse at 70% 60%,rgba(1,189,165,.06),transparent 55%);pointer-events:none;z-index:0;animation:slowDrift 18s ease-in-out infinite alternate}
+@keyframes slowDrift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-30px,20px) scale(1.05)}}
+.receipts-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative;z-index:1}
+.receipt-card{position:relative;background:var(--bg-card);border:1px solid var(--border);border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:18px;transition:all .5s cubic-bezier(.16,1,.3,1);overflow:hidden;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.receipt-card::before{content:'';position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:140%;height:140%;background:radial-gradient(circle at 50% 0%,rgba(1,189,165,.18),transparent 50%);opacity:.4;transition:opacity .6s,transform .8s cubic-bezier(.16,1,.3,1);pointer-events:none;z-index:0}
+.receipt-card:hover::before{opacity:1;transform:translateX(-50%) scale(1.1)}
+.receipt-card::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);transition:left .9s cubic-bezier(.16,1,.3,1);z-index:2}
+.receipt-card:hover::after{left:100%}
+.receipt-card:hover{transform:translateY(-6px);border-color:var(--accent-soft);box-shadow:0 20px 60px -20px rgba(1,189,165,.25),0 0 0 1px rgba(1,189,165,.08)}
+.receipt-card>*{position:relative;z-index:1}
+.receipt-card-head{display:flex;align-items:center;gap:14px}
+.receipt-card-logo{width:56px;height:56px;border-radius:14px;flex-shrink:0;object-fit:cover;border:1px solid var(--border-strong);background:var(--bg-soft);transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.receipt-card:hover .receipt-card-logo{transform:scale(1.05)}
+.receipt-card-meta{flex:1;min-width:0}
+.receipt-card-title{font-family:var(--display);font-size:18px;font-weight:600;text-transform:uppercase;letter-spacing:-.005em;line-height:1.05;margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.receipt-card-followers{font-family:var(--body);font-size:12px;color:var(--text-dim);display:flex;align-items:center;gap:6px}
+.receipt-card-followers svg{width:11px;height:11px;flex-shrink:0;fill:currentColor;opacity:.7}
+.receipt-card-followers strong{color:var(--text);font-weight:600}
+.receipt-pill{display:flex;align-items:center;gap:10px;padding:14px 18px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;transition:all .4s}
+.receipt-card:hover .receipt-pill{background:rgba(1,189,165,.06);border-color:var(--accent-soft)}
+.receipt-pill svg{width:18px;height:18px;stroke:var(--accent);flex-shrink:0;stroke-width:1.8}
+.receipt-pill-label{font-family:var(--display);font-size:15px;font-weight:600;letter-spacing:-.005em;color:var(--text)}
+.receipt-proof{position:relative;background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;aspect-ratio:1.05/1;display:flex;align-items:center;justify-content:center}
+.receipt-proof img,.receipt-proof video{width:100%;height:100%;object-fit:cover;display:block}
+.receipt-proof.dark{background:#000}
+.receipt-tag-overlay{position:absolute;top:14px;left:14px;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;background:rgba(6,6,12,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--accent-soft);border-radius:100px;font-family:var(--accent-font);font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);z-index:2}
+.receipt-tag-overlay::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:livePulse 2s ease-in-out infinite}
 @keyframes livePulse{0%,100%{opacity:1}50%{opacity:.4}}
-.receipt-hero-body{padding:48px 44px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
-.receipt-hero-head{display:flex;align-items:center;gap:16px;margin-bottom:28px}
-.receipt-hero-logo{width:64px;height:64px;border-radius:16px;flex-shrink:0;object-fit:cover;border:1px solid var(--border-strong);background:var(--bg-soft)}
-.receipt-hero-title{font-family:var(--display);font-size:36px;font-weight:600;text-transform:uppercase;letter-spacing:-.01em;line-height:1;margin-bottom:6px}
-.receipt-hero-tag{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.02em;line-height:1.5}
-.receipt-hero-tag span{color:var(--accent)}
-.receipt-hero-metric{font-family:var(--display);font-size:64px;font-weight:600;color:var(--accent);line-height:.95;margin-bottom:8px;background:linear-gradient(135deg,var(--accent),#00E8CC);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.receipt-hero-metric-label{font-family:var(--accent-font);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-dim);margin-bottom:32px}
-.receipt-hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.receipt-hero-stat{padding:14px 16px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:12px}
-.receipt-hero-stat-num{font-family:var(--display);font-size:20px;font-weight:600;color:var(--accent);line-height:1;margin-bottom:4px}
-.receipt-hero-stat-label{font-family:var(--accent-font);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);line-height:1.3}
-.receipts-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.receipt-card{position:relative;background:var(--bg-card);border:1px solid var(--border);border-radius:24px;overflow:hidden;transition:all .4s;display:flex;flex-direction:column}
-.receipt-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity .4s;z-index:3}
-.receipt-card:hover{border-color:var(--accent-soft);transform:translateY(-4px)}
-.receipt-card:hover::before{opacity:1}
-.receipt-card-media{position:relative;aspect-ratio:16/10;overflow:hidden;background:#000;border-bottom:1px solid var(--border)}
-.receipt-card-media video,.receipt-card-media img{width:100%;height:100%;object-fit:cover;display:block}
-.receipt-card-body{padding:24px 28px;display:flex;flex-direction:column;gap:14px;flex:1}
-.receipt-card-head{display:flex;align-items:center;gap:12px}
-.receipt-card-logo{width:36px;height:36px;border-radius:10px;flex-shrink:0;background:var(--bg-soft);border:1px solid var(--border);object-fit:cover}
-.receipt-card-title{font-family:var(--display);font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:-.005em;line-height:1.1}
-.receipt-card-sub{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:3px;letter-spacing:.02em}
-.receipt-card-metric{font-family:var(--display);font-size:28px;font-weight:600;color:var(--accent);line-height:1}
-.receipt-card-metric span{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.05em;display:block;margin-top:4px;font-weight:400}
-.receipt-soon{padding:40px 32px;display:flex;align-items:center;justify-content:center;text-align:center;min-height:300px;background:linear-gradient(180deg,rgba(1,189,165,.03),transparent);border:1px dashed var(--accent-soft);border-radius:24px}
+.receipt-soon{margin-top:20px;padding:48px 32px;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(180deg,rgba(1,189,165,.04),transparent);border:1px dashed var(--accent-soft);border-radius:24px;position:relative;z-index:1}
 .receipt-soon-eyebrow{font-family:var(--accent-font);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-.receipt-soon-title{font-family:var(--display);font-size:20px;font-weight:600;text-transform:uppercase;letter-spacing:-.005em;line-height:1.15;margin-bottom:12px}
+.receipt-soon-title{font-family:var(--display);font-size:22px;font-weight:600;text-transform:uppercase;letter-spacing:-.005em;line-height:1.15;margin-bottom:12px}
 .receipt-soon-title em{font-style:normal;color:var(--accent)}
-.receipt-soon-text{font-family:var(--mono);font-size:11px;color:var(--muted);max-width:300px;margin:0 auto;line-height:1.6}
-.receipts-cta{text-align:center;margin-top:40px;font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.05em}
+.receipt-soon-text{font-family:var(--mono);font-size:11px;color:var(--muted);max-width:380px;margin:0 auto;line-height:1.6}
+.receipts-cta{text-align:center;margin-top:40px;font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.05em;position:relative;z-index:1}
 .receipts-cta span{color:var(--accent)}
 
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:980px;margin:0 auto}
@@ -309,6 +302,7 @@ footer .footer-r a:hover{color:var(--text)}
   .cohort-grid{grid-template-columns:repeat(3,1fr)}
   .pulse-grid{grid-template-columns:repeat(2,1fr)}
   .tweet-grid{grid-template-columns:repeat(2,1fr)}
+  .receipts-row{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:780px){
   .pill-nav{padding:6px;gap:2px;left:16px;right:16px;transform:none;width:auto;justify-content:space-between}
@@ -340,18 +334,13 @@ footer .footer-r a:hover{color:var(--text)}
   .tweet-grid{grid-template-columns:1fr}
   .pulse-grid{grid-template-columns:1fr 1fr;gap:12px}
   .pulse-num{font-size:32px}
-  .receipt-hero{grid-template-columns:1fr;min-height:auto}
-  .receipt-hero-media{aspect-ratio:16/10;min-height:auto}
-  .receipt-hero-media::after{background:linear-gradient(180deg,transparent 70%,var(--bg-card) 100%)}
-  .receipt-hero-body{padding:32px 24px}
-  .receipt-hero-title{font-size:26px}
-  .receipt-hero-metric{font-size:44px}
-  .receipt-hero-stats{grid-template-columns:repeat(3,1fr);gap:8px}
-  .receipt-hero-stat{padding:10px 8px}
-  .receipt-hero-stat-num{font-size:15px}
   .receipts-row{grid-template-columns:1fr;gap:14px}
-  .receipt-card-body{padding:20px 22px}
-  .receipt-soon{padding:32px 24px;min-height:200px}
+  .receipt-card{padding:20px}
+  .receipt-card-title{font-size:16px}
+  .receipt-pill{padding:12px 14px}
+  .receipt-pill-label{font-size:13px}
+  .receipt-soon{padding:32px 24px}
+  .receipt-soon-title{font-size:18px}
   .team-grid{grid-template-columns:1fr}
   .apply-wrap{padding:36px 24px}
   .fg-row{grid-template-columns:1fr}
@@ -402,64 +391,62 @@ footer .footer-r a:hover{color:var(--text)}
 
   <div class="receipts-wrap">
 
-    <div class="receipt-hero reveal">
-      <div class="receipt-hero-media">
-        <span class="receipt-live-tag">Featured Campaign</span>
-        <video autoplay loop muted playsinline preload="metadata" poster="/assets/abu-dhabi-event.jpg">
-          <source src="/assets/farcana-gameplay.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="receipt-hero-body">
-        <div class="receipt-hero-head">
-          <img src="https://unavatar.io/x/FarcanaOfficial" class="receipt-hero-logo" alt="Farcana">
-          <div>
-            <div class="receipt-hero-title">Farcana</div>
-            <div class="receipt-hero-tag">Web3 PvP shooter · Backed by <span>Polygon · Animoca · Alienware · Dubai Gov</span></div>
-          </div>
-        </div>
-        <div class="receipt-hero-metric">122K+</div>
-        <div class="receipt-hero-metric-label">Top-Tweet Impressions · Tier-1 KOL Activation</div>
-        <div class="receipt-hero-stats">
-          <div class="receipt-hero-stat"><div class="receipt-hero-stat-num">$10M</div><div class="receipt-hero-stat-label">Total Raised</div></div>
-          <div class="receipt-hero-stat"><div class="receipt-hero-stat-num">165K+</div><div class="receipt-hero-stat-label">Registered Players</div></div>
-          <div class="receipt-hero-stat"><div class="receipt-hero-stat-num">7+</div><div class="receipt-hero-stat-label">Tier-1 KOLs</div></div>
-        </div>
-      </div>
-    </div>
-
     <div class="receipts-row">
 
+      <!-- CARD 1: ABU DHABI EVENT (VIDEO) -->
       <div class="receipt-card reveal">
-        <div class="receipt-card-media">
-          <img src="/assets/kapo-tweet.png" alt="Kapo Capital tweet · 122K views">
-        </div>
-        <div class="receipt-card-body">
-          <div class="receipt-card-head">
-            <img src="https://unavatar.io/x/KAPOTHEGOAT01" class="receipt-card-logo" alt="Kapo">
-            <div>
-              <div class="receipt-card-title">Kapo Capital · @KAPOTHEGOAT01</div>
-              <div class="receipt-card-sub">$10M funding announcement · Tier-1 coverage</div>
-            </div>
+        <div class="receipt-card-head">
+          <img src="https://unavatar.io/x/FarcanaOfficial" class="receipt-card-logo" alt="Farcana">
+          <div class="receipt-card-meta">
+            <div class="receipt-card-title">Farcana</div>
+            <div class="receipt-card-followers"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><strong>165K+</strong> Registered Players</div>
           </div>
-          <div class="receipt-card-metric">122K<span>views · 17 RTs · 111 likes</span></div>
+        </div>
+        <div class="receipt-pill">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M17 2H7a2 2 0 0 0-2 2v16l7-3.5L19 20V4a2 2 0 0 0-2-2z"/></svg>
+          <div class="receipt-pill-label">Abu Dhabi University · IRL Activation</div>
+        </div>
+        <div class="receipt-proof dark">
+          <span class="receipt-tag-overlay">Featured</span>
+          <video autoplay loop muted playsinline preload="metadata" poster="/assets/abu-dhabi-event.jpg">
+            <source src="/assets/farcana-gameplay.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
 
+      <!-- CARD 2: KAPO TWEET (122K) -->
       <div class="receipt-card reveal">
-        <div class="receipt-card-media">
-          <video autoplay loop muted playsinline preload="metadata" poster="/assets/khamzat-tweet.png">
-            <source src="/assets/farcana-screen.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="receipt-card-body">
-          <div class="receipt-card-head">
-            <img src="https://unavatar.io/x/KChimaev" class="receipt-card-logo" alt="Khamzat">
-            <div>
-              <div class="receipt-card-title">Khamzat Chimaev · UFC Title Holder</div>
-              <div class="receipt-card-sub">Cross-vertical sports × gaming activation</div>
-            </div>
+        <div class="receipt-card-head">
+          <img src="https://unavatar.io/x/FarcanaOfficial" class="receipt-card-logo" alt="Farcana">
+          <div class="receipt-card-meta">
+            <div class="receipt-card-title">Farcana</div>
+            <div class="receipt-card-followers"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><strong>165K+</strong> Registered Players</div>
           </div>
-          <div class="receipt-card-metric">UFC 279<span>Embedded gameplay reveal</span></div>
+        </div>
+        <div class="receipt-pill">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          <div class="receipt-pill-label">122K+ Impressions</div>
+        </div>
+        <div class="receipt-proof">
+          <img src="/assets/kapo-tweet.png" alt="Kapo Capital · 122K view tweet">
+        </div>
+      </div>
+
+      <!-- CARD 3: KHAMZAT × UFC -->
+      <div class="receipt-card reveal">
+        <div class="receipt-card-head">
+          <img src="https://unavatar.io/x/FarcanaOfficial" class="receipt-card-logo" alt="Farcana">
+          <div class="receipt-card-meta">
+            <div class="receipt-card-title">Farcana</div>
+            <div class="receipt-card-followers"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><strong>165K+</strong> Registered Players</div>
+          </div>
+        </div>
+        <div class="receipt-pill">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+          <div class="receipt-pill-label">UFC 279 · Khamzat Chimaev</div>
+        </div>
+        <div class="receipt-proof">
+          <img src="/assets/khamzat-tweet.png" alt="Khamzat Chimaev · UFC champion gameplay reveal">
         </div>
       </div>
 
@@ -468,7 +455,7 @@ footer .footer-r a:hover{color:var(--text)}
     <div class="receipt-soon reveal">
       <div>
         <div class="receipt-soon-eyebrow">Next Up</div>
-        <div class="receipt-soon-title">Three more receipts<br><em>dropping soon.</em></div>
+        <div class="receipt-soon-title">Three more receipts <em>dropping soon.</em></div>
         <div class="receipt-soon-text">We don't post case studies until the campaign is finished and the numbers are clean. Loading: Nerochain, MAIV, and one more.</div>
       </div>
     </div>
