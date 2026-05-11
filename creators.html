@@ -11,16 +11,16 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@triadnx">
+<meta name="twitter:site" content="@triadxyz">
 <meta name="twitter:image" content="https://triadnetwork.xyz/og-image.png">
-<meta property="og:title" content="Triad Creators — The Creator Engine for AI × Crypto">
-<meta property="og:description" content="An accelerator for the small-to-mid crypto creator. Brand built. Deals sourced. Earnings split 70/30. Free to apply.">
+<meta property="og:title" content="Triad Creators — By Application. Curated Roster.">
+<meta property="og:description" content="A curated roster for crypto's sharpest small-to-mid creators. Founding cohort capped at 100. Multi-section application. 45-minute partner interview required.">
 <meta property="og:url" content="https://triadnetwork.xyz/creators.html">
-<meta name="twitter:title" content="Triad Creators — The Creator Engine for AI × Crypto">
-<meta name="twitter:description" content="An accelerator for the small-to-mid crypto creator. Brand built. Deals sourced. Earnings split 70/30. Free to apply.">
-<meta name="description" content="An accelerator for the small-to-mid crypto creator. Brand built. Deals sourced. Earnings split 70/30. Free to apply.">
+<meta name="twitter:title" content="Triad Creators — By Application. Curated Roster.">
+<meta name="twitter:description" content="A curated roster for crypto's sharpest small-to-mid creators. By application. 45-minute partner interview required.">
+<meta name="description" content="Triad is a curated roster for crypto's sharpest small-to-mid creators. Founding cohort capped at 100 seats. By application. Distribution, on demand.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Triad Creators — The Creator Engine for AI × Crypto</title>
+<title>Triad Creators — By Application. Curated Roster.</title>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Michroma&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script async src="https://plausible.io/js/pa-sO608YaKMQ1Jb8JQKbrs2.js"></script>
 <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
@@ -261,7 +261,24 @@ a{color:inherit;text-decoration:none}
 .team-x{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;color:var(--muted);transition:color .3s}
 .team-x:hover{color:var(--accent)}
 
-.apply-wrap{max-width:640px;margin:0 auto;background:var(--bg-card);border:1px solid var(--border);border-radius:32px;padding:56px}
+.apply-wrap{max-width:780px;margin:0 auto;background:var(--bg-card);border:1px solid var(--border);border-radius:32px;padding:56px}
+.c-form{display:flex;flex-direction:column;gap:0}
+.form-section{padding:36px 0;border-bottom:1px solid var(--border)}
+.form-section:first-of-type{padding-top:0}
+.form-section:last-of-type{border-bottom:none}
+.form-section-head{display:flex;align-items:baseline;gap:18px;margin-bottom:8px}
+.form-section-num{font-family:var(--accent-font);font-size:10px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase;font-weight:500}
+.form-section-title{font-family:var(--display);font-size:20px;font-weight:600;text-transform:uppercase;letter-spacing:-.005em}
+.form-section-desc{font-family:var(--body);font-size:13px;color:var(--text-dim);margin-bottom:24px;line-height:1.55;max-width:560px}
+.fg-grid{display:flex;flex-direction:column;gap:18px}
+.fg-trio{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.fg-checks{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:6px}
+.fg-check{display:flex;align-items:center;gap:10px;padding:11px 14px;background:var(--bg-soft);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .25s;font-family:var(--body);font-size:13px;color:var(--text-dim)}
+.fg-check input[type=checkbox]{accent-color:var(--accent);width:14px;height:14px;cursor:pointer;flex-shrink:0}
+.fg-check:hover{border-color:var(--border-strong);color:var(--text)}
+.attestation{display:flex;flex-direction:column;gap:14px;padding:24px;background:var(--bg-soft);border:1px solid var(--accent-soft);border-radius:14px}
+.attest-row{display:flex;align-items:flex-start;gap:12px;font-family:var(--body);font-size:13px;color:var(--text-dim);line-height:1.55;cursor:pointer}
+.attest-row input[type=checkbox]{accent-color:var(--accent);width:16px;height:16px;margin-top:2px;flex-shrink:0;cursor:pointer}
 .c-form{display:flex;flex-direction:column;gap:22px}
 .fg{display:flex;flex-direction:column;gap:8px}
 .fg label{font-family:var(--accent-font);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500}
@@ -344,6 +361,10 @@ footer .footer-r a:hover{color:var(--text)}
   .team-grid{grid-template-columns:1fr}
   .apply-wrap{padding:36px 24px}
   .fg-row{grid-template-columns:1fr}
+  .fg-trio{grid-template-columns:1fr}
+  .fg-checks{grid-template-columns:1fr}
+  .form-section{padding:28px 0}
+  .form-section-head{gap:14px;flex-wrap:wrap}
   .contact-wrap{padding:48px 28px}
   footer{flex-direction:column;text-align:center;padding:40px 20px}
   .process-step{grid-template-columns:60px 1fr;gap:20px;padding:24px 0}
@@ -367,18 +388,18 @@ footer .footer-r a:hover{color:var(--text)}
   <a href="#calc" class="pill-link">Earnings</a>
   <a href="#process" class="pill-link">Journey</a>
   <a href="/dashboard.html" class="pill-link">Dashboard</a>
-  <a href="#apply" class="pill-cta">Apply Now</a>
+  <a href="#apply" class="pill-cta">Apply</a>
 </nav>
 
 <section class="hero-c">
-  <div class="hero-eyebrow">For Creators</div>
+  <div class="hero-eyebrow">By Application · Cohort 02</div>
   <h1>Built for the underdog.<br>Engineered for the <em>rise.</em></h1>
-  <p class="hero-sub">An accelerator for the small-to-mid crypto creator. We build your brand, source your deals, and split the upside 70/30. Free to apply.</p>
+  <p class="hero-sub">A curated roster for crypto's sharpest small-to-mid creators. Founding cohort capped at 100 seats. By application. 45-minute partner interview required for acceptance.</p>
   <div class="cta-pills">
-    <a href="#apply" class="btn-primary">Apply to the Network &rarr;</a>
-    <a href="/dashboard.html" class="btn-secondary">Open Dashboard</a>
+    <a href="#apply" class="btn-primary">Apply for Consideration &rarr;</a>
+    <a href="#receipts" class="btn-secondary">See the Work</a>
   </div>
-  <div class="hero-badge">The Triad Creator Engine</div>
+  <div class="hero-badge">Reviewing applications · Cohort 02</div>
 </section>
 
 <!-- RECEIPTS — TOP OF PAGE -->
@@ -527,23 +548,23 @@ footer .footer-r a:hover{color:var(--text)}
 <section class="section" id="cohort">
   <div class="section-head reveal">
     <div class="section-eyebrow">The Network</div>
-    <h2>First cohort. <em>Open slots.</em></h2>
-    <p>We're onboarding the founding 100 creators right now. Each accepted creator gets full brand buildout, paid campaign access, and a permanent profile in the Triad directory.</p>
+    <h2>Founding cohort. <em>Capped at 100.</em></h2>
+    <p>One cohort. One hundred seats. Reviewed and onboarded by partners. The directory below is the door — every accepted creator earns a permanent line in Triad's record.</p>
   </div>
   <div class="cohort-grid reveal">
-    <div class="cohort-card filled"><div class="cohort-slot">●</div><div class="cohort-handle">@triadnx</div><div class="cohort-meta live">Live</div></div>
-    <div class="cohort-card filled"><div class="cohort-slot">●</div><div class="cohort-handle">First Seat</div><div class="cohort-meta live">Onboarded</div></div>
-    <div class="cohort-card"><div class="cohort-slot">03</div><div class="cohort-handle">Open Slot</div><div class="cohort-meta">Reviewing</div></div>
-    <div class="cohort-card"><div class="cohort-slot">04</div><div class="cohort-handle">Open Slot</div><div class="cohort-meta">Reviewing</div></div>
-    <div class="cohort-card"><div class="cohort-slot">05</div><div class="cohort-handle">Open Slot</div><div class="cohort-meta">Apply</div></div>
-    <div class="cohort-card"><div class="cohort-slot">06</div><div class="cohort-handle">Open Slot</div><div class="cohort-meta">Apply</div></div>
-    <div class="cohort-card"><div class="cohort-slot">07</div><div class="cohort-handle">Open Slot</div><div class="cohort-meta">Apply</div></div>
-    <div class="cohort-card"><div class="cohort-slot">+93</div><div class="cohort-handle">More</div><div class="cohort-meta">Cohort 1</div></div>
+    <div class="cohort-card filled"><div class="cohort-slot">●</div><div class="cohort-handle">Seat 01</div><div class="cohort-meta live">Onboarded</div></div>
+    <div class="cohort-card filled"><div class="cohort-slot">●</div><div class="cohort-handle">Seat 02</div><div class="cohort-meta live">Onboarded</div></div>
+    <div class="cohort-card filled"><div class="cohort-slot">●</div><div class="cohort-handle">Seat 03</div><div class="cohort-meta live">Onboarded</div></div>
+    <div class="cohort-card filled"><div class="cohort-slot">●</div><div class="cohort-handle">Seat 04</div><div class="cohort-meta live">Onboarded</div></div>
+    <div class="cohort-card"><div class="cohort-slot">—</div><div class="cohort-handle">Reviewing</div><div class="cohort-meta">In Committee</div></div>
+    <div class="cohort-card"><div class="cohort-slot">—</div><div class="cohort-handle">Reviewing</div><div class="cohort-meta">In Committee</div></div>
+    <div class="cohort-card"><div class="cohort-slot">—</div><div class="cohort-handle">Reviewing</div><div class="cohort-meta">In Committee</div></div>
+    <div class="cohort-card"><div class="cohort-slot">↓</div><div class="cohort-handle">Apply Below</div><div class="cohort-meta">Cohort 02 Open</div></div>
   </div>
   <div class="cohort-stats reveal">
-    <div class="cstat"><div class="cstat-num">100</div><div class="cstat-label">Cohort Size</div></div>
-    <div class="cstat"><div class="cstat-num">$100K</div><div class="cstat-label">Monthly Volume Target</div></div>
-    <div class="cstat"><div class="cstat-num">12</div><div class="cstat-label">Markets Served</div></div>
+    <div class="cstat"><div class="cstat-num">100</div><div class="cstat-label">Founding Cohort Cap</div></div>
+    <div class="cstat"><div class="cstat-num">10–14</div><div class="cstat-label">Day Review Window</div></div>
+    <div class="cstat"><div class="cstat-num">45</div><div class="cstat-label">Min Partner Interview</div></div>
     <div class="cstat"><div class="cstat-num">550+</div><div class="cstat-label">Project Pipeline</div></div>
   </div>
 </section>
@@ -695,16 +716,16 @@ footer .footer-r a:hover{color:var(--text)}
 
 <section class="section" id="process">
   <div class="section-head reveal">
-    <div class="section-eyebrow">The Journey</div>
-    <h2>Application to first cheque. <em>Under two weeks.</em></h2>
-    <p>No interviews disguised as gatekeeping. No vague "we'll be in touch." Five clean steps from form to first paid campaign.</p>
+    <div class="section-eyebrow">The Process</div>
+    <h2>From application to first campaign. <em>Five steps. No noise.</em></h2>
+    <p>Triad doesn't run a turnstile. Every step below is gated by partners. Most applications won't advance past Step 02 — that's by design.</p>
   </div>
   <div class="process-list">
-    <div class="process-step reveal"><div class="process-num">Step 01</div><div class="process-body"><h3>Apply</h3><p>Three-minute application. Tell us who you are, what you create, and why you're here. Every submission is read by a human, not a screener.</p><span class="meta">~ 3 min · Free · No commitments</span></div></div>
-    <div class="process-step reveal"><div class="process-num">Step 02</div><div class="process-body"><h3>Brand Buildout</h3><p>If accepted, our design team builds your full visual identity in 48 hours. You approve everything before it ships. Assets are yours to keep.</p><span class="meta">~ 48 hours · 100% free</span></div></div>
-    <div class="process-step reveal"><div class="process-num">Step 03</div><div class="process-body"><h3>Profile Goes Live</h3><p>You're listed in the Triad directory. Projects in our pipeline now see you, your stats, your niche, your rates. Discovery flips on.</p><span class="meta">~ Day 4 · You're public</span></div></div>
-    <div class="process-step reveal"><div class="process-num">Step 04</div><div class="process-body"><h3>Briefs Arrive</h3><p>Niche-matched campaign briefs hit your inbox. You decide what to take. We handle the contract, the brief refinement, the payout.</p><span class="meta">~ Day 7 · First brief</span></div></div>
-    <div class="process-step reveal"><div class="process-num">Step 05</div><div class="process-body"><h3>You Earn. We Compound.</h3><p>70% to you within 7 days of campaign delivery. Track everything in your dashboard. Each campaign sharpens your rate, your network, your leverage.</p><span class="meta">~ Day 14 · First payout</span></div></div>
+    <div class="process-step reveal"><div class="process-num">Step 01</div><div class="process-body"><h3>Application</h3><p>Seven-section application. Identity, craft, audience data, work samples, deal history, thesis, attestation. Read by partners — not screeners, not interns.</p><span class="meta">~ 25 minutes · 10–14 day review</span></div></div>
+    <div class="process-step reveal"><div class="process-num">Step 02</div><div class="process-body"><h3>Partner Interview</h3><p>Advanced applications get a 45-minute call with a Triad partner. We test your thesis, your pipeline taste, and the audience numbers you submitted. Most applicants do not advance.</p><span class="meta">~ 45 min · By invitation</span></div></div>
+    <div class="process-step reveal"><div class="process-num">Step 03</div><div class="process-body"><h3>Onboarding &amp; Brand Buildout</h3><p>Accepted creators sign a non-exclusive deal memo and receive full brand buildout in 48 hours. Custom PFP, banner, palette, bio, content templates. Assets are yours to keep regardless of cohort tenure.</p><span class="meta">~ 48 hours · For selected creators</span></div></div>
+    <div class="process-step reveal"><div class="process-num">Step 04</div><div class="process-body"><h3>Roster Listing &amp; Pipeline Access</h3><p>You're placed in the Triad directory. The 550+ project pipeline opens. Briefs are matched to your niche, audience composition, and rates. You decide what to take.</p><span class="meta">~ Day 5 · Listed publicly</span></div></div>
+    <div class="process-step reveal"><div class="process-num">Step 05</div><div class="process-body"><h3>First Campaign</h3><p>Typically within 30 days of onboarding. Contract, brief refinement, payout — all handled. 70% to you within 7 days of delivery. Triad earns 30% on every sourced campaign.</p><span class="meta">~ Within 30 days · 70/30 split</span></div></div>
   </div>
 </section>
 
@@ -782,7 +803,7 @@ footer .footer-r a:hover{color:var(--text)}
   <div class="tweet-grid">
     <div class="tweet-card reveal"><div class="tweet-head"><img src="https://unavatar.io/x/psycryptonaut" class="tweet-pfp" alt=""><div><div class="tweet-name">Braja Nandan</div><div class="tweet-handle">@psycryptonaut</div></div></div><div class="tweet-text">Legit chads behind this, might just fix the broken KOL landscape! Well timed!</div><div class="tweet-meta"><span>256 views</span><span>3 likes</span></div></div>
     <div class="tweet-card reveal"><div class="tweet-head"><img src="https://unavatar.io/x/Nerochain_Au" class="tweet-pfp" alt=""><div><div class="tweet-name">Nerochain AU</div><div class="tweet-handle">@Nerochain_Au</div></div></div><div class="tweet-text">Most campaigns optimize for impressions, but the system was never designed to convert activity into sustainable economic flow.</div><div class="tweet-meta"><span>355 views</span><span>2 likes</span></div></div>
-    <div class="tweet-card reveal"><div class="tweet-head"><img src="https://unavatar.io/x/triadnx" class="tweet-pfp" alt=""><div><div class="tweet-name">Triad Network</div><div class="tweet-handle">@triadnx</div></div></div><div class="tweet-text">$100K/month flowing to small creators. Not a thesis — an infrastructure mandate. The first cohort is live.</div><div class="tweet-meta"><span>2.4K views</span><span>12 likes</span></div></div>
+    <div class="tweet-card reveal"><div class="tweet-head"><img src="https://unavatar.io/x/triadxyz" class="tweet-pfp" alt=""><div><div class="tweet-name">Triad Network</div><div class="tweet-handle">@triadxyz</div></div></div><div class="tweet-text">$100K/month flowing to small creators. Not a thesis — an infrastructure mandate. The first cohort is live.</div><div class="tweet-meta"><span>2.4K views</span><span>12 likes</span></div></div>
   </div>
 </section>
 
@@ -806,27 +827,168 @@ footer .footer-r a:hover{color:var(--text)}
 
 <section class="section" id="apply">
   <div class="section-head reveal">
-    <div class="section-eyebrow">Apply</div>
-    <h2>Free. Reviewed in <em>48 hours.</em></h2>
-    <p>Three minutes. No fees. No commitments. Every application is read by a human on our team.</p>
+    <div class="section-eyebrow">Application · Cohort 02</div>
+    <h2>Triad doesn't open the door <em>for everyone.</em></h2>
+    <p>Founding cohort capped at 100 seats. Seven sections. ~25 minutes. Reviewed by partners within 10–14 days. Advanced applicants sit a 45-minute interview before acceptance.</p>
   </div>
   <div class="apply-wrap reveal">
     <form class="c-form" action="https://formspree.io/f/xvzvlqzr" method="POST">
-      <div class="fg-row">
-        <div class="fg"><label>Your name</label><input type="text" name="name" placeholder="First or full" required></div>
-        <div class="fg"><label>X handle</label><input type="text" name="handle" placeholder="@yourhandle" required></div>
+
+      <div class="form-section">
+        <div class="form-section-head">
+          <div class="form-section-num">01 / 07</div>
+          <div class="form-section-title">Identity</div>
+        </div>
+        <div class="fg-grid">
+          <div class="fg-row">
+            <div class="fg"><label>Legal name</label><input type="text" name="01_legal_name" placeholder="Full legal name" required></div>
+            <div class="fg"><label>Display name</label><input type="text" name="02_display_name" placeholder="Pseudonym or public name" required></div>
+          </div>
+          <div class="fg-row">
+            <div class="fg"><label>Email</label><input type="email" name="03_email" placeholder="you@example.com" required></div>
+            <div class="fg"><label>Location · time zone</label><input type="text" name="04_location" placeholder="London · GMT+0" required></div>
+          </div>
+        </div>
       </div>
-      <div class="fg"><label>Email</label><input type="email" name="email" placeholder="you@example.com" required></div>
-      <div class="fg-row">
-        <div class="fg"><label>Follower count</label><input type="text" name="followers" placeholder="3,000" required></div>
-        <div class="fg"><label>Primary niche</label><select name="niche" required><option value="">Select…</option><option>AI × Crypto</option><option>DeFi</option><option>Layer 1s &amp; L2s</option><option>NFTs &amp; Gaming</option><option>Trading &amp; Alpha</option><option>General Crypto</option><option>Other</option></select></div>
+
+      <div class="form-section">
+        <div class="form-section-head">
+          <div class="form-section-num">02 / 07</div>
+          <div class="form-section-title">Channels</div>
+        </div>
+        <p class="form-section-desc">Where you publish. X and Telegram are required; list everything else you ship to.</p>
+        <div class="fg-grid">
+          <div class="fg-row">
+            <div class="fg"><label>X handle</label><input type="text" name="05_x_handle" placeholder="@yourhandle" required></div>
+            <div class="fg"><label>Telegram handle</label><input type="text" name="06_telegram" placeholder="@yourtelegram" required></div>
+          </div>
+          <div class="fg">
+            <label>Other platforms you ship to</label>
+            <div class="fg-checks">
+              <label class="fg-check"><input type="checkbox" name="07_platforms" value="Farcaster"><span>Farcaster</span></label>
+              <label class="fg-check"><input type="checkbox" name="07_platforms" value="YouTube"><span>YouTube</span></label>
+              <label class="fg-check"><input type="checkbox" name="07_platforms" value="Substack/Beehiiv"><span>Substack · Beehiiv</span></label>
+              <label class="fg-check"><input type="checkbox" name="07_platforms" value="Podcast"><span>Podcast</span></label>
+              <label class="fg-check"><input type="checkbox" name="07_platforms" value="TikTok"><span>TikTok</span></label>
+              <label class="fg-check"><input type="checkbox" name="07_platforms" value="Instagram"><span>Instagram</span></label>
+              <label class="fg-check"><input type="checkbox" name="07_platforms" value="Spaces"><span>X Spaces</span></label>
+              <label class="fg-check"><input type="checkbox" name="07_platforms" value="Other"><span>Other</span></label>
+            </div>
+          </div>
+          <div class="fg"><label>Handles / URLs for each</label><textarea name="08_other_handles" placeholder="One per line. e.g.&#10;youtube.com/@yourchannel&#10;warpcast.com/yourhandle&#10;yoursubstack.substack.com"></textarea></div>
+        </div>
       </div>
-      <div class="fg"><label>Why Triad?</label><textarea name="why" placeholder="What you're building and why you'd be a good fit. Authenticity over polish." required></textarea></div>
-      <div class="fg"><label>Best content you've made</label><input type="text" name="best_content" placeholder="Link to your best thread, video, or article" required></div>
-      <div class="fg"><label>Telegram handle (optional)</label><input type="text" name="telegram" placeholder="@yourtelegram"></div>
+
+      <div class="form-section">
+        <div class="form-section-head">
+          <div class="form-section-num">03 / 07</div>
+          <div class="form-section-title">Craft</div>
+        </div>
+        <p class="form-section-desc">What you make, how often, and from what depth of experience.</p>
+        <div class="fg-grid">
+          <div class="fg-row">
+            <div class="fg"><label>Primary niche</label><select name="09_primary_niche" required><option value="">Select…</option><option>AI × Crypto</option><option>DeFi mechanics</option><option>L1s &amp; L2s</option><option>NFTs &amp; gaming</option><option>Trading &amp; alpha</option><option>On-chain forensics</option><option>Macro &amp; markets</option><option>Builder / dev</option><option>General crypto</option><option>Other</option></select></div>
+            <div class="fg"><label>Secondary niche</label><select name="10_secondary_niche"><option value="">Optional</option><option>AI × Crypto</option><option>DeFi mechanics</option><option>L1s &amp; L2s</option><option>NFTs &amp; gaming</option><option>Trading &amp; alpha</option><option>On-chain forensics</option><option>Macro &amp; markets</option><option>Builder / dev</option><option>General crypto</option><option>None</option></select></div>
+          </div>
+          <div class="fg">
+            <label>Formats you ship regularly</label>
+            <div class="fg-checks">
+              <label class="fg-check"><input type="checkbox" name="11_formats" value="Long-form threads"><span>Long-form threads</span></label>
+              <label class="fg-check"><input type="checkbox" name="11_formats" value="Breaking news"><span>Breaking news</span></label>
+              <label class="fg-check"><input type="checkbox" name="11_formats" value="Spaces/podcasts"><span>Spaces · podcasts</span></label>
+              <label class="fg-check"><input type="checkbox" name="11_formats" value="Video essays"><span>Video essays</span></label>
+              <label class="fg-check"><input type="checkbox" name="11_formats" value="Livestream"><span>Livestream</span></label>
+              <label class="fg-check"><input type="checkbox" name="11_formats" value="Newsletters"><span>Newsletters</span></label>
+              <label class="fg-check"><input type="checkbox" name="11_formats" value="Memes"><span>Memes · shitposting</span></label>
+              <label class="fg-check"><input type="checkbox" name="11_formats" value="Other"><span>Other</span></label>
+            </div>
+          </div>
+          <div class="fg-trio">
+            <div class="fg"><label>Posting cadence</label><select name="12_cadence" required><option value="">Select…</option><option>Multiple per day</option><option>Daily</option><option>5× per week</option><option>3× per week</option><option>1–2× per week</option><option>Occasional</option></select></div>
+            <div class="fg"><label>Years in crypto</label><input type="number" name="13_years_crypto" placeholder="e.g. 4" min="0" required></div>
+            <div class="fg"><label>Years creating</label><input type="number" name="14_years_creating" placeholder="e.g. 2" min="0" required></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-head">
+          <div class="form-section-num">04 / 07</div>
+          <div class="form-section-title">Audience</div>
+        </div>
+        <p class="form-section-desc">Numbers we verify. Best-effort estimates where exact figures aren't trackable.</p>
+        <div class="fg-grid">
+          <div class="fg-trio">
+            <div class="fg"><label>X followers</label><input type="number" name="15_followers" placeholder="e.g. 4800" required></div>
+            <div class="fg"><label>Avg impressions / post · 30d</label><input type="number" name="16_impressions" placeholder="e.g. 12000" required></div>
+            <div class="fg"><label>Engagement rate · %</label><input type="number" name="17_engagement_rate" placeholder="e.g. 3.2" step="0.1" required></div>
+          </div>
+          <div class="fg"><label>Audience composition — best estimate</label><textarea name="18_audience" placeholder="Rough % breakdown. e.g.&#10;40% founders / builders&#10;30% traders / degens&#10;20% retail&#10;10% institutional / VC" required></textarea></div>
+          <div class="fg"><label>Top 3 audience geographies</label><input type="text" name="19_geographies" placeholder="e.g. US, UK, SEA" required></div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-head">
+          <div class="form-section-num">05 / 07</div>
+          <div class="form-section-title">Work Samples</div>
+        </div>
+        <p class="form-section-desc">Your strongest output. We read every link.</p>
+        <div class="fg-grid">
+          <div class="fg"><label>Best thread you've shipped</label><input type="url" name="20_best_thread" placeholder="https://x.com/…" required></div>
+          <div class="fg"><label>Best long-form piece</label><input type="url" name="21_best_longform" placeholder="https://… (substack, mirror, article)"></div>
+          <div class="fg"><label>Best video or podcast clip</label><input type="url" name="22_best_video" placeholder="https://… (YouTube, podcast, X video)"></div>
+          <div class="fg"><label>Best paid / sponsored post you've delivered</label><input type="url" name="23_best_paid" placeholder="https://… (any past sponsored work)"></div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-head">
+          <div class="form-section-num">06 / 07</div>
+          <div class="form-section-title">Deal History</div>
+        </div>
+        <p class="form-section-desc">Receipts. If you've been paid before, we want the shape of it.</p>
+        <div class="fg-grid">
+          <div class="fg-row">
+            <div class="fg"><label>Paid brand deals — last 12 months</label><input type="number" name="24_deals_12m" placeholder="e.g. 6" min="0" required></div>
+            <div class="fg"><label>Typical fee range per campaign</label><select name="25_fee_range" required><option value="">Select…</option><option>None yet</option><option>Under $500</option><option>$500 – $2K</option><option>$2K – $5K</option><option>$5K – $15K</option><option>$15K+</option></select></div>
+          </div>
+          <div class="fg"><label>Current rate card</label><input type="url" name="26_rate_card" placeholder="https://… (link to your rates, optional)"></div>
+          <div class="fg"><label>Two references — past sponsors, projects, or collaborators</label><textarea name="27_references" placeholder="Name + contact OR a public post URL where the work shipped. Two references required." required></textarea></div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-head">
+          <div class="form-section-num">07 / 07</div>
+          <div class="form-section-title">Thesis &amp; Fit</div>
+        </div>
+        <p class="form-section-desc">The longest section. Where the application earns or loses its slot. Write like you mean it.</p>
+        <div class="fg-grid">
+          <div class="fg"><label>What's your point of view in this market?</label><textarea name="28_thesis" placeholder="200–400 words. The ideas you're known for. The takes you'd defend in a room of strangers. Specific, not generic." rows="7" required></textarea></div>
+          <div class="fg"><label>Three creators in your lane you respect, and why</label><textarea name="29_peers" placeholder="Handle + one line on each. Tells us where you sit and who you read." required></textarea></div>
+          <div class="fg"><label>Why Triad — specifically</label><textarea name="30_why_triad" placeholder="Max 300 words. What you've seen of our work, what you'd plug into, what you'd contribute." rows="5" required></textarea></div>
+          <div class="fg"><label>Categories you will not promote</label><textarea name="31_nogos" placeholder="Be specific. Memecoins, RWAs, gambling, anon teams, etc. This protects us both." required></textarea></div>
+          <div class="fg"><label>What does success look like 12 months from now</label><textarea name="32_success" placeholder="Audience, revenue, positioning. Specifics over slogans." required></textarea></div>
+          <div class="fg"><label>How did you hear about Triad</label><select name="33_source" required><option value="">Select…</option><option>X / Twitter</option><option>Telegram</option><option>Referral from creator</option><option>Referral from project</option><option>Conference / event</option><option>Search</option><option>Other</option></select></div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-head">
+          <div class="form-section-num">Final</div>
+          <div class="form-section-title">Attestation</div>
+        </div>
+        <div class="attestation">
+          <label class="attest-row"><input type="checkbox" name="34_attest_accuracy" required><span>I confirm the numbers, links, and references above are accurate and verifiable.</span></label>
+          <label class="attest-row"><input type="checkbox" name="35_attest_interview" required><span>I understand acceptance requires a 45-minute partner interview, and that submission alone is not a guarantee of acceptance.</span></label>
+          <label class="attest-row"><input type="checkbox" name="36_attest_review" required><span>I understand applications are reviewed in 10–14 days by Triad partners. Reapplications are accepted one quarter after a rejection.</span></label>
+        </div>
+      </div>
+
       <button type="submit" class="submit-btn">Submit Application →</button>
     </form>
-    <p class="form-note">Reviewed within 48 hours · Free · No commitments</p>
+    <p class="form-note">Reviewed by partners in 10–14 days · 45-minute interview required for selected applicants · Founding cohort capped at 100 seats</p>
   </div>
 </section>
 
@@ -838,22 +1000,25 @@ footer .footer-r a:hover{color:var(--text)}
     <h2>Common <em>questions.</em></h2>
   </div>
   <div class="faq-list">
-    <details class="faq-item reveal"><summary>Is it really free?</summary><p>Yes. We make money when you make money — 30% of the campaigns we source. If you don't earn, we don't earn. No retainers, no signup fees, no hidden charges.</p></details>
-    <details class="faq-item reveal"><summary>I only have 300 followers. Can I apply?</summary><p>Absolutely. We care about content quality, niche depth, and consistency — not vanity counts. Half our pipeline is built specifically for the creators agencies refuse to talk to.</p></details>
-    <details class="faq-item reveal"><summary>Do I have to take every campaign?</summary><p>No. You choose what to promote. We'll never pressure you to shill something you don't believe in — protecting your audience is how we both win long-term.</p></details>
-    <details class="faq-item reveal"><summary>What does the brand buildout include?</summary><p>Custom PFP, X banner, optimised bio with CTA, content templates, and a complete colour palette. Multi-platform adaptation included. All assets are yours to keep, even if you leave the network.</p></details>
-    <details class="faq-item reveal"><summary>How do payouts work?</summary><p>A project funds the campaign. You deliver the content. We verify, then send your 70% to your preferred wallet or bank within 7 days. Triad keeps 30% for sourcing, contracts, and account management.</p></details>
-    <details class="faq-item reveal"><summary>Can I leave the network anytime?</summary><p>Yes. No contracts, no lock-in periods, no exit fees. You keep every brand asset we built for you. The directory listing simply comes down.</p></details>
-    <details class="faq-item reveal"><summary>What's the cohort size?</summary><p>We're capping the founding cohort at 100 creators. After that, applications continue but the bar rises — we'd rather under-recruit than over-promise.</p></details>
-    <details class="faq-item reveal"><summary>Do you take equity in my brand?</summary><p>Never. Your audience, your brand, your IP — all yours. We only take a campaign-level revenue split. Nothing else.</p></details>
+    <details class="faq-item reveal"><summary>How selective is the cohort?</summary><p>Founding cohort is capped at 100 creators. Applications go through a 10–14 day partner review, and advanced applicants sit a 45-minute interview before acceptance. We'd rather under-recruit than over-promise. Most submissions don't advance — that's by design.</p></details>
+    <details class="faq-item reveal"><summary>What does the cost structure look like?</summary><p>Nothing upfront. Triad earns 30% on every campaign we source, paid out from gross campaign revenue. You keep 70%, paid within 7 days of delivery. No retainers, no signup fees, no equity. We earn when you earn — and we are deeply selective about who we earn with.</p></details>
+    <details class="faq-item reveal"><summary>Is there a follower minimum?</summary><p>No. The bar is thesis, taste, and consistency — not vanity counts. We will take a 1.2K-follower writer with a sharp point of view over a 50K account that posts memes for a living. The application is built to surface signal, not size.</p></details>
+    <details class="faq-item reveal"><summary>What happens if my application is rejected?</summary><p>You'll receive a response within 14 days with a short, specific reason. Reapplications are welcome one quarter after a rejection — we'd rather see you grow into the bar than try to talk our way around it.</p></details>
+    <details class="faq-item reveal"><summary>Do I have to take every campaign you send?</summary><p>No. You choose what to promote. We'll never pressure you to shill something off-thesis or off-brand. The no-go list you submit at application is treated as a hard filter — protecting your audience is how we both win long-term.</p></details>
+    <details class="faq-item reveal"><summary>What does brand buildout include?</summary><p>For accepted creators only: custom PFP, X banner, optimised bio with conversion CTA, content templates, complete colour palette, multi-platform adaptation. Delivered in 48 hours after onboarding. All assets are yours to keep permanently, even if you leave the network.</p></details>
+    <details class="faq-item reveal"><summary>How do payouts work?</summary><p>A project funds the campaign. You deliver the content. We verify delivery, then send your 70% to your preferred wallet or bank within 7 days. Triad keeps 30% for sourcing, contracts, brief refinement, and account management. Statements available on your dashboard.</p></details>
+    <details class="faq-item reveal"><summary>Can I leave the network?</summary><p>Anytime. No contracts, no lock-in, no exit fees. You keep every brand asset we built for you. The directory listing simply comes down.</p></details>
+    <details class="faq-item reveal"><summary>Do you take equity in my brand?</summary><p>Never. Your audience, your IP, your name. Triad only takes a campaign-level revenue split on the work we source. Nothing else, ever.</p></details>
   </div>
 </section>
 
 <section class="section" style="padding-top:60px">
   <div class="contact-wrap reveal">
-    <h2>Still not <em>sure?</em></h2>
-    <p>Reach out directly on Telegram. Get all your questions answered before committing to anything. No pressure, no pitch — just a conversation.</p>
-    <a href="https://t.me/AltcoinSamurai" class="btn-tg" target="_blank">Message on Telegram →</a>
+    <div class="section-eyebrow" style="margin-bottom:20px">Cohort 02 · Reviewing</div>
+    <h2>The door is open. <em>Briefly.</em></h2>
+    <p>Triad reviews applications in 10–14 day windows. Cohort 02 closes when the founding 100 seats are filled — there is no waitlist past that, and Cohort 03 opens on a new cycle. Submit when you're ready; we'll read every line.</p>
+    <a href="#apply" class="btn-tg">Begin Your Application →</a>
+    <p style="margin-top:32px;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.05em">Brands · press · partner inquiries · <a href="mailto:altcoinsamurai@triadnetwork.xyz" style="color:var(--accent)">altcoinsamurai@triadnetwork.xyz</a></p>
   </div>
 </section>
 
