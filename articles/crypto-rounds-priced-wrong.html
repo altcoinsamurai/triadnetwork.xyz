@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Triad Network">
+<meta property="og:image" content="https://triadnetwork.xyz/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@triadxyz">
+<meta name="twitter:image" content="https://triadnetwork.xyz/og-image.png">
+<meta property="og:title" content="Why Most Crypto Rounds Get Priced Wrong — Triad Network">
+<meta property="og:description" content="An informational analysis of how publicly reported deal structures contributed to recent crypto project collapses. Movement Labs, Mantra, and what investors are really pricing.">
+<meta property="og:url" content="https://triadnetwork.xyz/articles/crypto-rounds-priced-wrong.html">
+<meta name="twitter:title" content="Why Most Crypto Rounds Get Priced Wrong">
+<meta name="twitter:description" content="An informational analysis of how publicly reported deal structures contributed to recent crypto project collapses.">
+<meta name="description" content="Informational analysis of recent publicly reported crypto fundraising and token-structure case studies — Movement Labs, Mantra, and the structural pricing failures behind 2025's biggest collapses.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Most Crypto Rounds Get Priced Wrong — Triad Network</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.article-img{width:100%;border-radius:12px;margin:32px 0;border:1px solid var(--border)}
+.article-caption{font-size:12px;color:var(--text3);text-align:center;margin-top:-20px;margin-bottom:32px;font-style:italic}
+.disclaimer{max-width:800px;margin:24px auto 48px;padding:20px 28px;background:var(--accentDim);border:1px solid var(--accent);border-left-width:3px;border-radius:8px;font-size:13px;color:var(--text2);line-height:1.65}
+.disclaimer strong{color:var(--text);text-transform:uppercase;letter-spacing:.08em;font-size:11px;display:block;margin-bottom:8px;font-weight:600}
+.pull-stat{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 32px;margin:40px 0;background:var(--console);color:#fff;border-radius:16px;text-align:center}
+.pull-stat-num{font-family:var(--display);font-size:clamp(48px,8vw,84px);font-weight:700;color:var(--accent2);line-height:1;letter-spacing:-.02em}
+.pull-stat-label{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-top:14px;color:rgba(255,255,255,.6)}
+.pull-stat-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:18px;max-width:520px;line-height:1.6}
+.viz-wrap{margin:40px 0;padding:32px;background:var(--bg2);border:1px solid var(--border);border-radius:16px}
+.viz-title{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:6px}
+.viz-head{font-family:var(--display);font-size:20px;font-weight:600;margin-bottom:20px;color:var(--text)}
+.viz-caption{font-size:12px;color:var(--text3);margin-top:14px;font-style:italic;line-height:1.5}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:32px 0}
+.case-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px 22px}
+.case-card-head{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-weight:600}
+.case-card-title{font-family:var(--display);font-size:18px;font-weight:700;margin-bottom:14px;color:var(--text)}
+.case-card-stat{font-family:var(--display);font-size:28px;font-weight:700;color:var(--text);line-height:1;margin-bottom:6px}
+.case-card-stat-sub{font-size:12px;color:var(--text3);margin-bottom:14px}
+.case-card p{font-size:13px;color:var(--text2);line-height:1.55;margin:0}
+.pull-quote{margin:40px 0;padding:24px 32px;border-left:3px solid var(--accent);background:var(--accentDim);border-radius:0 8px 8px 0;font-size:17px;line-height:1.55;color:var(--text);font-weight:500;font-style:italic}
+.pull-quote cite{display:block;margin-top:12px;font-size:12px;color:var(--text2);font-style:normal;letter-spacing:.05em}
+.pull-quote cite::before{content:"— "}
+.pattern-list{margin:32px 0;display:flex;flex-direction:column;gap:14px}
+.pattern-item{display:grid;grid-template-columns:48px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--border)}
+.pattern-item:last-child{border-bottom:none}
+.pattern-num{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.18em;font-weight:600;padding-top:4px}
+.pattern-body h4{font-family:var(--display);font-size:16px;font-weight:700;margin-bottom:6px;color:var(--text)}
+.pattern-body p{font-size:14px;color:var(--text2);line-height:1.65;margin:0}
+.triad-callout{margin:48px 0;padding:36px 32px;background:linear-gradient(180deg,var(--accentDim),transparent);border:1px solid var(--accent);border-radius:16px}
+.triad-callout .section-label{color:var(--accent);font-weight:700}
+.triad-callout h3{font-family:var(--display);font-size:22px;font-weight:700;margin:8px 0 14px;color:var(--text)}
+.triad-callout p{font-size:14.5px;line-height:1.7;color:var(--text2);margin-bottom:12px}
+.sources-list{font-size:13px;line-height:1.7;color:var(--text2)}
+.sources-list ol{padding-left:20px}
+.sources-list li{margin-bottom:10px}
+.sources-list a{color:var(--accent);text-decoration:none;word-break:break-all}
+.sources-list a:hover{text-decoration:underline}
+@media(max-width:780px){
+  .case-grid{grid-template-columns:1fr}
+  .pull-stat{padding:36px 20px}
+  .viz-wrap{padding:24px 18px}
+}
+</style>
+<script async src="https://plausible.io/js/pa-sO608YaKMQ1Jb8JQKbrs2.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <svg class="logo-mark" viewBox="0 0 36 36" fill="none"><circle cx="12" cy="18" r="10" stroke="#00BFA6" stroke-width="1" fill="none" opacity=".6"/><circle cx="24" cy="18" r="10" stroke="#00BFA6" stroke-width="1" fill="none" opacity=".4"/><circle cx="18" cy="10" r="10" stroke="#00BFA6" stroke-width="1" fill="none" opacity=".8"/></svg>
+    <span class="logo-text">Triad Network</span>
+    <span class="logo-div"></span>
+    <span class="logo-sub">Capital</span>
+  </a>
+  <div class="nav-links">
+    <a href="/ecosystem.html">Ecosystem</a>
+    <a href="/strategic-bd.html">Strategic BD</a>
+    <a href="/#capabilities">Capabilities</a>
+    <a href="/creators.html">Creators</a>
+    <a href="mailto:inquiries@triadnetwork.xyz" class="nav-cta">Inquire</a>
+  </div>
+  <button class="mobile-menu" style="display:none" onclick="document.querySelector('.nav-links').classList.toggle('show')"><span></span><span></span><span></span></button>
+</nav>
+
+<article>
+  <section class="page-hero" style="max-width:800px">
+    <a href="/" class="back-link">&larr; Back to Home</a>
+    <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+      <span class="tag" style="background:rgba(0,191,166,.1);color:#00BFA6;border-color:rgba(0,191,166,.2)">Research</span>
+      <span class="tag">Capital Markets</span>
+      <span class="tag">Token Structure</span>
+      <span class="tag">Due Diligence</span>
+    </div>
+    <h1>Why Most Crypto Rounds Get <em>Priced Wrong</em></h1>
+    <p style="font-size:18px;color:var(--text2);line-height:1.55;margin-top:18px;max-width:680px">An informational analysis of recent publicly reported case studies in crypto fundraising — and the structural pricing failures investors keep missing.</p>
+    <div style="display:flex;align-items:center;gap:16px;margin-top:24px;font-size:13px;color:var(--text3)">
+      <span>May 2026</span>
+      <span>&middot;</span>
+      <span>9 min read</span>
+      <span>&middot;</span>
+      <span>Triad Capital</span>
+    </div>
+  </section>
+
+  <div class="disclaimer">
+    <strong>Disclaimer · Informational Use Only</strong>
+    The following article is a research note discussing publicly reported events, allegations, and statements concerning the named projects. Every factual claim references reporting from established outlets including CoinDesk, Decrypt, Blockworks, BeInCrypto, and others, cited in full at the end of this article. Nothing herein constitutes financial, legal, or investment advice. Where allegations are described, they remain allegations as reported by source publications; this article expresses no independent finding of wrongdoing by any named individual or entity. Readers should consult primary sources and conduct their own due diligence before acting on any information.
+  </div>
+
+  <section class="content-section" style="max-width:800px">
+    <p style="font-size:17px;line-height:1.9;color:var(--text);font-weight:400">in 2025, more than 11.6 million crypto tokens went to zero. that's CoinGecko's number, not a manifesto headline — and it accounts for over 86% of all token failures recorded since 2021. compressed into a single year. some were memecoins that were always going to die. but a meaningful share of the carnage came from venture-backed, tier-one-VC-stamped, exchange-listed projects that raised serious capital at serious valuations and then unwound — sometimes within weeks of going live.</p>
+    <p>the easy explanation is "the market was bad." it wasn't. the s&amp;p hit highs. bitcoin held above $100K for most of the year. what was bad was the pricing of the rounds themselves — the gap between what allocators believed they were buying and what they actually were.</p>
+    <p>this piece walks through three of the more instructive 2025 failures: movement labs, mantra, and milkyway. each was funded by names you'd recognise. each crossed deal terms most allocators never see. and each got priced on a story that the structure couldn't support.</p>
+  </section>
+
+  <div class="pull-stat" style="max-width:800px;margin-left:auto;margin-right:auto">
+    <div class="pull-stat-num">$2.5B</div>
+    <div class="pull-stat-label">market cap evaporated</div>
+    <div class="pull-stat-sub">MOVE token, December 2024 launch to April 2025 collapse. Down 84% from all-time high after the publicly reported market-maker scandal broke.</div>
+  </div>
+
+  <section class="content-section" style="max-width:800px">
+    <div class="section-label">Case Study One</div>
+    <h2>Movement Labs: The $38M token dump that should have been priced in</h2>
+    <p>movement labs was, on paper, one of the cleanest 2025 setups in crypto. founded by two 22-year-old vanderbilt dropouts. raised $38 million pre-token. earned a spot in world liberty financial's portfolio. by january 2025, Reuters reported the team was wrapping a series B that would have valued the company at <strong>$3 billion</strong>. a move-VM ethereum L2 with the kind of distribution most projects only dream about.</p>
+    <p>the MOVE token launched on binance on december 9, 2024. within 24 hours, wallets later linked by Binance's internal investigation to a market maker had sold roughly 66 million tokens — about 5% of total supply — into the open market. the proceeds: approximately $38 million. binance froze the account for what it described as misconduct and alerted both movement labs and the movement foundation.</p>
+
+    <div class="viz-wrap">
+      <div class="viz-title">Reported price trajectory</div>
+      <div class="viz-head">MOVE token: $1.45 high → $0.16 low</div>
+      <svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+        <defs>
+          <linearGradient id="moveGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#00BFA6" stop-opacity=".35"/>
+            <stop offset="100%" stop-color="#00BFA6" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <!-- grid lines -->
+        <line x1="60" y1="40" x2="700" y2="40" stroke="#E5E5E5" stroke-width="1"/>
+        <line x1="60" y1="100" x2="700" y2="100" stroke="#E5E5E5" stroke-width="1"/>
+        <line x1="60" y1="160" x2="700" y2="160" stroke="#E5E5E5" stroke-width="1"/>
+        <line x1="60" y1="220" x2="700" y2="220" stroke="#E5E5E5" stroke-width="1"/>
+        <!-- y-axis labels -->
+        <text x="50" y="44" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="10" fill="#999">$1.50</text>
+        <text x="50" y="104" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="10" fill="#999">$1.00</text>
+        <text x="50" y="164" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="10" fill="#999">$0.50</text>
+        <text x="50" y="224" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="10" fill="#999">$0.00</text>
+        <!-- area fill -->
+        <path d="M 80 60 L 130 50 L 180 90 L 230 140 L 280 170 L 330 175 L 380 185 L 430 188 L 480 195 L 530 200 L 580 205 L 630 208 L 680 210 L 680 220 L 80 220 Z" fill="url(#moveGrad)"/>
+        <!-- price line -->
+        <path d="M 80 60 L 130 50 L 180 90 L 230 140 L 280 170 L 330 175 L 380 185 L 430 188 L 480 195 L 530 200 L 580 205 L 630 208 L 680 210" fill="none" stroke="#00BFA6" stroke-width="2.5"/>
+        <!-- key event markers -->
+        <circle cx="130" cy="50" r="5" fill="#00BFA6"/>
+        <line x1="130" y1="50" x2="130" y2="245" stroke="#00BFA6" stroke-dasharray="3,3" stroke-width="1" opacity=".4"/>
+        <text x="130" y="260" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#666">DEC 2024</text>
+        <text x="130" y="272" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#666" font-weight="600">LAUNCH · $1.45</text>
+        <circle cx="230" cy="140" r="5" fill="#E94B4B"/>
+        <line x1="230" y1="140" x2="230" y2="245" stroke="#E94B4B" stroke-dasharray="3,3" stroke-width="1" opacity=".5"/>
+        <text x="230" y="260" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#666">DEC 10</text>
+        <text x="230" y="272" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#E94B4B" font-weight="600">66M DUMP</text>
+        <circle cx="480" cy="195" r="5" fill="#E94B4B"/>
+        <line x1="480" y1="195" x2="480" y2="245" stroke="#E94B4B" stroke-dasharray="3,3" stroke-width="1" opacity=".5"/>
+        <text x="480" y="260" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#666">APR 30, 2025</text>
+        <text x="480" y="272" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#E94B4B" font-weight="600">SCANDAL PUBLIC</text>
+        <circle cx="630" cy="208" r="5" fill="#666"/>
+        <text x="630" y="260" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#666">MAY 2025</text>
+        <text x="630" y="272" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#666" font-weight="600">COINBASE DELIST</text>
+        <text x="680" y="206" font-family="JetBrains Mono, monospace" font-size="10" fill="#1A1A1A" font-weight="600">$0.16</text>
+      </svg>
+      <div class="viz-caption">Illustrative price trajectory based on public market data and timeline of events as reported by CoinDesk, Decrypt, and CryptoNinjas (April–May 2025). Not to scale.</div>
+    </div>
+
+    <p>according to a Decrypt summary of CoinDesk's reporting, the foundation believed it was contracting <strong>Web3Port</strong> — a chinese market maker — to provide liquidity for the launch. but internal documents reviewed by CoinDesk allegedly show that an entity called <strong>Rentech</strong> — a firm with no meaningful digital footprint at the time of contract signing — appeared on <em>both sides</em> of the agreement. once as Web3Port's representative, once as an agent of the movement foundation itself.</p>
+    <p>according to CoinDesk's reporting, the foundation's own general counsel (yk pek) flagged an early version of the rentech proposal as "possibly the worst agreement" they had ever reviewed. a revised version was nonetheless signed on december 8, 2025 — one day before the token launched. one provision allegedly allowed web3port to liquidate tokens if MOVE's valuation hit $5 billion, splitting profits with the foundation. an arrangement that legal commentators quoted in those reports characterised as creating clear pump-and-dump incentives.</p>
+
+    <div class="pull-quote">
+      "movement, a buzzy crypto startup supported by trump's world liberty financial, was rumored to be closing a $100M series B round. instead, following a CoinDesk investigation, the network is now at the center of an insider-dealing scandal that has exposed a seedy corner of crypto deal-making."
+      <cite>CoinDesk, The Protocol newsletter, April 30, 2025</cite>
+    </div>
+
+    <p>movement labs, for its part, has stated that it was misled, that the foundation believed rentech to be a legitimate web3port subsidiary, and that no insider sold tokens ahead of schedule. co-founder rushi manche was suspended on may 1, then terminated. co-founder cooper scanlon stepped down as CEO. coinbase delisted MOVE on may 15. the project rebranded as <em>move industries</em>. the MOVE token, which peaked at roughly $1.45 in december, traded at around $0.16 by may — an 84%+ drawdown that vapourised over $2 billion in market cap.</p>
+    <p>but here's what's instructive for anyone pricing a deal: this wasn't a market failure. it was a <strong>structure failure.</strong> the deal terms that destroyed the project were signed before the token ever traded. they were sitting in the foundation's legal files. and they were materially different from what most allocators in the round would have understood the cap table to be. <em>the round was priced on a story that the contracts didn't tell.</em></p>
+  </section>
+
+  <section class="content-section" style="max-width:800px">
+    <div class="section-label">Case Study Two</div>
+    <h2>Mantra: When fully diluted valuation is fiction</h2>
+    <p>if movement is the case study for opaque side agreements, <strong>mantra (OM)</strong> is the case study for fictional float. the april 2025 OM crash was, in one trading session, one of the most violent re-pricings of any major altcoin in recent memory. CryptoSlate, BlockEden, and others have all covered the aftermath in detail.</p>
+    <p>here's the part that matters for pricing rounds. allocators were valuing mantra against a fully diluted valuation that implied a particular distribution of token holders. according to multiple post-mortem analyses, critics on the ground alleged that the team or insiders may have controlled as much as 90% of the circulating supply at various points before the crash. BlockEden cited public on-chain data showing that <em>in the week before the crash, at least 17 wallets deposited 43.6 million OM (approximately $227 million) to exchanges</em> — two of those wallets allegedly linked, per Arkham data referenced in that reporting, to Laser Digital.</p>
+
+    <div class="pull-quote">
+      "co-founder john patrick mullin blamed reckless forced closures initiated by centralized exchanges. critics pointed to the concentration. OKX founder Star Xu called it a big scandal to the whole crypto industry."
+      <cite>BlockEden.xyz, 2025 Crypto Graveyard report</cite>
+    </div>
+
+    <p>mantra's founders publicly disputed the framing, attributing the crash to forced exchange liquidations. that may all be true. but the structural read-through doesn't depend on resolving the dispute. if a meaningful portion of "circulating" supply sits in addresses controlled by a small set of related parties, then <em>the fully diluted valuation an allocator priced against was always fictional.</em> the cap-table-on-screen didn't match the cap-table-in-practice.</p>
+    <p>this is the most common pricing failure in crypto, and the one that's hardest to catch from the outside. you can't diligence what isn't disclosed. and when even tier-one allocators are pricing rounds without the full distribution picture, the entire stack of downstream pricing — secondary OTC, retail listing, FDV-implied targets — sits on a foundation of incomplete information.</p>
+  </section>
+
+  <section class="content-section" style="max-width:800px">
+    <div class="section-label">Case Study Three</div>
+    <h2>MilkyWay: When unit economics aren't priced in</h2>
+    <p>not every collapse involves alleged misconduct. some are simpler. <strong>milkyway</strong> raised $5 million in seed funding led by polychain capital, with binance labs and crypto.com participating. by the time the $MILK token launched in april 2025, the protocol had accumulated more than $80 million in restaking total value locked and over 300,000 users — the kind of numbers that would justify a meaningful follow-on round.</p>
+    <p>according to The Merkle's reporting on its eventual shutdown, the team made a structural choice early: milkyway retained only <strong>10% of staking fees</strong>, leaving the protocol with a very small slice of the economic activity happening on its rails. when adoption plateaued and operational costs continued, the team concluded the project could not sustain itself.</p>
+
+    <div class="pull-quote">
+      "milkyway retained only 10 percent of staking fees, leaving the project with a very small slice of the economic activity happening on its platform. combined with delays in releasing new features, the protocol gradually lost momentum."
+      <cite>The Merkle News, March 2026</cite>
+    </div>
+
+    <p>this is the simplest kind of mispricing. the seed round was priced on a TVL ramp the unit economics couldn't support. there was no scandal, no insider sale, no exchange ban. just a fee structure that didn't capture enough of the value the protocol enabled. polychain, binance labs, crypto.com — three of the most sophisticated allocators in the space — and the structure still didn't price the runway against the take rate.</p>
+  </section>
+
+  <section class="content-section" style="max-width:800px">
+    <div class="section-label">The Pattern</div>
+    <h2>Three projects. One root cause.</h2>
+    <p>across these cases, a few different things broke. but one thing was consistent: every round got <em>priced on the narrative the founder told</em>, not on the structure the contracts actually described.</p>
+
+    <div class="case-grid">
+      <div class="case-card">
+        <div class="case-card-head">Movement Labs</div>
+        <div class="case-card-title">Opaque side deals</div>
+        <div class="case-card-stat">$3B → $496M</div>
+        <div class="case-card-stat-sub">rumoured valuation to post-scandal market cap</div>
+        <p>A market-making arrangement reportedly allowed ~5% of supply to be dumped within 24 hours of launch. According to CoinDesk's reporting, that structure was finalised the day before listing.</p>
+      </div>
+      <div class="case-card">
+        <div class="case-card-head">Mantra</div>
+        <div class="case-card-title">Concentrated supply</div>
+        <div class="case-card-stat">~$227M</div>
+        <div class="case-card-stat-sub">in OM allegedly moved to exchanges pre-crash</div>
+        <p>Allegations of insider concentration meant the FDV allocators had priced against was, according to critics, structurally disconnected from the actual distribution.</p>
+      </div>
+      <div class="case-card">
+        <div class="case-card-head">MilkyWay</div>
+        <div class="case-card-title">Broken take rate</div>
+        <div class="case-card-stat">10%</div>
+        <div class="case-card-stat-sub">of staking fees retained by the protocol</div>
+        <p>$80M TVL and 300K users at peak weren't enough to fund the team. The unit economics were never going to capitalise the round.</p>
+      </div>
+    </div>
+
+    <h2 style="margin-top:48px">Four structural mistakes investors keep paying for</h2>
+    <p>look across these three and a wider universe of recent post-mortems — slingshot, polynomial, nifty gateway, vega protocol — and a handful of repeat patterns surface. these aren't unknowable risks. they're known patterns that get overlooked when momentum is doing the diligence.</p>
+
+    <div class="pattern-list">
+      <div class="pattern-item">
+        <div class="pattern-num">01</div>
+        <div class="pattern-body">
+          <h4>Pricing FDV without distribution forensics</h4>
+          <p>An FDV is only as useful as the distribution underneath it. Without a full read on wallet concentration, vesting cliffs, and side-loaned supply to market makers or advisors, the valuation on the term sheet is a marketing number, not a market number. The mantra-style failure mode.</p>
+        </div>
+      </div>
+      <div class="pattern-item">
+        <div class="pattern-num">02</div>
+        <div class="pattern-body">
+          <h4>Trusting the foundation/lab separation as real</h4>
+          <p>Many crypto structures separate the operating company from the nominally independent foundation that holds the treasury and signs token-related deals. In practice, those entities often share directors, legal counsel, and economic interests — meaning the "independent" foundation is a governance fiction. The movement-style failure mode.</p>
+        </div>
+      </div>
+      <div class="pattern-item">
+        <div class="pattern-num">03</div>
+        <div class="pattern-body">
+          <h4>Skipping the unit economics question</h4>
+          <p>"TVL" and "users" are not revenue. They're proxies. A protocol that processes $1B in volume but retains 0.05% of it is a different business than one that retains 5%. Pricing rounds against the bigger of the two numbers — and not the smaller — is how funded teams quietly run out of runway. The milkyway-style failure mode.</p>
+        </div>
+      </div>
+      <div class="pattern-item">
+        <div class="pattern-num">04</div>
+        <div class="pattern-body">
+          <h4>Mistaking a co-investor for diligence</h4>
+          <p>Polychain. Binance Labs. Coinbase Ventures. Framework. Pantera. The lead-investor logo carries enormous psychological weight in this market. But every failure above had tier-one names on the cap table. A famous co-investor is not a substitute for primary diligence. Sometimes it is the reason primary diligence didn't happen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" style="max-width:800px">
+    <div class="section-label">What Good Pricing Looks Like</div>
+    <h2>The five questions a properly priced round actually answers</h2>
+    <p>none of this is an argument against crypto rounds. it's an argument against priced-on-narrative crypto rounds. a properly priced deal is one where the cap-table-on-screen matches the cap-table-in-practice, the take rate funds the team, and the contracts the foundation has already signed are on the table before the lead writes the cheque.</p>
+    <ul style="margin-top:18px;padding-left:22px">
+      <li><strong>Who owns what, actually?</strong> Full on-chain distribution analysis. Every advisor agreement. Every market-maker loan. Every side letter.</li>
+      <li><strong>What does the foundation actually look like?</strong> Director overlap with the operating company. Legal counsel independence. Track record on prior token treasuries.</li>
+      <li><strong>What's the take rate, and what runway does it fund?</strong> Not TVL. Not users. Actual fee capture, modeled against fixed and variable costs.</li>
+      <li><strong>What's the unlock schedule, in practice?</strong> Lock-ups are easy to write and easy to evade through loaned-token arrangements. Read the market-making contracts.</li>
+      <li><strong>What did the legal counsel object to?</strong> Internal dissent is the strongest leading indicator of structural risk. If the counsel called it the worst agreement they'd seen, the round is already overpriced.</li>
+    </ul>
+  </section>
+
+  <div class="triad-callout" style="max-width:800px;margin-left:auto;margin-right:auto">
+    <div class="section-label">A Note from Triad Capital</div>
+    <h3>This is the work the round-pricing layer keeps missing.</h3>
+    <p>Triad sits at the intersection of distribution, capital, and structural advisory across the AI × crypto sector. We don't write cheques on narratives — we read the contracts the foundation has already signed, model the take rate against the staffing plan, and pull the wallet concentration before we look at the deck. 550+ ventures, 12 markets, eight years of structuring this work end-to-end.</p>
+    <p>If you're a founder pricing a round, or an allocator about to sign a term sheet, the diligence above is the bar. We're happy to compare notes.</p>
+    <p style="margin-top:18px"><a href="mailto:altcoinsamurai@triadnetwork.xyz" style="color:var(--accent);font-weight:600;text-decoration:none">altcoinsamurai@triadnetwork.xyz &rarr;</a></p>
+  </div>
+
+  <section class="content-section" style="max-width:800px">
+    <h2>One question worth sitting with</h2>
+    <p>across the three cases above — and across nearly every major 2025 collapse where the contracts later leaked — the structural risk was readable <em>before</em> the token ever traded. the deals were signed. the counsel had objected. the wallet concentration was on-chain. nobody had to wait for the price chart to tell the story.</p>
+    <p>so the question isn't really "how do we avoid the next one?"</p>
+    <p>it's: <strong>how did so many of the most experienced allocators in the world price these rounds anyway?</strong></p>
+  </section>
+
+  <section class="content-section" style="max-width:800px">
+    <div class="section-label">Sources &amp; Further Reading</div>
+    <h2>References</h2>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:18px">All factual claims in this article reference publicly available reporting. We encourage readers to consult the primary sources directly.</p>
+    <div class="sources-list">
+      <ol>
+        <li>Nikhilesh De &amp; Ian Allison, <em>"Inside Movement's Token-Dump Scandal: Secret Contracts, Shadow Advisers and Hidden Middlemen,"</em> CoinDesk, April 30, 2025. <a href="https://www.coindesk.com/tech/2025/04/30/inside-movement-s-token-dump-scandal-secret-contracts-shadow-advisors-and-hidden-middlemen" target="_blank" rel="noopener">coindesk.com</a></li>
+        <li>CoinDesk, <em>"Movement Labs Secretly Promised Advisers Millions in Tokens, Leaked Documents Show,"</em> May 15, 2025. <a href="https://www.coindesk.com/tech/2025/05/15/movement-labs-secretly-promised-advisers-millions-in-tokens-leaked-documents-show" target="_blank" rel="noopener">coindesk.com</a></li>
+        <li>Decrypt, <em>"Movement Labs Suspends Co-Founder Amid Market Maker Controversy,"</em> May 2, 2025. <a href="https://decrypt.co/317524/movement-labs-suspends-co-founder-amid-market-maker-controversy" target="_blank" rel="noopener">decrypt.co</a></li>
+        <li>Blockworks, <em>"Movement Labs, Foundation conducts 'investigation' into 'market maker abnormalities',"</em> April 15, 2025. <a href="https://blockworks.com/news/movement-market-maker-investigation" target="_blank" rel="noopener">blockworks.com</a></li>
+        <li>BeInCrypto, <em>"Movement Labs Investigates MOVE Token Market Maker,"</em> April 16, 2025. <a href="https://beincrypto.com/movement-labs-investigation-market-maker-misconduct/" target="_blank" rel="noopener">beincrypto.com</a></li>
+        <li>Cryptopotato, <em>"Movement Labs Suspends Co-Founder Amid Market Maker Scandal: Full Details,"</em> May 2, 2025. <a href="https://cryptopotato.com/movement-labs-suspends-co-founder-amid-market-maker-scandal-full-details/" target="_blank" rel="noopener">cryptopotato.com</a></li>
+        <li>CryptoNinjas, <em>"Movement Labs Fires CEO, Rebrands as Move Industries After $2.5B MOVE Token Crash,"</em> May 7, 2025. <a href="https://www.cryptoninjas.net/news/movement-labs-fires-ceo-rebrands-as-move-industries-after-2-5b-move-token-crash/" target="_blank" rel="noopener">cryptoninjas.net</a></li>
+        <li>Blocmates, <em>"Movement Labs Suspends Co-Founder Following Market-Making Investigation,"</em> May 6, 2025. <a href="https://www.blocmates.com/news-posts/movement-labs-suspends-co-founder-following-market-making-investigation" target="_blank" rel="noopener">blocmates.com</a></li>
+        <li>BlockEden.xyz, <em>"The 2025 Crypto Graveyard: $700M+ in Failed Projects and What Builders Can Learn,"</em> January 2026. <a href="https://blockeden.xyz/blog/2026/01/09/crypto-graveyard-2025-failed-projects-lessons/" target="_blank" rel="noopener">blockeden.xyz</a></li>
+        <li>CryptoSlate, <em>"The 10 biggest failures in crypto in 2025 (and what went wrong),"</em> January 2026. <a href="https://cryptoslate.com/the-10-biggest-crypto-losers-of-2025-and-what-went-wrong/" target="_blank" rel="noopener">cryptoslate.com</a></li>
+        <li>The Merkle News, <em>"Eight Crypto Projects That Shut Down in 2026 as Market Reality Forces a Harsh Industry Reset,"</em> March 7, 2026. <a href="https://themerkle.com/eight-crypto-projects-that-shut-down-in-2026-as-market-reality-forces-a-harsh-industry-reset/" target="_blank" rel="noopener">themerkle.com</a></li>
+        <li>CoinGecko Research, <em>"Dead Coins: How Many Cryptocurrencies Have Failed?"</em> January 2026. <a href="https://www.coingecko.com/research/publications/how-many-cryptocurrencies-failed" target="_blank" rel="noopener">coingecko.com</a></li>
+        <li>BeInCrypto, <em>"This is Why Most Crypto Failed in 2025, and It Could Get Worse,"</em> January 15, 2026. <a href="https://beincrypto.com/crypto-token-failures-2025-collapse/" target="_blank" rel="noopener">beincrypto.com</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="disclaimer" style="margin-top:48px">
+    <strong>Final disclaimer</strong>
+    Triad Network is not affiliated with Movement Labs, Move Industries, Mantra, MilkyWay, or any other project named in this article. This research note is provided for informational and educational purposes only and does not constitute investment, legal, tax, or financial advice. All references to alleged misconduct are descriptions of publicly reported allegations as covered by the cited sources; this article does not independently allege wrongdoing by any specific person or entity. Some claims described above remain disputed by parties named in the underlying reporting. Triad Network and the author make no warranty as to the completeness or accuracy of third-party reporting. Readers should verify all information independently before relying on it.
+  </div>
+
+  <!-- Share -->
+  <section style="max-width:800px;margin:0 auto;padding:0 var(--pad,48px) 60px">
+    <div style="font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;font-weight:600">Share this article</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a id="share-x" target="_blank" style="display:flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:500;color:var(--text2);transition:all .2s;cursor:pointer;-webkit-tap-highlight-color:transparent" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='';this.style.color=''">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        Post on X
+      </a>
+      <a id="share-linkedin" target="_blank" style="display:flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:500;color:var(--text2);transition:all .2s;cursor:pointer;-webkit-tap-highlight-color:transparent" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='';this.style.color=''">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a id="share-telegram" target="_blank" style="display:flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:500;color:var(--text2);transition:all .2s;cursor:pointer;-webkit-tap-highlight-color:transparent" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='';this.style.color=''">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0 12 12 0 0011.944 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        Telegram
+      </a>
+    </div>
+  </section>
+
+<script>
+// Set share URLs dynamically based on current page
+const url = encodeURIComponent(window.location.href);
+const title = encodeURIComponent(document.title);
+const sx = document.getElementById('share-x');
+if(sx) sx.href = 'https://x.com/intent/tweet?url=' + url + '&text=' + title;
+const sl = document.getElementById('share-linkedin');
+if(sl) sl.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+const st = document.getElementById('share-telegram');
+if(st) st.href = 'https://t.me/share/url?url=' + url + '&text=' + title;
+</script>
+
+</article>
+
+<footer>
+  <div class="footer-l">&copy; 2026 Triad Network. All rights reserved.</div>
+  <div class="footer-r">
+    <a href="/">Home</a>
+    <a href="/ecosystem.html">Ecosystem</a>
+    <a href="/strategic-bd.html">Strategic BD</a>
+    <a href="#">Terms</a>
+    <a href="#">Privacy</a>
+  </div>
+</footer>
+
+<!-- Mobile Tab Bar -->
+<div class="tab-bar">
+  <div class="tab-bar-inner">
+    <a href="/" class="tab-item active" data-tab="home"><svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></a>
+    <a href="/strategic-bd.html" class="tab-item" data-tab="bd"><svg viewBox="0 0 24 24"><polyline points="7 8 3 12 7 16"/><polyline points="17 8 21 12 17 16"/><line x1="14" y1="4" x2="10" y2="20"/></svg></a>
+    <a href="/ecosystem.html" class="tab-item" data-tab="ecosystem"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a14.5 14.5 0 014 9 14.5 14.5 0 01-4 9 14.5 14.5 0 01-4-9 14.5 14.5 0 014-9"/><line x1="3" y1="12" x2="21" y2="12"/></svg></a>
+    <a href="/ecosystem.html#partners" class="tab-item" data-tab="partners"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></a>
+    <a href="/strategic-bd/tge.html" class="tab-item" data-tab="growth"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></a>
+    <a href="/strategic-bd/ecosystem-partnerships.html" class="tab-item" data-tab="integrations"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></a>
+    <a href="/strategic-bd/due-diligence.html" class="tab-item" data-tab="structure"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></a>
+    <a href="mailto:inquiries@triadnetwork.xyz" class="tab-item" data-tab="contact"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg></a>
+    <a href="/strategic-bd/engagement.html" class="tab-item" data-tab="more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="1"/><circle cx="8" cy="12" r="1"/><circle cx="16" cy="12" r="1"/></svg></a>
+  </div>
+</div>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 60);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
