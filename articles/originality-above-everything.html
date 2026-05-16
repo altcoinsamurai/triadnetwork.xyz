@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Triad Network">
+<meta property="og:image" content="https://triadnetwork.xyz/assets/og-originality.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@triadxyz">
+<meta name="twitter:image" content="https://triadnetwork.xyz/assets/og-originality.png">
+<meta property="og:title" content="Originality, Above Everything — Triad Network">
+<meta property="og:description" content="A manifesto on what crypto creator agencies select for, and why Triad's bar is structurally different. Founder voice. The case for originality as the only durable filter.">
+<meta property="og:url" content="https://triadnetwork.xyz/articles/originality-above-everything.html">
+<meta name="twitter:title" content="Originality, Above Everything">
+<meta name="twitter:description" content="A manifesto on what crypto creator agencies select for, and why Triad's bar is structurally different.">
+<meta name="description" content="A founder-voice manifesto on the structural difference between Triad's creator selection model and the rest of the crypto creator-agency category. Originality, voice, and the case for selecting on what creators have shipped rather than who they are.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Originality, Above Everything — A Manifesto on the Bar — Triad Network</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.article-img{width:100%;border-radius:12px;margin:32px 0;border:1px solid var(--border)}
+.article-caption{font-size:12px;color:var(--text3);text-align:center;margin-top:-20px;margin-bottom:32px;font-style:italic}
+.disclaimer{max-width:800px;margin:24px auto 48px;padding:20px 28px;background:var(--accentDim);border:1px solid var(--accent);border-left-width:3px;border-radius:8px;font-size:13px;color:var(--text2);line-height:1.65}
+.disclaimer strong{color:var(--text);text-transform:uppercase;letter-spacing:.08em;font-size:11px;display:block;margin-bottom:8px;font-weight:600}
+.pull-stat{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 32px;margin:40px 0;background:var(--console);color:#fff;border-radius:16px;text-align:center}
+.pull-stat-num{font-family:var(--display);font-size:clamp(48px,8vw,84px);font-weight:700;color:var(--accent2);line-height:1;letter-spacing:-.02em}
+.pull-stat-label{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-top:14px;color:rgba(255,255,255,.6)}
+.pull-stat-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:18px;max-width:520px;line-height:1.6}
+.pull-quote{margin:40px 0;padding:24px 32px;border-left:3px solid var(--accent);background:var(--accentDim);border-radius:0 8px 8px 0;font-size:17px;line-height:1.55;color:var(--text);font-weight:500;font-style:italic}
+.pull-quote cite{display:block;margin-top:12px;font-size:12px;color:var(--text2);font-style:normal;letter-spacing:.05em}
+.pull-quote cite::before{content:"— "}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:36px 0}
+.compare-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:26px 24px}
+.compare-card.triad{background:linear-gradient(180deg,var(--accentDim),transparent);border-color:var(--accent)}
+.compare-head{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);margin-bottom:10px;font-weight:600}
+.compare-card.triad .compare-head{color:var(--accent)}
+.compare-title{font-family:var(--display);font-size:17px;font-weight:700;margin-bottom:14px;color:var(--text)}
+.compare-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.compare-list li{font-size:13.5px;color:var(--text2);line-height:1.55;padding-left:18px;position:relative}
+.compare-list li::before{content:'—';position:absolute;left:0;color:var(--text3)}
+.compare-card.triad .compare-list li::before{content:'+';color:var(--accent);font-weight:700}
+.pattern-list{margin:32px 0;display:flex;flex-direction:column;gap:14px}
+.pattern-item{display:grid;grid-template-columns:48px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--border)}
+.pattern-item:last-child{border-bottom:none}
+.pattern-num{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.18em;font-weight:600;padding-top:4px}
+.pattern-body h4{font-family:var(--display);font-size:16px;font-weight:700;margin-bottom:6px;color:var(--text)}
+.pattern-body p{font-size:14px;color:var(--text2);line-height:1.65;margin:0}
+.triad-callout{margin:48px 0;padding:36px 32px;background:linear-gradient(180deg,var(--accentDim),transparent);border:1px solid var(--accent);border-radius:16px}
+.triad-callout .section-label{color:var(--accent);font-weight:700}
+.triad-callout h3{font-family:var(--display);font-size:22px;font-weight:700;margin:8px 0 14px;color:var(--text)}
+.triad-callout p{font-size:14.5px;line-height:1.7;color:var(--text2);margin-bottom:12px}
+@media(max-width:780px){
+  .compare-grid{grid-template-columns:1fr}
+  .pull-stat{padding:36px 20px}
+}
+</style>
+<script async src="https://plausible.io/js/pa-sO608YaKMQ1Jb8JQKbrs2.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <svg class="logo-mark" viewBox="0 0 36 36" fill="none"><circle cx="12" cy="18" r="10" stroke="#00BFA6" stroke-width="1" fill="none" opacity=".6"/><circle cx="24" cy="18" r="10" stroke="#00BFA6" stroke-width="1" fill="none" opacity=".4"/><circle cx="18" cy="10" r="10" stroke="#00BFA6" stroke-width="1" fill="none" opacity=".8"/></svg>
+    <span class="logo-text">Triad Network</span>
+    <span class="logo-div"></span>
+    <span class="logo-sub">Distribution</span>
+  </a>
+  <div class="nav-links">
+    <a href="/ecosystem.html">Ecosystem</a>
+    <a href="/strategic-bd.html">Strategic BD</a>
+    <a href="/#capabilities">Capabilities</a>
+    <a href="/creators.html">Creators</a>
+    <a href="mailto:inquiries@triadnetwork.xyz" class="nav-cta">Inquire</a>
+  </div>
+  <button class="mobile-menu" style="display:none" onclick="document.querySelector('.nav-links').classList.toggle('show')"><span></span><span></span><span></span></button>
+</nav>
+
+<article>
+  <section class="page-hero" style="max-width:800px">
+    <a href="/" class="back-link">&larr; Back to Home</a>
+    <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+      <span class="tag" style="background:rgba(0,191,166,.1);color:#00BFA6;border-color:rgba(0,191,166,.2)">Manifesto</span>
+      <span class="tag">Distribution</span>
+      <span class="tag">Selection</span>
+      <span class="tag">Founder Note</span>
+    </div>
+    <h1>Originality, <em>above everything.</em></h1>
+    <p style="font-size:18px;color:var(--text2);line-height:1.55;margin-top:18px;max-width:680px">A founder note on what crypto creator agencies select for, and why Triad's bar is structurally different. On the case for selecting against the resumé.</p>
+    <div style="display:flex;align-items:center;gap:16px;margin-top:24px;font-size:13px;color:var(--text3)">
+      <span>May 2026</span>
+      <span>&middot;</span>
+      <span>11 min read</span>
+      <span>&middot;</span>
+      <span>@altcoinsamurai · Triad Network</span>
+    </div>
+  </section>
+
+  <div class="disclaimer">
+    <strong>Editorial note</strong>
+    This is an opinion piece. It is the personal view of the author writing on behalf of Triad Network, on the question of how the crypto creator-agency category selects for talent. Where this piece characterises how the wider category operates, it does so on the basis of broad observation rather than commentary on any specific firm. Triad acknowledges that other agencies in the category operate legitimate, credible businesses under different theses than ours. Reasonable people disagree on selection criteria. This is the case for ours.
+  </div>
+
+  <section class="content-section" style="max-width:800px">
+    <p style="font-size:17px;line-height:1.9;color:var(--text);font-weight:400">every creator agency in crypto runs on a hidden filter. nobody publishes it on their homepage. nobody acknowledges it in pitch decks. but it shapes who gets onto the roster and who doesn't, and it explains why the same forty-or-fifty accounts cycle through every major campaign year after year.</p>
+    <p>the filter is this: <strong>do you already have the credentials we recognise?</strong> followers, network, prior brand deals, an introduction from someone we trust, ideally all four. the work itself is checked at the margin — does the writing land, are the threads sharp — but the work is rarely the gate. the gate is the resumé.</p>
+    <p>this isn't a hostile read. it's a defensible model. agencies need volume and consistency. resumé-led selection delivers both. you sign creators with proven audiences, you ship campaigns on schedule, you keep the project pipeline happy. the unit economics work. and you can hand the diligence layer off to a junior because the bar is countable: did this account exist 18 months ago, do they have at least 25K followers, are they on the friends-of-friends list, have they shipped paid before.</p>
+    <p>i understand the model. it works. and it has built credible businesses across the category — there are real firms running real distribution machines on variations of this filter, and they earn the campaigns they win. nothing in this piece argues otherwise. but the model has a hole the size of a generation of creators in it. and that hole is what triad was built to address.</p>
+  </section>
+
+  <div class="pull-stat" style="max-width:800px;margin-left:auto;margin-right:auto">
+    <div class="pull-stat-num">~40</div>
+    <div class="pull-stat-label">accounts in heavy rotation</div>
+    <div class="pull-stat-sub">The number of crypto creator accounts who, by reasonable estimate, do the bulk of major paid campaign work across the top five agencies in 2026. The category is more concentrated than its public surface suggests.</div>
+  </div>
+
+  <section class="content-section" style="max-width:800px">
+    <div class="section-label">The Hidden Filter</div>
+    <h2>What the category actually selects for</h2>
+    <p>walk the public-facing pages of the established crypto creator agencies and the language is remarkably consistent. they describe themselves as working with <em>"top-tier crypto KOLs,"</em> <em>"the most influential voices in web3,"</em> <em>"the leading creators in the space."</em> the phrasing varies. the function doesn't. "top-tier" is defined retrospectively by which accounts already win paid placements. "influential" is a synonym for follower count and existing campaign credentials. these aren't bad words. they're truthful descriptions of how the category operates.</p>
+    <p>but read them again with the question: <em>what is the bar to get in?</em></p>
+    <p>top-tier means already top-tier. most influential means already most influential. the criteria are self-referencing. you qualify because you already qualified somewhere else. and the somewhere else — the prior agency, the prior campaign, the prior signal — was operating on the same filter. the result is a category that loops back on itself. forty accounts get sent eighty briefs. the eighty-first brief goes to one of the same forty.</p>
+    <p>this isn't a failure of effort. it's a failure of <strong>structural risk appetite.</strong> resumé-led selection is, fundamentally, a low-variance bet. you sign accounts whose past performance you can verify. you avoid the embarrassment of a creator you championed underperforming. you keep the campaign machine running. but the consequence is that the next generation of voices — the small, sharp, unproven accounts who haven't accumulated the credential stack yet — never enter the system. they don't get the briefs. they don't compound the receipts. they don't graduate into the forty.</p>
+    <p>which means the bar to entry, at scale across the category, is closed to almost everyone who would be qualified to clear it on merit alone. you can write better than half the accounts in heavy rotation. it won't matter. the credential filter runs first.</p>
+  </section>
+
+  <section class="content-section" style="max-width:800px">
+    <div class="section-label">The Choice</div>
+    <h2>Why we built a different filter</h2>
+    <p>triad was founded on a different bet. the bet is that <strong>originality of voice is the only filter that compounds.</strong> follower counts decay. networks shift. KYC credentials don't predict anything. but a creator with a sharp, identifiable, non-derivative voice — someone who would still sound like themselves at 500 followers and at 50,000 followers — is the only kind of account that gets better with time rather than worse.</p>
+    <p>everything else is downstream. originality is upstream of follower growth, paid placements, longevity, all of it. you don't build originality out of a creator who doesn't have it. you absolutely can grow the audience of one who does.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <div class="compare-head">The Category Filter</div>
+        <div class="compare-title">What most agencies select for</div>
+        <ul class="compare-list">
+          <li>Follower count above a published threshold</li>
+          <li>Existing campaign track record</li>
+          <li>Real-world identity, often via KYC</li>
+          <li>Introduction from someone in the network</li>
+          <li>"Top-tier" or "most influential" by retrospective consensus</li>
+          <li>Predictability of campaign throughput</li>
+        </ul>
+      </div>
+      <div class="compare-card triad">
+        <div class="compare-head">The Triad Filter</div>
+        <div class="compare-title">What we select for</div>
+        <ul class="compare-list">
+          <li>A point of view you'd defend in a room of strangers</li>
+          <li>Sentences that could only be yours</li>
+          <li>A thesis you've shipped on, repeatedly</li>
+          <li>Taste — for what to write about, and what to ignore</li>
+          <li>Cadence and reliability of original output</li>
+          <li>Editorial independence from the prevailing consensus</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>the second column is harder to qualify for. that's deliberate. a follower count threshold is countable; voice is not. you cannot delegate the assessment of voice to a screener. it has to be read by someone who has read enough to know what good looks like. that's why our application has seven sections and forty-five-minute partner interviews — the structure is built around what cannot be measured with a number.</p>
+    <p>the upside is that the bar, once cleared, is durable. an account selected for originality cannot be uplisted or downlisted by a follower-count algorithm change. cannot be replaced by a higher-follower account that lacks the voice. cannot be unseated by a competitor signing the same forty accounts under a different banner. the unit economics shift in your favour because the asset — the creator's voice — is genuinely rare.</p>
+  </section>
+
+  <section class="content-section" style="max-width:800px">
+    <div class="section-label">The Cohort 02 Bet</div>
+    <h2>Who we're actually signing</h2>
+    <p>at the time of writing, triad has signed its first founding creator: <strong>vikktorrre</strong>. anime PFP. verified on X with a short tenure. location set, half-jokingly, to "mars." bio reads, in full, <em>"i write my thoughts and make money."</em> followers in the small-to-mid range. zero prior agency relationships at signing.</p>
+    <p>on any resumé-led filter, vikktorrre wouldn't make a first-round cut. probably wouldn't make a third-round cut. the credential stack is light. the IRL footprint is non-existent. the introduction came from nobody important.</p>
+    <p>on our filter, he was an obvious yes. <strong>the writing is unmistakably his.</strong> the cadence is consistent. the takes are non-derivative. when you read three of his threads in a row, you can describe his point of view back to a stranger without effort. that is the entire bar. it is rarer than it sounds.</p>
+    <p>the rest — audience growth, brand assets, distribution into the wider triad pipeline — is the work we do after the bet, not before it. resumé-led agencies do the work before the bet, signing creators whose audiences are already built. we do it after, on creators whose voices are.</p>
+
+    <div class="pull-quote">
+      we don't care where you are from, what you do in real life, or how many followers were in the room when you started. we care about whether the work you've already shipped sounds like you. if it does, we want you on the bench. if it doesn't, no amount of audience size compensates.
+      <cite>From a recent founder DM, May 2026</cite>
+    </div>
+  </section>
+
+  <section class="content-section" style="max-width:800px">
+    <div class="section-label">The Four Trades</div>
+    <h2>What we trade away by selecting this way</h2>
+    <p>the originality filter has costs. it would be dishonest not to name them. four real trades sit underneath this model, and any allocator or founder considering working with us should understand them:</p>
+
+    <div class="pattern-list">
+      <div class="pattern-item">
+        <div class="pattern-num">Trade 01</div>
+        <div class="pattern-body">
+          <h4>Smaller campaign-week throughput</h4>
+          <p>A roster of 100 sharp small-to-mid creators ships less paid-campaign volume per quarter than a roster of 40 tier-one KOLs. We're choosing depth and durability over breadth and speed. Projects that need a 5M-impression airdrop campaign in seven days are not our market. Projects building for a five-year audience compound are.</p>
+        </div>
+      </div>
+      <div class="pattern-item">
+        <div class="pattern-num">Trade 02</div>
+        <div class="pattern-body">
+          <h4>Higher diligence cost per creator</h4>
+          <p>Reading seven application sections, conducting a 45-minute partner interview, and verifying the writing samples against on-chain and on-X data takes hours per applicant. A follower-count threshold takes seconds. We've accepted that the diligence work is, structurally, the product.</p>
+        </div>
+      </div>
+      <div class="pattern-item">
+        <div class="pattern-num">Trade 03</div>
+        <div class="pattern-body">
+          <h4>Slower public momentum in the first year</h4>
+          <p>Cohort 02 is capped at 100 seats. By design, our roster won't appear on the same KOL lists as agencies with 400 names. Visibility comes later, from the compounding work of the creators we signed early. Most agencies optimise for the inverse — public roster size first, output quality later.</p>
+        </div>
+      </div>
+      <div class="pattern-item">
+        <div class="pattern-num">Trade 04</div>
+        <div class="pattern-body">
+          <h4>Real possibility of being wrong on a creator</h4>
+          <p>Originality is a judgment call. Voice is, ultimately, taste. We will sign creators we believe in and watch some of them fail to grow into the bet. That's the cost of selecting against a numerical filter. We've decided the upside on the ones who do compound — durable, defensible voices we got to early — is worth the variance on the ones who don't.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" style="max-width:800px">
+    <div class="section-label">What This Isn't</div>
+    <h2>The case against the case we're making</h2>
+    <p>three honest pushbacks deserve responses before this manifesto ends.</p>
+    <p><strong>"originality is subjective — your bar is arbitrary."</strong> partially true. originality is a judgment, not a measurement. but every filter is. follower counts are arbitrary too — why 25K and not 12K, why 50K and not 30K. the question isn't whether the bar is objective; no bar is. the question is whether the bar selects for the trait that compounds. follower counts don't. voice does. we're betting on the right variable, knowing the measurement is qualitative.</p>
+    <p><strong>"the existing agencies still produce results."</strong> they do. firms across the category ship campaigns that hit their KPIs every week. nothing in this piece argues otherwise. the manifesto isn't that the existing model fails — it's that the existing model leaves an entire tier of high-quality creators unaddressed, and we're building specifically for that tier. it's a different lane in the same road, not a takedown of the lane next to it.</p>
+    <p><strong>"small creators are cheaper for projects — that's the whole reason you can run this model."</strong> partially true and worth addressing directly. yes, smaller creators command lower per-post rates, and that opens commercial models that wouldn't work on a tier-one roster. but the durability premium — the value of an audience that grew with a creator who has a real voice — compounds over years. projects that work with us once and see compound results tend to come back. that's the moat. cheap impressions are a starting hand, not a closing one.</p>
+  </section>
+
+  <div class="triad-callout" style="max-width:800px;margin-left:auto;margin-right:auto">
+    <div class="section-label">A Note on Why This Matters Now</div>
+    <h3>The crypto creator economy is about to fragment, hard.</h3>
+    <p>The next 18 months will see the category split. The resumé-led agencies will continue to do what they do well — high-volume, tier-one-only campaign machines for projects that need scale. That's a real business and it will keep working.</p>
+    <p>But a second category is forming underneath: agencies built around editorial standards, founder-grade taste, and creators selected on the basis of original work rather than acquired credentials. Triad is one of these. We won't be the only one. The market for genuinely original voices is larger than the market for credentialed ones, because the supply of original voices is structurally underpriced today.</p>
+    <p>If you're a creator who thinks they belong on a serious roster but has never been read by one — cohort 02 will, when it opens, read every line. If you're a project tired of running the same forty names through the same eighty briefs — there's a roster being assembled that you haven't seen yet.</p>
+    <p style="margin-top:18px"><a href="/creators.html" style="color:var(--accent);font-weight:600;text-decoration:none">See the Triad creator network &rarr;</a></p>
+  </div>
+
+  <section class="content-section" style="max-width:800px">
+    <h2>Where this leaves you</h2>
+    <p>the case for triad's bar isn't that originality is the only way to run a creator agency. it's that originality is the only way <em>we</em> are willing to run one — because every other filter ages badly, and the work of selecting on voice is the only work we believe compounds.</p>
+    <p>other agencies have built credible businesses on a different bet. we hold them in real respect. we expect to share a market with them for years. but we are not them, and we are not trying to be.</p>
+    <p>the question isn't whether their model is right or ours is. both are. <strong>the question is which one you, as a creator or a project, want to bet on.</strong></p>
+    <p>so. who do you want reading your work.</p>
+  </section>
+
+  <!-- Share -->
+  <section style="max-width:800px;margin:0 auto;padding:0 var(--pad,48px) 60px">
+    <div style="font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;font-weight:600">Share this piece</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a id="share-x" target="_blank" style="display:flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:500;color:var(--text2);transition:all .2s;cursor:pointer;-webkit-tap-highlight-color:transparent" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='';this.style.color=''">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        Post on X
+      </a>
+      <a id="share-linkedin" target="_blank" style="display:flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:500;color:var(--text2);transition:all .2s;cursor:pointer;-webkit-tap-highlight-color:transparent" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='';this.style.color=''">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a id="share-telegram" target="_blank" style="display:flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:500;color:var(--text2);transition:all .2s;cursor:pointer;-webkit-tap-highlight-color:transparent" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='';this.style.color=''">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0 12 12 0 0011.944 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        Telegram
+      </a>
+    </div>
+  </section>
+
+<script>
+// Set share URLs dynamically based on current page
+const url = encodeURIComponent(window.location.href);
+const title = encodeURIComponent(document.title);
+const sx = document.getElementById('share-x');
+if(sx) sx.href = 'https://x.com/intent/tweet?url=' + url + '&text=' + title;
+const sl = document.getElementById('share-linkedin');
+if(sl) sl.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+const st = document.getElementById('share-telegram');
+if(st) st.href = 'https://t.me/share/url?url=' + url + '&text=' + title;
+</script>
+
+</article>
+
+<footer>
+  <div class="footer-l">&copy; 2026 Triad Network. All rights reserved.</div>
+  <div class="footer-r">
+    <a href="/">Home</a>
+    <a href="/ecosystem.html">Ecosystem</a>
+    <a href="/strategic-bd.html">Strategic BD</a>
+    <a href="/legal.html">Legal</a>
+    <a href="/legal.html#privacy">Privacy</a>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 60);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
