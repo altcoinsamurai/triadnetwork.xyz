@@ -259,6 +259,23 @@ a{color:inherit;text-decoration:none}
 .receipt-carousel-slide .receipt-pill{margin:0}
 .receipt-carousel-slide .receipt-proof{margin:0;aspect-ratio:auto;height:380px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .receipt-carousel-slide .receipt-proof img{width:100%;height:100%;object-fit:contain;object-position:center top;padding:8px;box-sizing:border-box;background:#fff}
+.receipt-carousel-slide .receipt-proof.dark{background:#000}
+.receipt-carousel-slide .receipt-proof.dark video{width:100%;height:100%;object-fit:cover;padding:0;background:#000}
+
+/* VIDEO UNMUTE BUTTON */
+.video-with-unmute{position:relative}
+.video-unmute{position:absolute;bottom:14px;right:14px;z-index:4;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;background:rgba(6,6,12,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.18);border-radius:100px;color:#fff;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;transition:all .35s cubic-bezier(.16,1,.3,1);-webkit-tap-highlight-color:transparent}
+.video-unmute svg{width:14px;height:14px;flex-shrink:0;transition:opacity .25s}
+.video-unmute .icon-unmuted{display:none}
+.video-unmute:hover{background:rgba(1,189,165,.18);border-color:var(--accent);color:var(--accent);transform:translateY(-1px);box-shadow:0 8px 20px -8px rgba(1,189,165,.45)}
+.video-unmute.is-unmuted .icon-muted{display:none}
+.video-unmute.is-unmuted .icon-unmuted{display:block}
+.video-unmute.is-unmuted{background:rgba(1,189,165,.14);border-color:var(--accent-soft);color:var(--accent)}
+.video-unmute-label{line-height:1;white-space:nowrap}
+@media(max-width:560px){
+  .video-unmute{padding:7px 11px;font-size:9px}
+  .video-unmute svg{width:12px;height:12px}
+}
 .receipt-carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:6px;padding-top:6px}
 .receipt-carousel-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.15);border:none;cursor:pointer;padding:0;transition:all .35s ease;flex-shrink:0}
 .receipt-carousel-dot.active{background:var(--accent);width:22px;border-radius:100px;box-shadow:0 0 8px rgba(1,189,165,.6)}
@@ -607,18 +624,45 @@ footer .footer-r a:hover{color:var(--text)}
         </div>
       </div>
 
-      <div class="receipt-card placeholder reveal">
+      <div class="receipt-card carousel reveal" data-carousel>
         <div class="receipt-card-head">
-          <img src="/assets/replycorp-logo.jpg" class="receipt-card-logo" alt="Replycorp" style="opacity:.5">
+          <img src="/assets/replycorp-logo.jpg" class="receipt-card-logo" alt="Replycorp">
           <div class="receipt-card-meta">
-            <div class="receipt-card-title" style="opacity:.7">Replycorp</div>
-            <div class="receipt-card-followers" style="opacity:.6"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="6" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>New campaign update <strong>incoming</strong></div>
+            <div class="receipt-card-title">Replycorp</div>
+            <div class="receipt-card-followers"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>On-Chain Social Commerce · <strong>Reply Layer</strong></div>
           </div>
         </div>
-        <div class="receipt-placeholder-body">
-          <div class="receipt-placeholder-eyebrow">Campaign 02 · Reviewing</div>
-          <div class="receipt-placeholder-title">Receipt <em>dropping soon.</em></div>
-          <div class="receipt-placeholder-text">Next phase of the Replycorp campaign is wrapping. Numbers go up when the campaign closes — not before.</div>
+        <div class="receipt-carousel">
+          <div class="receipt-carousel-counter"><span class="rc-current">1</span> / 2</div>
+          <div class="receipt-carousel-track">
+            <div class="receipt-carousel-slide">
+              <div class="receipt-pill">
+                <svg viewBox="0 0 24 24" fill="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <div class="receipt-pill-label">Jordan / Replycorp · Founder Receipt</div>
+              </div>
+              <div class="receipt-proof dark video-with-unmute">
+                <video src="/assets/replycorp-jordan-clip.mp4" poster="/assets/replycorp-jordan-poster.jpg" autoplay loop muted playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;padding:0;background:#000"></video>
+                <button class="video-unmute" type="button" aria-label="Unmute video">
+                  <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                  <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                  <span class="video-unmute-label">Tap to unmute</span>
+                </button>
+              </div>
+            </div>
+            <div class="receipt-carousel-slide">
+              <div class="receipt-pill">
+                <svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <div class="receipt-pill-label">$500K via ACF Launchpad · Virtuals.io</div>
+              </div>
+              <div class="receipt-proof">
+                <img src="/assets/replycorp-donjohnson-tweet.png" alt="$500K raised via ACF Launchpad — DonJohnson on Jordan / Replycorp">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="receipt-carousel-dots">
+          <button class="receipt-carousel-dot active" data-slide="0" aria-label="Slide 1: Founder Receipt"></button>
+          <button class="receipt-carousel-dot" data-slide="1" aria-label="Slide 2: $500K Raise"></button>
         </div>
       </div>
 
@@ -1131,6 +1175,29 @@ document.querySelectorAll('[data-carousel]').forEach(function(card){
   // Prevent click from bubbling to card link when interacting with carousel
   viewport.addEventListener('click', function(e){
     if(Math.abs(deltaX) > 5) e.preventDefault();
+  });
+});
+
+/* VIDEO UNMUTE TOGGLE */
+document.querySelectorAll('.video-unmute').forEach(function(btn){
+  var wrap = btn.closest('.video-with-unmute');
+  var video = wrap ? wrap.querySelector('video') : null;
+  var label = btn.querySelector('.video-unmute-label');
+  if(!video || !label) return;
+
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    if(video.muted){
+      video.muted = false;
+      video.play().catch(function(){ /* ignore play promise rejection */ });
+      btn.classList.add('is-unmuted');
+      label.textContent = 'Sound on';
+    } else {
+      video.muted = true;
+      btn.classList.remove('is-unmuted');
+      label.textContent = 'Tap to unmute';
+    }
   });
 });
 </script>
