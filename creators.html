@@ -251,6 +251,33 @@ a{color:inherit;text-decoration:none}
 .receipts-cta{text-align:center;margin-top:40px;font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.05em;position:relative;z-index:1}
 .receipts-cta span{color:var(--accent)}
 
+/* CAROUSEL — swipeable receipt cards */
+.receipt-card.carousel{padding-bottom:18px}
+.receipt-carousel{position:relative;overflow:hidden;border-radius:14px;touch-action:pan-y}
+.receipt-carousel-track{display:flex;transition:transform .55s cubic-bezier(.22,1,.36,1);will-change:transform}
+.receipt-carousel-slide{flex:0 0 100%;min-width:0;display:flex;flex-direction:column;gap:14px;user-select:none;-webkit-user-select:none}
+.receipt-carousel-slide .receipt-pill{margin:0}
+.receipt-carousel-slide .receipt-proof{margin:0;aspect-ratio:1.05/1}
+.receipt-carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:6px;padding-top:6px}
+.receipt-carousel-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.15);border:none;cursor:pointer;padding:0;transition:all .35s ease;flex-shrink:0}
+.receipt-carousel-dot.active{background:var(--accent);width:22px;border-radius:100px;box-shadow:0 0 8px rgba(1,189,165,.6)}
+.receipt-carousel-dot:hover{background:rgba(1,189,165,.5)}
+.receipt-carousel-dot.active:hover{background:var(--accent)}
+.receipt-carousel.dragging .receipt-carousel-track{transition:none;cursor:grabbing}
+.receipt-carousel-counter{position:absolute;top:8px;right:10px;font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:rgba(255,255,255,.4);background:rgba(6,6,12,.65);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:3px 8px;border-radius:100px;z-index:3;pointer-events:none}
+
+/* PLACEHOLDER — incoming receipt cards */
+.receipt-card.placeholder{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.005));border-style:dashed;border-color:rgba(1,189,165,.18);transition:all .5s cubic-bezier(.16,1,.3,1)}
+.receipt-card.placeholder::before{opacity:.15}
+.receipt-card.placeholder:hover{border-color:var(--accent-soft);box-shadow:0 12px 36px -16px rgba(1,189,165,.18)}
+.receipt-card.placeholder:hover::before{opacity:.35}
+.receipt-placeholder-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 8px;min-height:240px;background:radial-gradient(circle at 50% 50%,rgba(1,189,165,.03),transparent 70%);border:1px dashed rgba(1,189,165,.12);border-radius:14px}
+.receipt-placeholder-eyebrow{font-family:var(--accent-font);font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding:6px 12px;background:rgba(1,189,165,.06);border:1px solid rgba(1,189,165,.18);border-radius:100px;display:inline-flex;align-items:center;gap:8px}
+.receipt-placeholder-eyebrow::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:livePulse 2s ease-in-out infinite}
+.receipt-placeholder-title{font-family:var(--display);font-size:20px;font-weight:600;text-transform:uppercase;letter-spacing:-.005em;line-height:1.15;margin-bottom:10px;color:var(--text)}
+.receipt-placeholder-title em{font-style:normal;color:var(--accent)}
+.receipt-placeholder-text{font-family:var(--mono);font-size:11px;color:var(--muted);max-width:280px;line-height:1.6}
+
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:980px;margin:0 auto}
 .team-card{background:var(--bg-card);border:1px solid var(--border);border-radius:24px;padding:36px 28px;text-align:center;transition:all .4s}
 .team-card:hover{border-color:var(--accent-soft);transform:translateY(-4px)}
@@ -524,6 +551,91 @@ footer .footer-r a:hover{color:var(--text)}
         </div>
         <div class="receipt-proof">
           <img src="/assets/zauth-king-tweet.png" alt="KING · @kinggszn · Triad operator backing Zauth">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ════════ ROW 3: REPLYCORP (CAROUSEL + INCOMING) ════════ -->
+    <div class="receipts-row" style="margin-top:20px">
+
+      <div class="receipt-card carousel reveal" data-carousel>
+        <div class="receipt-card-head">
+          <img src="/assets/replycorp-logo.jpg" class="receipt-card-logo" alt="Replycorp">
+          <div class="receipt-card-meta">
+            <div class="receipt-card-title">Replycorp</div>
+            <div class="receipt-card-followers"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>On-Chain Social Commerce · <strong>Reply Layer</strong></div>
+          </div>
+        </div>
+        <div class="receipt-carousel">
+          <div class="receipt-carousel-counter"><span class="rc-current">1</span> / 3</div>
+          <div class="receipt-carousel-track">
+            <div class="receipt-carousel-slide">
+              <div class="receipt-pill">
+                <svg viewBox="0 0 24 24" fill="none"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                <div class="receipt-pill-label">FDV 7M → 18M · Campaign Window</div>
+              </div>
+              <div class="receipt-proof">
+                <span class="receipt-tag-overlay">Sector Thesis</span>
+                <img src="/assets/replycorp-altcoinsamurai-tweet.png" alt="Sector thesis on Replycorp · @altcoinsamurai">
+              </div>
+            </div>
+            <div class="receipt-carousel-slide">
+              <div class="receipt-pill">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <div class="receipt-pill-label">$REPPO Client · $38M FDV</div>
+              </div>
+              <div class="receipt-proof">
+                <span class="receipt-tag-overlay">Client Traction</span>
+                <img src="/assets/replycorp-altcoinsamurai-tweet-2.png" alt="$REPPO client validates Replycorp · @altcoinsamurai">
+              </div>
+            </div>
+            <div class="receipt-carousel-slide">
+              <div class="receipt-pill">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.4 0 4.58.94 6.2 2.47"/></svg>
+                <div class="receipt-pill-label">Client Endorsement · 1.24M → 3M TVL</div>
+              </div>
+              <div class="receipt-proof">
+                <span class="receipt-tag-overlay">Client Endorsement</span>
+                <img src="/assets/replycorp-reppo-endorsement.png" alt="Reppo client endorsement · 1.24M to 3M TVL after Triad campaign">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="receipt-carousel-dots">
+          <button class="receipt-carousel-dot active" data-slide="0" aria-label="Slide 1: Sector Thesis"></button>
+          <button class="receipt-carousel-dot" data-slide="1" aria-label="Slide 2: Client Traction"></button>
+          <button class="receipt-carousel-dot" data-slide="2" aria-label="Slide 3: Client Endorsement"></button>
+        </div>
+      </div>
+
+      <div class="receipt-card placeholder reveal">
+        <div class="receipt-card-head">
+          <img src="/assets/replycorp-logo.jpg" class="receipt-card-logo" alt="Replycorp" style="opacity:.5">
+          <div class="receipt-card-meta">
+            <div class="receipt-card-title" style="opacity:.7">Replycorp</div>
+            <div class="receipt-card-followers" style="opacity:.6"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="6" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>New campaign update <strong>incoming</strong></div>
+          </div>
+        </div>
+        <div class="receipt-placeholder-body">
+          <div class="receipt-placeholder-eyebrow">Campaign 02 · Reviewing</div>
+          <div class="receipt-placeholder-title">Receipt <em>dropping soon.</em></div>
+          <div class="receipt-placeholder-text">Next phase of the Replycorp campaign is wrapping. Numbers go up when the campaign closes — not before.</div>
+        </div>
+      </div>
+
+      <div class="receipt-card placeholder reveal">
+        <div class="receipt-card-head">
+          <img src="/assets/replycorp-logo.jpg" class="receipt-card-logo" alt="Replycorp" style="opacity:.5">
+          <div class="receipt-card-meta">
+            <div class="receipt-card-title" style="opacity:.7">Replycorp</div>
+            <div class="receipt-card-followers" style="opacity:.6"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="6" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>New campaign update <strong>incoming</strong></div>
+          </div>
+        </div>
+        <div class="receipt-placeholder-body">
+          <div class="receipt-placeholder-eyebrow">Campaign 03 · In Flight</div>
+          <div class="receipt-placeholder-title">Receipt <em>dropping soon.</em></div>
+          <div class="receipt-placeholder-text">Next phase of the Replycorp campaign is wrapping. Numbers go up when the campaign closes — not before.</div>
         </div>
       </div>
 
@@ -949,6 +1061,80 @@ var observer=new IntersectionObserver(function(entries){
   })
 },{threshold:.1});
 document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el)});
+
+/* CAROUSEL — swipeable receipt cards */
+document.querySelectorAll('[data-carousel]').forEach(function(card){
+  var viewport = card.querySelector('.receipt-carousel');
+  var track = card.querySelector('.receipt-carousel-track');
+  var slides = card.querySelectorAll('.receipt-carousel-slide');
+  var dots = card.querySelectorAll('.receipt-carousel-dot');
+  var counter = card.querySelector('.rc-current');
+  var total = slides.length;
+  var current = 0;
+  var startX = 0;
+  var deltaX = 0;
+  var dragging = false;
+
+  function goTo(idx){
+    current = Math.max(0, Math.min(total - 1, idx));
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function(d, i){
+      d.classList.toggle('active', i === current);
+    });
+    if(counter) counter.textContent = String(current + 1);
+  }
+
+  // Dot navigation
+  dots.forEach(function(dot, i){
+    dot.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      goTo(i);
+    });
+  });
+
+  // Touch / pointer drag
+  function onStart(e){
+    dragging = true;
+    startX = (e.touches ? e.touches[0].clientX : e.clientX);
+    deltaX = 0;
+    viewport.classList.add('dragging');
+  }
+  function onMove(e){
+    if(!dragging) return;
+    var x = (e.touches ? e.touches[0].clientX : e.clientX);
+    deltaX = x - startX;
+    var w = viewport.offsetWidth;
+    var offset = -(current * 100) + (deltaX / w) * 100;
+    track.style.transform = 'translateX(' + offset + '%)';
+  }
+  function onEnd(){
+    if(!dragging) return;
+    dragging = false;
+    viewport.classList.remove('dragging');
+    var w = viewport.offsetWidth;
+    var threshold = w * 0.18; // ~18% of card width triggers a slide change
+    if(deltaX < -threshold && current < total - 1) goTo(current + 1);
+    else if(deltaX > threshold && current > 0) goTo(current - 1);
+    else goTo(current);
+    deltaX = 0;
+  }
+
+  viewport.addEventListener('touchstart', onStart, {passive: true});
+  viewport.addEventListener('touchmove', onMove, {passive: true});
+  viewport.addEventListener('touchend', onEnd);
+  viewport.addEventListener('mousedown', function(e){
+    onStart(e);
+    e.preventDefault();
+  });
+  window.addEventListener('mousemove', onMove);
+  window.addEventListener('mouseup', onEnd);
+
+  // Prevent click from bubbling to card link when interacting with carousel
+  viewport.addEventListener('click', function(e){
+    if(Math.abs(deltaX) > 5) e.preventDefault();
+  });
+});
 </script>
 
 </body>
