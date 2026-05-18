@@ -90,6 +90,21 @@ a{color:inherit;text-decoration:none}
 .cohort-date-sub .divider{opacity:.3;color:var(--text-dim)}
 .cohort-countdown{font-family:var(--accent-font);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600}
 
+/* DIGITAL COUNTDOWN BLOCK — days + hours */
+.cohort-clock{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:18px;padding-top:18px;border-top:1px dashed rgba(0,191,166,.2)}
+.cohort-clock-unit{display:flex;flex-direction:column;align-items:center;padding:10px 18px;background:rgba(0,191,166,.04);border:1px solid rgba(0,191,166,.18);border-radius:8px;min-width:74px;position:relative;overflow:hidden}
+.cohort-clock-unit::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(0,191,166,.5) 50%,transparent 100%)}
+.cohort-clock-num{font-family:var(--display);font-size:32px;font-weight:700;line-height:1;color:var(--text);letter-spacing:-.01em;font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+.cohort-clock-label{font-family:var(--accent-font);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-dim);margin-top:6px;font-weight:600}
+.cohort-clock-divider{font-family:var(--display);font-size:24px;font-weight:700;color:rgba(0,191,166,.4);line-height:1;padding:0 2px;align-self:flex-start;margin-top:14px}
+
+@media(max-width:680px){
+  .cohort-clock-unit{padding:8px 14px;min-width:60px}
+  .cohort-clock-num{font-size:24px}
+  .cohort-clock-label{font-size:8px}
+  .cohort-clock-divider{font-size:18px;margin-top:10px}
+}
+
 @keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.2)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 
@@ -464,8 +479,17 @@ footer .footer-r a:hover{color:var(--text)}
       <span><strong>100</strong> seats</span>
       <span class="divider">·</span>
       <span><strong>By application</strong></span>
-      <span class="divider">·</span>
-      <span class="cohort-countdown" id="cohortCountdown">Opens in 15 days</span>
+    </div>
+    <div class="cohort-clock" id="cohortClock">
+      <div class="cohort-clock-unit">
+        <div class="cohort-clock-num" id="cdDays">15</div>
+        <div class="cohort-clock-label">Days</div>
+      </div>
+      <div class="cohort-clock-divider">:</div>
+      <div class="cohort-clock-unit">
+        <div class="cohort-clock-num" id="cdHours">00</div>
+        <div class="cohort-clock-label">Hours</div>
+      </div>
     </div>
   </div>
 
@@ -1084,29 +1108,34 @@ footer .footer-r a:hover{color:var(--text)}
 </footer>
 
 <script>
-// COHORT 01 LIVE COUNTDOWN — auto-updates client-side
+// COHORT 01 LIVE COUNTDOWN — days + hours, auto-updates client-side
 (function(){
   var target = new Date('2026-06-02T00:00:00Z');
-  var el = document.getElementById('cohortCountdown');
-  if(!el) return;
+  var daysEl = document.getElementById('cdDays');
+  var hoursEl = document.getElementById('cdHours');
+  var clockEl = document.getElementById('cohortClock');
+  if(!daysEl || !hoursEl) return;
+
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+
   function tick(){
     var now = new Date();
     var diff = target - now;
     if(diff <= 0){
-      el.textContent = 'Applications open now';
+      // Date has passed — show "LIVE" state
+      if(clockEl){
+        clockEl.innerHTML = '<div class="cohort-clock-unit" style="min-width:auto;padding:14px 28px"><div class="cohort-clock-num" style="color:var(--accent);font-size:18px;letter-spacing:.22em">APPLICATIONS OPEN</div></div>';
+      }
       return;
     }
-    var days = Math.ceil(diff / (1000 * 60 * 60 * 24));
-    if(days === 1){
-      el.textContent = 'Opens tomorrow';
-    } else if(days <= 7){
-      el.textContent = 'Opens in ' + days + ' days';
-    } else {
-      el.textContent = 'Opens in ' + days + ' days';
-    }
+    var totalHours = diff / (1000 * 60 * 60);
+    var days = Math.floor(totalHours / 24);
+    var hours = Math.floor(totalHours % 24);
+    daysEl.textContent = pad(days);
+    hoursEl.textContent = pad(hours);
   }
   tick();
-  setInterval(tick, 60 * 60 * 1000); // update hourly
+  setInterval(tick, 60 * 1000); // refresh every minute (so hours rollover live)
 })();
 
 var nav=document.getElementById('pillNav');
