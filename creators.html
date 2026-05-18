@@ -358,9 +358,10 @@ a{color:inherit;text-decoration:none}
 .c-form{display:flex;flex-direction:column;gap:22px}
 .fg{display:flex;flex-direction:column;gap:8px}
 .fg label{font-family:var(--accent-font);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500}
-.fg input,.fg select,.fg textarea{padding:14px 16px;border:1px solid var(--border);border-radius:12px;font-family:var(--body);font-size:14px;background:var(--bg-soft);color:var(--text);outline:none;transition:all .3s;-webkit-appearance:none}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
-.fg textarea{min-height:110px;resize:vertical;font-family:var(--body)}
+.fg input:not([type=checkbox]):not([type=radio]),.fg select,.fg textarea{padding:14px 16px;border:1px solid var(--border);border-radius:12px;font-family:var(--mono);font-size:14px;font-weight:500;letter-spacing:.01em;background:var(--bg-soft);color:var(--text);outline:none;transition:all .3s;-webkit-appearance:none}
+.fg input:not([type=checkbox]):not([type=radio]):focus,.fg select:focus,.fg textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
+.fg textarea{min-height:110px;resize:vertical;font-family:var(--mono);font-weight:500;line-height:1.55}
+.fg input:not([type=checkbox]):not([type=radio])::placeholder,.fg textarea::placeholder,.fg select::placeholder{font-family:var(--mono);font-weight:400;color:var(--text-dim);opacity:.55;letter-spacing:.01em}
 .fg-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .submit-btn{padding:18px;background:var(--accent);color:#06060C;font-family:var(--accent-font);font-size:11px;letter-spacing:.22em;text-transform:uppercase;border:none;border-radius:100px;cursor:pointer;transition:all .3s;font-weight:600;margin-top:8px}
 .submit-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(1,189,165,.3)}
