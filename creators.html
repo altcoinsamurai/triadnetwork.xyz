@@ -75,6 +75,22 @@ a{color:inherit;text-decoration:none}
 .btn-secondary:hover{border-color:var(--text);background:rgba(255,255,255,.04);transform:translateY(-2px)}
 .hero-badge{margin-top:80px;display:inline-flex;align-items:center;gap:10px;padding:10px 20px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:100px;font-family:var(--accent-font);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-dim);opacity:0;animation:fadeUp .8s ease 1s both}
 .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
+
+/* COHORT DATE MARQUEE — the new hero centerpiece */
+.cohort-date-box{margin:0 auto 48px;display:inline-flex;flex-direction:column;align-items:center;gap:0;padding:24px 40px;background:linear-gradient(180deg,rgba(0,191,166,.06) 0%,rgba(0,191,166,.02) 100%);border:1px solid rgba(0,191,166,.28);border-radius:14px;position:relative;overflow:hidden;opacity:0;animation:fadeUp .8s ease .8s both;box-shadow:0 0 60px -20px rgba(0,191,166,.25)}
+.cohort-date-box::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,var(--accent) 50%,transparent 100%);opacity:.6}
+.cohort-date-box::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,var(--accent) 50%,transparent 100%);opacity:.3}
+.cohort-date-label{font-family:var(--accent-font);font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.cohort-date-label::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent);animation:livePulse 2.4s ease-in-out infinite}
+.cohort-date-headline{font-family:var(--display);font-size:clamp(28px,4.5vw,42px);font-weight:700;text-transform:uppercase;letter-spacing:-.005em;line-height:1.05;color:var(--text)}
+.cohort-date-headline em{font-style:normal;color:var(--accent)}
+.cohort-date-sub{font-family:var(--accent-font);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);margin-top:10px;display:flex;align-items:center;gap:12px}
+.cohort-date-sub span{color:var(--text-dim)}
+.cohort-date-sub strong{color:var(--text);font-weight:600}
+.cohort-date-sub .divider{opacity:.3;color:var(--text-dim)}
+.cohort-countdown{font-family:var(--accent-font);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600}
+
+@keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.2)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 
 .section{max-width:1200px;margin:0 auto;padding:120px 32px;position:relative;z-index:2}
@@ -437,14 +453,27 @@ footer .footer-r a:hover{color:var(--text)}
 </nav>
 
 <section class="hero-c">
-  <div class="hero-eyebrow">By Application · Cohort 02</div>
+  <div class="hero-eyebrow">By Application · Cohort 01</div>
   <h1>Built for the underdog.<br>Engineered for the <em>rise.</em></h1>
   <p class="hero-sub">A curated roster for crypto's sharpest small-to-mid creators. Founding cohort capped at 100 seats. By application. 45-minute partner interview required for acceptance.</p>
+
+  <div class="cohort-date-box">
+    <div class="cohort-date-label">Founding Cohort · Opens</div>
+    <div class="cohort-date-headline">June 2 <em>·</em> 2026</div>
+    <div class="cohort-date-sub">
+      <span><strong>100</strong> seats</span>
+      <span class="divider">·</span>
+      <span><strong>By application</strong></span>
+      <span class="divider">·</span>
+      <span class="cohort-countdown" id="cohortCountdown">Opens in 15 days</span>
+    </div>
+  </div>
+
   <div class="cta-pills">
     <a href="#apply" class="btn-primary">Apply for Consideration &rarr;</a>
     <a href="#receipts" class="btn-secondary">See the Work</a>
   </div>
-  <div class="hero-badge">Reviewing applications · Cohort 02</div>
+  <div class="hero-badge">Pre-application window · Cohort 01</div>
 </section>
 <!-- RECEIPTS — TOP OF PAGE -->
 <section class="section" id="receipts" style="padding-top:60px">
@@ -711,7 +740,7 @@ footer .footer-r a:hover{color:var(--text)}
     <div class="cohort-card"><div class="cohort-slot">—</div><div class="cohort-handle">Reviewing</div><div class="cohort-meta">In Committee</div></div>
     <div class="cohort-card"><div class="cohort-slot">—</div><div class="cohort-handle">Reviewing</div><div class="cohort-meta">In Committee</div></div>
     <div class="cohort-card"><div class="cohort-slot">—</div><div class="cohort-handle">Reviewing</div><div class="cohort-meta">In Committee</div></div>
-    <div class="cohort-card"><div class="cohort-slot">↓</div><div class="cohort-handle">Apply Below</div><div class="cohort-meta">Cohort 02 Open</div></div>
+    <div class="cohort-card"><div class="cohort-slot">↓</div><div class="cohort-handle">Apply Below</div><div class="cohort-meta">Cohort 01 Open</div></div>
   </div>
   <div class="cohort-stats reveal">
     <div class="cstat"><div class="cstat-num">100</div><div class="cstat-label">Founding Cohort Cap</div></div>
@@ -850,7 +879,7 @@ footer .footer-r a:hover{color:var(--text)}
 
 <section class="section" id="apply">
   <div class="section-head reveal">
-    <div class="section-eyebrow">Application · Cohort 02</div>
+    <div class="section-eyebrow">Application · Cohort 01</div>
     <h2>Triad doesn't open the door <em>for everyone.</em></h2>
     <p>Founding cohort capped at 100 seats. Seven sections. ~25 minutes. Reviewed by partners within 10–14 days. Advanced applicants sit a 45-minute interview before acceptance.</p>
   </div>
@@ -1035,9 +1064,9 @@ footer .footer-r a:hover{color:var(--text)}
 </section>
 <section class="section" style="padding-top:60px">
   <div class="contact-wrap reveal">
-    <div class="section-eyebrow" style="margin-bottom:20px">Cohort 02 · Reviewing</div>
+    <div class="section-eyebrow" style="margin-bottom:20px">Cohort 01 · Pre-Launch</div>
     <h2>The door is open. <em>Briefly.</em></h2>
-    <p>Triad reviews applications in 10–14 day windows. Cohort 02 closes when the founding 100 seats are filled — there is no waitlist past that, and Cohort 03 opens on a new cycle. Submit when you're ready; we'll read every line.</p>
+    <p>Triad reviews applications in 10–14 day windows. Cohort 01 closes when the founding 100 seats are filled — there is no waitlist past that, and Cohort 02 opens on a new cycle. Submit when you're ready; we'll read every line.</p>
     <a href="#apply" class="btn-tg">Begin Your Application →</a>
     <p style="margin-top:32px;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.05em">Brands · press · partner inquiries · <a href="mailto:altcoinsamurai@triadnetwork.xyz" style="color:var(--accent)">altcoinsamurai@triadnetwork.xyz</a></p>
   </div>
@@ -1055,6 +1084,31 @@ footer .footer-r a:hover{color:var(--text)}
 </footer>
 
 <script>
+// COHORT 01 LIVE COUNTDOWN — auto-updates client-side
+(function(){
+  var target = new Date('2026-06-02T00:00:00Z');
+  var el = document.getElementById('cohortCountdown');
+  if(!el) return;
+  function tick(){
+    var now = new Date();
+    var diff = target - now;
+    if(diff <= 0){
+      el.textContent = 'Applications open now';
+      return;
+    }
+    var days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+    if(days === 1){
+      el.textContent = 'Opens tomorrow';
+    } else if(days <= 7){
+      el.textContent = 'Opens in ' + days + ' days';
+    } else {
+      el.textContent = 'Opens in ' + days + ' days';
+    }
+  }
+  tick();
+  setInterval(tick, 60 * 60 * 1000); // update hourly
+})();
+
 var nav=document.getElementById('pillNav');
 window.addEventListener('scroll',function(){
   if(window.scrollY>40)nav.classList.add('scrolled');else nav.classList.remove('scrolled');
