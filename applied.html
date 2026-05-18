@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Application Received — Triad Network</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F1EA;
+  --paper-soft:#EEEAE0;
+  --paper-hi:#FAF7F0;
+  --ink:#0F0F12;
+  --ink-soft:#3A3A40;
+  --ink-mute:#6B6B72;
+  --rule:#1A1A1A;
+  --rule-soft:#D8D2C4;
+  --teal:#01BDA5;
+  --teal-soft:#E8F6F3;
+  --serif:'Lora',Georgia,serif;
+  --sans:'Inter',-apple-system,sans-serif;
+  --mono:'JetBrains Mono',Menlo,monospace;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.62;font-size:18px;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;position:relative}
+
+/* DRIFTING PARTICLES — ambient signature */
+.particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.particle{position:absolute;bottom:-20px;width:3px;height:3px;background:var(--teal);border-radius:50%;opacity:0;animation:drift 14s linear infinite}
+.particle:nth-child(odd){width:2px;height:2px;opacity:0;animation-duration:18s}
+.particle:nth-child(3n){width:4px;height:4px;animation-duration:20s}
+@keyframes drift{
+  0%{transform:translateY(0) translateX(0);opacity:0}
+  10%{opacity:.5}
+  50%{opacity:.7}
+  90%{opacity:.3}
+  100%{transform:translateY(-110vh) translateX(40px);opacity:0}
+}
+
+/* NAV — light editorial nav */
+.nav-wrap{position:sticky;top:0;z-index:50;background:rgba(244,241,234,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule-soft)}
+nav{max-width:1100px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.nav-logo img{width:30px;height:30px;object-fit:contain}
+.nav-logo-text{display:flex;flex-direction:column;line-height:1.1}
+.nav-logo-name{font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:-.005em}
+.nav-logo-sub{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute);margin-top:2px}
+.nav-link{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;font-weight:500;padding:8px 14px;border-radius:6px;transition:color .2s,background .2s}
+.nav-link:hover{color:var(--teal)}
+
+/* MAIN CONTENT */
+.page{flex:1;position:relative;z-index:1;display:flex;align-items:center;padding:80px 24px 80px}
+.wrap{max-width:720px;margin:0 auto;width:100%}
+
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:24px;display:flex;align-items:center;gap:14px;opacity:0;animation:fadeUp .8s ease .1s both}
+.eyebrow::before{content:'';width:36px;height:1px;background:var(--teal)}
+.eyebrow .pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 12px var(--teal);animation:livePulse 2.4s ease-in-out infinite;margin-right:6px}
+
+.headline{font-family:var(--sans);font-size:clamp(40px,5.8vw,68px);font-weight:700;line-height:1.04;letter-spacing:-.02em;color:var(--ink);margin-bottom:24px;opacity:0;animation:fadeUp .8s ease .25s both}
+.headline em{font-style:italic;font-family:var(--serif);font-weight:500;color:var(--ink-soft)}
+
+.deck{font-family:var(--serif);font-size:21px;font-weight:400;line-height:1.5;color:var(--ink-soft);margin-bottom:48px;max-width:620px;font-style:italic;opacity:0;animation:fadeUp .8s ease .4s both}
+
+.divider{width:60px;height:1px;background:var(--ink);margin:0 0 40px;opacity:0;animation:fadeUp .8s ease .5s both}
+
+/* WHAT HAPPENS NEXT */
+.section{margin-bottom:48px;opacity:0;animation:fadeUp .8s ease .6s both}
+.section-label{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-mute);font-weight:600;margin-bottom:14px}
+.steps{display:flex;flex-direction:column;gap:0;border-left:1px solid var(--rule-soft);padding-left:0;margin-left:8px}
+.step{position:relative;padding:18px 0 18px 32px;border-bottom:1px dashed var(--rule-soft)}
+.step:last-child{border-bottom:none;padding-bottom:0}
+.step::before{content:'';position:absolute;left:-5px;top:24px;width:9px;height:9px;border-radius:50%;background:var(--paper);border:2px solid var(--teal)}
+.step.done::before{background:var(--teal)}
+.step-num{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:6px}
+.step-title{font-family:var(--sans);font-size:17px;font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:-.005em}
+.step-desc{font-family:var(--serif);font-size:15px;color:var(--ink-soft);line-height:1.55}
+.step-meta{font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:.05em;margin-top:6px}
+
+/* FOUNDER NOTE */
+.founder-note{margin-bottom:48px;padding:32px 32px;background:var(--paper-hi);border:1px solid var(--rule-soft);border-left:3px solid var(--teal);border-radius:6px;opacity:0;animation:fadeUp .8s ease .75s both}
+.founder-note-label{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:14px}
+.founder-note-body{font-family:var(--serif);font-size:17px;line-height:1.65;color:var(--ink);font-style:italic}
+.founder-note-body strong{font-style:normal;font-weight:600}
+.founder-sig{margin-top:18px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;color:var(--ink-mute);letter-spacing:.05em}
+.founder-sig a{color:var(--teal);text-decoration:none;font-weight:600}
+.founder-sig a:hover{text-decoration:underline}
+
+/* CTA BLOCK */
+.cta-block{display:flex;flex-direction:column;gap:14px;margin-bottom:56px;opacity:0;animation:fadeUp .8s ease .9s both}
+.cta-primary{display:inline-flex;align-items:center;justify-content:space-between;gap:14px;padding:22px 28px;background:var(--ink);color:var(--paper);text-decoration:none;border-radius:8px;transition:transform .25s,background .25s}
+.cta-primary:hover{background:var(--teal);transform:translateY(-2px)}
+.cta-primary-text{display:flex;flex-direction:column;gap:4px;text-align:left}
+.cta-primary-label{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);font-weight:600}
+.cta-primary:hover .cta-primary-label{color:var(--paper)}
+.cta-primary-title{font-family:var(--sans);font-size:18px;font-weight:700;letter-spacing:-.005em}
+.cta-arrow{font-family:var(--sans);font-size:22px;font-weight:300;line-height:1;flex-shrink:0}
+
+.cta-secondary{display:inline-flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 24px;background:transparent;color:var(--ink);text-decoration:none;border-radius:8px;border:1px solid var(--rule-soft);transition:border-color .25s,background .25s}
+.cta-secondary:hover{border-color:var(--ink);background:var(--paper-soft)}
+.cta-secondary-text{display:flex;flex-direction:column;gap:4px;text-align:left}
+.cta-secondary-label{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-mute);font-weight:600}
+.cta-secondary-title{font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:-.005em}
+
+/* THESIS FOOTER */
+.thesis{margin-bottom:24px;padding:28px 0;border-top:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);opacity:0;animation:fadeUp .8s ease 1.05s both}
+.thesis-label{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-mute);font-weight:600;margin-bottom:10px}
+.thesis-body{font-family:var(--serif);font-size:16px;line-height:1.6;color:var(--ink-soft);font-style:italic}
+.thesis-body a{color:var(--teal);text-decoration:none;font-weight:600;font-style:normal}
+.thesis-body a:hover{text-decoration:underline}
+
+/* FOOTER */
+footer{position:relative;z-index:1;padding:32px 24px;border-top:1px solid var(--rule-soft);background:var(--paper-soft);font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:.04em}
+.footer-wrap{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.footer-r{display:flex;gap:18px;flex-wrap:wrap}
+.footer-r a{color:var(--ink-soft);text-decoration:none}
+.footer-r a:hover{color:var(--teal)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+
+@media(max-width:680px){
+  .page{padding:48px 18px 60px}
+  .headline{font-size:36px}
+  .deck{font-size:17px;margin-bottom:36px}
+  .founder-note{padding:24px 22px}
+  .founder-note-body{font-size:15px}
+  .cta-primary{padding:18px 22px}
+  .cta-primary-title{font-size:16px}
+  nav{padding:14px 18px}
+}
+</style>
+</head>
+<body>
+
+<!-- Drifting particles — 18 of them, randomly positioned -->
+<div class="particles" aria-hidden="true">
+  <div class="particle" style="left:6%;animation-delay:0s"></div>
+  <div class="particle" style="left:12%;animation-delay:3s"></div>
+  <div class="particle" style="left:18%;animation-delay:7s"></div>
+  <div class="particle" style="left:24%;animation-delay:1s"></div>
+  <div class="particle" style="left:30%;animation-delay:5s"></div>
+  <div class="particle" style="left:36%;animation-delay:9s"></div>
+  <div class="particle" style="left:42%;animation-delay:2s"></div>
+  <div class="particle" style="left:48%;animation-delay:6s"></div>
+  <div class="particle" style="left:54%;animation-delay:11s"></div>
+  <div class="particle" style="left:60%;animation-delay:4s"></div>
+  <div class="particle" style="left:66%;animation-delay:8s"></div>
+  <div class="particle" style="left:72%;animation-delay:0s"></div>
+  <div class="particle" style="left:78%;animation-delay:10s"></div>
+  <div class="particle" style="left:84%;animation-delay:3s"></div>
+  <div class="particle" style="left:90%;animation-delay:7s"></div>
+  <div class="particle" style="left:94%;animation-delay:5s"></div>
+  <div class="particle" style="left:15%;animation-delay:13s"></div>
+  <div class="particle" style="left:75%;animation-delay:12s"></div>
+</div>
+
+<div class="nav-wrap">
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/assets/triad-mark.png" alt="Triad Network">
+      <div class="nav-logo-text">
+        <div class="nav-logo-name">Triad Network</div>
+        <div class="nav-logo-sub">Applied · Cohort 01</div>
+      </div>
+    </a>
+    <a href="/creators.html" class="nav-link">← Back to Creators</a>
+  </nav>
+</div>
+
+<main class="page">
+  <div class="wrap">
+
+    <div class="eyebrow"><span class="pulse"></span>Application Received · Cohort 01</div>
+
+    <h1 class="headline">Your application is <em>in.</em></h1>
+
+    <p class="deck">A partner will read every line — not a filter, not a form-checker. Thank you for trusting us with your work. Here's what happens next.</p>
+
+    <div class="divider"></div>
+
+    <!-- WHAT HAPPENS NEXT -->
+    <div class="section">
+      <div class="section-label">The Process · From Here</div>
+      <div class="steps">
+        <div class="step done">
+          <div class="step-num">Step 01 — Complete</div>
+          <div class="step-title">Application submitted</div>
+          <div class="step-desc">Your responses have been delivered to the partner inbox. You should receive an automated confirmation to the email you provided within a few minutes.</div>
+          <div class="step-meta">If you don't see it, check spam · or write to inquiries@triadnetwork.xyz</div>
+        </div>
+        <div class="step">
+          <div class="step-num">Step 02 — In progress</div>
+          <div class="step-title">Partner review</div>
+          <div class="step-desc">Each application is read in full by a Triad partner. We look for voice, originality, depth of work — not follower count. Reviews happen in 10–14 day windows.</div>
+          <div class="step-meta">Expected response · within 14 days</div>
+        </div>
+        <div class="step">
+          <div class="step-num">Step 03 — If advanced</div>
+          <div class="step-title">45-minute partner interview</div>
+          <div class="step-desc">If your application is advanced, you'll receive a calendar link to schedule a partner conversation. This is two-sided — we get to know your work, and you get to ask us anything about how Triad operates.</div>
+          <div class="step-meta">Conducted on Telegram or Google Meet · creator's preference</div>
+        </div>
+        <div class="step">
+          <div class="step-num">Step 04 — Final</div>
+          <div class="step-title">Offer or decision letter</div>
+          <div class="step-desc">Every applicant receives a decision — accepted into the cohort with seat assignment, declined with our reasoning, or invited to reapply for a future cycle. No silent rejections.</div>
+          <div class="step-meta">Cohort 01 opens June 2, 2026 · 100 seats total</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ASSISTANCE NOTE -->
+    <div class="founder-note">
+      <div class="founder-note-label">Need anything?</div>
+      <div class="founder-note-body">
+        Most applicants don't need to hear from us before their review concludes — the process runs on its own timeline. But if something comes up — you forgot to mention something material, you have a question about how Triad operates, or you'd like to flag a piece of work you're particularly proud of — <strong>just send a direct message.</strong><br><br>
+        We read everything. We respond to everything.
+      </div>
+      <div class="founder-sig">Direct line · <a href="https://x.com/Altcoinsamurai" target="_blank">@Altcoinsamurai</a> on X</div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-block">
+      <a href="https://t.me/+FQK2npO-AN8xYmM0" target="_blank" class="cta-primary">
+        <div class="cta-primary-text">
+          <div class="cta-primary-label">While you wait</div>
+          <div class="cta-primary-title">Join the Triad community on Telegram</div>
+        </div>
+        <span class="cta-arrow">→</span>
+      </a>
+      <a href="/articles/originality-above-everything.html" class="cta-secondary">
+        <div class="cta-secondary-text">
+          <div class="cta-secondary-label">Read the thesis</div>
+          <div class="cta-secondary-title">The Originality Premium — Triad Research, Memo 03</div>
+        </div>
+        <span class="cta-arrow">→</span>
+      </a>
+    </div>
+
+    <!-- THESIS REMINDER -->
+    <div class="thesis">
+      <div class="thesis-label">The Thesis</div>
+      <div class="thesis-body">
+        Curated &gt; aggregated. Voice &gt; reach. Trust &gt; impressions. Triad operates on the model the crypto creator economy is converging toward — selecting for originality, not follower count. The data behind it is in <a href="/articles/originality-above-everything.html">The Originality Premium</a>.
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-wrap">
+    <div>&copy; 2026 Triad Network · London</div>
+    <div class="footer-r">
+      <a href="/">Home</a>
+      <a href="/creators.html">Creators</a>
+      <a href="/legal.html">Terms</a>
+      <a href="/legal.html">Privacy</a>
+      <a href="https://x.com/triadxyz" target="_blank">𝕏 Follow</a>
+      <a href="https://youtube.com/@triadxyz" target="_blank" style="display:inline-flex;align-items:center;gap:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;vertical-align:middle" aria-hidden="true"><path d="M21.582 6.186a2.506 2.506 0 0 0-1.768-1.768C18.254 4 12 4 12 4s-6.254 0-7.814.418a2.506 2.506 0 0 0-1.768 1.768C2 7.746 2 12 2 12s0 4.254.418 5.814a2.506 2.506 0 0 0 1.768 1.768C5.746 20 12 20 12 20s6.254 0 7.814-.418a2.506 2.506 0 0 0 1.768-1.768C22 16.254 22 12 22 12s0-4.254-.418-5.814zM10 15.5v-7l6 3.5-6 3.5z"/></svg>YouTube</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
