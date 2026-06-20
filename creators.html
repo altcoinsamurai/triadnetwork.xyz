@@ -963,10 +963,24 @@ footer .footer-r a:hover{color:var(--text)}
     var el=document.getElementById(id); if(!el||!list.length)return;
     var html=list.map(render).join('');
     el.innerHTML=html+html; // duplicate for seamless marquee loop
+    // iOS Safari computes the marquee against the row's empty width and only
+    // recalculates on a repaint — restart the animation now that cards are in.
+    requestAnimationFrame(function(){
+      el.style.animation='none';
+      void el.offsetWidth; // force reflow against real width
+      el.style.animation='';
+    });
   }
   fill('crExclusive', EXCLUSIVE, exCard);
   fill('crNetworkA', NETWORK_A, nCard);
   fill('crNetworkB', NETWORK_B, nCard);
+  // once images/fonts finish loading, recompute against final width
+  window.addEventListener('load', function(){
+    ['crExclusive','crNetworkA','crNetworkB'].forEach(function(id){
+      var el=document.getElementById(id); if(!el)return;
+      el.style.animation='none'; void el.offsetWidth; el.style.animation='';
+    });
+  });
 })();
 </script>
 
