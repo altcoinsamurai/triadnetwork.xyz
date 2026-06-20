@@ -405,6 +405,10 @@ a{color:inherit;text-decoration:none}
 @media(max-width:520px){.tsp{width:100%;max-width:100%;padding:36px 22px 26px}.tsp h2{font-size:23px}}
 .partner-media{border-radius:16px;overflow:hidden;border:1px solid var(--border);background:#000;aspect-ratio:1280/698;align-self:start}
 .partner-media video{width:100%;height:100%;object-fit:cover;display:block}
+.partner-media .yt-embed{position:relative;width:100%;height:100%;cursor:pointer;display:block}
+.partner-media .yt-poster{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.16,1,.3,1),filter .4s}
+.partner-media .yt-embed:hover .yt-poster{transform:scale(1.04);filter:brightness(1.1)}
+.partner-media .yt-embed iframe{width:100%;height:100%;border:0;display:block}
 @media(max-width:760px){
   .partner-body{grid-template-columns:1fr;gap:24px;padding:22px}
   .partner-media{order:-1}
@@ -657,7 +661,9 @@ footer .footer-r a:hover{color:var(--text)}
         </div>
       </div>
       <div class="partner-media">
-        <video src="/assets/dapital-clip.mp4" poster="/assets/dapital-poster.jpg" autoplay loop muted playsinline preload="metadata"></video>
+        <div class="yt-embed" data-yt="DLXn9ZT_YHM">
+          <img class="yt-poster" src="/assets/dapital-video-poster.jpg" alt="Watch Dapital — meet the founders" loading="lazy">
+        </div>
       </div>
     </div>
   </div>
@@ -1610,6 +1616,14 @@ document.querySelectorAll('.video-unmute').forEach(function(btn){
   var book=document.getElementById('tspBook'); if(book)book.addEventListener('click',function(){close(true);});
   document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&drawer.classList.contains('open'))close(true); });
 })();
+</script>
+<script>
+document.querySelectorAll('.yt-embed').forEach(function(el){
+  el.addEventListener('click',function(){
+    var id=el.getAttribute('data-yt'); if(!id)return;
+    el.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1&playsinline=1" title="Dapital" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+  },{once:true});
+});
 </script>
 </body>
 </html>
