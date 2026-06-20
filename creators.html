@@ -319,9 +319,8 @@ a{color:inherit;text-decoration:none}
 .cr-track.left{animation:crScrollL 70s linear infinite}
 .cr-track.right{animation:crScrollR 88s linear infinite}
 .cr-row:hover .cr-track{animation-play-state:paused}
-@keyframes crScrollL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@keyframes crScrollR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
-@media(prefers-reduced-motion:reduce){.cr-track{animation:none!important}.cr-row{overflow-x:auto}}
+@keyframes crScrollL{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+@keyframes crScrollR{from{transform:translate3d(-50%,0,0)}to{transform:translate3d(0,0,0)}}
 /* exclusive (big) */
 .cr-x{flex:0 0 auto;width:232px;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:16px;transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .4s,box-shadow .4s}
 .cr-x:hover{border-color:var(--accent-soft);transform:translateY(-4px);box-shadow:0 22px 50px -26px rgba(1,189,165,.35)}
