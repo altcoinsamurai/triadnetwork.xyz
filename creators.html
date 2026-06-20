@@ -1530,13 +1530,10 @@ document.querySelectorAll('.video-unmute').forEach(function(btn){
   function suppressed(){ try{var v=localStorage.getItem(KEY);return v&&Date.now()<parseInt(v,10);}catch(e){return false;} }
   function suppress(days){ try{localStorage.setItem(KEY,String(Date.now()+days*864e5));}catch(e){} }
   var opened=false, timer;
-  function cleanup(){ window.removeEventListener('scroll',onScroll); clearTimeout(timer); }
-  function open(){ if(opened||suppressed())return; opened=true; cleanup(); overlay.classList.add('open'); drawer.classList.add('open'); }
+  function open(){ if(opened||suppressed())return; opened=true; clearTimeout(timer); overlay.classList.add('open'); drawer.classList.add('open'); }
   function close(persist){ overlay.classList.remove('open'); drawer.classList.remove('open'); if(persist)suppress(4); }
-  function onScroll(){ var h=document.documentElement.scrollHeight-window.innerHeight; if(h>0&&(window.scrollY/h)>0.45)open(); }
   if(!suppressed()){
-    timer=setTimeout(open,12000);
-    window.addEventListener('scroll',onScroll,{passive:true});
+    timer=setTimeout(open,5000);
   }
   document.getElementById('tspClose').addEventListener('click',function(){close(true);});
   document.getElementById('tspHide').addEventListener('click',function(){close(true);});
