@@ -298,8 +298,17 @@ a{color:inherit;text-decoration:none}
 .partner-backers{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-family:var(--accent-font);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dim)}
 .partner-backers strong{color:var(--text);font-weight:600}
 .partner-backers .dot{width:4px;height:4px;border-radius:50%;background:var(--muted);opacity:.5}
-.partner-visit{margin-top:auto;align-self:flex-start;padding:14px 26px;background:var(--text);color:#06060C;font-family:var(--accent-font);font-size:10px;letter-spacing:.2em;text-transform:uppercase;border-radius:100px;font-weight:500;transition:all .3s}
+.partner-visit{padding:14px 26px;background:var(--text);color:#06060C;font-family:var(--accent-font);font-size:10px;letter-spacing:.2em;text-transform:uppercase;border-radius:100px;font-weight:500;transition:all .3s}
 .partner-visit:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 12px 32px rgba(1,189,165,.25)}
+.partner-cta-wrap{margin-top:auto}
+.partner-cta-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.partner-testers{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;background:linear-gradient(180deg,rgba(1,189,165,.16) 0%,rgba(1,189,165,.05) 100%);color:var(--accent);font-family:var(--accent-font);font-size:10px;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--accent-soft);border-radius:100px;font-weight:600;transition:all .35s;position:relative;overflow:hidden}
+.partner-testers::before{content:"";position:absolute;top:0;left:-60%;width:45%;height:100%;background:linear-gradient(90deg,transparent,rgba(1,189,165,.22),transparent);transform:skewX(-20deg);transition:left .6s ease}
+.partner-testers:hover{border-color:var(--accent);background:linear-gradient(180deg,rgba(1,189,165,.24) 0%,rgba(1,189,165,.1) 100%);box-shadow:0 0 30px -6px rgba(1,189,165,.45);transform:translateY(-2px)}
+.partner-testers:hover::before{left:120%}
+.partner-testers .pulse{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:livePulse 2.4s ease-in-out infinite;flex-shrink:0}
+.partner-scarcity{display:flex;align-items:center;gap:8px;margin-top:14px;font-family:var(--mono);font-size:10px;letter-spacing:.03em;color:var(--text-dim)}
+.partner-scarcity svg{width:12px;height:12px;stroke:var(--accent);fill:none;flex-shrink:0}
 .partner-media{border-radius:16px;overflow:hidden;border:1px solid var(--border);background:#000;aspect-ratio:1280/698;align-self:start}
 .partner-media video{width:100%;height:100%;object-fit:cover;display:block}
 @media(max-width:760px){
@@ -542,7 +551,16 @@ footer .footer-r a:hover{color:var(--text)}
           <span class="dot"></span>
           <span><strong>Curated by</strong> ICM.RUN</span>
         </div>
-        <a href="https://dapital.xyz" target="_blank" rel="noopener" class="partner-visit">Visit dapital.xyz &rarr;</a>
+        <div class="partner-cta-wrap">
+          <div class="partner-cta-row">
+            <a href="https://dapital.xyz" target="_blank" rel="noopener" class="partner-visit">Visit dapital.xyz &rarr;</a>
+            <a href="/founding-testers.html" class="partner-testers"><span class="pulse"></span>Founding Testers &rarr;</a>
+          </div>
+          <div class="partner-scarcity">
+            <svg viewBox="0 0 24 24" stroke-width="1.8"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            Closed beta · founding cohort · by invitation
+          </div>
+        </div>
       </div>
       <div class="partner-media">
         <video src="/assets/dapital-clip.mp4" poster="/assets/dapital-poster.jpg" autoplay loop muted playsinline preload="metadata"></video>
