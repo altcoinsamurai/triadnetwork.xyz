@@ -309,6 +309,23 @@ a{color:inherit;text-decoration:none}
 .partner-testers .pulse{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:livePulse 2.4s ease-in-out infinite;flex-shrink:0}
 .partner-scarcity{display:flex;align-items:center;gap:8px;margin-top:14px;font-family:var(--mono);font-size:10px;letter-spacing:.03em;color:var(--text-dim)}
 .partner-scarcity svg{width:12px;height:12px;stroke:var(--accent);fill:none;flex-shrink:0}
+/* ─ PTSD block extras ─ */
+.ptsd-banner{aspect-ratio:1200/360;display:flex;align-items:center;justify-content:center;background:radial-gradient(120% 150% at 50% 0%,rgba(1,189,165,.14),transparent 62%),linear-gradient(180deg,#11111b,#06060c)}
+.ptsd-banner img{width:auto;height:52%;max-width:66%;object-fit:contain}
+.partner-watch{display:inline-flex;align-items:center;gap:9px;padding:14px 24px;background:linear-gradient(180deg,rgba(1,189,165,.16) 0%,rgba(1,189,165,.05) 100%);color:var(--accent);font-family:var(--accent-font);font-size:10px;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--accent-soft);border-radius:100px;font-weight:600;transition:all .35s}
+.partner-watch:hover{border-color:var(--accent);background:linear-gradient(180deg,rgba(1,189,165,.24) 0%,rgba(1,189,165,.1) 100%);box-shadow:0 0 26px -8px rgba(1,189,165,.4);transform:translateY(-2px)}
+.partner-watch svg{width:13px;height:13px;fill:currentColor}
+.ptsd-eps{display:flex;flex-direction:column;gap:12px;align-self:start}
+.ptsd-eps-label{font-family:var(--accent-font);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim);margin-bottom:2px}
+.ep-card{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:14px;padding:10px;transition:transform .35s,border-color .35s}
+.ep-card:hover{border-color:var(--accent-soft);transform:translateX(3px)}
+.ep-thumb{width:108px;height:64px;border-radius:9px;overflow:hidden;background:#000;flex-shrink:0;position:relative}
+.ep-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.ep-info{flex:1;min-width:0}
+.ep-num{font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;color:var(--accent);margin-bottom:4px;text-transform:uppercase}
+.ep-title{font-family:var(--display);font-size:14px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ep-arrow{width:15px;height:15px;stroke:var(--text-dim);fill:none;stroke-width:2;flex-shrink:0;margin-right:4px;transition:stroke .3s}
+.ep-card:hover .ep-arrow{stroke:var(--accent)}
 /* ═══ CREATOR SPOTLIGHT ═══ */
 .cr-tier{max-width:1280px;margin:0 auto 44px;position:relative}
 .cr-tier-label{display:inline-flex;align-items:center;gap:9px;margin:0 0 20px 32px;padding:9px 17px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-family:var(--accent-font);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--text);backdrop-filter:blur(8px)}
@@ -641,6 +658,53 @@ footer .footer-r a:hover{color:var(--text)}
       </div>
       <div class="partner-media">
         <video src="/assets/dapital-clip.mp4" poster="/assets/dapital-poster.jpg" autoplay loop muted playsinline preload="metadata"></video>
+      </div>
+    </div>
+  </div>
+
+  <div class="partner-featured reveal" style="margin-top:24px">
+    <div class="partner-banner ptsd-banner">
+      <img src="https://www.ptsdshow.com/images/hero/logo.png" alt="PTSD — Post Trench Stress Disorder">
+      <span class="partner-status">Triad · Curators</span>
+    </div>
+    <div class="partner-body">
+      <div class="partner-content">
+        <div class="partner-head">
+          <div>
+            <div class="partner-name">PTSD</div>
+            <div class="partner-cat">Post Trench Stress Disorder · Animated Web3 Series</div>
+          </div>
+        </div>
+        <p class="partner-desc">The first crypto-native animated series — a dark comedy for anyone who's ever held too long, bought the top, got rugged, rekt, or liquidated. Think Rick &amp; Morty for the trenches, built from the chaos we all lived on-chain. #1 rated show on X.</p>
+        <div class="partner-backers">
+          <span><strong>Backed by</strong> Animoca Brands</span>
+          <span class="dot"></span>
+          <span><strong>&amp;</strong> Concept Labs</span>
+        </div>
+        <div class="partner-cta-wrap">
+          <div class="partner-cta-row">
+            <a href="https://www.ptsdshow.com" target="_blank" rel="noopener" class="partner-visit">Visit ptsdshow.com &rarr;</a>
+            <a href="https://x.com/ptsdshow/status/2021963569710186600" target="_blank" rel="noopener" class="partner-watch"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Watch Trailer</a>
+          </div>
+        </div>
+      </div>
+      <div class="ptsd-eps">
+        <div class="ptsd-eps-label">Episodes</div>
+        <a class="ep-card" href="https://x.com/ptsdshow/status/2024499485489934608" target="_blank" rel="noopener">
+          <div class="ep-thumb"><img src="https://images.ctfassets.net/6vjzkixzmqd9/6TztT96is15FQryKlFk6e/5f68303c7cad85eaeaf59040024eeb79/PT_Dipowitz_Office0001_1.png" alt="Enter The Trenches" loading="lazy"></div>
+          <div class="ep-info"><div class="ep-num">Episode 01 · 04:07</div><div class="ep-title">Enter The Trenches</div></div>
+          <svg class="ep-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </a>
+        <a class="ep-card" href="https://x.com/ptsdshow/status/2029572905797910580" target="_blank" rel="noopener">
+          <div class="ep-thumb"><img src="https://images.ctfassets.net/6vjzkixzmqd9/LqfwIKU8Lnbd5kMxV6BFx/66531990f25ec10a76603339777745bc/tg_image_351367837.jpeg" alt="SausageDaddy" loading="lazy"></div>
+          <div class="ep-info"><div class="ep-num">Episode 02 · 04:00</div><div class="ep-title">SausageDaddy</div></div>
+          <svg class="ep-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </a>
+        <a class="ep-card" href="https://x.com/ptsdshow/status/2032094274628575419" target="_blank" rel="noopener">
+          <div class="ep-thumb"><img src="https://images.ctfassets.net/6vjzkixzmqd9/47GUeOoLunRtKqvKPwf9iA/25478ca3eb2311ee88f1d1f5ad600fc0/ep3web.jpeg" alt="Infinite Money Glitch" loading="lazy"></div>
+          <div class="ep-info"><div class="ep-num">Episode 03 · 05:10</div><div class="ep-title">Infinite Money Glitch</div></div>
+          <svg class="ep-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </a>
       </div>
     </div>
   </div>
