@@ -1527,11 +1527,11 @@ document.querySelectorAll('.video-unmute').forEach(function(btn){
   var KEY='triad_strategist_suppress_until';
   var overlay=document.getElementById('tspOverlay'), drawer=document.getElementById('tspDrawer');
   if(!overlay||!drawer)return;
-  function suppressed(){ try{var v=localStorage.getItem(KEY);return v&&Date.now()<parseInt(v,10);}catch(e){return false;} }
-  function suppress(days){ try{localStorage.setItem(KEY,String(Date.now()+days*864e5));}catch(e){} }
+  function suppressed(){ try{return sessionStorage.getItem(KEY)==='1';}catch(e){return false;} }
+  function suppress(){ try{sessionStorage.setItem(KEY,'1');}catch(e){} }
   var opened=false, timer;
   function open(){ if(opened||suppressed())return; opened=true; clearTimeout(timer); overlay.classList.add('open'); drawer.classList.add('open'); }
-  function close(persist){ overlay.classList.remove('open'); drawer.classList.remove('open'); if(persist)suppress(4); }
+  function close(persist){ overlay.classList.remove('open'); drawer.classList.remove('open'); if(persist)suppress(); }
   if(!suppressed()){
     timer=setTimeout(open,5000);
   }
