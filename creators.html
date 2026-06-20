@@ -13,14 +13,14 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@triadxyz">
 <meta name="twitter:image" content="https://triadnetwork.xyz/og-image.png">
-<meta property="og:title" content="Triad Creators — By Application. Curated Roster.">
-<meta property="og:description" content="A curated roster for crypto's sharpest small-to-mid creators. Founding cohort capped at 100. Multi-section application. 45-minute partner interview required.">
+<meta property="og:title" content="Triad Creators — Curated Roster">
+<meta property="og:description" content="A curated roster for crypto's sharpest small-to-mid creators. Cohort 01 selected. Partners moving through the network.">
 <meta property="og:url" content="https://triadnetwork.xyz/creators.html">
-<meta name="twitter:title" content="Triad Creators — By Application. Curated Roster.">
-<meta name="twitter:description" content="A curated roster for crypto's sharpest small-to-mid creators. By application. 45-minute partner interview required.">
-<meta name="description" content="Triad is a curated roster for crypto's sharpest small-to-mid creators. Founding cohort capped at 100 seats. By application. Distribution, on demand.">
+<meta name="twitter:title" content="Triad Creators — Curated Roster">
+<meta name="twitter:description" content="A curated roster for crypto's sharpest small-to-mid creators. Cohort 01 selected. Partners moving through the network.">
+<meta name="description" content="Triad is a curated roster for crypto's sharpest small-to-mid creators. Cohort 01 selected. Distribution, on demand.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Triad Creators — By Application. Curated Roster.</title>
+<title>Triad Creators — Curated Roster</title>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Michroma&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script async src="https://plausible.io/js/pa-sO608YaKMQ1Jb8JQKbrs2.js"></script>
 <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
@@ -281,6 +281,32 @@ a{color:inherit;text-decoration:none}
 .receipt-soon-text{font-family:var(--mono);font-size:11px;color:var(--muted);max-width:380px;margin:0 auto;line-height:1.6}
 .receipts-cta{text-align:center;margin-top:40px;font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.05em;position:relative;z-index:1}
 .receipts-cta span{color:var(--accent)}
+/* ═══ INCOMING PARTNERS ═══ */
+.partner-featured{max-width:1100px;margin:0 auto;background:var(--bg-card);border:1px solid var(--border);border-radius:24px;overflow:hidden;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:all .5s cubic-bezier(.16,1,.3,1)}
+.partner-featured:hover{border-color:var(--accent-soft);box-shadow:0 24px 60px -28px rgba(1,189,165,.25)}
+.partner-banner{position:relative;aspect-ratio:1200/440;overflow:hidden;border-bottom:1px solid var(--border)}
+.partner-banner img{width:100%;height:100%;object-fit:cover;display:block}
+.partner-status{position:absolute;top:18px;left:18px;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;background:rgba(6,6,12,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--accent-soft);border-radius:100px;font-family:var(--accent-font);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.partner-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:livePulse 2.4s ease-in-out infinite}
+.partner-body{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:34px}
+.partner-content{display:flex;flex-direction:column;gap:20px}
+.partner-head{display:flex;align-items:center;gap:14px}
+.partner-logo{width:56px;height:56px;border-radius:14px;border:1px solid var(--border);object-fit:cover;flex-shrink:0;background:#000}
+.partner-name{font-family:var(--display);font-size:24px;font-weight:600;text-transform:uppercase;letter-spacing:-.005em;line-height:1}
+.partner-cat{font-family:var(--mono);font-size:11px;color:var(--text-dim);letter-spacing:.01em;margin-top:7px}
+.partner-desc{font-family:var(--body);font-size:15px;line-height:1.65;color:var(--text-dim)}
+.partner-backers{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-family:var(--accent-font);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dim)}
+.partner-backers strong{color:var(--text);font-weight:600}
+.partner-backers .dot{width:4px;height:4px;border-radius:50%;background:var(--muted);opacity:.5}
+.partner-visit{margin-top:auto;align-self:flex-start;padding:14px 26px;background:var(--text);color:#06060C;font-family:var(--accent-font);font-size:10px;letter-spacing:.2em;text-transform:uppercase;border-radius:100px;font-weight:500;transition:all .3s}
+.partner-visit:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 12px 32px rgba(1,189,165,.25)}
+.partner-media{border-radius:16px;overflow:hidden;border:1px solid var(--border);background:#000;aspect-ratio:1280/698;align-self:start}
+.partner-media video{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:760px){
+  .partner-body{grid-template-columns:1fr;gap:24px;padding:22px}
+  .partner-media{order:-1}
+  .partner-banner{aspect-ratio:1200/560}
+}
 
 /* CAROUSEL — swipeable receipt cards */
 .receipt-card.carousel{padding-bottom:18px}
@@ -465,40 +491,64 @@ footer .footer-r a:hover{color:var(--text)}
   <a href="#calc" class="pill-link">Earnings</a>
   <a href="#process" class="pill-link">Journey</a>
   <a href="/dashboard.html" class="pill-link">Dashboard</a>
-  <a href="#apply" class="pill-cta">Apply</a>
+  <a href="#partners" class="pill-cta">Partners</a>
 </nav>
 
 <section class="hero-c">
-  <div class="hero-eyebrow">By Application · Cohort 01</div>
+  <div class="hero-eyebrow">Curated Roster · Cohort 01 Selected</div>
   <h1>Built for the underdog.<br>Engineered for the <em>rise.</em></h1>
-  <p class="hero-sub">A curated roster for crypto's sharpest small-to-mid creators. Founding cohort capped at 100 seats. By application. 45-minute partner interview required for acceptance.</p>
+  <p class="hero-sub">A curated roster for crypto's sharpest small-to-mid creators. The founding 100 are selected — and these are the projects now moving through the network.</p>
 
   <div class="cohort-date-box">
-    <div class="cohort-date-label">Founding Cohort · Opens</div>
-    <div class="cohort-date-headline">June 2 <em>·</em> 2026</div>
+    <div class="cohort-date-label">Founding Cohort · Status</div>
+    <div class="cohort-date-headline">Cohort 01 <em>·</em> Selected</div>
     <div class="cohort-date-sub">
-      <span><strong>100</strong> seats</span>
+      <span><strong>100</strong> seats filled</span>
       <span class="divider">·</span>
-      <span><strong>By application</strong></span>
-    </div>
-    <div class="cohort-clock" id="cohortClock">
-      <div class="cohort-clock-unit">
-        <div class="cohort-clock-num" id="cdDays">15</div>
-        <div class="cohort-clock-label">Days</div>
-      </div>
-      <div class="cohort-clock-divider">:</div>
-      <div class="cohort-clock-unit">
-        <div class="cohort-clock-num" id="cdHours">00</div>
-        <div class="cohort-clock-label">Hours</div>
-      </div>
+      <span><strong>Applications closed</strong></span>
     </div>
   </div>
 
   <div class="cta-pills">
-    <a href="#apply" class="btn-primary">Apply for Consideration &rarr;</a>
+    <a href="#partners" class="btn-primary">Meet the Partners &rarr;</a>
     <a href="#receipts" class="btn-secondary">See the Work</a>
   </div>
-  <div class="hero-badge">Pre-application window · Cohort 01</div>
+  <div class="hero-badge">Cohort 01 selected · Cohort 02 by invitation</div>
+</section>
+<!-- INCOMING PARTNERS -->
+<section class="section" id="partners" style="padding-top:60px">
+  <div class="section-head reveal">
+    <div class="section-eyebrow">Incoming · Partner Projects</div>
+    <h2>Partners moving through the <em>network.</em></h2>
+    <p>Triad's advisory and distribution work, in the open — the projects we're building alongside, and the ones arriving next.</p>
+  </div>
+  <div class="partner-featured reveal">
+    <div class="partner-banner">
+      <img src="/assets/dapital-banner.jpg" alt="Dapital">
+      <span class="partner-status">Triad Advisory</span>
+    </div>
+    <div class="partner-body">
+      <div class="partner-content">
+        <div class="partner-head">
+          <img src="/assets/dapital-logo.jpg" class="partner-logo" alt="Dapital logo">
+          <div>
+            <div class="partner-name">Dapital</div>
+            <div class="partner-cat">Financialized Social Network · Consumer Finance</div>
+          </div>
+        </div>
+        <p class="partner-desc">A consumer finance app where investment discovery, execution, attribution, and reputation live in one loop. Investing is already social — people find ideas through feeds, group chats, creators and communities. Dapital pulls the fragmented pieces of discovery, execution and attribution into a single surface.</p>
+        <div class="partner-backers">
+          <span><strong>Backed by</strong> YZi Labs</span>
+          <span class="dot"></span>
+          <span><strong>Curated by</strong> ICM.RUN</span>
+        </div>
+        <a href="https://dapital.xyz" target="_blank" rel="noopener" class="partner-visit">Visit dapital.xyz &rarr;</a>
+      </div>
+      <div class="partner-media">
+        <video src="/assets/dapital-clip.mp4" poster="/assets/dapital-poster.jpg" autoplay loop muted playsinline preload="metadata"></video>
+      </div>
+    </div>
+  </div>
 </section>
 <!-- RECEIPTS — TOP OF PAGE -->
 <section class="section" id="receipts" style="padding-top:60px">
@@ -765,7 +815,7 @@ footer .footer-r a:hover{color:var(--text)}
     <div class="cohort-card"><div class="cohort-slot">—</div><div class="cohort-handle">Reviewing</div><div class="cohort-meta">In Committee</div></div>
     <div class="cohort-card"><div class="cohort-slot">—</div><div class="cohort-handle">Reviewing</div><div class="cohort-meta">In Committee</div></div>
     <div class="cohort-card"><div class="cohort-slot">—</div><div class="cohort-handle">Reviewing</div><div class="cohort-meta">In Committee</div></div>
-    <div class="cohort-card"><div class="cohort-slot">↓</div><div class="cohort-handle">Apply Below</div><div class="cohort-meta">Cohort 01 Open</div></div>
+    <div class="cohort-card"><div class="cohort-slot">●</div><div class="cohort-handle">Roster Live</div><div class="cohort-meta">Cohort 01 Closed</div></div>
   </div>
   <div class="cohort-stats reveal">
     <div class="cstat"><div class="cstat-num">100</div><div class="cstat-label">Founding Cohort Cap</div></div>
@@ -864,7 +914,7 @@ footer .footer-r a:hover{color:var(--text)}
         <div><span>Your 70% share</span><span id="calcShare">$0</span></div>
         <div><span>Annual projection</span><span id="calcAnnual">$0</span></div>
       </div>
-      <a href="#apply" class="btn-primary" style="width:100%;justify-content:center">Start Earning →</a>
+      <a href="#partners" class="btn-primary" style="width:100%;justify-content:center">See the Network →</a>
     </div>
   </div>
 </section>
@@ -904,11 +954,16 @@ footer .footer-r a:hover{color:var(--text)}
 
 <section class="section" id="apply">
   <div class="section-head reveal">
-    <div class="section-eyebrow">Application · Cohort 01</div>
-    <h2>Triad doesn't open the door <em>for everyone.</em></h2>
-    <p>Founding cohort capped at 100 seats. Seven sections. ~25 minutes. Reviewed by partners within 10–14 days. Advanced applicants sit a 45-minute interview before acceptance.</p>
+    <div class="section-eyebrow">Cohort 01 · Closed</div>
+    <h2>The founding cohort is <em>closed.</em></h2>
+    <p>Cohort 01 reached its founding 100 seats and is no longer accepting applications. Cohort 02 opens on a new cycle, by invitation.</p>
   </div>
-  <div class="apply-wrap reveal">
+  <div class="reveal" style="max-width:680px;margin:0 auto 8px;text-align:center;padding:44px 32px;background:var(--bg-card);border:1px solid var(--border);border-radius:24px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)">
+    <div style="font-family:var(--accent-font);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:16px">Applications Closed</div>
+    <p style="font-family:var(--body);font-size:16px;line-height:1.65;color:var(--text-dim);margin:0 auto 26px;max-width:520px">The founding 100 are selected. Cohort 02 opens on a new cycle — follow <a href="https://x.com/triadxyz" target="_blank" rel="noopener" style="color:var(--accent)">@triadxyz</a> for the next window.</p>
+    <a href="#partners" class="btn-primary" style="display:inline-flex">Meet the Partners &rarr;</a>
+  </div>
+  <div class="apply-wrap reveal" style="display:none">
     <form class="c-form" action="https://formspree.io/f/mredgvwj" method="POST">
 
       <input type="hidden" name="_next" value="https://triadnetwork.xyz/applied.html">
@@ -1092,10 +1147,10 @@ footer .footer-r a:hover{color:var(--text)}
 </section>
 <section class="section" style="padding-top:60px">
   <div class="contact-wrap reveal">
-    <div class="section-eyebrow" style="margin-bottom:20px">Cohort 01 · Pre-Launch</div>
-    <h2>The door is open. <em>Briefly.</em></h2>
-    <p>Triad reviews applications in 10–14 day windows. Cohort 01 closes when the founding 100 seats are filled — there is no waitlist past that, and Cohort 02 opens on a new cycle. Submit when you're ready; we'll read every line.</p>
-    <a href="#apply" class="btn-tg">Begin Your Application →</a>
+    <div class="section-eyebrow" style="margin-bottom:20px">Cohort 01 · Closed</div>
+    <h2>The door is closed. <em>For now.</em></h2>
+    <p>Cohort 01 reached its founding 100 and is now closed. There's no waitlist — Cohort 02 opens on a new cycle, by invitation. Follow @triadxyz for the next window.</p>
+    <a href="#partners" class="btn-tg">See the Network →</a>
     <p style="margin-top:32px;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.05em">Brands · press · partner inquiries · <a href="mailto:altcoinsamurai@triadnetwork.xyz" style="color:var(--accent)">altcoinsamurai@triadnetwork.xyz</a></p>
   </div>
 </section>
@@ -1112,35 +1167,7 @@ footer .footer-r a:hover{color:var(--text)}
 </footer>
 
 <script>
-// COHORT 01 LIVE COUNTDOWN — days + hours, auto-updates client-side
-(function(){
-  var target = new Date('2026-06-02T00:00:00Z');
-  var daysEl = document.getElementById('cdDays');
-  var hoursEl = document.getElementById('cdHours');
-  var clockEl = document.getElementById('cohortClock');
-  if(!daysEl || !hoursEl) return;
-
-  function pad(n){ return n < 10 ? '0' + n : '' + n; }
-
-  function tick(){
-    var now = new Date();
-    var diff = target - now;
-    if(diff <= 0){
-      // Date has passed — show "LIVE" state
-      if(clockEl){
-        clockEl.innerHTML = '<div class="cohort-clock-unit" style="min-width:auto;padding:14px 28px"><div class="cohort-clock-num" style="color:var(--accent);font-size:18px;letter-spacing:.22em">APPLICATIONS OPEN</div></div>';
-      }
-      return;
-    }
-    var totalHours = diff / (1000 * 60 * 60);
-    var days = Math.floor(totalHours / 24);
-    var hours = Math.floor(totalHours % 24);
-    daysEl.textContent = pad(days);
-    hoursEl.textContent = pad(hours);
-  }
-  tick();
-  setInterval(tick, 60 * 1000); // refresh every minute (so hours rollover live)
-})();
+// Cohort 01 countdown retired — applications closed
 
 var nav=document.getElementById('pillNav');
 window.addEventListener('scroll',function(){
