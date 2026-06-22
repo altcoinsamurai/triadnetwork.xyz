@@ -343,7 +343,7 @@ a{color:inherit;text-decoration:none}
 .cr-x:hover{border-color:var(--accent-soft);transform:translateY(-4px);box-shadow:0 22px 50px -26px rgba(1,189,165,.35)}
 .cr-x-pfp{width:100%;aspect-ratio:1;border-radius:14px;overflow:hidden;background:var(--bg-soft);margin-bottom:15px}
 .cr-x-pfp img{width:100%;height:100%;object-fit:cover;display:block}
-.cr-x-name{display:flex;align-items:center;gap:8px;font-family:var(--display);font-size:18px;font-weight:600;margin-bottom:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cr-x-name{display:flex;align-items:center;gap:8px;font-family:var(--display);font-size:18px;font-weight:600;margin-bottom:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cr-x-name svg{width:14px;height:14px;stroke:var(--text-dim);margin-left:auto;flex-shrink:0;transition:stroke .3s}
 .cr-x:hover .cr-x-name svg{stroke:var(--accent)}
 .cr-x-stats{display:flex;flex-direction:column;gap:7px}
@@ -356,7 +356,7 @@ a{color:inherit;text-decoration:none}
 .cr-n-pfp{width:56px;height:56px;border-radius:12px;overflow:hidden;background:var(--bg-soft);flex-shrink:0}
 .cr-n-pfp img{width:100%;height:100%;object-fit:cover;display:block}
 .cr-n-info{flex:1;min-width:0}
-.cr-n-name{display:flex;align-items:center;gap:6px;font-family:var(--display);font-size:15px;font-weight:600;margin-bottom:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cr-n-name{display:flex;align-items:center;gap:6px;font-family:var(--display);font-size:15px;font-weight:600;margin-bottom:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cr-n-name svg{width:12px;height:12px;stroke:var(--text-dim);margin-left:auto;flex-shrink:0;transition:stroke .3s}
 .cr-n:hover .cr-n-name svg{stroke:var(--accent)}
 .cr-n-stat{display:flex;align-items:baseline;gap:7px;line-height:1.45}
@@ -994,9 +994,7 @@ footer .footer-r a:hover{color:var(--text)}
 <script>
 (function(){
   // ── ROSTER DATA ── replace placeholders with real creators.
-  // Each: { name, handle, pfp, url, followers, secondary, secondaryLabel }
-  // pfp: path like '/assets/creators/handle.jpg' (omit/null → initial tile)
-  // secondaryLabel defaults to 'Monthly Impressions' (use 'Average Listeners' etc. where it fits)
+  // Each: { name, url, pfp }   ·   pfp optional (omit/null → initial tile)
   var EXCLUSIVE = [
     {name:'Creator 01', url:'#', followers:'—', secondary:'—'},
     {name:'Creator 02', url:'#', followers:'—', secondary:'—'},
@@ -1033,18 +1031,13 @@ footer .footer-r a:hover{color:var(--text)}
     return '<a class="cr-x" href="'+esc(c.url||'#')+'" target="_blank" rel="noopener">'
       +'<div class="cr-x-pfp">'+pfp(c)+'</div>'
       +'<div class="cr-x-name">'+esc(c.name)+ARROW+'</div>'
-      +'<div class="cr-x-stats">'
-      +'<div class="cr-x-stat"><span class="v">'+esc(c.followers)+'</span><span class="l">X Followers</span></div>'
-      +'<div class="cr-x-stat"><span class="v">'+esc(c.secondary)+'</span><span class="l">'+esc(c.secondaryLabel||'Monthly Impressions')+'</span></div>'
-      +'</div></a>';
+      +'</a>';
   }
   function nCard(c){
     return '<a class="cr-n" href="'+esc(c.url||'#')+'" target="_blank" rel="noopener">'
       +'<div class="cr-n-pfp">'+pfp(c)+'</div>'
       +'<div class="cr-n-info">'
       +'<div class="cr-n-name">'+esc(c.name)+ARROW+'</div>'
-      +'<div class="cr-n-stat"><span class="v">'+esc(c.followers)+'</span><span class="l">X Followers</span></div>'
-      +'<div class="cr-n-stat"><span class="v">'+esc(c.secondary)+'</span><span class="l">'+esc(c.secondaryLabel||'Monthly Impressions')+'</span></div>'
       +'</div></a>';
   }
   function fill(id, list, render){
