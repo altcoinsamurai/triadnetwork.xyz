@@ -81,7 +81,6 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.06)}
   display:flex;align-items:center;gap:12px;font-weight:500;
 }
 .section-label.centered{justify-content:center}
-.section-label.centered::before{display:none}
 
 /* ═══ CONSOLE FRAME ═══ */
 .console-frame{
