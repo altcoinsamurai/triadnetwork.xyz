@@ -80,7 +80,6 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.06)}
   color:var(--accent);margin-bottom:16px;
   display:flex;align-items:center;gap:12px;font-weight:500;
 }
-.section-label::before{content:'';width:24px;height:2px;background:var(--accent);border-radius:1px}
 .section-label.centered{justify-content:center}
 .section-label.centered::before{display:none}
 
