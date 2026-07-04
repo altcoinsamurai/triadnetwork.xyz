@@ -20,7 +20,7 @@
   --accentDim:rgba(0,191,166,.08);
   --accentGlow:rgba(0,191,166,.12);
   --green:#34C759;
-  --sans:'Inter',system-ui,-apple-system,sans-serif;
+  --sans:'Instrument Sans','Inter',system-ui,-apple-system,sans-serif;
   --mono:'JetBrains Mono','SF Mono',monospace;
   --display:'Inter',system-ui,sans-serif;
   --pad:48px;
