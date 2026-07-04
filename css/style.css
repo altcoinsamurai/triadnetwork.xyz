@@ -28,6 +28,7 @@
   --radius-sm:10px;
 }
 html{scroll-behavior:smooth}
+html{overflow-x:clip}
 body{background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;padding-bottom:64px}
 a{color:inherit;text-decoration:none}
 
