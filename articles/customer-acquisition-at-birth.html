@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Triad Network">
+<meta property="og:image" content="https://triadnetwork.xyz/assets/tenev-stanford.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@triadxyz">
+<meta name="twitter:image" content="https://triadnetwork.xyz/assets/og-originality.png">
+<meta property="og:title" content="Customer Acquisition at Birth">
+<meta property="og:description" content="Robinhood is now sole initial trustee of a federal program that opens an investment account for every American newborn. The distribution read.">
+<meta property="og:url" content="https://triadnetwork.xyz/articles/originality-above-everything.html">
+<meta name="twitter:title" content="The Originality Premium">
+<meta name="twitter:description" content="Why originality outperforms follower-count selection on every metric that compounds. Web2 benchmarks + crypto case evidence.">
+<meta name="description" content="Triad Network research piece on creator selection economics. Examines the micro-influencer engagement premium (5.7% vs 1.8%), the Movement Labs collapse, Kaito's mindshare model, and the case for originality as the durable filter. 19 cited sources.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Acquisition at Birth · Triad Research</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+/* RESEARCH PIECE STYLES — light editorial paper */
+:root{
+  --paper:#F4F1EA;
+  --paper-soft:#EEEAE0;
+  --ink:#0F0F12;
+  --ink-soft:#3A3A40;
+  --ink-mute:#6B6B72;
+  --rule:#1A1A1A;
+  --rule-soft:#D8D2C4;
+  --teal:#01BDA5;
+  --teal-soft:#E8F6F3;
+  --serif:'Lora',Georgia,serif;
+  --sans:'Inter',-apple-system,sans-serif;
+  --mono:'JetBrains Mono',Menlo,monospace;
+}
+body.research-doc{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.62;font-size:18px}
+.research-doc nav{background:rgba(244,241,234,.94)!important;border-bottom:1px solid var(--rule-soft)!important;backdrop-filter:blur(12px)}
+.research-doc nav .logo-text,.research-doc nav .logo-sub,.research-doc nav .nav-links a{color:var(--ink)!important}
+.research-doc nav .nav-cta{background:var(--ink)!important;color:var(--paper)!important;border-color:var(--ink)!important}
+.research-doc nav .nav-cta:hover{background:var(--teal)!important;border-color:var(--teal)!important}
+.research-doc nav .logo-div{background:var(--ink-mute)!important}
+.research-doc footer{background:var(--paper-soft)!important;border-top:1px solid var(--rule-soft)!important;color:var(--ink-mute)!important}
+.research-doc footer a{color:var(--ink-soft)!important}
+.research-doc footer a:hover{color:var(--teal)!important}
+
+article.research{max-width:760px;margin:0 auto;padding:120px 24px 80px;color:var(--ink)}
+.research-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:24px;display:flex;align-items:center;gap:14px}
+.research-title{font-family:var(--sans);font-size:clamp(38px,5.6vw,64px);font-weight:700;line-height:1.06;letter-spacing:-.02em;color:var(--ink);margin-bottom:18px}
+.research-title em{font-style:italic;font-family:var(--serif);font-weight:500;color:var(--ink-soft)}
+.research-deck{font-family:var(--serif);font-size:21px;font-weight:400;line-height:1.5;color:var(--ink-soft);margin-bottom:36px;max-width:640px;font-style:italic}
+.research-meta{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:18px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule-soft);margin-bottom:56px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);font-weight:500}
+.research-meta strong{color:var(--ink);font-weight:600}
+.research-meta-divider{color:var(--rule-soft)}
+
+.research h2{font-family:var(--sans);font-size:28px;font-weight:700;color:var(--ink);margin:56px 0 8px;letter-spacing:-.01em;line-height:1.2}
+.research h2 .section-num{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--teal);display:block;margin-bottom:10px;font-weight:600}
+.research h3{font-family:var(--sans);font-size:20px;font-weight:600;color:var(--ink);margin:38px 0 12px;letter-spacing:-.005em}
+.research p{font-family:var(--serif);font-size:18px;line-height:1.65;color:var(--ink-soft);margin-bottom:18px}
+.research p strong{color:var(--ink);font-weight:600}
+.research a.cite{color:var(--teal);text-decoration:none;font-weight:500;font-size:14px;vertical-align:super;line-height:0;font-family:var(--mono);padding:0 1px}
+.research a.cite:hover{text-decoration:underline}
+
+.disclaimer-research{max-width:760px;margin:0 auto 56px;padding:22px 28px;background:var(--paper-soft);border:1px solid var(--rule-soft);border-left:3px solid var(--teal);border-radius:6px;font-family:var(--serif);font-size:14.5px;color:var(--ink-mute);line-height:1.65}
+.disclaimer-research strong{display:block;color:var(--ink);font-family:var(--mono);font-size:10px;letter-spacing:.2em;margin-bottom:8px;font-weight:600;text-transform:uppercase}
+
+/* DATA-VIZ BLOCKS */
+.data-block{margin:48px 0;padding:32px 28px;background:var(--paper-soft);border:1px solid var(--rule-soft);border-radius:8px}
+.data-block-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);font-weight:600;margin-bottom:14px}
+.data-block-title{font-family:var(--sans);font-size:17px;font-weight:700;color:var(--ink);margin-bottom:22px;line-height:1.35}
+
+.chart-bar{display:grid;grid-template-columns:140px 1fr 70px;gap:14px;align-items:center;margin-bottom:14px}
+.chart-bar-label{font-family:var(--mono);font-size:12px;color:var(--ink-soft);font-weight:500}
+.chart-bar-track{height:34px;background:var(--paper);border:1px solid var(--rule-soft);border-radius:4px;overflow:hidden;position:relative}
+.chart-bar-fill{height:100%;background:var(--teal);transition:width 1s ease-out}
+.chart-bar-fill.dim{background:#B8B2A4}
+.chart-bar-value{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--ink);text-align:right}
+
+.metric-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:32px 0}
+.metric-card{background:var(--paper-soft);border:1px solid var(--rule-soft);border-radius:8px;padding:22px 18px}
+.metric-card .metric-num{font-family:var(--sans);font-size:38px;font-weight:700;color:var(--ink);letter-spacing:-.02em;line-height:1}
+.metric-card .metric-num .pct{color:var(--teal)}
+.metric-card .metric-label{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);margin-top:10px;font-weight:600}
+.metric-card .metric-sub{font-family:var(--serif);font-size:13px;color:var(--ink-soft);margin-top:8px;line-height:1.5}
+
+.research-pullquote{margin:48px 0;padding:0 0 0 28px;border-left:3px solid var(--teal);font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.4;color:var(--ink);font-weight:400}
+.research-pullquote cite{display:block;margin-top:14px;font-style:normal;font-size:13px;color:var(--ink-mute);font-family:var(--mono);letter-spacing:.06em}
+.research-pullquote cite::before{content:"— "}
+
+.case-study{margin:48px 0;padding:32px 28px;background:#0F0F12;color:#F0EEE8;border-radius:8px;border-left:4px solid var(--teal)}
+.case-study .case-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--teal);font-weight:600;text-transform:uppercase;margin-bottom:12px}
+.case-study h3{font-family:var(--sans);font-size:22px;font-weight:700;color:#F0EEE8;margin:0 0 18px;letter-spacing:-.01em}
+.case-study p{color:rgba(240,238,232,.78);font-size:16px;line-height:1.65;margin-bottom:14px;font-family:var(--serif)}
+.case-study p strong{color:#fff}
+.case-study .case-meta{display:flex;flex-wrap:wrap;gap:16px;font-family:var(--mono);font-size:11px;color:rgba(240,238,232,.6);letter-spacing:.1em;margin-top:18px;padding-top:18px;border-top:1px solid rgba(240,238,232,.12)}
+
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:36px 0}
+.compare-card{background:var(--paper-soft);border:1px solid var(--rule-soft);border-radius:8px;padding:24px 20px}
+.compare-card.triad{background:var(--teal-soft);border-color:var(--teal)}
+.compare-head{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:10px;font-weight:600}
+.compare-card.triad .compare-head{color:var(--teal)}
+.compare-title{font-family:var(--sans);font-size:16px;font-weight:700;margin-bottom:14px;color:var(--ink)}
+.compare-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.compare-list li{font-family:var(--serif);font-size:14px;color:var(--ink-soft);line-height:1.55;padding-left:18px;position:relative}
+.compare-list li::before{content:'—';position:absolute;left:0;color:var(--ink-mute)}
+.compare-card.triad .compare-list li::before{content:'+';color:var(--teal);font-weight:700}
+
+.research-end{margin:80px 0 56px;padding:36px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);text-align:center;font-family:var(--mono);font-size:13px;letter-spacing:.16em;color:var(--ink-mute);font-weight:500}
+.research-end strong{color:var(--teal);font-weight:700}
+
+/* REFERENCES */
+.references{margin-top:60px;padding-top:36px;border-top:1px solid var(--rule)}
+.references h2{font-family:var(--sans);font-size:22px;font-weight:700;color:var(--ink);margin-bottom:24px}
+.ref-list{list-style:none;padding:0;margin:0;counter-reset:ref}
+.ref-item{counter-increment:ref;display:grid;grid-template-columns:36px 1fr;gap:8px;margin-bottom:14px;font-family:var(--serif);font-size:13px;line-height:1.55;color:var(--ink-soft)}
+.ref-item::before{content:'[' counter(ref) ']';font-family:var(--mono);font-size:11px;color:var(--teal);font-weight:600;padding-top:2px}
+.ref-item a{color:var(--teal);text-decoration:none;font-weight:500;word-break:break-all}
+.ref-item a:hover{text-decoration:underline}
+
+@media(max-width:680px){
+  article.research{padding:84px 20px 60px}
+  .research-title{font-size:clamp(30px,9vw,44px);line-height:1.1}
+  .research-deck{font-size:17px;line-height:1.55}
+  .research-meta{display:flex;flex-direction:column;gap:7px;align-items:flex-start}
+  .research-meta-divider{display:none}
+  h2.research-h2, article.research h2{font-size:21px;line-height:1.3}
+  .chart-bar{grid-template-columns:76px 1fr 50px;gap:10px}
+  .chart-bar-label{font-size:10px}
+  .chart-bar-value{font-size:13px}
+  .metric-row{grid-template-columns:1fr}
+  .compare-grid{grid-template-columns:1fr}
+  .research-pullquote{font-size:18px;padding-left:18px}
+  .case-meta{display:flex;flex-wrap:wrap;gap:6px 10px}
+  .disclaimer-research{font-size:12.5px}
+}
+@media(max-width:400px){
+  .research-title{font-size:30px}
+  article.research{padding:80px 16px 52px}
+}
+</style>
+<script async src="https://plausible.io/js/pa-sO608YaKMQ1Jb8JQKbrs2.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+</head>
+<body class="research-doc">
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/assets/triad-mark.png" class="logo-mark" alt="Triad Network" width="36" height="36" style="object-fit:contain">
+    <span class="logo-text">Triad Network</span>
+    <span class="logo-div"></span>
+    <span class="logo-sub">Research</span>
+  </a>
+  <div class="nav-links">
+    <a href="/ecosystem.html">Ecosystem</a>
+    <a href="/strategic-bd.html">Strategic BD</a>
+    <a href="/#capabilities">Capabilities</a>
+    <a href="/creators.html">Creators</a>
+    <a href="mailto:inquiries@triadnetwork.xyz" class="nav-cta">Inquire</a>
+  </div>
+  <button class="mobile-menu" style="display:none" onclick="document.querySelector('.nav-links').classList.toggle('show')"><span></span><span></span><span></span></button>
+</nav>
+
+<article class="research">
+  <div class="research-eyebrow">Triad Research · Memo 04 · Distribution</div>
+  <h1 class="research-title">Customer Acquisition <em>at Birth</em></h1>
+  <p class="research-deck">Robinhood is now the sole initial trustee of a federal program that opens an investment account for every eligible American newborn. Set the politics aside. Read it as distribution.</p>
+
+  <div class="research-meta">
+    <span><strong>Author</strong> &nbsp; <a href="https://x.com/Altcoinsamurai" target="_blank" style="color:var(--teal);text-decoration:none;font-weight:600">@Altcoinsamurai</a></span>
+    <span class="research-meta-divider">·</span>
+    <span><strong>Published</strong> &nbsp; July 2026</span>
+    <span class="research-meta-divider">·</span>
+    <span><strong>Read</strong> &nbsp; 7 min</span>
+    <span class="research-meta-divider">·</span>
+    <span><strong>Sources</strong> &nbsp; 11 citations</span>
+  </div>
+
+  <figure style="margin:0 0 34px">
+    <img src="/assets/tenev-stanford.jpg" alt="Vlad Tenev speaking at Stanford Directors' College" style="width:100%;border-radius:6px;display:block">
+    <figcaption style="font-family:var(--mono);font-size:11px;color:var(--ink-mute);margin-top:10px;letter-spacing:.04em">Robinhood CEO Vlad Tenev at Stanford Directors' College, 2026. Photo via Stanford Rock Center on X.</figcaption>
+  </figure>
+
+  <div class="disclaimer-research">
+    <strong>On the numbers</strong>
+    Every figure links to a public source at the end of the page: Treasury and Robinhood announcements, and reporting from CNBC, Forbes, CNN and The 19th. This memo is distribution analysis, not political commentary, and not financial advice.
+  </div>
+
+  <h2><span class="section-num">§ 01</span>What happened</h2>
+
+  <p>On July 4, the country's 250th birthday, the US Treasury launched Trump Accounts: tax-advantaged investment accounts for American children, with a $1,000 federal contribution for every eligible child born between 2025 and 2028<a href="#ref-1" class="cite">[1]</a>. Two days later the President rang the NYSE opening bell from the Oval Office as the first deposits landed<a href="#ref-8" class="cite">[8]</a>.</p>
+
+  <p>The branding is loud and the politics are not our subject. Our subject is one line in the program structure: <strong>Robinhood Securities serves as broker and sole initial trustee</strong>, with BNY as the Treasury's financial agent<a href="#ref-1" class="cite">[1]</a><a href="#ref-2" class="cite">[2]</a>. Selected in April, live in July<a href="#ref-9" class="cite">[9]</a>. Vlad Tenev spent launch week on CNBC, Bloomberg and Fox describing his company's new role as, in his words, a government subcontractor<a href="#ref-10" class="cite">[10]</a>.</p>
+
+  <p>Strip everything else away and look at what the company actually acquired. We think it is the largest customer-acquisition event in fintech history.</p>
+
+  <h2><span class="section-num">§ 02</span>The arithmetic of default</h2>
+
+  <p>Roughly 14.3 million babies are expected to be born in the US between 2025 and 2028, which puts the federal seed program at about $14.3 billion<a href="#ref-4" class="cite">[4]</a>. Before launch day, more than 6 million accounts had already been opened, around 1.4 million of them eligible for the $1,000 seed, and 86% of applicant families earn under $200,000<a href="#ref-5" class="cite">[5]</a><a href="#ref-6" class="cite">[6]</a>. This is not a product for the top decile. It is a default for everyone.</p>
+
+  <p>Then look at who is stacking money on top. The Dell Foundation pledged $6.25 billion to add $250 for an estimated 25 million children<a href="#ref-4" class="cite">[4]</a>. Ray Dalio is funding top-ups in Connecticut<a href="#ref-4" class="cite">[4]</a>. SpaceX's president announced share donations into more than 2 million accounts<a href="#ref-5" class="cite">[5]</a>. Over 50 companies, from Micron to Schwab, are matching the federal $1,000 for employees' children<a href="#ref-4" class="cite">[4]</a>. Families, friends and employers can add up to $5,000 a year on top of all of it<a href="#ref-7" class="cite">[7]</a>.</p>
+
+  <p>Now follow who pays and who collects. The Treasury funds the deposits. Dell and Dalio fund the top-ups. Employers fund the matches. And Robinhood, the trustee, collects the customer relationship. Its acquisition cost per funded account rounds to zero.</p>
+
+  <h2><span class="section-num">§ 03</span>The state as a channel</h2>
+
+  <p>The distribution mechanics are the part worth studying. The Social Security Administration now lets parents open a Trump Account at the hospital, in the same flow as registering the newborn's Social Security number<a href="#ref-6" class="cite">[6]</a>. State child-welfare agencies can open accounts for foster children, with about half of states signed up<a href="#ref-6" class="cite">[6]</a>. Enrollment otherwise runs through an IRS form and an app that families download to activate and track the account, an app built in partnership with Robinhood<a href="#ref-3" class="cite">[3]</a>.</p>
+
+  <p>Every fintech on earth pays real money for a funded account. Hundreds of dollars per user is normal, and the deposit bonuses come out of the company's own pocket. Here, sign-up is embedded in the paperwork of being born, the deposit comes from the government, and the app on the family's phone belongs to the trustee.</p>
+
+  <p>A channel is any surface where your customer already has to be. There is no surface more universal than a birth certificate.</p>
+
+  <h2><span class="section-num">§ 04</span>The 2043 cohort</h2>
+
+  <p>The accounts are built for lock-in by law, not by product design. Funds sit in low-cost US equity index funds and generally cannot be touched before the child turns 18<a href="#ref-7" class="cite">[7]</a>. At 18, the account converts into a traditional IRA and the child takes control<a href="#ref-5" class="cite">[5]</a>.</p>
+
+  <p>Run the dates. A child born this year takes control in 2044. Robinhood has, in one program, signed a cohort of customers who structurally cannot churn for eighteen years, and who will each be handed a funded retirement account at the exact moment they become adult investors, inside an app their family has been checking since the week they were born.</p>
+
+  <p>Nobody has ever bought loyalty that early or held it that long. The program does not guarantee those 18-year-olds stay. It guarantees Robinhood is the incumbent when the decision gets made, 14 million times, on a schedule that runs into the 2040s.</p>
+
+  <h2><span class="section-num">§ 05</span>The pattern, and the caveats</h2>
+
+  <p>There is a bigger arc here. Robinhood has spent this cycle becoming the rail other businesses run on: Kalshi, the fastest-scaling app of 2026, routes more than half of its trading volume through its Robinhood integration<a href="#ref-11" class="cite">[11]</a>. Now the US Treasury runs a national savings program on Robinhood's trusteeship. The company everyone borrows rails from just borrowed the biggest rail in existence: the state itself.</p>
+
+  <p>For anyone building distribution, the lesson repeats. Audiences are rented. Channels are borrowed. The durable position is being the infrastructure that other people's programs get built on, and the second-best position is borrowing a channel your customers already cannot avoid.</p>
+
+  <p>The caveats, stated plainly. This is a politically branded program, and political programs carry regime risk: Robinhood is the initial trustee, not a permanent one, and a future administration can restructure or re-tender the mandate. Researchers already flag that unequal family contributions could compound wealth gaps rather than close them<a href="#ref-4" class="cite">[4]</a>. And a single broker as sole initial trustee of a national program is a concentration the next Treasury may well revisit.</p>
+
+  <p>None of that changes the distribution fact. As of July 4, 2026, being born in America comes with a brokerage account, and one company is the counterparty. Customer acquisition has a new ceiling.</p>
+
+  <div class="research-end">
+    Triad Research · Memo 04 · <strong>Distribution Series</strong>
+  </div>
+
+  <!-- ═══════════ REFERENCES ═══════════ -->
+  <div class="references">
+    <h2>Sources &amp; References</h2>
+    <ul class="ref-list">
+      <li class="ref-item" id="ref-1">"Trump Accounts Officially Launch." Robinhood Newsroom, July 6, 2026. Trustee and broker role, launch mechanics, Tenev statement. <a href="https://robinhood.com/us/en/newsroom/trump-accounts-officially-launch/" target="_blank">robinhood.com/us/en/newsroom/trump-accounts-officially-launch</a></li>
+      <li class="ref-item" id="ref-2">"Trump Accounts Launch to All Eligible American Families." BNY press release, July 6, 2026. BNY as financial agent; program infrastructure. <a href="https://www.bny.com/corporate/global/en/about-us/newsroom/press-release/trump-accounts-launch-eligible-american-families.html" target="_blank">bny.com/corporate/newsroom</a></li>
+      <li class="ref-item" id="ref-3">"Trump Accounts for kids launched July 4: What parents need to know." CNBC, July 1, 2026. Account mechanics, app partnership, enrollment. <a href="https://www.cnbc.com/2026/07/01/trump-accounts-launch-july-4.html" target="_blank">cnbc.com/2026/07/01/trump-accounts-launch-july-4</a></li>
+      <li class="ref-item" id="ref-4">"Trump's Investment Accounts For Kids Launch Tomorrow." Forbes, July 3, 2026. 14.3M projected births, $14.3B cost, employer matches, Dell Foundation $6.25B pledge, contribution-inequality research. <a href="https://www.forbes.com/sites/maryroeloffs/2026/07/03/trumps-investment-accounts-for-kids-launch-tomorrow-how-to-register/" target="_blank">forbes.com</a></li>
+      <li class="ref-item" id="ref-5">"Trump Accounts are now live. Here's what you need to know." CNN Business, July 4, 2026. 6M+ accounts, 1.4M seed-eligible, SpaceX share donations, IRA conversion at 18. <a href="https://www.cnn.com/2026/07/04/business/trump-accounts-faq" target="_blank">cnn.com/2026/07/04/business/trump-accounts-faq</a></li>
+      <li class="ref-item" id="ref-6">"What are Trump Accounts for kids?" The 19th, July 6, 2026. SSA hospital enrollment, Fostering the Future foster program, applicant income distribution. <a href="https://19thnews.org/2026/07/trump-accounts-children-savings-eligibility/" target="_blank">19thnews.org</a></li>
+      <li class="ref-item" id="ref-7">"Trump Accounts: Long-Term Investing for the Next Generation." Robinhood Learn, 2026. Contribution limits, index-fund restriction, age-18 rules. <a href="https://learn.robinhood.com/articles/trump-accounts/" target="_blank">learn.robinhood.com/articles/trump-accounts</a></li>
+      <li class="ref-item" id="ref-8">"Robinhood CEO Vlad Tenev breaks down how Trump Accounts work." CBS News via Social News XYZ, July 6, 2026. Oval Office NYSE bell. <a href="https://www.socialnews.xyz/2026/07/06/robinhood-ceo-vlad-tenev-breaks-down-how-trump-accounts-work-video/" target="_blank">socialnews.xyz</a></li>
+      <li class="ref-item" id="ref-9">"Robinhood Launches Trump Accounts App Ahead Of July 4 Rollout." Benzinga via Yahoo Finance, July 2026. April selection of Robinhood and BNY by Treasury. <a href="https://finance.yahoo.com/markets/stocks/articles/robinhood-launches-trump-accounts-app-180107673.html" target="_blank">finance.yahoo.com</a></li>
+      <li class="ref-item" id="ref-10">"Watch CNBC's full interview with Robinhood CEO Vlad Tenev." CNBC, July 6, 2026. Government-subcontractor framing. <a href="https://www.cnbc.com/video/2026/07/06/watch-cnbcas-full-interview-with-robinhood-ceo-vlad-tenev.html" target="_blank">cnbc.com</a></li>
+      <li class="ref-item" id="ref-11">"Kalshi." TSG Invest analysis, April 2026. Robinhood integration share of Kalshi trading volume. <a href="https://tsginvest.com/kalshi/" target="_blank">tsginvest.com/kalshi</a></li>
+    </ul>
+  </div>
+
+</article>
+
+<footer>
+  <div class="footer-l">&copy; 2026 Triad Network. All rights reserved.</div>
+  <div class="footer-r">
+    <a href="/">Home</a>
+    <a href="/ecosystem.html">Ecosystem</a>
+    <a href="/strategic-bd.html">Strategic BD</a>
+    <a href="/terms.html">Terms</a>
+    <a href="/legal.html">Privacy</a>
+    <a href="https://x.com/triadxyz" target="_blank">𝕏 Follow</a>
+    <a href="https://youtube.com/@triadxyz" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px;margin-right:2px" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#06060C"/></svg> YouTube</a>
+  </div>
+</footer>
+
+</body>
+</html>
