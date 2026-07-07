@@ -13,14 +13,14 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@triadxyz">
 <meta name="twitter:image" content="https://triadnetwork.xyz/assets/og-originality.png">
-<meta property="og:title" content="The Originality Premium — Triad Network Research">
+<meta property="og:title" content="Originality, Above Everything">
 <meta property="og:description" content="A research note on why creators selected for voice outperform follower-count selection on every metric that compounds. Web2 benchmarks, crypto case evidence, 19 citations.">
 <meta property="og:url" content="https://triadnetwork.xyz/articles/originality-above-everything.html">
 <meta name="twitter:title" content="The Originality Premium">
 <meta name="twitter:description" content="Why originality outperforms follower-count selection on every metric that compounds. Web2 benchmarks + crypto case evidence.">
 <meta name="description" content="Triad Network research piece on creator selection economics. Examines the micro-influencer engagement premium (5.7% vs 1.8%), the Movement Labs collapse, Kaito's mindshare model, and the case for originality as the durable filter. 19 cited sources.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Originality Premium — A Research Note on Creator Selection — Triad Network</title>
+<title>Originality, Above Everything · Triad Research</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 <style>
@@ -123,12 +123,24 @@ article.research{max-width:760px;margin:0 auto;padding:120px 24px 80px;color:var
 .ref-item a:hover{text-decoration:underline}
 
 @media(max-width:680px){
-  article.research{padding:90px 18px 60px}
-  .chart-bar{grid-template-columns:90px 1fr 56px}
-  .chart-bar-label{font-size:10.5px}
+  article.research{padding:84px 20px 60px}
+  .research-title{font-size:clamp(30px,9vw,44px);line-height:1.1}
+  .research-deck{font-size:17px;line-height:1.55}
+  .research-meta{display:flex;flex-direction:column;gap:7px;align-items:flex-start}
+  .research-meta-divider{display:none}
+  h2.research-h2, article.research h2{font-size:21px;line-height:1.3}
+  .chart-bar{grid-template-columns:76px 1fr 50px;gap:10px}
+  .chart-bar-label{font-size:10px}
+  .chart-bar-value{font-size:13px}
   .metric-row{grid-template-columns:1fr}
   .compare-grid{grid-template-columns:1fr}
-  .research-deck{font-size:18px}
+  .research-pullquote{font-size:18px;padding-left:18px}
+  .case-meta{display:flex;flex-wrap:wrap;gap:6px 10px}
+  .disclaimer-research{font-size:12.5px}
+}
+@media(max-width:400px){
+  .research-title{font-size:30px}
+  article.research{padding:80px 16px 52px}
 }
 </style>
 <script async src="https://plausible.io/js/pa-sO608YaKMQ1Jb8JQKbrs2.js"></script>
@@ -157,46 +169,40 @@ article.research{max-width:760px;margin:0 auto;padding:120px 24px 80px;color:var
 </nav>
 
 <article class="research">
-  <div class="research-eyebrow">Triad Research · Memo 03 · Distribution</div>
-  <h1 class="research-title">The Originality <em>Premium</em></h1>
-  <p class="research-deck">A research note on why creators selected for voice outperform follower-count selection on the metrics that compound — and why the crypto creator-agency model is structurally late to converge with what Web2 marketing settled five years ago.</p>
+  <div class="research-eyebrow">Triad Research · Memo 03 · Founder Note</div>
+  <h1 class="research-title">Originality, <em>Above Everything</em></h1>
+  <p class="research-deck">Why Triad selects creators on voice instead of follower count. A founder note, with the receipts attached.</p>
 
   <div class="research-meta">
     <span><strong>Author</strong> &nbsp; <a href="https://x.com/Altcoinsamurai" target="_blank" style="color:var(--teal);text-decoration:none;font-weight:600">@Altcoinsamurai</a></span>
     <span class="research-meta-divider">·</span>
-    <span><strong>Published</strong> &nbsp; May 2026</span>
+    <span><strong>Published</strong> &nbsp; May 2026 · Revised July 2026</span>
     <span class="research-meta-divider">·</span>
-    <span><strong>Read</strong> &nbsp; 16 min</span>
+    <span><strong>Read</strong> &nbsp; 8 min</span>
     <span class="research-meta-divider">·</span>
     <span><strong>Sources</strong> &nbsp; 19 citations</span>
   </div>
 
   <div class="disclaimer-research">
-    <strong>Methodology &amp; Scope</strong>
-    This piece synthesises Web2 creator-economy data from third-party industry reports (Zebracat, Social Cat, Marketing Hub, GRIN), peer-reviewed academic research on parasocial dynamics, and public-record evidence from named crypto case studies (Movement Labs, Mantra, Kaito). Where Web2 benchmarks are applied to crypto contexts, the extrapolation is explicitly flagged. No proprietary Triad client data is disclosed; campaign-level figures referenced elsewhere on this site are independently verifiable on X. Where percentage ranges vary between studies, conservative midpoints are used. All sources are linked at the end of this document.
+    <strong>On the numbers</strong>
+    Every figure in this note links to a public source at the end of the page. Web2 benchmarks applied to crypto are flagged as extrapolation. No Triad client data appears anywhere in it.
   </div>
 
-  <!-- ═══════════ INTRO ═══════════ -->
-  <h2><span class="section-num">§ 01 · The Question</span>What does a crypto creator agency actually select for?</h2>
+  <h2><span class="section-num">§ 01</span>The one number</h2>
 
-  <p>The crypto creator-agency category — KOL networks, distribution shops, attention-as-a-service desks — has operated for roughly five years on a single load-bearing selection criterion: follower count. The largest accounts get the campaigns. The campaigns inflate the largest accounts. The cycle compounds, and a small number of established voices end up doing a disproportionate share of all paid crypto coverage. This is well-documented and operates more or less as the industry's open secret.</p>
+  <p>For five years, every KOL shop in crypto has selected on one number: follower count. The biggest accounts get the deals. Size is the product. We built Triad on the opposite bet, and this note is me explaining why.</p>
 
-  <p>What is less well-examined is whether this model is <em>correct</em>. Whether selecting on follower count actually produces the outcomes — for projects buying coverage, for creators building careers, for the markets ostensibly being moved — that the participants assume it does.</p>
+  <p>The follower-count loop is simple. Large accounts get the campaigns. Campaigns inflate the large accounts. A small circle of established voices ends up doing most of the paid coverage in the industry, and everybody involved knows it. It is the category's open secret.</p>
 
-  <p>This memo argues that the follower-count model is structurally inferior to a voice-based selection model on every metric that compounds, and that the crypto creator economy is roughly five years behind Web2 in arriving at this conclusion. The data Web2 marketing settled in 2020–2022 — micro-influencer engagement premiums, parasocial trust dynamics, the failure of reach-based attribution — has yet to be priced into crypto creator selection. This memo lays out the evidence and proposes what the converged model looks like.</p>
+  <p>What almost nobody asks is whether the model is correct. Whether selecting on size actually produces the outcomes that projects pay for and creators build careers on. Web2 asked that question years ago. It got a clear answer. Crypto has mostly not looked.</p>
 
-  <p>We are writing this because Triad operates by the converged model, and the question of <em>why</em> is the question this memo is built to answer.</p>
+  <h2><span class="section-num">§ 02</span>What Web2 already settled</h2>
 
-  <!-- ═══════════ § 02 · WEB2 BENCHMARK ═══════════ -->
-  <h2><span class="section-num">§ 02 · The Web2 Benchmark</span>Five years of data on what follower count actually predicts.</h2>
-
-  <p>The Web2 influencer-marketing industry — projected at <strong>$32.55 billion in 2025 global spend</strong><a href="#ref-1" class="cite">[1]</a> — has gone through the same migration we expect crypto to undergo. The shift began around 2022 as brands started running rigorous post-campaign attribution and finding that follower count was a poor predictor of campaign outcomes.</p>
-
-  <p>The headline finding, reproduced across multiple independent datasets, is that <strong>engagement rate scales inversely with audience size.</strong> A creator with 30,000 followers generates a higher engagement rate per post than a creator with 1,000,000 followers — not by a small margin, but by 3x to 7x depending on the platform and methodology.</p>
+  <p>Influencer marketing outside crypto is a $32.55 billion industry this year<a href="#ref-1" class="cite">[1]</a>, and around 2022 it started doing something crypto still rarely does: measuring campaigns against real conversion instead of impressions. The finding that came back, again and again, across independent datasets, is that engagement rate runs inverse to audience size. Not slightly. By 3x to 7x.</p>
 
   <div class="data-block">
     <div class="data-block-eyebrow">Chart 01 · Engagement Rate by Creator Tier</div>
-    <div class="data-block-title">Micro-influencers consistently outperform macro and mega tiers on engagement rate per post.</div>
+    <div class="data-block-title">Smaller creators consistently outperform macro and mega tiers on engagement per post.</div>
 
     <div class="chart-bar">
       <div class="chart-bar-label">Nano<br><span style="opacity:.6">&lt;10K</span></div>
@@ -204,17 +210,17 @@ article.research{max-width:760px;margin:0 auto;padding:120px 24px 80px;color:var
       <div class="chart-bar-value">7.0%</div>
     </div>
     <div class="chart-bar">
-      <div class="chart-bar-label">Micro<br><span style="opacity:.6">10–100K</span></div>
+      <div class="chart-bar-label">Micro<br><span style="opacity:.6">10-100K</span></div>
       <div class="chart-bar-track"><div class="chart-bar-fill" style="width:72%"></div></div>
       <div class="chart-bar-value">5.7%</div>
     </div>
     <div class="chart-bar">
-      <div class="chart-bar-label">Mid-tier<br><span style="opacity:.6">100–500K</span></div>
+      <div class="chart-bar-label">Mid-tier<br><span style="opacity:.6">100-500K</span></div>
       <div class="chart-bar-track"><div class="chart-bar-fill dim" style="width:38%"></div></div>
       <div class="chart-bar-value">3.0%</div>
     </div>
     <div class="chart-bar">
-      <div class="chart-bar-label">Macro<br><span style="opacity:.6">500K–1M</span></div>
+      <div class="chart-bar-label">Macro<br><span style="opacity:.6">500K-1M</span></div>
       <div class="chart-bar-track"><div class="chart-bar-fill dim" style="width:23%"></div></div>
       <div class="chart-bar-value">1.8%</div>
     </div>
@@ -226,75 +232,51 @@ article.research{max-width:760px;margin:0 auto;padding:120px 24px 80px;color:var
     <p style="font-family:var(--mono);font-size:11px;color:var(--ink-mute);margin-top:18px;letter-spacing:.04em">Source: Zebracat aggregated benchmarks (2025)<a href="#ref-2" class="cite">[2]</a> · Social Cat 17,715-post analysis (2025)<a href="#ref-3" class="cite">[3]</a> · TANKE / Leap Amp (2026)<a href="#ref-4" class="cite">[4]</a>. Figures averaged across cited studies; methodology varies between platforms.</p>
   </div>
 
-  <p>The conventional response to this data is that engagement rate <em>understates</em> the value of macro-creators because their raw audience size compensates: a 2% rate on 1M followers is 20,000 engagements, materially more than a 7% rate on 30K followers (2,100 engagements). This is mathematically correct and substantively misleading. The conversion economics work differently.</p>
-
-  <h3>Conversion economics</h3>
-
-  <p>When campaigns are measured on action — sign-ups, transactions, retained users — not impressions, the picture inverts. Brands report <strong>3–5x higher ROI from micro-influencer campaigns</strong> versus macro spend<a href="#ref-5" class="cite">[5]</a>. 61% of brands explicitly state higher ROI from micros than macros, and micro-led campaigns produce 28% higher repeat-customer rates<a href="#ref-2" class="cite">[2]</a>. The cost gap is equally pronounced:</p>
+  <p>The standard rebuttal is arithmetic: 1.8% of a million followers is still more raw engagement than 7% of thirty thousand. True. It is also beside the point, because impressions are not what anyone is actually buying. When campaigns get measured on action, the picture flips. Brands report 3 to 5x higher ROI from micro-creator campaigns than macro spend<a href="#ref-5" class="cite">[5]</a>. 61% of brands say micros beat macros on ROI outright, and micro-led campaigns produce 28% higher repeat-customer rates<a href="#ref-2" class="cite">[2]</a>. Then there is the price of admission:</p>
 
   <div class="metric-row">
     <div class="metric-card">
       <div class="metric-num">$320</div>
       <div class="metric-label">Avg micro post cost</div>
-      <div class="metric-sub">10K–100K follower tier, sponsored content (Zebracat 2025)<a href="#ref-2" class="cite">[2]</a></div>
+      <div class="metric-sub">10K-100K follower tier, sponsored content (Zebracat 2025)<a href="#ref-2" class="cite">[2]</a></div>
     </div>
     <div class="metric-card">
       <div class="metric-num">$4,800</div>
       <div class="metric-label">Avg macro post cost</div>
-      <div class="metric-sub">500K+ follower tier, same dataset — 15x premium for &lt;⅓ the engagement<a href="#ref-2" class="cite">[2]</a></div>
+      <div class="metric-sub">500K+ tier, same dataset. A 15x premium for under a third of the engagement<a href="#ref-2" class="cite">[2]</a></div>
     </div>
     <div class="metric-card">
       <div class="metric-num"><span class="pct">82%</span></div>
       <div class="metric-label">Act on micro vs traditional ad</div>
-      <div class="metric-sub">Consumers more likely to act on micro-influencer recommendation than traditional advertising<a href="#ref-6" class="cite">[6]</a></div>
+      <div class="metric-sub">Consumers more likely to act on a micro-creator recommendation than traditional advertising<a href="#ref-6" class="cite">[6]</a></div>
     </div>
   </div>
 
-  <p>The implication is straightforward: <strong>follower count is a vanity proxy</strong>. It correlates loosely with reach but inversely with the qualities that produce campaign outcomes — depth of audience attention, trust per follower, and the willingness of an audience to act on a recommendation. The Web2 industry has been pricing this in for three years.</p>
+  <p>Follower count is a vanity proxy. It tracks reach, loosely, and runs inverse to the things that actually convert: attention depth, trust per follower, an audience willing to act on a recommendation.</p>
 
-  <h3>The parasocial mechanism</h3>
+  <p>The academic work explains why. Audiences form one-sided bonds with creators whose voice they trust, and that trust is what converts. Reinikainen and colleagues showed in the <em>Journal of Marketing Management</em> that perceived authenticity predicts purchase intent more strongly than reach does<a href="#ref-7" class="cite">[7]</a>. Follow-on studies found the flip side: the more an audience reads a feed as paid, the less it converts<a href="#ref-8" class="cite">[8]</a><a href="#ref-9" class="cite">[9]</a>. Trust accumulates with consistency and originality over time. It does not accumulate with reach<a href="#ref-10" class="cite">[10]</a>.</p>
 
-  <p>Why does the inversion exist? The academic literature on parasocial relationships in influencer marketing is now substantial and consistent. The 2019 study published in the <em>Journal of Marketing Management</em> by Reinikainen et al.<a href="#ref-7" class="cite">[7]</a> established that perceived authenticity moderates credibility more strongly than reach in predicting purchase intent. Subsequent work (van Driel &amp; Dumitrica, <em>Convergence</em>, 2018<a href="#ref-8" class="cite">[8]</a>; Schwemmer &amp; Ziewiecki, <em>Social Media + Society</em>, 2018<a href="#ref-9" class="cite">[9]</a>) extended this: as creators professionalise and audiences perceive content as paid, conversion drops sharply.</p>
+  <h2><span class="section-num">§ 03</span>Why crypto has not priced it in</h2>
 
-  <p>The intuition behind the data is simple. Audiences form one-sided emotional bonds with creators whose voice they trust. Trust accumulates with consistency, originality, and visible authenticity over time. It does not accumulate with reach. A creator with 30,000 followers who has built voice over five years has more trust per follower than a creator with 1,000,000 who has built reach through campaign volume. When a brand wants <em>action</em> from an audience, trust is what converts.</p>
+  <p>If the evidence is that settled, why does crypto still buy on follower count? I see three reasons, and I have watched all of them operate from inside the industry.</p>
 
-  <blockquote class="research-pullquote">
-    "It's no longer about the old-school influencer marketing considerations of how many followers someone may have, but instead taking a media-based approach — retention rates, view-through rates, and individual audiences' trust in their creator of choice."
-    <cite>Digiday, January 2026 — on the maturation of the creator economy<a href="#ref-10" class="cite">[10]</a></cite>
-  </blockquote>
+  <p>First, crypto campaigns rarely measure against conversion. The metric that gets reported is impressions on paid posts, which happens to be one of the few metrics where macro accounts genuinely lead. Optimise for impressions and you will select for the accounts that produce them. The loop closes before any quality signal can break it. It does not help that most token launches are optimising for a 72-hour attention spike around TGE rather than retained users. Macro accounts produce spikes. Micro accounts produce retention. The category rewards what it measures.</p>
 
-  <!-- ═══════════ § 03 · CRYPTO LAG ═══════════ -->
-  <h2><span class="section-num">§ 03 · The Crypto Lag</span>Why the same data has not yet priced in.</h2>
+  <p>Second, follow the agency economics. A shop that earns take-rate on placements makes more money putting $50,000 across five macro accounts than across fifty micro accounts, even when the fifty outperform on every attribution metric. That is not corruption. It is just how take-rate models behave, and it is why the pressure to change will not come from inside.</p>
 
-  <p>If the Web2 conclusion is so well-established, the question becomes: why does the crypto creator-agency category still operate predominantly on follower count? Three explanations, in descending order of importance.</p>
+  <p>Third, the incumbents are built for the old model. Pipeline, contracts, rate cards, payment rails, all calibrated for managing thirty relationships, not three hundred. Switching costs are real, and the firms that would have to pay them are the ones the current model serves best.</p>
 
-  <h3>First: closed attribution loops</h3>
+  <p>Everyone has a local incentive to keep the system running. Nobody inside it has standing to challenge it. So the challenge comes from outside.</p>
 
-  <p>The Web2 migration happened because brands ran post-campaign attribution and found macro-spend uneconomic. Crypto campaigns, by contrast, rarely measure against true conversion. The dominant metric — impressions on paid posts — is one of the few metrics where macro accounts genuinely lead. If you optimise for impressions, you select for the accounts that generate them. The loop closes before any quality signal can break it.</p>
+  <h2><span class="section-num">§ 04</span>What it looks like when it fails</h2>
 
-  <p>This is reinforced by the fact that crypto projects buying coverage are often optimising for <em>narrative ignition</em> rather than retained users. A token launch needs a 72-hour spike of attention to coincide with TGE. After that, the campaign is judged on price action, not user retention. Macro accounts produce spikes. Micro accounts produce retention. The category structurally rewards what it measures.</p>
-
-  <h3>Second: incentive misalignment in agencies</h3>
-
-  <p>Agencies whose business model is take-rate on paid creator placements have direct economic incentive to maintain the macro-centric model. Higher placement values mean higher take. A campaign placing $50,000 across 5 macro accounts produces meaningfully more agency revenue than a campaign placing $50,000 across 50 micro accounts, even if the latter outperforms on attribution. This is not a critique of any specific firm — it is a structural feature of how take-rate models operate.</p>
-
-  <h3>Third: creator concentration is self-reinforcing</h3>
-
-  <p>Once a small set of macro voices dominates campaign volume, agencies build infrastructure around managing those relationships. Pipeline, contracts, rate cards, payment rails, content review — all calibrated for a relatively small roster of high-volume accounts. Expanding to 100+ micro accounts requires fundamentally different operational infrastructure. The switching cost is real, and the incumbents who would need to bear it are the ones the model is currently serving best.</p>
-
-  <p>The result is a category where the data Web2 settled five years ago is structurally suppressed. Every participant has a local incentive to maintain the system; no participant has standing to challenge it. The challenge has to come from outside.</p>
-
-  <!-- ═══════════ § 04 · CASE EVIDENCE ═══════════ -->
-  <h2><span class="section-num">§ 04 · Crypto Case Evidence</span>What happens when reach-based campaigns meet reality.</h2>
-
-  <p>The follower-count model is most clearly stressed in the cases where it most visibly fails. Two recent examples — both well-documented in public reporting — illustrate the gap between paid amplification and durable outcomes.</p>
+  <p>You can see the model stress-tested in public, because 2025 supplied two clean experiments.</p>
 
   <div class="case-study">
-    <div class="case-eyebrow">Case 01 · December 2024 – May 2025</div>
+    <div class="case-eyebrow">Case 01 · December 2024 - May 2025</div>
     <h3>Movement Labs (MOVE)</h3>
-    <p>Movement Labs launched its MOVE token in December 2024 with extensive paid coverage across the standard macro-account roster. The project carried a $3 billion valuation in its January 2025 funding round<a href="#ref-12" class="cite">[12]</a>, reflecting the narrative momentum the campaign had successfully generated.</p>
-    <p>Within four months, that valuation had collapsed. On April 21, 2025, CoinDesk published an investigation revealing that a market-making counterparty controlling 66 million MOVE tokens had liquidated approximately $38 million worth of supply onto retail buyers shortly after the token's exchange debut<a href="#ref-11" class="cite">[11]</a>. By May 7, co-founder Rushi Manche had been terminated, the company rebranded as Move Industries, and the MOVE token traded at <strong>$0.16 — down approximately 95% from launch</strong><a href="#ref-13" class="cite">[13]</a>. Coinbase delisted MOVE.</p>
-    <p>What the campaign coverage could not produce: a holder base willing to sit through volatility, a community willing to defend the project through controversy, durable secondary liquidity, retained users. <strong>Paid amplification can manufacture a launch. It cannot manufacture the structural integrity that determines what happens after.</strong></p>
+    <p>Movement launched MOVE in December 2024 behind heavy paid coverage across the standard macro roster, and rode the narrative to a $3 billion valuation in its January round<a href="#ref-12" class="cite">[12]</a>. Four months later CoinDesk revealed a market-making counterparty had dumped roughly $38 million of supply on retail right after the exchange debut<a href="#ref-11" class="cite">[11]</a>. By May the co-founder was out, the company had rebranded, Coinbase had delisted, and MOVE traded around $0.16, down about 95% from launch<a href="#ref-13" class="cite">[13]</a>.</p>
+    <p>All that coverage bought a launch. It could not buy a holder base willing to sit through volatility, a community willing to defend the project, or anyone still there at month four.</p>
     <div class="case-meta">
       <span>Funding round valuation: $3B</span>
       <span>·</span>
@@ -307,8 +289,7 @@ article.research{max-width:760px;margin:0 auto;padding:120px 24px 80px;color:var
   <div class="case-study">
     <div class="case-eyebrow">Case 02 · April 2025</div>
     <h3>Mantra (OM)</h3>
-    <p>On April 13, 2025, the Mantra OM token collapsed more than 90% in a matter of hours, with no clear public catalyst<a href="#ref-14" class="cite">[14]</a>. Subsequent reporting traced the move to opaque token unlock dynamics and undisclosed side agreements involving early backers and market makers.</p>
-    <p>Like Movement, Mantra had received substantial paid creator coverage in the run-up. Like Movement, that coverage did not translate into a holder base willing to absorb the shock when structural issues surfaced. Coverage generated attention; attention did not generate resilience. The investor base built through paid amplification proved precisely as durable as the campaign that produced it.</p>
+    <p>On April 13, 2025, OM fell more than 90% in hours with no public catalyst<a href="#ref-14" class="cite">[14]</a>. The reporting afterwards pointed to opaque unlocks and undisclosed side agreements. Mantra had also bought its way up the feeds. When the structure cracked, the audience that paid amplification had assembled proved exactly as durable as the campaign that assembled it.</p>
     <div class="case-meta">
       <span>Token: OM</span>
       <span>·</span>
@@ -318,51 +299,47 @@ article.research{max-width:760px;margin:0 auto;padding:120px 24px 80px;color:var
     </div>
   </div>
 
-  <p>Neither case is being cited as an indictment of any specific creator or agency. Many of the accounts that covered Movement and Mantra are excellent creators producing genuine work; the responsibility for what happened lies with the projects' internal governance and the market structure around them, not with the people paid to amplify the launches. The point is narrower: <strong>paid amplification, no matter how aggressively deployed, does not produce the audience qualities that determine post-launch outcomes</strong>. Coverage is upstream of price; resilience is downstream of trust. These are different mechanisms.</p>
+  <p>To be clear about where the blame sits: not with the creators who took those briefs. Plenty of them are excellent at their jobs, and the failures above were governance failures inside the projects. The point is narrower. Coverage is upstream of price. Resilience is downstream of trust. Paid amplification, at any budget, buys the first and cannot buy the second.</p>
 
-  <p>This is the gap the Web2 industry priced in five years ago, and the gap crypto is now beginning to price in — most visibly through tools like Kaito.</p>
+  <h2><span class="section-num">§ 05</span>The Kaito signal</h2>
 
-  <!-- ═══════════ § 05 · KAITO ═══════════ -->
-  <h2><span class="section-num">§ 05 · The Kaito Signal</span>What the rise of mindshare scoring tells us.</h2>
+  <p>The market is now correcting this with infrastructure rather than discourse. Kaito's Yapper Leaderboard scores creators on mindshare instead of follower count or paid placement<a href="#ref-15" class="cite">[15]</a>, and it has reached scale: 250,000+ active users, an InfoFi category at a $335M market cap with $50M+ daily volume<a href="#ref-15" class="cite">[15]</a>, and serious projects (Polygon, Berachain, Monad, Eclipse, MegaETH) running $30,000-a-month reward pools through it<a href="#ref-16" class="cite">[16]</a>.</p>
 
-  <p>Kaito's emergence is the most legible signal that crypto is beginning its own version of the Web2 migration. The platform's "Yapper Leaderboard" — which uses AI scoring to rank creators by <em>mindshare</em> rather than follower count or paid placement<a href="#ref-15" class="cite">[15]</a> — surfaces a parallel selection mechanism. As of early 2025, the program had 250,000+ active users, and the broader InfoFi category reached a $335M market cap with sustained $50M+ daily trading volume<a href="#ref-15" class="cite">[15]</a>. Major projects (Polygon, Berachain, Monad, Eclipse, MegaETH) run campaigns through the leaderboard with $30,000/month reward pools targeting top voices<a href="#ref-16" class="cite">[16]</a>.</p>
-
-  <p>The mechanics matter. Kaito's scoring system explicitly downweights:</p>
+  <p>Look at what the scoring punishes:</p>
 
   <ul style="margin:18px 0 24px 24px;list-style:none;padding-left:0">
-    <li style="margin-bottom:10px;padding-left:22px;position:relative;font-family:var(--serif);color:var(--ink-soft);font-size:16.5px;line-height:1.6"><span style="position:absolute;left:0;color:var(--teal);font-family:var(--mono);font-weight:700">→</span>Repetitive content lacking analysis</li>
-    <li style="margin-bottom:10px;padding-left:22px;position:relative;font-family:var(--serif);color:var(--ink-soft);font-size:16.5px;line-height:1.6"><span style="position:absolute;left:0;color:var(--teal);font-family:var(--mono);font-weight:700">→</span>Posts below qualified-engagement thresholds (reputation-weighted, not raw impressions)</li>
+    <li style="margin-bottom:10px;padding-left:22px;position:relative;font-family:var(--serif);color:var(--ink-soft);font-size:16.5px;line-height:1.6"><span style="position:absolute;left:0;color:var(--teal);font-family:var(--mono);font-weight:700">→</span>Repetitive content with no analysis</li>
+    <li style="margin-bottom:10px;padding-left:22px;position:relative;font-family:var(--serif);color:var(--ink-soft);font-size:16.5px;line-height:1.6"><span style="position:absolute;left:0;color:var(--teal);font-family:var(--mono);font-weight:700">→</span>Engagement below reputation-weighted thresholds</li>
     <li style="margin-bottom:10px;padding-left:22px;position:relative;font-family:var(--serif);color:var(--ink-soft);font-size:16.5px;line-height:1.6"><span style="position:absolute;left:0;color:var(--teal);font-family:var(--mono);font-weight:700">→</span>Engagement from low-quality accounts</li>
   </ul>
 
-  <p>And explicitly rewards:</p>
+  <p>And what it rewards:</p>
 
   <ul style="margin:18px 0 24px 24px;list-style:none;padding-left:0">
     <li style="margin-bottom:10px;padding-left:22px;position:relative;font-family:var(--serif);color:var(--ink-soft);font-size:16.5px;line-height:1.6"><span style="position:absolute;left:0;color:var(--teal);font-family:var(--mono);font-weight:700">+</span>Depth of analysis and topical originality</li>
-    <li style="margin-bottom:10px;padding-left:22px;position:relative;font-family:var(--serif);color:var(--ink-soft);font-size:16.5px;line-height:1.6"><span style="position:absolute;left:0;color:var(--teal);font-family:var(--mono);font-weight:700">+</span>Engagement from other high-mindshare voices (peer signal)</li>
-    <li style="margin-bottom:10px;padding-left:22px;position:relative;font-family:var(--serif);color:var(--ink-soft);font-size:16.5px;line-height:1.6"><span style="position:absolute;left:0;color:var(--teal);font-family:var(--mono);font-weight:700">+</span>Consistency over time rather than spike behaviour</li>
+    <li style="margin-bottom:10px;padding-left:22px;position:relative;font-family:var(--serif);color:var(--ink-soft);font-size:16.5px;line-height:1.6"><span style="position:absolute;left:0;color:var(--teal);font-family:var(--mono);font-weight:700">+</span>Engagement from other high-mindshare voices</li>
+    <li style="margin-bottom:10px;padding-left:22px;position:relative;font-family:var(--serif);color:var(--ink-soft);font-size:16.5px;line-height:1.6"><span style="position:absolute;left:0;color:var(--teal);font-family:var(--mono);font-weight:700">+</span>Consistency over time rather than spikes</li>
   </ul>
 
-  <p>One Chinese-language analysis<a href="#ref-17" class="cite">[17]</a> made the implication explicit:</p>
+  <p>That is a machine built to price originality. One analysis of the model put it plainly<a href="#ref-17" class="cite">[17]</a>:</p>
 
   <blockquote class="research-pullquote">
     "Instead of spending money to have a KOL post an ad, it is more effective to allocate a portion of the budget as a community reward to incentivise engagement on Kaito. KOLs must demonstrate their genuine insights into the project to earn community approval. The era of presumptive trust has concluded."
     <cite>BlockBeats analysis on the Kaito Yap model, 2025<a href="#ref-17" class="cite">[17]</a></cite>
   </blockquote>
 
-  <p>The market is reaching the conclusion through infrastructure rather than discourse: the metric crypto needed to start measuring already exists, the platform that measures it has reached scale, and the projects deploying budget against it are running the experiment in real time. The question is no longer whether the migration happens — Kaito's adoption proves it is. The question is which agencies finish on the right side of it.</p>
+  <p>The migration is not a prediction anymore. It is running, with real budgets. The only open question is which agencies end up on the right side of it.</p>
 
-  <!-- ═══════════ § 06 · WHAT CONVERGES ═══════════ -->
-  <h2><span class="section-num">§ 06 · What the Converged Model Looks Like</span>Selection on voice, contract on output, scale through curation.</h2>
+  <h2><span class="section-num">§ 06</span>The model we run</h2>
 
-  <p>If the Web2 evidence is correct and the Kaito signal indicates crypto is converging in the same direction, the operational question becomes: what does a creator agency selecting on voice rather than follower count actually do differently? Four structural differences, all of which Triad has built around.</p>
+  <p>So what does an agency actually do differently when it selects on voice? Side by side:</p>
 
   <div class="compare-grid">
     <div class="compare-card">
       <div class="compare-head">Macro-Selection Model</div>
       <div class="compare-title">Optimises for reach and impressions</div>
       <ul class="compare-list">
-        <li>Roster: ~30–80 high-follower accounts</li>
+        <li>Roster: ~30-80 high-follower accounts</li>
         <li>Selection: follower count, prior campaign participation</li>
         <li>Pricing: by impressions / reach guarantees</li>
         <li>Attribution: campaign-window engagement metrics</li>
@@ -384,38 +361,30 @@ article.research{max-width:760px;margin:0 auto;padding:120px 24px 80px;color:var
     </div>
   </div>
 
-  <p>The voice-selection model has one significant operational disadvantage: discovery is hard. Identifying genuinely original creators with 10K–50K followers requires reading work rather than pulling a leaderboard. It does not scale through automation. This is the part of the model that takes patience.</p>
+  <p>I will be honest about the cost of the right-hand column: discovery is brutal. Finding genuinely original creators at 10K to 50K followers means reading their work, not pulling a leaderboard. It does not automate. That is the tax, and we pay it every week.</p>
 
-  <p>It also has one significant advantage that compounds over time: <strong>the roster appreciates</strong>. A creator brought into an agency at 12K followers, given access to substantive briefs and partner introductions, who grows to 45K over 18 months on the strength of their own voice, becomes more valuable to the agency every quarter. A macro-creator brought in at 500K, who continues to take paid campaigns indefinitely, depreciates as their audience treats their feed as ad inventory. The math on which model produces a more valuable roster over a five-year horizon is not close.</p>
+  <p>Here is what you get for the tax: the roster appreciates. A creator we sign at 12K followers, who gets substantive briefs and real introductions and grows to 45K on the strength of their own voice, becomes more valuable to us every quarter. A macro account signed at 500K that keeps taking paid campaigns depreciates, because its audience learns to read the feed as ad inventory. Run that math over five years. It is not close.</p>
 
-  <!-- ═══════════ § 07 · IMPLICATIONS ═══════════ -->
-  <h2><span class="section-num">§ 07 · Implications</span>For projects, for creators, for the category.</h2>
+  <h2><span class="section-num">§ 07</span>What I would tell you</h2>
 
-  <h3>For projects buying coverage</h3>
+  <p><strong>If you run a project:</strong> after 2025, there is no serious argument left that aggressive paid amplification buys durable outcomes. Measure your campaigns on retained holders and users at T+90 and T+180, not impressions at T+7. Use paid coverage as one component, not the strategy. A budget spent entirely on macro inventory is misallocated against the evidence above.</p>
 
-  <p>The 2025 collapses make clear that there is no longer a credible argument that aggressive paid amplification produces durable outcomes. Projects launching tokens or campaigns in 2026 should be running attribution against retained holders / users at T+90 and T+180, not impression counts at T+7. Where paid coverage is used, it should be structured as a smaller component of a broader distribution strategy that includes mindshare-scored organic engagement and curated micro-influencer placement. Budgets allocated entirely to macro-account inventory are misallocated against the available evidence.</p>
+  <p><strong>If you create:</strong> the premium on voice is real and it is growing. If you are at 10K to 80K followers producing original analysis, you are the demographic this migration rewards over the next three to five years. Every short-term placement you take prices against long-term audience erosion. A feed that reads as ad inventory has a ceiling. A feed that reads as original work does not.</p>
 
-  <h3>For creators</h3>
+  <p><strong>If you run an agency:</strong> the shops built around thirty macro relationships are not positioned to migrate, and the half-committed middle position is the most exposed one on the board.</p>
 
-  <p>The premium on voice is real and growing. Creators currently in the 10K–80K follower range who continue producing original work — analysis, framing, conviction — are the demographic that the converging market is most likely to reward over a three-to-five-year horizon. The temptation to optimise for short-term paid placements should be measured against the long-term cost of audience erosion. A feed that reads as ad inventory has a ceiling. A feed that reads as original analysis does not.</p>
+  <h2><span class="section-num">§ 08</span>Where we stand</h2>
 
-  <h3>For the category</h3>
+  <p>Triad runs the voice-selection model structurally, from the founding cohort onward. One hundred seats, filled by application and interview, never by follower count. Economics calibrated for creators in the 10K to 100K range producing original work, with retainers built so they can focus on long-form output instead of chasing placements.</p>
 
-  <p>Crypto creator agencies that have built infrastructure around managing a small roster of macro-accounts are not structurally positioned to migrate. Their pipeline, pricing, and operational expertise are all calibrated for the model that the data suggests is in decline. The agencies that will succeed in the converged market are either new entrants building on the voice-selection model from day one, or incumbents capable of running both models in parallel during a multi-year transition. The middle position — half-committed macro shops trying to add micro pipelines — is the most exposed.</p>
+  <p>None of this is a shot at the established firms. Some of them are run by serious people, and a well-timed amplification campaign has its place. My claim is narrower: the converged market will select for a different model than the one that built this category, and we built Triad for the converged market.</p>
 
-  <!-- ═══════════ § 08 · TRIAD POSITIONING ═══════════ -->
-  <h2><span class="section-num">§ 08 · Where Triad Operates</span>The thesis applied.</h2>
+  <p>If you create original work, the application is open. If you are planning distribution for 2026, ask one question of every campaign you are quoted: what does it produce at T+180? Then check whether the answer matches the budget.</p>
 
-  <p>Triad's creator practice is built on the voice-selection model — explicitly, structurally, from the founding cohort onward. The cohort is capped at 100 seats. Selection is by application and partner interview, not follower count. Roster economics are calibrated for creators in the 10K–100K range producing original work, with retainers structured to give creators stability to focus on long-form output rather than chasing short-term placement income.</p>
-
-  <p>This is not a critique of how the established crypto agencies operate. Many of them are excellent firms run by serious people, and a paid-amplification campaign run against the right project at the right moment is genuinely valuable. The argument is narrower: <strong>the converged market will require a meaningfully different selection model than the one that built the current category</strong>, and Triad is built for the converged market.</p>
-
-  <p>If you are a creator producing original work, the application is open. If you are a project evaluating distribution strategy for 2026, the question we would invite you to ask is what your campaign produces at T+180 days — and whether the answer to that question matches the campaign budget you've allocated.</p>
-
-  <p>The full apparatus — application, roster, retainer structure, campaign workflow — is at <a href="/creators.html" style="color:var(--teal);font-weight:600">triadnetwork.xyz/creators</a>.</p>
+  <p>The full apparatus, application, roster, retainer structure and campaign workflow, is at <a href="/creators.html" style="color:var(--teal);font-weight:600">triadnetwork.xyz/creators</a>.</p>
 
   <div class="research-end">
-    Triad Research · Memo 03 · <strong>Distribution Series</strong>
+    Triad Research · Memo 03 · <strong>Founder Note</strong>
   </div>
 
   <!-- ═══════════ REFERENCES ═══════════ -->
