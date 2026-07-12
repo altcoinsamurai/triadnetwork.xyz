@@ -342,7 +342,8 @@ a{color:inherit;text-decoration:none}
 /* exclusive (big) */
 .cr-x{flex:0 0 auto;width:232px;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:16px;transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .4s,box-shadow .4s}
 .cr-x:hover{border-color:var(--accent-soft);transform:translateY(-4px);box-shadow:0 22px 50px -26px rgba(1,189,165,.35)}
-.cr-x-pfp{width:100%;aspect-ratio:1;border-radius:14px;overflow:hidden;background:var(--bg-soft);margin-bottom:15px}
+.cr-x-pfp{width:100%;aspect-ratio:1;border-radius:14px;overflow:hidden;background:var(--bg-soft);margin-bottom:15px;position:relative}
+.cr-x-tag{position:absolute;top:10px;left:10px;right:auto;z-index:2;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#06060C;background:linear-gradient(100deg,#E8C15A 0%,#D4AF37 45%,#01BDA5 100%);padding:5px 11px;border-radius:100px;box-shadow:0 3px 12px rgba(0,0,0,.45)}
 .cr-x-pfp img{width:100%;height:100%;object-fit:cover;display:block}
 .cr-x-name{display:flex;align-items:center;gap:8px;font-family:var(--display);font-size:18px;font-weight:600;margin-bottom:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cr-x-name svg{width:14px;height:14px;stroke:var(--text-dim);margin-left:auto;flex-shrink:0;transition:stroke .3s}
@@ -1003,6 +1004,7 @@ footer .footer-r a:hover{color:var(--text)}
     {name:'@madiweb3', url:'https://x.com/madiweb3', pfp:'/assets/creators/madiweb3.jpg'},
     {name:'@telcier', url:'https://x.com/telcier', pfp:'/assets/creators/telcier.jpg'},
     {name:'@0xtoberry', url:'https://x.com/0xtoberry', pfp:'/assets/creators/0xtoberry.jpg'},
+    {name:'@0xseth_', url:'https://x.com/0xseth_', pfp:'/assets/creators/0xseth_.jpg', tag:'Creator of the Week'},
     {name:'@omaofweb3', url:'https://x.com/omaofweb3', pfp:'/assets/creators/omaofweb3.jpg'},
     {name:'@0x_Samir', url:'https://x.com/0x_Samir', pfp:'/assets/creators/0x_samir.jpg'},
     {name:'@kenpachey_eth', url:'https://x.com/kenpachey_eth', pfp:'/assets/creators/kenpachey_eth.jpg'},
@@ -1037,8 +1039,9 @@ footer .footer-r a:hover{color:var(--text)}
   function pfp(c){ return c.pfp ? '<img src="'+esc(c.pfp)+'" alt="'+esc(c.name)+'">' : '<div class="cr-ph" style="background:'+tile(c)+'">'+esc(initial(c))+'</div>'; }
 
   function exCard(c){
+    var badge = c.tag ? '<div class="cr-x-tag">'+esc(c.tag)+'</div>' : '';
     return '<a class="cr-x" href="'+esc(c.url||'#')+'" target="_blank" rel="noopener">'
-      +'<div class="cr-x-pfp">'+pfp(c)+'</div>'
+      +'<div class="cr-x-pfp">'+badge+pfp(c)+'</div>'
       +'<div class="cr-x-name">'+esc(c.name)+ARROW+'</div>'
       +'</a>';
   }
