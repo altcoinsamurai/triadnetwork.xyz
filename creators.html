@@ -533,6 +533,12 @@ footer .footer-r a:hover{color:var(--text)}
   .tweet-grid{grid-template-columns:repeat(2,1fr)}
   .receipts-row{grid-template-columns:repeat(2,1fr)}
 }
+@media(min-width:781px) and (max-width:980px){
+  .pill-nav{gap:2px;padding:6px}
+  .pill-link{padding:8px 9px;letter-spacing:.10em}
+  .pill-cta{padding:9px 14px;letter-spacing:.10em}
+  .pill-logo{padding:8px 10px}
+}
 @media(max-width:780px){
   .pill-nav{padding:6px;gap:2px;left:16px;right:16px;transform:none;width:auto;justify-content:space-between}
   .pill-link,.pill-divider{display:none}
@@ -594,6 +600,7 @@ footer .footer-r a:hover{color:var(--text)}
     <span>Triad</span>
   </a>
   <span class="pill-divider"></span>
+  <a href="#render" class="pill-link">Render</a>
   <a href="#receipts" class="pill-link">Receipts</a>
   <a href="#cohort" class="pill-link">Network</a>
   <a href="#suite" class="pill-link">Suite</a>
@@ -624,6 +631,115 @@ footer .footer-r a:hover{color:var(--text)}
   </div>
   <div class="hero-badge">Cohort 01 selected · Cohort 02 by invitation</div>
 </section>
+<!-- ═══ TRIAD RENDER ═══ -->
+<section class="section" id="render" style="padding-top:60px">
+  <div class="section-head reveal">
+    <div class="section-eyebrow">Triad Render · Video Unit</div>
+    <h2>The work, <em>in motion.</em></h2>
+    <p>Triad Render is the network's video arm. Creator-led shorts, protocol explainers and campaign cuts, produced in-house and published through the roster.</p>
+  </div>
+
+  <div class="tr-grid" id="trGrid"></div>
+
+  <div class="tr-foot reveal">
+    <span class="tr-foot-dot"></span>
+    <span>New drops publish here as they ship</span>
+  </div>
+</section>
+
+<style>
+.tr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px}
+.tr-card{position:relative;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .25s ease,transform .25s ease}
+.tr-card:hover{border-color:var(--border-strong);transform:translateY(-3px)}
+.tr-frame{position:relative;aspect-ratio:9/16;background:#000;overflow:hidden;cursor:pointer}
+.tr-card[data-ratio="16/9"] .tr-frame{aspect-ratio:16/9}
+.tr-frame img,.tr-frame video{width:100%;height:100%;object-fit:cover;display:block}
+.tr-play{position:absolute;left:14px;bottom:14px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:rgba(6,6,12,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:background .2s ease,transform .2s ease}
+.tr-play svg{width:18px;height:18px;fill:var(--accent);margin-left:2px}
+.tr-frame:hover .tr-play{background:var(--accent-soft);transform:scale(1.08)}
+.tr-tag{position:absolute;top:12px;left:12px;font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);background:rgba(6,6,12,.78);border:1px solid var(--accent-soft);padding:5px 10px;border-radius:100px}
+.tr-meta{padding:16px 16px 18px}
+.tr-title{font-family:var(--display);font-size:15px;font-weight:600;letter-spacing:-.01em;line-height:1.3;color:var(--text);text-transform:uppercase}
+.tr-by{display:flex;align-items:center;gap:8px;margin-top:10px}
+.tr-av{width:22px;height:22px;border-radius:50%;object-fit:cover;border:1px solid var(--border-strong);flex-shrink:0}
+.tr-av-fb{width:22px;height:22px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;flex-shrink:0}
+.tr-handle{font-family:var(--mono);font-size:11px;color:var(--text-dim);text-decoration:none}
+.tr-handle:hover{color:var(--accent)}
+.tr-sub{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.tr-slot .tr-frame{display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,rgba(1,189,165,.05),rgba(255,255,255,.01));cursor:default}
+.tr-slot-mark{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:center;padding:0 20px}
+.tr-slot-mark span{display:block;font-size:26px;color:rgba(240,238,232,.14);margin-bottom:10px;font-family:var(--display)}
+.tr-foot{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:40px;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.tr-foot-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+@media(max-width:600px){.tr-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}.tr-meta{padding:12px 12px 14px}.tr-title{font-size:13px}}
+</style>
+
+<script>
+(function(){
+  // ── TRIAD RENDER DATA ──
+  // { title, handle, url, src, poster, tag, ratio, sub }
+  //   src    → /assets/render/<file>.mp4   (local video)
+  //   poster → /assets/render/<file>.jpg   (still frame)
+  //   ratio  → '9/16' (default) or '16/9'
+  //   avatar → /assets/creators/<handle>.jpg  (optional)
+  var RENDER = [
+    // entries land here as uploads come in
+  ];
+
+  var SLOTS = 4; // placeholder tiles shown while the reel fills
+
+  var grid = document.getElementById('trGrid');
+  if(!grid) return;
+
+  function card(v){
+    var el = document.createElement('div');
+    el.className = 'tr-card reveal';
+    el.setAttribute('data-ratio', v.ratio || '9/16');
+    var av = v.avatar
+      ? '<img class="tr-av" src="'+v.avatar+'" alt="">'
+      : '<div class="tr-av-fb">'+(v.handle||'@?').replace('@','').charAt(0).toUpperCase()+'</div>';
+    el.innerHTML =
+      '<div class="tr-frame" data-src="'+v.src+'">'+
+        (v.tag ? '<div class="tr-tag">'+v.tag+'</div>' : '')+
+        '<img src="'+v.poster+'" alt="'+(v.title||'')+'" loading="lazy">'+
+        '<button class="tr-play" aria-label="Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>'+
+      '</div>'+
+      '<div class="tr-meta">'+
+        '<div class="tr-title">'+(v.title||'')+'</div>'+
+        '<div class="tr-by">'+av+'<a class="tr-handle" href="'+(v.url||'#')+'" target="_blank" rel="noopener">'+(v.handle||'')+'</a></div>'+
+        (v.sub ? '<div class="tr-sub">'+v.sub+'</div>' : '')+
+      '</div>';
+    return el;
+  }
+
+  function slot(){
+    var el = document.createElement('div');
+    el.className = 'tr-card tr-slot reveal';
+    el.innerHTML =
+      '<div class="tr-frame"><div class="tr-slot-mark"><span>&#9654;</span>Slot open</div></div>'+
+      '<div class="tr-meta"><div class="tr-title" style="color:rgba(240,238,232,.3)">In production</div>'+
+      '<div class="tr-sub">Triad Render</div></div>';
+    return el;
+  }
+
+  RENDER.forEach(function(v){ grid.appendChild(card(v)); });
+  var fill = Math.max(0, SLOTS - RENDER.length);
+  for(var i=0;i<fill;i++) grid.appendChild(slot());
+
+  grid.addEventListener('click', function(e){
+    var f = e.target.closest('.tr-frame');
+    if(!f || !f.dataset.src || f.dataset.played) return;
+    f.dataset.played = '1';
+    var vid = document.createElement('video');
+    vid.src = f.dataset.src;
+    vid.controls = true; vid.autoplay = true; vid.playsInline = true;
+    vid.setAttribute('playsinline',''); vid.preload = 'auto';
+    f.innerHTML = '';
+    f.appendChild(vid);
+  });
+})();
+</script>
+
 <!-- INCOMING PARTNERS -->
 <section class="section" id="partners" style="padding-top:60px">
   <div class="section-head reveal">
