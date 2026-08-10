@@ -1208,6 +1208,11 @@ footer .footer-r a:hover{color:var(--text)}
     <p>Every creator in the network, their reach, their work, their receipts. One scrolling wall of the people Triad backs.</p>
   </div>
 
+  <div class="cr-tier tx-tier reveal">
+    <div class="cr-tier-label">Triadxyz <span class="q">?</span></div>
+    <div class="tx-grid" id="txGrid"></div>
+  </div>
+
   <div class="cr-tier reveal">
     <div class="cr-tier-label">Triad Vanguard <span class="q">?</span></div>
     <div class="cr-row"><div class="cr-track left" id="crExclusive"></div></div>
@@ -1219,6 +1224,70 @@ footer .footer-r a:hover{color:var(--text)}
     <div class="cr-row"><div class="cr-track right" id="crNetworkB"></div></div>
   </div>
 </section>
+
+<style>
+.tx-tier{padding:0 32px}
+.tx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;align-items:start}
+.tx-card{position:relative;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;text-decoration:none;display:block;transition:border-color .25s ease,transform .25s ease}
+.tx-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.tx-banner{position:relative;aspect-ratio:1500/500;overflow:hidden;background:var(--bg-soft)}
+.tx-banner img{width:100%;height:100%;object-fit:cover;display:block}
+.tx-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,6,12,0) 40%,rgba(6,6,12,.85) 100%)}
+.tx-body{padding:0 20px 20px;margin-top:-30px;position:relative;z-index:2}
+.tx-pfp{width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid var(--bg);background:var(--bg-soft);display:block}
+.tx-pfp-fb{width:60px;height:60px;border-radius:50%;border:2px solid var(--bg);background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:22px}
+.tx-handle{font-family:var(--display);font-size:17px;font-weight:600;color:var(--text);margin-top:12px;letter-spacing:-.01em}
+.tx-beat{font-family:var(--body);font-size:13px;line-height:1.55;color:var(--text-dim);margin-top:7px}
+.tx-badge{position:absolute;top:12px;right:12px;z-index:3;font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);background:rgba(6,6,12,.8);border:1px solid var(--accent-soft);padding:5px 10px;border-radius:100px}
+.tx-slot{pointer-events:none}
+.tx-slot .tx-banner{background:linear-gradient(160deg,rgba(1,189,165,.05),rgba(255,255,255,.01))}
+.tx-slot .tx-handle{color:rgba(240,238,232,.28)}
+@media(max-width:600px){.tx-tier{padding:0 20px}.tx-grid{grid-template-columns:1fr;gap:16px}}
+</style>
+<script>
+(function(){
+  // ── TRIADXYZ ── written-content tier, sits above Vanguard.
+  // { handle, url, pfp, banner, beat, tag }
+  var TRIADXYZ = [
+    // entries land here as creators are added
+  ];
+
+  var SLOTS = 3;
+  var grid = document.getElementById('txGrid');
+  if(!grid) return;
+
+  function card(c){
+    var el = document.createElement('a');
+    el.className = 'tx-card reveal';
+    el.href = c.url || '#'; el.target = '_blank'; el.rel = 'noopener';
+    var pfp = c.pfp
+      ? '<img class="tx-pfp" src="'+c.pfp+'" alt="'+c.handle+'">'
+      : '<div class="tx-pfp-fb">'+(c.handle||'@?').replace('@','').charAt(0).toUpperCase()+'</div>';
+    el.innerHTML =
+      (c.tag ? '<div class="tx-badge">'+c.tag+'</div>' : '')+
+      '<div class="tx-banner">'+(c.banner ? '<img src="'+c.banner+'" alt="" loading="lazy">' : '')+'</div>'+
+      '<div class="tx-body">'+pfp+
+        '<div class="tx-handle">'+(c.handle||'')+'</div>'+
+        (c.beat ? '<div class="tx-beat">'+c.beat+'</div>' : '')+
+      '</div>';
+    return el;
+  }
+
+  function slot(){
+    var el = document.createElement('div');
+    el.className = 'tx-card tx-slot reveal';
+    el.innerHTML =
+      '<div class="tx-banner"></div>'+
+      '<div class="tx-body"><div class="tx-pfp-fb" style="color:rgba(240,238,232,.2);background:rgba(255,255,255,.03)">&middot;</div>'+
+      '<div class="tx-handle">Seat open</div>'+
+      '<div class="tx-beat" style="color:rgba(240,238,232,.22)">By invitation</div></div>';
+    return el;
+  }
+
+  TRIADXYZ.forEach(function(c){ grid.appendChild(card(c)); });
+  for(var i=0;i<Math.max(0,SLOTS-TRIADXYZ.length);i++) grid.appendChild(slot());
+})();
+</script>
 
 <script>
 (function(){
