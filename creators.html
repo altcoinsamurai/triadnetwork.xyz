@@ -1210,7 +1210,8 @@ footer .footer-r a:hover{color:var(--text)}
 
   <div class="cr-tier tx-tier reveal">
     <div class="cr-tier-label">Triadxyz <span class="q">?</span></div>
-    <div class="tx-grid" id="txGrid"></div>
+    <div class="cr-row"><div class="cr-track left" id="txRowA"></div></div>
+    <div class="cr-row"><div class="cr-track right" id="txRowB"></div></div>
   </div>
 
   <div class="cr-tier reveal">
@@ -1227,8 +1228,8 @@ footer .footer-r a:hover{color:var(--text)}
 
 <style>
 .tx-tier{padding:0 32px}
-.tx-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(440px,1fr));gap:20px;align-items:start}
-.tx-card{position:relative;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;text-decoration:none;display:block;transition:border-color .25s ease,transform .25s ease}
+.tx-track-gap{}
+.tx-card{flex:0 0 auto;width:400px;position:relative;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;text-decoration:none;display:block;transition:border-color .25s ease,transform .25s ease}
 .tx-card:hover{border-color:var(--accent);transform:translateY(-3px)}
 .tx-banner{position:relative;aspect-ratio:1500/500;overflow:hidden;background:var(--bg-soft)}
 .tx-banner img{width:100%;height:100%;object-fit:cover;display:block}
@@ -1242,7 +1243,7 @@ footer .footer-r a:hover{color:var(--text)}
 .tx-slot{pointer-events:none}
 .tx-slot .tx-banner{background:linear-gradient(160deg,rgba(1,189,165,.05),rgba(255,255,255,.01))}
 .tx-slot .tx-handle{color:rgba(240,238,232,.28)}
-@media(max-width:600px){.tx-tier{padding:0 20px}.tx-grid{grid-template-columns:1fr;gap:16px}}
+@media(max-width:600px){.tx-tier{padding:0}.tx-card{width:290px}.tx-pfp,.tx-pfp-fb{width:50px;height:50px}.tx-body{margin-top:-25px;padding:0 16px 16px}.tx-handle{font-size:15px}}
 </style>
 <script>
 (function(){
@@ -1282,13 +1283,14 @@ footer .footer-r a:hover{color:var(--text)}
     // entries land here as creators are added
   ];
 
-  var SLOTS = 3;
-  var grid = document.getElementById('txGrid');
-  if(!grid) return;
+  var SLOTS = 4;
+  var rowA = document.getElementById('txRowA');
+  var rowB = document.getElementById('txRowB');
+  if(!rowA || !rowB) return;
 
   function card(c){
     var el = document.createElement('a');
-    el.className = 'tx-card reveal';
+    el.className = 'tx-card';
     el.href = c.url || '#'; el.target = '_blank'; el.rel = 'noopener';
     var pfp = c.pfp
       ? '<img class="tx-pfp" src="'+c.pfp+'" alt="'+c.handle+'">'
@@ -1305,7 +1307,7 @@ footer .footer-r a:hover{color:var(--text)}
 
   function slot(){
     var el = document.createElement('div');
-    el.className = 'tx-card tx-slot reveal';
+    el.className = 'tx-card tx-slot';
     el.innerHTML =
       '<div class="tx-banner"></div>'+
       '<div class="tx-body"><div class="tx-pfp-fb" style="color:rgba(240,238,232,.2);background:rgba(255,255,255,.03)">&middot;</div>'+
@@ -1314,10 +1316,37 @@ footer .footer-r a:hover{color:var(--text)}
     return el;
   }
 
-  TRIADXYZ.forEach(function(c){ grid.appendChild(card(c)); });
-  // empty tier shows SLOTS placeholders; otherwise pad the last row to an even pair
-  var fill = TRIADXYZ.length ? (TRIADXYZ.length % 2) : SLOTS;
-  for(var i=0;i<fill;i++) grid.appendChild(slot());
+  var items = TRIADXYZ.slice();
+  if(!items.length){ for(var i=0;i<SLOTS;i++) items.push(null); }
+
+  // alternate down the two rows so both stay populated
+  var A=[], B=[];
+  items.forEach(function(c,i){ (i%2 ? B : A).push(c); });
+  if(!B.length) B = A.slice();
+
+  function build(track, list){
+    function one(c){ return (c ? card(c) : slot()).outerHTML; }
+    var html = list.map(one).join('');
+    // duplicate until the strip comfortably exceeds the viewport, then once more
+    // so the -50% keyframe always lands on an identical frame
+    var unit = html;
+    while(list.length * 400 * (unit.length/html.length) < window.innerWidth * 1.5) unit += html;
+    track.innerHTML = unit + unit;
+    requestAnimationFrame(function(){
+      track.style.animation='none';
+      void track.offsetWidth;
+      track.style.animation='';
+    });
+  }
+
+  build(rowA, A);
+  build(rowB, B);
+
+  window.addEventListener('load', function(){
+    [rowA,rowB].forEach(function(el){
+      el.style.animation='none'; void el.offsetWidth; el.style.animation='';
+    });
+  });
 })();
 </script>
 
