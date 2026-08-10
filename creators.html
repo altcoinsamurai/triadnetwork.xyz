@@ -1272,6 +1272,12 @@ footer .footer-r a:hover{color:var(--text)}
       url:'https://x.com/AddyyyOnChain',
       pfp:'/assets/creators/addyyyonchain.jpg'
       // banner pending: upload was X's sensitive-media interstitial, not his header
+    },
+    {
+      handle:'@jayencodes',
+      url:'https://x.com/jayencodes',
+      pfp:'/assets/creators/jayencodes.jpg',
+      banner:'/assets/banners/jayencodes.jpg'
     }
     // entries land here as creators are added
   ];
@@ -1309,7 +1315,9 @@ footer .footer-r a:hover{color:var(--text)}
   }
 
   TRIADXYZ.forEach(function(c){ grid.appendChild(card(c)); });
-  for(var i=0;i<Math.max(0,SLOTS-TRIADXYZ.length);i++) grid.appendChild(slot());
+  // empty tier shows SLOTS placeholders; otherwise pad the last row to an even pair
+  var fill = TRIADXYZ.length ? (TRIADXYZ.length % 2) : SLOTS;
+  for(var i=0;i<fill;i++) grid.appendChild(slot());
 })();
 </script>
 
