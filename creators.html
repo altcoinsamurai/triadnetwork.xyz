@@ -648,7 +648,7 @@ footer .footer-r a:hover{color:var(--text)}
 </section>
 
 <style>
-.tr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px}
+.tr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px;align-items:start}
 .tr-card{position:relative;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .25s ease,transform .25s ease}
 .tr-card:hover{border-color:var(--border-strong);transform:translateY(-3px)}
 .tr-frame{position:relative;aspect-ratio:9/16;background:#000;overflow:hidden;cursor:pointer}
@@ -683,6 +683,17 @@ footer .footer-r a:hover{color:var(--text)}
   //   ratio  → '9/16' (default) or '16/9'
   //   avatar → /assets/creators/<handle>.jpg  (optional)
   var RENDER = [
+    {
+      title:'Inside FAIR',
+      handle:'@Samooves',
+      url:'https://x.com/Samooves',
+      avatar:'/assets/creators/samooves.jpg',
+      src:'/assets/render/samooves-fair.mp4',
+      poster:'/assets/render/samooves-fair.jpg',
+      tag:'Partner · FAIR',
+      ratio:'16/9',
+      sub:'Product walkthrough · 44s'
+    }
     // entries land here as uploads come in
   ];
 
@@ -715,6 +726,7 @@ footer .footer-r a:hover{color:var(--text)}
   function slot(){
     var el = document.createElement('div');
     el.className = 'tr-card tr-slot reveal';
+    el.setAttribute('data-ratio', (RENDER[0] && RENDER[0].ratio) || '9/16');
     el.innerHTML =
       '<div class="tr-frame"><div class="tr-slot-mark"><span>&#9654;</span>Slot open</div></div>'+
       '<div class="tr-meta"><div class="tr-title" style="color:rgba(240,238,232,.3)">In production</div>'+
