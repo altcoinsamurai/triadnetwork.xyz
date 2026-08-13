@@ -58,7 +58,7 @@ a{color:inherit;text-decoration:none}
 .pill-logo svg{width:22px;height:22px}
 .pill-logo span{font-family:var(--display);font-size:13px;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
 .pill-divider{width:1px;height:20px;background:var(--border);margin:0 4px}
-.pill-link{padding:8px 14px;font-family:var(--accent-font);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);transition:color .3s;border-radius:100px}
+.pill-link{white-space:nowrap;padding:8px 14px;font-family:var(--accent-font);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);transition:color .3s;border-radius:100px}
 .pill-link:hover{color:var(--text)}
 .pill-cta{padding:10px 20px;background:var(--text);color:#06060C;font-family:var(--accent-font);font-size:10px;letter-spacing:.18em;text-transform:uppercase;border-radius:100px;transition:all .3s;font-weight:500;white-space:nowrap}
 .pill-cta:hover{background:var(--accent);color:#06060C}
@@ -533,13 +533,19 @@ footer .footer-r a:hover{color:var(--text)}
   .tweet-grid{grid-template-columns:repeat(2,1fr)}
   .receipts-row{grid-template-columns:repeat(2,1fr)}
 }
-@media(min-width:781px) and (max-width:980px){
+@media(min-width:800px) and (max-width:870px){
+  .pill-nav{gap:0;padding:5px}
+  .pill-link{padding:8px 6px;letter-spacing:.04em;font-size:9px}
+  .pill-cta{padding:8px 11px;letter-spacing:.06em;font-size:9px}
+  .pill-logo{padding:8px 8px;font-size:11px}
+}
+@media(min-width:781px) and (max-width:1120px){
   .pill-nav{gap:2px;padding:6px}
   .pill-link{padding:8px 9px;letter-spacing:.10em}
   .pill-cta{padding:9px 14px;letter-spacing:.10em}
   .pill-logo{padding:8px 10px}
 }
-@media(max-width:780px){
+@media(max-width:799px){
   .pill-nav{padding:6px;gap:2px;left:16px;right:16px;transform:none;width:auto;justify-content:space-between}
   .pill-link,.pill-divider{display:none}
   .pill-logo{padding:6px 10px}
@@ -600,6 +606,7 @@ footer .footer-r a:hover{color:var(--text)}
     <span>Triad</span>
   </a>
   <span class="pill-divider"></span>
+  <a href="#clanwars" class="pill-link">Clan Wars</a>
   <a href="#render" class="pill-link">Render</a>
   <a href="#receipts" class="pill-link">Receipts</a>
   <a href="#cohort" class="pill-link">Network</a>
@@ -1451,6 +1458,101 @@ footer .footer-r a:hover{color:var(--text)}
   });
 })();
 </script>
+
+<section class="section" id="clanwars">
+  <div class="section-head reveal">
+    <div class="section-eyebrow">Triad Clan Wars &middot; Season 01</div>
+    <h2>The edge is already there. <em>The capital isn't.</em></h2>
+    <p>$5,000 a month in grant capital, deployed to upcoming traders with a track record and no bankroll behind it. Our clan runs on fomo, where traders group up and get ranked on combined profit and loss.</p>
+  </div>
+
+  <div class="cw-wrap reveal">
+    <div class="cw-copy">
+      <div class="cw-brand">
+        <img src="/assets/fomo-logo.jpg" alt="fomo" class="cw-logo">
+        <div>
+          <div class="cw-brand-name">fomo</div>
+          <div class="cw-brand-sub">Social trading &middot; The Clan Wars hub</div>
+        </div>
+      </div>
+
+      <div class="cw-pot">
+        <div class="cw-pot-amt">$5,000</div>
+        <div class="cw-pot-sub">Monthly grant pool</div>
+      </div>
+
+      <ul class="cw-steps">
+        <li><span class="cw-n">01</span><span class="cw-t"><b>Join the clan</b>Sign up on fomo through our link and follow Triad. Clans are ranked on the combined PnL of everyone in them.</span></li>
+        <li><span class="cw-n">02</span><span class="cw-t"><b>Register</b>Show us the tape. We read track record, not follower count.</span></li>
+        <li><span class="cw-n">03</span><span class="cw-t"><b>Get funded</b>Grants awarded monthly from the pool. Reviewed on consistency and risk discipline, not one lucky month.</span></li>
+      </ul>
+
+      <div class="cw-cta-row">
+        <a href="/clan-wars.html" class="cw-primary">Register for Season 01 &rarr;</a>
+        <a href="https://fomo.family/r/triadxyz" target="_blank" rel="noopener" class="cw-secondary">Join Triad on fomo &#8599;</a>
+      </div>
+
+      <p class="cw-disc">18+. An application, not an offer of funding. Trading carries risk of total loss. Triad earns a share of fomo trading fees from signups through our link.</p>
+    </div>
+
+    <div class="cw-media">
+      <div class="cw-video" data-src="/assets/render/fomo-clans.mp4">
+        <img src="/assets/render/fomo-clans.jpg" alt="fomo Clans, traders ranked by combined profit and loss" loading="lazy">
+        <button class="cw-play" aria-label="Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="cw-cap">Clans on fomo &middot; ranked by combined PnL</div>
+    </div>
+  </div>
+</section>
+
+<style>
+.cw-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;max-width:1100px;margin:0 auto;align-items:center}
+.cw-brand{display:flex;align-items:center;gap:13px;padding-bottom:20px;border-bottom:1px solid var(--border);margin-bottom:24px}
+.cw-logo{width:44px;height:44px;border-radius:12px;object-fit:cover;border:1px solid var(--border);flex-shrink:0}
+.cw-brand-name{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;letter-spacing:.02em}
+.cw-brand-sub{font-family:var(--mono);font-size:10.5px;color:var(--text-dim);margin-top:3px}
+.cw-pot{display:inline-block;padding:18px 26px;background:linear-gradient(180deg,rgba(1,189,165,.07) 0%,rgba(1,189,165,.02) 100%);border:1px solid rgba(1,189,165,.28);border-radius:14px;margin-bottom:28px}
+.cw-pot-amt{font-family:var(--display);font-size:36px;font-weight:700;letter-spacing:-.02em;line-height:1;color:var(--text)}
+.cw-pot-sub{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-top:7px}
+.cw-steps{list-style:none;display:flex;flex-direction:column;gap:15px;margin-bottom:30px}
+.cw-steps li{display:flex;gap:14px}
+.cw-n{font-family:var(--mono);font-size:11px;color:var(--accent);flex-shrink:0;padding-top:2px}
+.cw-t{font-size:13.5px;color:var(--text-dim);line-height:1.55}
+.cw-t b{color:var(--text);font-weight:600;display:block;font-family:var(--body);margin-bottom:1px}
+.cw-cta-row{display:flex;flex-wrap:wrap;gap:11px;margin-bottom:20px}
+.cw-primary{display:inline-flex;align-items:center;background:var(--accent);color:#06060C;font-family:var(--accent-font);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;padding:15px 26px;border-radius:100px;transition:transform .25s,box-shadow .25s}
+.cw-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px -10px rgba(1,189,165,.5)}
+.cw-secondary{display:inline-flex;align-items:center;color:var(--text);font-family:var(--accent-font);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;padding:15px 24px;border-radius:100px;border:1px solid var(--border-strong);transition:border-color .25s,background .25s}
+.cw-secondary:hover{border-color:var(--accent);background:var(--accent-glow)}
+.cw-disc{font-size:11.5px;line-height:1.6;color:var(--muted);max-width:460px}
+.cw-media{display:flex;flex-direction:column}
+.cw-video{position:relative;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:#000;cursor:pointer;border:1px solid var(--border)}
+.cw-video img,.cw-video video{width:100%;height:100%;object-fit:cover;display:block;border:0}
+.cw-play{position:absolute;left:16px;bottom:16px;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(6,6,12,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:background .2s,transform .2s}
+.cw-play svg{width:21px;height:21px;fill:var(--accent);margin-left:3px}
+.cw-video:hover .cw-play{background:var(--accent-soft);transform:scale(1.07)}
+.cw-cap{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:13px;text-align:center}
+@media(max-width:900px){
+  .cw-wrap{grid-template-columns:1fr;gap:32px}
+  .cw-media{order:-1;max-width:420px;margin:0 auto;width:100%}
+  .cw-cta-row .cw-primary,.cw-cta-row .cw-secondary{flex:1 1 auto;justify-content:center}
+  .cw-disc{max-width:none}
+}
+</style>
+<script>
+document.querySelectorAll('.cw-video').forEach(function(el){
+  el.addEventListener('click', function(){
+    if(el.dataset.played) return;
+    el.dataset.played='1';
+    var v=document.createElement('video');
+    v.src=el.dataset.src; v.controls=true; v.autoplay=true; v.playsInline=true;
+    v.setAttribute('playsinline',''); v.preload='auto';
+    el.innerHTML=''; el.appendChild(v); el.style.cursor='default';
+  });
+});
+</script>
+
+<div class="divider"></div>
 
 <section class="section" id="calc">
   <div class="section-head reveal">
