@@ -1500,7 +1500,7 @@ footer .footer-r a:hover{color:var(--text)}
         <img src="/assets/render/fomo-clans.jpg" alt="fomo Clans, traders ranked by combined profit and loss" loading="lazy">
         <button class="cw-play" aria-label="Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
       </div>
-      <div class="cw-cap">Clans on fomo &middot; ranked by combined PnL</div>
+      <a class="cw-cap" href="https://x.com/fomo/status/2086878259279450404" target="_blank" rel="noopener">Clans on fomo &middot; ranked by combined PnL<svg class="cw-ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
     </div>
   </div>
 </section>
@@ -1532,7 +1532,9 @@ footer .footer-r a:hover{color:var(--text)}
 .cw-play{position:absolute;left:16px;bottom:16px;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(6,6,12,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:background .2s,transform .2s}
 .cw-play svg{width:21px;height:21px;fill:var(--accent);margin-left:3px}
 .cw-video:hover .cw-play{background:var(--accent-soft);transform:scale(1.07)}
-.cw-cap{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:13px;text-align:center}
+.cw-cap{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:13px;text-align:center;transition:color .25s}
+.cw-cap:hover{color:var(--accent)}
+.cw-cap .cw-ext{width:10px;height:10px;margin-left:6px}
 @media(max-width:900px){
   .cw-wrap{grid-template-columns:1fr;gap:32px}
   .cw-media{order:-1;max-width:420px;margin:0 auto;width:100%}
