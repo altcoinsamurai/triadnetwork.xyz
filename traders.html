@@ -80,6 +80,29 @@ h1 em{font-style:normal;color:var(--gold)}
 .disc-inner p{font-size:12px;line-height:1.65;color:var(--muted);margin-bottom:8px}
 .disc-inner p:last-child{margin-bottom:0}
 
+.ar-placard{border:1px solid rgba(211,244,7,.26);border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#0B0B13 0%,#06060C 100%)}
+.ar-banner img{width:100%;display:block}
+.ar-body{padding:32px 36px 28px}
+.ar-head{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.ar-logo{width:56px;height:56px;border-radius:13px;flex-shrink:0;border:1px solid rgba(255,255,255,.08)}
+.ar-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:3.4px;color:#D3F407;margin-bottom:6px}
+.ar-title{font-family:var(--display);font-size:clamp(24px,3.6vw,34px);font-weight:700;line-height:1.05;margin:0;text-transform:none}
+.ar-cat{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:5px;letter-spacing:.04em}
+.ar-sub{font-size:14.5px;color:var(--text-dim);max-width:740px;line-height:1.65;margin:0 0 24px}
+.ar-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:22px}
+.ar-stat{border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px 18px;background:rgba(255,255,255,.02)}
+.ar-sn{font-family:var(--display);font-size:19px;font-weight:700;color:#D3F407;line-height:1.1}
+.ar-sl{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;color:var(--muted);margin-top:7px;line-height:1.45}
+.ar-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.ar-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#D3F407;border:1px solid rgba(211,244,7,.3);border-radius:100px;padding:5px 11px}
+.ar-note{font-family:var(--mono);font-size:10px;line-height:1.6;letter-spacing:.02em;color:var(--muted);border-top:1px solid rgba(240,238,232,.08);padding-top:15px}
+@media(max-width:680px){
+  .ar-body{padding:22px 20px 20px}
+  .ar-head{gap:13px}.ar-logo{width:46px;height:46px}
+  .ar-sub{font-size:13.5px}
+  .ar-stats{grid-template-columns:1fr}
+}
+
 /* Robinhood Chain placard */
 .hood-placard{border:1px solid rgba(204,255,0,.28);border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#0B0B13 0%,#06060C 100%)}
 .hood-banner img{width:100%;display:block}
@@ -130,8 +153,37 @@ h1 em{font-style:normal;color:var(--gold)}
 <section class="section" id="work">
   <div class="section-eyebrow">The Work</div>
   <h2>Projects we've <em>actually shipped on.</em></h2>
-  <p class="section-sub">Advisory, distribution and content mandates across the protocols and ecosystems we cover. Roles are stated plainly.</p>
+  <p class="section-sub">Advisory, distribution and content mandates across the protocols and ecosystems we cover. Roles are stated plainly on every entry.</p>
   <div class="tr-grid" id="trGrid"></div>
+</section>
+
+<!-- FEATURED: ARROW FINANCE -->
+<section class="section" id="arrow" style="padding-top:20px">
+  <div class="ar-placard reveal">
+    <div class="ar-banner"><img src="/assets/traders/arrow-banner.jpg" alt="Arrow Finance, the gateway for Robinhood DeFi" loading="lazy"></div>
+    <div class="ar-body">
+      <div class="ar-head">
+        <img src="/assets/traders/arrow-logo.jpg" alt="" class="ar-logo">
+        <div>
+          <div class="ar-eyebrow">TRIAD &times; ARROW FINANCE</div>
+          <h2 class="ar-title">$ARROW</h2>
+          <div class="ar-cat">CDP lending &middot; Robinhood Chain</div>
+        </div>
+      </div>
+      <p class="ar-sub">Arrow Finance is the gateway for Robinhood DeFi: trade, earn, borrow, launch and manage assets on Robinhood Chain. Triad held the content and distribution mandate across the launch and the ecosystem narrative around it.</p>
+      <div class="ar-stats">
+        <div class="ar-stat"><div class="ar-sn">$1M &rarr; $34M</div><div class="ar-sl">Market cap over the campaign period</div></div>
+        <div class="ar-stat"><div class="ar-sn">Content</div><div class="ar-sl">Written &amp; video across the roster</div></div>
+        <div class="ar-stat"><div class="ar-sn">Live</div><div class="ar-sl">Mandate status</div></div>
+      </div>
+      <div class="ar-tags">
+        <span class="ar-tag">Marketing relationship</span>
+        <span class="ar-tag">Content</span>
+        <span class="ar-tag">Distribution</span>
+      </div>
+      <div class="ar-note">Triad holds a disclosed marketing relationship with Arrow Finance. Market capitalisation figures describe what happened during the mandate period and are stated as context, not as a result attributed to Triad or a forecast of any kind. Nothing here is investment advice.</div>
+    </div>
+  </div>
 </section>
 
 <!-- ROBINHOOD CHAIN PLACARD -->
@@ -167,16 +219,9 @@ h1 em{font-style:normal;color:var(--gold)}
   // ── TRACK RECORD ──
   // { name, ticker, category, desc, role[], logo, url }
   var PROJECTS = [
-    {
-      name:'Arrow Finance',
-      ticker:'$ARROW',
-      category:'CDP lending protocol &middot; Robinhood Chain',
-      desc:'A collateralised debt position lending protocol built on Robinhood Chain. Triad ran content and distribution across the launch and the surrounding ecosystem narrative.',
-      role:['Marketing relationship','Content','Distribution'],
-      url:''
-    }
     // further entries land here
   ];
+
 
   var SLOTS = 3;
   var grid = document.getElementById('trGrid');
