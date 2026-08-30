@@ -30,6 +30,7 @@
   --bg:#06060C;
   --text:#F0EEE8;
   --muted:#808285;
+  --gold:#E0A84A;
   --display:'Conthrax','Chakra Petch','Saira',system-ui,sans-serif;
   --accent-font:'Inversionz Unboxed','Michroma','Orbitron',sans-serif;
   --mono:'JetBrains Mono',monospace;
@@ -45,20 +46,24 @@ a{color:inherit;text-decoration:none}
 .hero-title em{font-style:normal;color:var(--accent)}
 .hero-sub{font-family:var(--accent-font);font-size:13px;color:var(--muted);letter-spacing:.28em;text-transform:uppercase;margin-bottom:0;opacity:0;animation:fadeUp .8s ease .7s both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.path-cards{display:flex;gap:24px;justify-content:center;opacity:0;animation:fadeUp .8s ease .9s both;flex-wrap:wrap;padding:0 20px;margin-top:auto;padding-top:6vh;width:100%}
-.path-card{width:340px;background:rgba(6,6,12,.72);backdrop-filter:blur(20px);border:1px solid rgba(128,130,133,.18);border-radius:18px;padding:36px 28px;text-align:left;transition:all .5s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden;cursor:pointer}
+.path-cards{display:flex;gap:20px;justify-content:center;max-width:1120px;margin-inline:auto;opacity:0;animation:fadeUp .8s ease .9s both;flex-wrap:wrap;padding:0 20px;margin-top:auto;padding-top:6vh;width:100%}
+.path-card{width:340px;flex:0 1 340px;background:rgba(6,6,12,.72);backdrop-filter:blur(20px);border:1px solid rgba(128,130,133,.18);border-radius:18px;padding:36px 28px;text-align:left;transition:all .5s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden;cursor:pointer}
 .path-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;transition:transform .4s;transform:scaleX(0);transform-origin:left}
 .path-card:hover{transform:translateY(-8px);border-color:rgba(255,255,255,.18);box-shadow:0 24px 60px rgba(0,0,0,.4)}
 .path-card:hover::before{transform:scaleX(1)}
 .path-card.creator::before{background:linear-gradient(90deg,var(--accent),transparent)}
 .path-card.creator:hover{border-color:var(--accent-soft);box-shadow:0 24px 60px var(--accent-glow)}
 .path-card.project::before{background:linear-gradient(90deg,var(--muted),transparent)}
+.path-card.trader::before{background:linear-gradient(90deg,var(--gold),transparent)}
+.path-card.trader:hover{border-color:rgba(224,168,74,.45);box-shadow:0 24px 60px rgba(224,168,74,.12)}
 .path-card.project:hover{border-color:rgba(128,130,133,.45);box-shadow:0 24px 60px rgba(128,130,133,.12)}
 .path-label{font-family:var(--accent-font);font-size:10px;letter-spacing:.28em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px}
 .path-label::before{content:'';width:8px;height:8px;border-radius:50%}
 .path-card.creator .path-label{color:var(--accent)}
 .path-card.creator .path-label::before{background:var(--accent);box-shadow:0 0 8px var(--accent-soft)}
 .path-card.project .path-label{color:var(--muted)}
+.path-card.trader .path-label{color:var(--gold)}
+.path-card.trader .path-label::before{background:var(--gold);box-shadow:0 0 8px rgba(224,168,74,.5)}
 .path-card.project .path-label::before{background:var(--muted);box-shadow:0 0 8px rgba(128,130,133,.5)}
 .path-card h2{font-family:var(--display);font-size:24px;font-weight:600;letter-spacing:0;margin-bottom:14px;text-transform:uppercase}
 .path-card p{font-family:var(--display);font-size:13.5px;line-height:1.6;color:rgba(240,238,232,.55);margin-bottom:22px;font-weight:400}
@@ -66,6 +71,7 @@ a{color:inherit;text-decoration:none}
 .path-card:hover .path-arrow{gap:14px}
 .path-card.creator .path-arrow{color:var(--accent)}
 .path-card.project .path-arrow{color:var(--text)}
+.path-card.trader .path-arrow{color:var(--gold)}
 .stats-bar{position:relative;z-index:2;display:flex;justify-content:center;gap:48px;padding:48px 20px 32px;opacity:0;animation:fadeUp .8s ease 1.1s both}
 .stat-item{text-align:center}
 .stat-num{font-family:var(--display);font-size:22px;font-weight:600;color:var(--accent)}
@@ -74,7 +80,13 @@ a{color:inherit;text-decoration:none}
 .gateway-footer span{font-family:var(--accent-font);font-size:9px;color:var(--muted);letter-spacing:.18em;text-transform:uppercase}
 .gateway-footer a{font-family:var(--accent-font);font-size:9px;color:var(--muted);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:color .3s}
 .gateway-footer a:hover{color:var(--text)}
-@media(max-width:700px){
+@media(min-width:1000px) and (max-width:1180px){
+  .path-cards{gap:14px;padding:0 12px}
+  .path-card{flex:0 1 288px;width:288px;padding:28px 20px}
+  .path-card h2{font-size:21px}
+  .path-card p{font-size:12.5px}
+}
+@media(max-width:999px){
   .hero{min-height:auto;padding:0 0 8vh}
   .hero-bg{position:relative;inset:auto;align-self:stretch;width:100%;aspect-ratio:16/9;flex:0 0 auto;background-size:cover;background-position:center}
   .hero-bg::after{background:linear-gradient(180deg,transparent 0%,transparent 65%,rgba(6,6,12,.6) 88%,var(--bg) 100%)}
@@ -107,6 +119,12 @@ a{color:inherit;text-decoration:none}
         <div class="path-label">For Projects</div>
         <h2>I'm a Project</h2>
         <p>Strategic BD, exchange listings, capital introductions, and creator distribution across 12 markets.</p>
+        <span class="path-arrow">Enter &rarr;</span>
+      </a>
+      <a href="/clan-wars.html" class="path-card trader">
+        <div class="path-label">For Traders</div>
+        <h2>I'm a Trader</h2>
+        <p>Grant capital, clan ranking, and a seat on fomo. Season 01 open, selected on the tape.</p>
         <span class="path-arrow">Enter &rarr;</span>
       </a>
     </div>
