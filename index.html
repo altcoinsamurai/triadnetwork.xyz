@@ -67,6 +67,7 @@ a{color:inherit;text-decoration:none}
 .path-card.project .path-label::before{background:var(--muted);box-shadow:0 0 8px rgba(128,130,133,.5)}
 .path-card h2{font-family:var(--display);font-size:24px;font-weight:600;letter-spacing:0;margin-bottom:14px;text-transform:uppercase}
 .path-card p{font-family:var(--display);font-size:13.5px;line-height:1.6;color:rgba(240,238,232,.55);margin-bottom:22px;font-weight:400}
+.deck-dots{display:none}
 .path-arrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--accent-font);font-size:11px;letter-spacing:.18em;text-transform:uppercase;transition:gap .3s}
 .path-card:hover .path-arrow{gap:14px}
 .path-card.creator .path-arrow{color:var(--accent)}
@@ -87,17 +88,29 @@ a{color:inherit;text-decoration:none}
   .path-card p{font-size:12.5px}
 }
 @media(max-width:999px){
-  .hero{min-height:auto;padding:0 0 8vh}
+  .hero{min-height:auto;padding:0 0 2vh}
   .hero-bg{position:relative;inset:auto;align-self:stretch;width:100%;aspect-ratio:16/9;flex:0 0 auto;background-size:cover;background-position:center}
   .hero-bg::after{background:linear-gradient(180deg,transparent 0%,transparent 65%,rgba(6,6,12,.6) 88%,var(--bg) 100%)}
   .hero-content{padding:0 20px;margin-top:7vh;flex:1}
   .hero-eyebrow{margin-bottom:18px;font-size:10px;gap:10px}
   .hero-title{font-size:clamp(26px,8vw,40px);margin-bottom:14px}
   .hero-sub{font-size:11px;letter-spacing:.24em}
-  .path-cards{flex-direction:column;align-items:center;padding-top:7vh;margin-top:0}
-  .path-card{width:100%;max-width:360px}
-  .stats-bar{gap:24px;flex-wrap:wrap;padding:32px 20px}
-  .stats-bar .stat-item{min-width:70px}
+  .path-cards{display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:flex-start;
+    overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    gap:14px;padding:5vh 20px 0;margin-top:0;max-width:none;scrollbar-width:none}
+  .path-cards::-webkit-scrollbar{display:none}
+  .path-card{flex:0 0 82%;width:auto;max-width:none;scroll-snap-align:center;
+    padding:26px 22px 24px;min-height:238px;display:flex;flex-direction:column}
+  .path-card p{flex:1;margin-bottom:16px}
+  .path-card h2{font-size:22px}
+  .deck-dots{display:flex;justify-content:center;gap:8px;padding:16px 0 0}
+  .deck-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.22);
+    border:0;padding:0;cursor:pointer;transition:width .3s,background .3s}
+  .deck-dot.on{width:20px;border-radius:4px;background:var(--accent)}
+  .stats-bar{gap:0;flex-wrap:nowrap;justify-content:space-around;padding:20px 14px 24px}
+  .stats-bar .stat-item{min-width:0;flex:1}
+  .stat-num{font-size:18px}
+  .stat-label{font-size:7.5px;letter-spacing:.14em}
 }
 </style>
 </head>
@@ -128,6 +141,11 @@ a{color:inherit;text-decoration:none}
         <span class="path-arrow">Enter &rarr;</span>
       </a>
     </div>
+    <div class="deck-dots" id="deckDots" aria-hidden="true">
+      <button class="deck-dot on" data-i="0" aria-label="Creators"></button>
+      <button class="deck-dot" data-i="1" aria-label="Projects"></button>
+      <button class="deck-dot" data-i="2" aria-label="Traders"></button>
+    </div>
   </div>
 </section>
 <div class="stats-bar">
@@ -139,5 +157,29 @@ a{color:inherit;text-decoration:none}
 <div class="gateway-footer">
   <span>&copy; 2026 Triad Network · Triadxyz, a series of OtoCo WY LLC (Wyoming) · </span><a href="/terms.html">Terms</a>
 </div>
+<script>
+(function(){
+  var deck=document.querySelector('.path-cards'), dots=document.getElementById('deckDots');
+  if(!deck||!dots) return;
+  var btns=[].slice.call(dots.querySelectorAll('.deck-dot'));
+  var cards=[].slice.call(deck.querySelectorAll('.path-card'));
+  function active(){
+    var mid=deck.scrollLeft+deck.clientWidth/2, best=0, dist=Infinity;
+    cards.forEach(function(c,i){
+      var cmid=c.offsetLeft+c.offsetWidth/2, d=Math.abs(cmid-mid);
+      if(d<dist){dist=d;best=i;}
+    });
+    btns.forEach(function(b,i){ b.classList.toggle('on', i===best); });
+  }
+  var t; deck.addEventListener('scroll', function(){ clearTimeout(t); t=setTimeout(active,60); }, {passive:true});
+  btns.forEach(function(b,i){
+    b.addEventListener('click', function(){
+      var c=cards[i];
+      deck.scrollTo({left:c.offsetLeft-(deck.clientWidth-c.offsetWidth)/2, behavior:'smooth'});
+    });
+  });
+  active();
+})();
+</script>
 </body>
 </html>
