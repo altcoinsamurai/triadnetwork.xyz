@@ -110,19 +110,26 @@ h2{font-family:var(--display);font-size:clamp(21px,3vw,30px);font-weight:600;lin
   <div class="hero">
     <div class="eyebrow">TRIAD &times; ARROW FINANCE &middot; DATA ROOM</div>
     <h1>The work, <em>on the record.</em></h1>
-    <p class="lede">Every piece Triad produced and distributed for Arrow Finance across the launch and the Robinhood Chain ecosystem narrative. Posts, threads, video and campaign assets, collected in one place.</p>
+    <p class="lede">The content record from Triad's mandate with Arrow Finance: what we produced, and the coverage, listings and integrations that followed across the Robinhood Chain ecosystem.</p>
     <div class="keyline">
-      <div class="kv"><div class="n" id="kvCount">0</div><div class="l">Pieces in the record</div></div>
+      <div class="kv"><div class="n" id="kvCount">0</div><div class="l">Items in the record</div></div>
       <div class="kv"><div class="n">$1M &rarr; $34M</div><div class="l">Market cap over the campaign period</div></div>
       <div class="kv"><div class="n">Live</div><div class="l">Mandate status</div></div>
     </div>
   </div>
 
   <section class="section">
-    <div class="sec-eyebrow">THE RECORD</div>
-    <h2>Everything we shipped</h2>
-    <p class="sec-sub">Click any item to view it full size. Where a piece was published publicly, the card links to the original.</p>
+    <div class="sec-eyebrow">TRIAD OUTPUT</div>
+    <h2>What we produced</h2>
+    <p class="sec-sub">Content written and published by Triad and the Triad roster under the Arrow mandate. Click any item to view it full size.</p>
     <div class="cgrid" id="cGrid"></div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="sec-eyebrow">COVERAGE</div>
+    <h2>What followed</h2>
+    <p class="sec-sub">Third-party coverage, listings and integrations during the mandate period. These are other people's posts, collected here as a record of the moment. Triad did not produce them and does not endorse the views in them.</p>
+    <div class="cgrid" id="vGrid"></div>
   </section>
 
   <section class="section" style="padding-top:0">
@@ -138,6 +145,7 @@ h2{font-family:var(--display);font-size:clamp(21px,3vw,30px);font-weight:600;lin
   <div class="disc">
     <h4>Disclosure</h4>
     <p>Triad Network holds a disclosed marketing relationship with Arrow Finance. Content shown on this page was produced under that mandate and was published with disclosure where required by law or platform rules.</p>
+    <p>Items shown under Coverage were published by third parties and are reproduced here as a record of coverage during the mandate period. Triad did not produce them, does not endorse the opinions expressed in them, and any price targets, predictions or trading views in third-party content are those of their authors alone.</p>
     <p>Market capitalisation figures describe what happened during the mandate period. They are stated as context, not as a result attributed to Triad, and not as a forecast. Nothing on this page is financial, investment or trading advice, a recommendation to buy or sell any asset, or an offer or solicitation of any kind. Digital assets are volatile and carry significant risk of total loss.</p>
   </div>
 </div>
@@ -157,22 +165,43 @@ h2{font-family:var(--display);font-size:clamp(21px,3vw,30px);font-weight:600;lin
   //   img   → /assets/traders/arrow/<file>.jpg
   //   type  → 'Post' | 'Thread' | 'Video' | 'Campaign' | 'Chart'
   //   url   → optional link to the published original
+  var A='/assets/traders/arrow/';
+
+  // ── TRIAD OUTPUT ── content Triad produced under the mandate
   var RECORD = [
-    // entries land here as screenshots come in
+    { img:A+'triad-credit-layer.jpg', type:'Post', title:'The second-order question nobody was asking',
+      note:'@Altcoinsamurai · 7 Jul 2026 · 8.2K views',
+      url:'https://x.com/Altcoinsamurai' }
+    // further Triad-produced pieces land here
   ];
 
-  var SLOTS = 6;
-  var grid = document.getElementById('cGrid');
-  var countEl = document.getElementById('kvCount');
-  if(!grid) return;
+  // ── COVERAGE ── third-party posts, listings and integrations
+  var COVERAGE = [
+    { img:A+'ash-advisor.jpg', type:'Announcement', title:'Ash Manicka joins Arrow as Strategic Advisor',
+      note:'@ArrowFinanceio · 10 Jul 2026 · 61K views' },
+    { img:A+'geckoterminal.jpg', type:'Data', title:'Top 5 Robinhood memecoins by market cap, $ARROW at number two',
+      note:'@GeckoTerminal · 8 Jul 2026 · 53K views' },
+    { img:A+'mexc.jpg', type:'Listing', title:'MEXC lists $ARROWUSDT',
+      note:'@Alpha_MEXC · 9 Jul 2026 · 18K views' },
+    { img:A+'arcus.jpg', type:'Listing', title:'$ARROW live on Arcus Spot',
+      note:'@arcus_xyz · 9 Jul 2026 · 29K views' },
+    { img:A+'virtuals.jpg', type:'Integration', title:'$ARROW composable in Virtuals Protocol indexes',
+      note:'@virtuals_io · Robinhood Chain tokenised assets' },
+    { img:A+'melos.jpg', type:'Coverage', title:'Robinhood Chain lending protocol coverage',
+      note:'@0xMelos · 8 Jul 2026 · 40.9K views' },
+    { img:A+'bluntz.jpg', type:'Coverage', title:'Chart read on $ARROW and the Robinhood Chain RWA build-out',
+      note:'@Bluntz_Capital · 14 Jul 2026 · 36K views' }
+  ];
+
+  var SLOTS = 3;
   function esc(t){ return String(t==null?'':t).replace(/[<>"&]/g,function(c){return {'<':'&lt;','>':'&gt;','"':'&quot;','&':'&amp;'}[c];}); }
 
-  function item(c,i){
+  function item(c,key,i){
     var el = document.createElement(c.url ? 'a' : 'div');
     el.className='citem reveal';
     if(c.url){ el.href=c.url; el.target='_blank'; el.rel='noopener'; }
     el.innerHTML =
-      '<div class="cshot" data-i="'+i+'">'+
+      '<div class="cshot" data-k="'+key+'" data-i="'+i+'">'+
         (c.type ? '<span class="ctype">'+esc(c.type)+'</span>' : '')+
         '<img src="'+esc(c.img)+'" alt="'+esc(c.title||'')+'" loading="lazy">'+
       '</div>'+
@@ -188,17 +217,23 @@ h2{font-family:var(--display);font-size:clamp(21px,3vw,30px);font-weight:600;lin
     return el;
   }
 
-  RECORD.forEach(function(c,i){ grid.appendChild(item(c,i)); });
-  for(var i=0;i<Math.max(0,SLOTS-RECORD.length);i++) grid.appendChild(slot());
-  if(countEl) countEl.textContent = RECORD.length;
+  var SETS = { r:RECORD, v:COVERAGE };
+  var grids = { r:document.getElementById('cGrid'), v:document.getElementById('vGrid') };
+  Object.keys(SETS).forEach(function(k){
+    var g=grids[k]; if(!g) return;
+    SETS[k].forEach(function(c,i){ g.appendChild(item(c,k,i)); });
+    if(k==='r'){ for(var i=0;i<Math.max(0,SLOTS-SETS[k].length);i++) g.appendChild(slot()); }
+  });
+  var countEl=document.getElementById('kvCount');
+  if(countEl) countEl.textContent = RECORD.length + COVERAGE.length;
 
   // lightbox
   var lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'), lbCap=document.getElementById('lbCap');
-  grid.addEventListener('click', function(e){
+  document.addEventListener('click', function(e){
     var shot=e.target.closest('.cshot');
     if(!shot) return;
     e.preventDefault();
-    var c=RECORD[+shot.dataset.i];
+    var c=SETS[shot.dataset.k][+shot.dataset.i];
     if(!c) return;
     lbImg.src=c.img; lbCap.textContent=[c.title,c.note].filter(Boolean).join(' · ');
     lb.classList.add('on'); document.body.style.overflow='hidden';
