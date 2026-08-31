@@ -93,6 +93,10 @@ h1 em{font-style:normal;color:var(--gold)}
 .ar-stat{border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px 18px;background:rgba(255,255,255,.02)}
 .ar-sn{font-family:var(--display);font-size:19px;font-weight:700;color:#D3F407;line-height:1.1}
 .ar-sl{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;color:var(--muted);margin-top:7px;line-height:1.45}
+.ar-stat-link{display:block;text-decoration:none;transition:border-color .25s,background .25s,transform .25s}
+.ar-stat-link:hover{border-color:rgba(211,244,7,.45);background:rgba(211,244,7,.05);transform:translateY(-2px)}
+.ar-go{display:inline-block;transition:transform .25s}
+.ar-stat-link:hover .ar-go{transform:translateX(4px)}
 .ar-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
 .ar-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#D3F407;border:1px solid rgba(211,244,7,.3);border-radius:100px;padding:5px 11px}
 .ar-note{font-family:var(--mono);font-size:10px;line-height:1.6;letter-spacing:.02em;color:var(--muted);border-top:1px solid rgba(240,238,232,.08);padding-top:15px}
@@ -173,7 +177,7 @@ h1 em{font-style:normal;color:var(--gold)}
       <p class="ar-sub">Arrow Finance is the gateway for Robinhood DeFi: trade, earn, borrow, launch and manage assets on Robinhood Chain. Triad held the content and distribution mandate across the launch and the ecosystem narrative around it.</p>
       <div class="ar-stats">
         <div class="ar-stat"><div class="ar-sn">$1M &rarr; $34M</div><div class="ar-sl">Market cap over the campaign period</div></div>
-        <div class="ar-stat"><div class="ar-sn">Content</div><div class="ar-sl">Written &amp; video across the roster</div></div>
+        <a class="ar-stat ar-stat-link" href="/traders/arrow.html"><div class="ar-sn">Content <span class="ar-go">&rarr;</span></div><div class="ar-sl">Written &amp; video across the roster &middot; open the data room</div></a>
         <div class="ar-stat"><div class="ar-sn">Live</div><div class="ar-sl">Mandate status</div></div>
       </div>
       <div class="ar-tags">
