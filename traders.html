@@ -107,6 +107,29 @@ h1 em{font-style:normal;color:var(--gold)}
   .ar-stats{grid-template-columns:1fr}
 }
 
+.mf-placard{border:1px solid rgba(201,167,106,.28);border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#0B0B13 0%,#06060C 100%)}
+.mf-banner img{width:100%;display:block}
+.mf-body{padding:32px 36px 28px}
+.mf-head{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.mf-logo{width:56px;height:56px;border-radius:13px;flex-shrink:0;border:1px solid rgba(255,255,255,.08)}
+.mf-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:3.4px;color:#C9A76A;margin-bottom:6px}
+.mf-title{font-family:var(--display);font-size:clamp(24px,3.6vw,34px);font-weight:700;line-height:1.05;margin:0;text-transform:none}
+.mf-cat{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:5px;letter-spacing:.04em}
+.mf-sub{font-size:14.5px;color:var(--text-dim);max-width:740px;line-height:1.65;margin:0 0 24px}
+.mf-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:22px}
+.mf-stat{border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px 18px;background:rgba(255,255,255,.02)}
+.mf-sn{font-family:var(--display);font-size:19px;font-weight:700;color:#C9A76A;line-height:1.1}
+.mf-sl{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;color:var(--muted);margin-top:7px;line-height:1.45}
+.mf-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.mf-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#C9A76A;border:1px solid rgba(201,167,106,.3);border-radius:100px;padding:5px 11px}
+.mf-note{font-family:var(--mono);font-size:10px;line-height:1.6;letter-spacing:.02em;color:var(--muted);border-top:1px solid rgba(240,238,232,.08);padding-top:15px}
+@media(max-width:680px){
+  .mf-body{padding:22px 20px 20px}
+  .mf-head{gap:13px}.mf-logo{width:46px;height:46px}
+  .mf-sub{font-size:13.5px}
+  .mf-stats{grid-template-columns:1fr}
+}
+
 /* Robinhood Chain placard */
 .hood-placard{border:1px solid rgba(204,255,0,.28);border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#0B0B13 0%,#06060C 100%)}
 .hood-banner img{width:100%;display:block}
@@ -186,6 +209,35 @@ h1 em{font-style:normal;color:var(--gold)}
         <span class="ar-tag">Distribution</span>
       </div>
       <div class="ar-note">Triad holds a disclosed marketing relationship with Arrow Finance. Market capitalisation figures describe what happened during the mandate period and are stated as context, not as a result attributed to Triad or a forecast of any kind. Nothing here is investment advice.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED: MANIFEST -->
+<section class="section" id="manifest" style="padding-top:20px">
+  <div class="mf-placard reveal">
+    <div class="mf-banner"><img src="/assets/traders/manifest-banner.jpg" alt="Manifest" loading="lazy"></div>
+    <div class="mf-body">
+      <div class="mf-head">
+        <img src="/assets/traders/manifest-logo.jpg" alt="" class="mf-logo">
+        <div>
+          <div class="mf-eyebrow">TRIAD &times; MANIFEST</div>
+          <h2 class="mf-title">$MANIFEST</h2>
+          <div class="mf-cat">Memecoin &middot; Solana &middot; @ManifestingXs</div>
+        </div>
+      </div>
+      <p class="mf-sub">Manifesting is a Solana memecoin built on the manifestation and law-of-attraction theme, launched through pump.fun. Triad worked across distribution, OTC and advisory through the campaign period.</p>
+      <div class="mf-stats">
+        <div class="mf-stat"><div class="mf-sn">$48.6M</div><div class="mf-sl">Peak market cap reached during the campaign period</div></div>
+        <div class="mf-stat"><div class="mf-sn">Solana</div><div class="mf-sl">Ecosystem</div></div>
+        <div class="mf-stat"><div class="mf-sn">3 workstreams</div><div class="mf-sl">Distribution, OTC and advisory</div></div>
+      </div>
+      <div class="mf-tags">
+        <span class="mf-tag">Distribution</span>
+        <span class="mf-tag">OTC</span>
+        <span class="mf-tag">Advisory</span>
+      </div>
+      <div class="mf-note">Triad held a commercial relationship with Manifest. Market capitalisation shown is the peak reached during the campaign period, not a current figure and not a result attributed to Triad. Memecoins carry a high risk of total loss and are not backed by any protocol revenue or asset. Nothing here is investment advice. Not to be confused with Manifest (@ManifestTrade), an unrelated Solana orderbook protocol.</div>
     </div>
   </div>
 </section>
