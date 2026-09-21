@@ -79,7 +79,7 @@
 <div class="sf-footer" role="contentinfo">
 <style>
 .sf-footer{background:#06060C;border-top:1px solid rgba(240,238,232,.07);padding:56px 6vw 30px;font-family:'Instrument Sans',system-ui,sans-serif;position:relative;z-index:2}
-.sf-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;max-width:1200px;margin:0 auto;padding-bottom:38px}
+.sf-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;max-width:1200px;margin:0 auto;padding-bottom:38px}
 .sf-brandline{display:flex;align-items:center;gap:9px;margin-bottom:14px}
 .sf-brandline img{width:22px;height:22px}
 .sf-brandline span{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:4px;color:#F0EEE8;font-weight:500}
@@ -94,18 +94,12 @@
 .sf-social{display:flex;gap:20px}
 .sf-social a{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:1px;color:#8a8a93;text-decoration:none;transition:color .25s}
 .sf-social a:hover{color:#01BDA5}
-@media(max-width:760px){.sf-grid{grid-template-columns:1fr 1fr}.sf-band{grid-template-columns:1fr}.sf-bottom{flex-direction:column;align-items:flex-start}}
+@media(max-width:760px){.sf-grid{grid-template-columns:1fr 1fr}.sf-grid>:first-child{grid-column:1/-1}.sf-band{grid-template-columns:1fr}.sf-bottom{flex-direction:column;align-items:flex-start}}
 </style>
 <div class="sf-grid">
   <div>
     <div class="sf-brandline"><img src="/assets/logo.png" alt="" onerror="this.style.display='none'"><span>TRIAD</span></div>
     <div class="sf-desc">Curated creator and distribution network for the AI &times; crypto economy.</div>
-  </div>
-  <div class="sf-col"><div class="sf-h">CREATORS</div>
-    <a href="/creators.html">Join the Roster</a>
-    <a href="/creators/directory.html">The Network</a>
-    <a href="/creators/revenue-share.html">Revenue Share</a>
-    <a href="/founding-testers.html">Founding Testers</a>
   </div>
   <div class="sf-col"><div class="sf-h">PROJECTS</div>
     <a href="/strategic-bd.html">Strategic BD</a>
