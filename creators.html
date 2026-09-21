@@ -156,14 +156,6 @@ a{color:inherit;text-decoration:none}
 .suite-card:hover .suite-arrow{gap:14px}
 
 
-.process-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:0}
-.process-step{display:grid;grid-template-columns:80px 1fr;gap:32px;padding:32px 0;border-bottom:1px solid var(--border);transition:all .3s}
-.process-step:last-child{border-bottom:none}
-.process-step:hover{background:rgba(255,255,255,.01)}
-.process-num{font-family:var(--accent-font);font-size:11px;letter-spacing:.22em;color:var(--accent);padding-top:4px}
-.process-body h3{font-family:var(--display);font-size:22px;font-weight:600;text-transform:uppercase;margin-bottom:8px;letter-spacing:-.005em}
-.process-body p{font-size:14px;color:var(--text-dim);line-height:1.65}
-.process-body .meta{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:10px;letter-spacing:.05em}
 
 .who-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:980px;margin:0 auto}
 .who-card{background:var(--bg-card);border:1px solid var(--border);border-radius:18px;padding:28px 32px;display:grid;grid-template-columns:32px 1fr;gap:18px;align-items:flex-start;transition:all .3s}
@@ -529,9 +521,7 @@ footer .footer-r a:hover{color:var(--text)}
   .fg-trio{grid-template-columns:1fr}
   .fg-checks{grid-template-columns:1fr}
         footer{flex-direction:column;text-align:center;padding:40px 20px}
-  .process-step{grid-template-columns:60px 1fr;gap:20px;padding:24px 0}
-  .process-body h3{font-size:18px}
-}
+    }
 </style>
 </head>
 <body>
@@ -547,7 +537,6 @@ footer .footer-r a:hover{color:var(--text)}
   <a href="#partners" class="pill-link">Partners</a>
   <a href="#clanwars" class="pill-link">Clan Wars</a>
   <a href="#receipts" class="pill-link">Receipts</a>
-  <a href="#process" class="pill-link">Journey</a>
   <a href="/dashboard.html" class="pill-link">Dashboard</a>
   <a href="#partners" class="pill-cta">Partners</a>
 </nav>
@@ -996,23 +985,6 @@ document.querySelectorAll('.cw-video').forEach(function(el){
   });
 });
 </script>
-
-<div class="divider"></div>
-
-<section class="section" id="process">
-  <div class="section-head reveal">
-    <div class="section-eyebrow">The Process</div>
-    <h2>From application to first campaign. <em>Five steps. No noise.</em></h2>
-    <p>Triad doesn't run a turnstile. Every step below is gated by partners. Most applications won't advance past Step 02. That's by design.</p>
-  </div>
-  <div class="process-list">
-    <div class="process-step reveal"><div class="process-num">Step 01</div><div class="process-body"><h3>Application</h3><p>Seven-section application. Identity, craft, audience data, work samples, deal history, thesis, attestation. Read by partners, not screeners, not interns.</p><span class="meta">~ 25 minutes · 10–14 day review</span></div></div>
-    <div class="process-step reveal"><div class="process-num">Step 02</div><div class="process-body"><h3>Partner Interview</h3><p>Advanced applications get a 45-minute call with a Triad partner. We test your thesis, your pipeline taste, and the audience numbers you submitted. Most applicants do not advance.</p><span class="meta">~ 45 min · By invitation</span></div></div>
-    <div class="process-step reveal"><div class="process-num">Step 03</div><div class="process-body"><h3>Onboarding &amp; Brand Buildout</h3><p>Accepted creators sign a non-exclusive deal memo and receive full brand buildout in 48 hours. Custom PFP, banner, palette, bio, content templates. Assets are yours to keep regardless of cohort tenure.</p><span class="meta">~ 48 hours · For selected creators</span></div></div>
-    <div class="process-step reveal"><div class="process-num">Step 04</div><div class="process-body"><h3>Roster Listing &amp; Pipeline Access</h3><p>You're placed in the Triad directory. The 550+ project pipeline opens. Briefs are matched to your niche, audience composition, and rates. You decide what to take.</p><span class="meta">~ Day 5 · Listed publicly</span></div></div>
-    <div class="process-step reveal"><div class="process-num">Step 05</div><div class="process-body"><h3>First Campaign</h3><p>Typically within 30 days of onboarding. Contract, brief refinement, payout, all handled. 70% to you within 7 days of delivery. Triad earns 30% on every sourced campaign.</p><span class="meta">~ Within 30 days · 70/30 split</span></div></div>
-  </div>
-</section>
 
 <div class="sf-footer" role="contentinfo">
 <style>
