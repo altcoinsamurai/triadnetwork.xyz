@@ -446,12 +446,6 @@ a{color:inherit;text-decoration:none}
 .team-x{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;color:var(--muted);transition:color .3s}
 .team-x:hover{color:var(--accent)}
 
-.apply-wrap{max-width:780px;margin:0 auto;background:var(--bg-card);border:1px solid var(--border);border-radius:32px;padding:56px}
-.c-form{display:flex;flex-direction:column;gap:0}
-.form-section{padding:36px 0;border-bottom:1px solid var(--border)}
-.form-section:first-of-type{padding-top:0}
-.form-section:last-of-type{border-bottom:none}
-.form-section-head{display:flex;align-items:baseline;gap:18px;margin-bottom:8px}
 .form-section-num{font-family:var(--accent-font);font-size:10px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase;font-weight:500}
 .form-section-title{font-family:var(--display);font-size:20px;font-weight:600;text-transform:uppercase;letter-spacing:-.005em}
 .form-section-desc{font-family:var(--body);font-size:13px;color:var(--text-dim);margin-bottom:24px;line-height:1.55;max-width:560px}
@@ -461,10 +455,6 @@ a{color:inherit;text-decoration:none}
 .fg-check{display:flex;align-items:center;gap:10px;padding:11px 14px;background:var(--bg-soft);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .25s;font-family:var(--body);font-size:13px;color:var(--text-dim)}
 .fg-check input[type=checkbox]{accent-color:var(--accent);width:14px;height:14px;cursor:pointer;flex-shrink:0}
 .fg-check:hover{border-color:var(--border-strong);color:var(--text)}
-.attestation{display:flex;flex-direction:column;gap:14px;padding:24px;background:var(--bg-soft);border:1px solid var(--accent-soft);border-radius:14px}
-.attest-row{display:flex;align-items:flex-start;gap:12px;font-family:var(--body);font-size:13px;color:var(--text-dim);line-height:1.55;cursor:pointer}
-.attest-row input[type=checkbox]{accent-color:var(--accent);width:16px;height:16px;margin-top:2px;flex-shrink:0;cursor:pointer}
-.c-form{display:flex;flex-direction:column;gap:22px}
 .fg{display:flex;flex-direction:column;gap:8px}
 .fg label{font-family:var(--accent-font);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500}
 .fg input:not([type=checkbox]):not([type=radio]),.fg select,.fg textarea{padding:14px 16px;border:1px solid var(--border);border-radius:12px;font-family:var(--mono);font-size:14px;font-weight:500;letter-spacing:.01em;background:var(--bg-soft);color:var(--text);outline:none;transition:all .3s;-webkit-appearance:none}
@@ -472,9 +462,6 @@ a{color:inherit;text-decoration:none}
 .fg textarea{min-height:110px;resize:vertical;font-family:var(--mono);font-weight:500;line-height:1.55}
 .fg input:not([type=checkbox]):not([type=radio])::placeholder,.fg textarea::placeholder,.fg select::placeholder{font-family:var(--mono);font-weight:400;color:var(--text-dim);opacity:.55;letter-spacing:.01em}
 .fg-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.submit-btn{padding:18px;background:var(--accent);color:#06060C;font-family:var(--accent-font);font-size:11px;letter-spacing:.22em;text-transform:uppercase;border:none;border-radius:100px;cursor:pointer;transition:all .3s;font-weight:600;margin-top:8px}
-.submit-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(1,189,165,.3)}
-.form-note{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:center;margin-top:18px;letter-spacing:.05em}
 
 
 
@@ -538,13 +525,10 @@ footer .footer-r a:hover{color:var(--text)}
   .receipt-soon{padding:32px 24px}
   .receipt-soon-title{font-size:18px}
   .team-grid{grid-template-columns:1fr}
-  .apply-wrap{padding:36px 24px}
-  .fg-row{grid-template-columns:1fr}
+    .fg-row{grid-template-columns:1fr}
   .fg-trio{grid-template-columns:1fr}
   .fg-checks{grid-template-columns:1fr}
-  .form-section{padding:28px 0}
-  .form-section-head{gap:14px;flex-wrap:wrap}
-    footer{flex-direction:column;text-align:center;padding:40px 20px}
+        footer{flex-direction:column;text-align:center;padding:40px 20px}
   .process-step{grid-template-columns:60px 1fr;gap:20px;padding:24px 0}
   .process-body h3{font-size:18px}
 }
@@ -1030,180 +1014,6 @@ document.querySelectorAll('.cw-video').forEach(function(el){
   </div>
 </section>
 
-<section class="section" id="apply">
-  <div class="section-head reveal">
-    <div class="section-eyebrow">Cohort 01 · Closed</div>
-    <h2>The founding cohort is <em>closed.</em></h2>
-    <p>Cohort 01 reached its founding 100 seats and is no longer accepting applications. Cohort 02 opens on a new cycle, by invitation.</p>
-  </div>
-  <div class="reveal" style="max-width:680px;margin:0 auto 8px;text-align:center;padding:44px 32px;background:var(--bg-card);border:1px solid var(--border);border-radius:24px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)">
-    <div style="font-family:var(--accent-font);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:16px">Applications Closed</div>
-    <p style="font-family:var(--body);font-size:16px;line-height:1.65;color:var(--text-dim);margin:0 auto 26px;max-width:520px">The founding 100 are selected. Cohort 02 opens on a new cycle, follow <a href="https://x.com/triadxyz" target="_blank" rel="noopener" style="color:var(--accent)">@triadxyz</a> for the next window.</p>
-    <a href="#partners" class="btn-primary" style="display:inline-flex">Meet the Partners &rarr;</a>
-  </div>
-  <div class="apply-wrap reveal" style="display:none">
-    <form class="c-form" action="https://formspree.io/f/mredgvwj" method="POST">
-
-      <input type="hidden" name="_next" value="https://triadnetwork.xyz/applied.html">
-      <input type="hidden" name="_subject" value="[Triad Application] New Cohort 01 Application">
-
-      <div class="form-section">
-        <div class="form-section-head">
-          <div class="form-section-num">01 / 07</div>
-          <div class="form-section-title">Identity</div>
-        </div>
-        <div class="fg-grid">
-          <div class="fg-row">
-            <div class="fg"><label>Legal name</label><input type="text" name="01_legal_name" placeholder="Full legal name" required></div>
-            <div class="fg"><label>Display name</label><input type="text" name="02_display_name" placeholder="Pseudonym or public name" required></div>
-          </div>
-          <div class="fg-row">
-            <div class="fg"><label>Email</label><input type="email" name="03_email" placeholder="you@example.com" required></div>
-            <div class="fg"><label>Location · time zone</label><input type="text" name="04_location" placeholder="London · GMT+0" required></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-section">
-        <div class="form-section-head">
-          <div class="form-section-num">02 / 07</div>
-          <div class="form-section-title">Channels</div>
-        </div>
-        <p class="form-section-desc">Where you publish. X and Telegram are required; list everything else you ship to.</p>
-        <div class="fg-grid">
-          <div class="fg-row">
-            <div class="fg"><label>X handle</label><input type="text" name="05_x_handle" placeholder="@yourhandle" required></div>
-            <div class="fg"><label>Telegram handle</label><input type="text" name="06_telegram" placeholder="@yourtelegram" required></div>
-          </div>
-          <div class="fg">
-            <label>Other platforms you ship to</label>
-            <div class="fg-checks">
-              <label class="fg-check"><input type="checkbox" name="07_platforms" value="Farcaster"><span>Farcaster</span></label>
-              <label class="fg-check"><input type="checkbox" name="07_platforms" value="YouTube"><span>YouTube</span></label>
-              <label class="fg-check"><input type="checkbox" name="07_platforms" value="Substack/Beehiiv"><span>Substack · Beehiiv</span></label>
-              <label class="fg-check"><input type="checkbox" name="07_platforms" value="Podcast"><span>Podcast</span></label>
-              <label class="fg-check"><input type="checkbox" name="07_platforms" value="TikTok"><span>TikTok</span></label>
-              <label class="fg-check"><input type="checkbox" name="07_platforms" value="Instagram"><span>Instagram</span></label>
-              <label class="fg-check"><input type="checkbox" name="07_platforms" value="Spaces"><span>X Spaces</span></label>
-              <label class="fg-check"><input type="checkbox" name="07_platforms" value="Other"><span>Other</span></label>
-            </div>
-          </div>
-          <div class="fg"><label>Handles / URLs for each</label><textarea name="08_other_handles" placeholder="One per line. e.g.&#10;youtube.com/@yourchannel&#10;warpcast.com/yourhandle&#10;yoursubstack.substack.com"></textarea></div>
-        </div>
-      </div>
-
-      <div class="form-section">
-        <div class="form-section-head">
-          <div class="form-section-num">03 / 07</div>
-          <div class="form-section-title">Craft</div>
-        </div>
-        <p class="form-section-desc">What you make, how often, and from what depth of experience.</p>
-        <div class="fg-grid">
-          <div class="fg-row">
-            <div class="fg"><label>Primary niche</label><select name="09_primary_niche" required><option value="">Select…</option><option>AI × Crypto</option><option>DeFi mechanics</option><option>L1s &amp; L2s</option><option>NFTs &amp; gaming</option><option>Trading &amp; alpha</option><option>On-chain forensics</option><option>Macro &amp; markets</option><option>Builder / dev</option><option>General crypto</option><option>Other</option></select></div>
-            <div class="fg"><label>Secondary niche</label><select name="10_secondary_niche"><option value="">Optional</option><option>AI × Crypto</option><option>DeFi mechanics</option><option>L1s &amp; L2s</option><option>NFTs &amp; gaming</option><option>Trading &amp; alpha</option><option>On-chain forensics</option><option>Macro &amp; markets</option><option>Builder / dev</option><option>General crypto</option><option>None</option></select></div>
-          </div>
-          <div class="fg">
-            <label>Formats you ship regularly</label>
-            <div class="fg-checks">
-              <label class="fg-check"><input type="checkbox" name="11_formats" value="Long-form threads"><span>Long-form threads</span></label>
-              <label class="fg-check"><input type="checkbox" name="11_formats" value="Breaking news"><span>Breaking news</span></label>
-              <label class="fg-check"><input type="checkbox" name="11_formats" value="Spaces/podcasts"><span>Spaces · podcasts</span></label>
-              <label class="fg-check"><input type="checkbox" name="11_formats" value="Video essays"><span>Video essays</span></label>
-              <label class="fg-check"><input type="checkbox" name="11_formats" value="Livestream"><span>Livestream</span></label>
-              <label class="fg-check"><input type="checkbox" name="11_formats" value="Newsletters"><span>Newsletters</span></label>
-              <label class="fg-check"><input type="checkbox" name="11_formats" value="Memes"><span>Memes · shitposting</span></label>
-              <label class="fg-check"><input type="checkbox" name="11_formats" value="Other"><span>Other</span></label>
-            </div>
-          </div>
-          <div class="fg-trio">
-            <div class="fg"><label>Posting cadence</label><select name="12_cadence" required><option value="">Select…</option><option>Multiple per day</option><option>Daily</option><option>5× per week</option><option>3× per week</option><option>1–2× per week</option><option>Occasional</option></select></div>
-            <div class="fg"><label>Years in crypto</label><input type="number" name="13_years_crypto" placeholder="e.g. 4" min="0" required></div>
-            <div class="fg"><label>Years creating</label><input type="number" name="14_years_creating" placeholder="e.g. 2" min="0" required></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-section">
-        <div class="form-section-head">
-          <div class="form-section-num">04 / 07</div>
-          <div class="form-section-title">Audience</div>
-        </div>
-        <p class="form-section-desc">Numbers we verify. Best-effort estimates where exact figures aren't trackable.</p>
-        <div class="fg-grid">
-          <div class="fg-trio">
-            <div class="fg"><label>X followers</label><input type="number" name="15_followers" placeholder="e.g. 4800" required></div>
-            <div class="fg"><label>Avg impressions / post · 30d</label><input type="number" name="16_impressions" placeholder="e.g. 12000" required></div>
-            <div class="fg"><label>Engagement rate · %</label><input type="number" name="17_engagement_rate" placeholder="e.g. 3.2" step="0.1" required></div>
-          </div>
-          <div class="fg"><label>Audience composition, best estimate</label><textarea name="18_audience" placeholder="Rough % breakdown. e.g.&#10;40% founders / builders&#10;30% traders / degens&#10;20% retail&#10;10% institutional / VC" required></textarea></div>
-          <div class="fg"><label>Top 3 audience geographies</label><input type="text" name="19_geographies" placeholder="e.g. US, UK, SEA" required></div>
-        </div>
-      </div>
-
-      <div class="form-section">
-        <div class="form-section-head">
-          <div class="form-section-num">05 / 07</div>
-          <div class="form-section-title">Work Samples</div>
-        </div>
-        <p class="form-section-desc">Your strongest output. We read every link.</p>
-        <div class="fg-grid">
-          <div class="fg"><label>Best thread you've shipped</label><input type="url" name="20_best_thread" placeholder="https://x.com/…" required></div>
-          <div class="fg"><label>Best long-form piece</label><input type="url" name="21_best_longform" placeholder="https://… (substack, mirror, article)"></div>
-          <div class="fg"><label>Best video or podcast clip</label><input type="url" name="22_best_video" placeholder="https://… (YouTube, podcast, X video)"></div>
-          <div class="fg"><label>Best paid / sponsored post you've delivered</label><input type="url" name="23_best_paid" placeholder="https://… (any past sponsored work)"></div>
-        </div>
-      </div>
-
-      <div class="form-section">
-        <div class="form-section-head">
-          <div class="form-section-num">06 / 07</div>
-          <div class="form-section-title">Deal History</div>
-        </div>
-        <p class="form-section-desc">Receipts. If you've been paid before, we want the shape of it.</p>
-        <div class="fg-grid">
-          <div class="fg-row">
-            <div class="fg"><label>Paid brand deals, last 12 months</label><input type="number" name="24_deals_12m" placeholder="e.g. 6" min="0" required></div>
-            <div class="fg"><label>Typical fee range per campaign</label><select name="25_fee_range" required><option value="">Select…</option><option>None yet</option><option>Under $500</option><option>$500 – $2K</option><option>$2K – $5K</option><option>$5K – $15K</option><option>$15K+</option></select></div>
-          </div>
-          <div class="fg"><label>Current rate card</label><input type="url" name="26_rate_card" placeholder="https://… (link to your rates, optional)"></div>
-          <div class="fg"><label>Two references, past sponsors, projects, or collaborators</label><textarea name="27_references" placeholder="Name + contact OR a public post URL where the work shipped. Two references required." required></textarea></div>
-        </div>
-      </div>
-
-      <div class="form-section">
-        <div class="form-section-head">
-          <div class="form-section-num">07 / 07</div>
-          <div class="form-section-title">Thesis &amp; Fit</div>
-        </div>
-        <p class="form-section-desc">The longest section. Where the application earns or loses its slot. Write like you mean it.</p>
-        <div class="fg-grid">
-          <div class="fg"><label>What's your point of view in this market?</label><textarea name="28_thesis" placeholder="200–400 words. The ideas you're known for. The takes you'd defend in a room of strangers. Specific, not generic." rows="7" required></textarea></div>
-          <div class="fg"><label>Three creators in your lane you respect, and why</label><textarea name="29_peers" placeholder="Handle + one line on each. Tells us where you sit and who you read." required></textarea></div>
-          <div class="fg"><label>Why Triad, specifically</label><textarea name="30_why_triad" placeholder="Max 300 words. What you've seen of our work, what you'd plug into, what you'd contribute." rows="5" required></textarea></div>
-          <div class="fg"><label>Categories you will not promote</label><textarea name="31_nogos" placeholder="Be specific. Memecoins, RWAs, gambling, anon teams, etc. This protects us both." required></textarea></div>
-          <div class="fg"><label>What does success look like 12 months from now</label><textarea name="32_success" placeholder="Audience, revenue, positioning. Specifics over slogans." required></textarea></div>
-          <div class="fg"><label>How did you hear about Triad</label><select name="33_source" required><option value="">Select…</option><option>X / Twitter</option><option>Telegram</option><option>Referral from creator</option><option>Referral from project</option><option>Conference / event</option><option>Search</option><option>Other</option></select></div>
-        </div>
-      </div>
-
-      <div class="form-section">
-        <div class="form-section-head">
-          <div class="form-section-num">Final</div>
-          <div class="form-section-title">Attestation</div>
-        </div>
-        <div class="attestation">
-          <label class="attest-row"><input type="checkbox" name="34_attest_accuracy" required><span>I confirm the numbers, links, and references above are accurate and verifiable.</span></label>
-          <label class="attest-row"><input type="checkbox" name="35_attest_interview" required><span>I understand acceptance requires a 45-minute partner interview, and that submission alone is not a guarantee of acceptance.</span></label>
-          <label class="attest-row"><input type="checkbox" name="36_attest_review" required><span>I understand applications are reviewed in 10–14 days by Triad partners. Reapplications are accepted one quarter after a rejection.</span></label>
-        </div>
-      </div>
-
-      <button type="submit" class="submit-btn">Submit Application →</button>
-    </form>
-    <p class="form-note">Reviewed by partners in 10–14 days · 45-minute interview required for selected applicants · Founding cohort capped at 100 seats</p>
-  </div>
-</section>
 <div class="sf-footer" role="contentinfo">
 <style>
 .sf-footer{background:#06060C;border-top:1px solid rgba(240,238,232,.07);padding:56px 6vw 30px;font-family:'Instrument Sans',system-ui,sans-serif;position:relative;z-index:2}
