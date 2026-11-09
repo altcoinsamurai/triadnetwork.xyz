@@ -57,6 +57,7 @@ nav{
 nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.06)}
 .nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer;flex-shrink:0}
 .logo-mark{width:32px;height:32px}
+.logo-lockup{height:30px;width:auto;display:block}
 .logo-text{font-family:var(--display);font-size:18px;font-weight:700;letter-spacing:-.01em;color:var(--text)}
 .logo-div{display:none}
 .logo-sub{display:none}
@@ -324,6 +325,7 @@ footer{border-top:1px solid var(--border);padding:32px var(--pad);display:flex;j
   .mobile-menu{display:flex!important}
   .logo-text{font-size:16px}
   .logo-mark{width:26px;height:26px}
+  .logo-lockup{height:24px}
 
   .hero{padding:80px 20px 40px;min-height:auto}
   .hero h1{font-size:clamp(28px,7vw,38px)}
