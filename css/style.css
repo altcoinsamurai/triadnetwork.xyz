@@ -144,7 +144,6 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.06)}
 .backers-label{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);line-height:1.6;margin-bottom:24px}
 .backers-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
 .backers-list li{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(20px,1.8vw,26px);line-height:1.1;letter-spacing:-.01em;color:var(--text)}
-.backers-note{margin-top:24px;padding-top:14px;border-top:1px solid var(--border);font-family:var(--mono);font-size:9px;line-height:1.7;letter-spacing:.03em;color:var(--text3)}
 @media(max-width:900px){
   .hero-grid{grid-template-columns:1fr;gap:34px}
   .backers{border-left:none;border-top:1px solid var(--border);padding-left:0;padding-top:28px}
