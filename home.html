@@ -630,9 +630,20 @@ window.addEventListener('scroll', () => {
       if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); play(el); }
     });
     var img = el.querySelector('img');
-    if(img) img.addEventListener('error', function(){
-      img.src = 'https://i.ytimg.com/vi/' + el.getAttribute('data-yt') + '/hqdefault.jpg';
-    }, { once: true });
+    if(!img) return;
+    // YouTube answers a missing maxresdefault with a 120x90 grey placeholder and a
+    // 200 status, so an error handler alone never fires. Fall back on size too,
+    // stepping down through the resolutions that are likelier to exist.
+    var steps = ['sddefault', 'hqdefault'], at = 0;
+    function fallback(){
+      if(at >= steps.length) return;
+      img.dataset.fellBack = steps[at];
+      img.src = 'https://i.ytimg.com/vi/' + el.getAttribute('data-yt') + '/' + steps[at++] + '.jpg';
+    }
+    function check(){ if(img.naturalWidth && img.naturalWidth < 200) fallback(); }
+    img.addEventListener('error', fallback);
+    img.addEventListener('load', check);
+    if(img.complete) check();
   });
 })();
 </script>
