@@ -167,6 +167,38 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.06)}
 .study-note+.study-note{margin-top:12px}
 .studies-foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--border2);display:flex;flex-wrap:wrap;gap:12px 32px;align-items:baseline;justify-content:space-between}
 .studies-foot p{font-size:14px;color:var(--text3);max-width:620px;line-height:1.6}
+.rooms{padding:0 48px 110px;max-width:1200px;margin:0 auto}
+.rooms-head{max-width:760px;margin-bottom:64px;padding-top:96px;border-top:1px solid var(--border2)}
+.rooms-head h2{font-family:var(--serif);font-size:clamp(30px,4vw,50px);font-weight:400;line-height:1.1;letter-spacing:-.01em;margin:14px 0 18px}
+.rooms-head h2 em{font-style:italic;color:var(--serif-muted)}
+.rooms-head p{font-size:17px;line-height:1.7;color:var(--text2)}
+.rooms-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:76px}
+.room{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:52px;align-items:center}
+.room:nth-child(even) .room-media{order:2}
+.room-media{position:relative;aspect-ratio:16/9;border-radius:var(--radius-sm);overflow:hidden;background:var(--surface);cursor:pointer;border:1px solid var(--border)}
+.room-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.room-media:hover img{transform:scale(1.03)}
+.room-media iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.room-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;background:rgba(10,10,12,.72);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;transition:background .3s}
+.room-play svg{width:15px;height:17px;fill:#fff;margin-left:3px}
+.room-media:hover .room-play{background:var(--accent)}
+.room-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:12px}
+.room-idx{color:var(--accent);font-weight:500;margin-right:14px}
+.room h3{font-family:var(--serif);font-size:clamp(26px,2.7vw,36px);font-weight:400;line-height:1.14;letter-spacing:-.01em;margin-bottom:14px;color:var(--text)}
+.room-body>p{font-size:15.5px;line-height:1.72;color:var(--text2);margin-bottom:20px}
+.room-read{font-size:15px;line-height:1.7;color:var(--text);padding-left:20px;border-left:2px solid var(--accent);margin-bottom:22px}
+.room-read b{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:7px}
+.room-tags{display:flex;flex-wrap:wrap;gap:8px}
+.room-tags span{font-family:var(--mono);font-size:10px;letter-spacing:.05em;color:var(--text2);background:var(--bg3);border:1px solid var(--border);padding:5px 11px;border-radius:100px}
+.rooms-foot{margin-top:64px;padding-top:24px;border-top:1px solid var(--border2);display:flex;flex-wrap:wrap;gap:12px 32px;align-items:baseline;justify-content:space-between}
+.rooms-foot p{font-size:14px;color:var(--text3);max-width:680px;line-height:1.6}
+@media(max-width:980px){
+  .rooms{padding:0 24px 80px}
+  .rooms-head{padding-top:72px;margin-bottom:48px}
+  .rooms-list{gap:56px}
+  .room{grid-template-columns:1fr;gap:24px}
+  .room:nth-child(even) .room-media{order:0}
+}
 @media(max-width:980px){
   .studies{padding:80px 24px}
   .studies-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 28px}
